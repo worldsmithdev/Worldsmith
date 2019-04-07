@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: GreaterMap
+    uniqueID: 72114753
+    locked: 0
+  - name: SubMapHighlight
+    uniqueID: 2311163915
+    locked: 0
+  - name: SubMap
+    uniqueID: 1288057077
+    locked: 0
+  - name: SectionBackgroundCanvas
+    uniqueID: 3536678749
+    locked: 0
+  - name: SectionContentCanvas
+    uniqueID: 2358442101
+    locked: 0
+  - name: TileBlockBelowUI
+    uniqueID: 3221896893
+    locked: 0
+  - name: ContainerLines
+    uniqueID: 4184427157
+    locked: 0
+  - name: LocationContainerColorBall
+    uniqueID: 3538251367
+    locked: 0
+  - name: LocationContainerIcon
+    uniqueID: 1549798603
+    locked: 0
+  - name: LocationContainerName
+    uniqueID: 1063329585
+    locked: 0
+  - name: LocationTooltip
+    uniqueID: 3125814921
+    locked: 0
+  - name: UI Panel
+    uniqueID: 1765950427
+    locked: 0
+  - name: UI Panel Elements
+    uniqueID: 3187078703
+    locked: 0
+  - name: TileBlockAboveUI
+    uniqueID: 3468675453
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
