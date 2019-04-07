@@ -1,0 +1,45 @@
+using UnityEngine;
+using UnityEditor;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+
+using GDataDB;
+using GDataDB.Linq;
+
+using UnityQuickSheet;
+
+///
+/// !!! Machine generated code !!!
+///
+[CustomEditor(typeof($WorkSheetClassName))]
+public class $ClassName : BaseGoogleEditor<$WorkSheetClassName>
+{	    
+    public override bool Load()
+    {        
+        $WorkSheetClassName targetData = target as $WorkSheetClassName;
+        
+        var client = new DatabaseClient("", "");
+        string error = string.Empty;
+        var db = client.GetDatabase(targetData.SheetName, ref error);	
+        var table = db.GetTable<$DataClassName>(targetData.WorksheetName) ?? db.CreateTable<$DataClassName>(targetData.WorksheetName);
+        
+        List<$DataClassName> myDataList = new List<$DataClassName>();
+        
+        var all = table.FindAll();
+        foreach(var elem in all)
+        {
+            $DataClassName data = new $DataClassName();
+            
+            data = Cloner.DeepCopy<$DataClassName>(elem.Element);
+            myDataList.Add(data);
+        }
+                
+        targetData.dataArray = myDataList.ToArray();
+        
+        EditorUtility.SetDirty(targetData);
+        AssetDatabase.SaveAssets();
+        
+        return true;
+    }
+}
