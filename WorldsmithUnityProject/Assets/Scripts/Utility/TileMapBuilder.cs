@@ -270,7 +270,7 @@ public class TileMapBuilder : MonoBehaviour
                         tileDrawn = true;
                     }
                 if (linkedTile.tileEcoBlockType == EcoBlock.BlockType.Ruler)                
-                    blockObj.GetComponent<SpriteRenderer>().sprite = ecoBlockHierarchySpritePairings[EconomyController.Instance.GetRulerFromID(linkedEB.blockID).rulerHierarchy];
+                    blockObj.GetComponent<SpriteRenderer>().sprite = ecoBlockHierarchySpritePairings[RulerController.Instance.GetRulerFromID(linkedEB.blockID).rulerHierarchy];
              }
         }
     }

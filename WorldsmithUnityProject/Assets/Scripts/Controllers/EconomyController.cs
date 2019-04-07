@@ -10,6 +10,8 @@ public class EconomyController : MonoBehaviour
 
     public EconomyBuilder economyBuilder;
 
+
+    // Eventually probably move these dictionaries to RulerController, etc. 
     public Dictionary<Ruler, Ruler> rulerDictionary = new Dictionary<Ruler, Ruler>();
     public Dictionary<Warband, Ruler> warbandDictionary = new Dictionary<Warband, Ruler>(); 
     public Dictionary<Population, Ruler> populationDictionary = new Dictionary<Population, Ruler>(); 
@@ -20,7 +22,7 @@ public class EconomyController : MonoBehaviour
         Instance = this;
     }
 
-
+    // Split these later into dedicated scripts. And call it create > build for consistency with WorldController.
     public void BuildEconomy()
     {
         economyBuilder.BuildRulers(); 
@@ -28,35 +30,7 @@ public class EconomyController : MonoBehaviour
         economyBuilder.BuildTerritories();
         economyBuilder.BuildPopulations();
         economyBuilder.BuildResources();
-    }
-
-    public  Ruler GetLocationRuler(Location loc)
-    {
-        return loc.localRuler;
-    }
-    public List<Ruler> GetLocationRulers(Location loc)
-    {
-        List<Ruler> returnList = new List<Ruler>();
-
-        foreach (Ruler ruler in loc.secondaryRulers)        
-            if (ruler != null)
-                returnList.Add(ruler);        
-
-        returnList.Add(loc.localRuler);
-        return returnList;
-    }
-
-  
-   
-    public Ruler GetRulerFromID (string id)
-    {
-        foreach (Ruler ruler in rulerDictionary.Keys)        
-            if (ruler.blockID == id)
-                return ruler;        
-        Debug.Log("Tried to find Ruler but no id match for "+ id);
-        return null;
-    }
-
+    } 
 
 
     public void ClearDictionaries()
@@ -67,6 +41,7 @@ public class EconomyController : MonoBehaviour
     territoryDictionary = new Dictionary<Territory, Ruler>(); 
     }
 
+    // To check if a name already exists when creating an EcoBlock
     public bool BlockIDExists(string id, EcoBlock.BlockType type)
     {
         if (type == EcoBlock.BlockType.Ruler)

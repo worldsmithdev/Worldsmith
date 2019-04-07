@@ -12,13 +12,15 @@ public class RulerController : MonoBehaviour
     }
 
 
-    public List<Ruler> GetRulersAtLocation(Location loc)
+    public List<Ruler> GetLocationRulers(Location loc)
     {
         List<Ruler> returnList = new List<Ruler>();
-        foreach (Ruler ruler in EconomyController.Instance.rulerDictionary.Keys)
+
+        foreach (Ruler ruler in loc.secondaryRulers)
             if (ruler != null)
-                if (ruler.xLocation == loc.GetPositionVector().x && ruler.yLocation == loc.GetPositionVector().y)
-                    returnList.Add(ruler);
+                returnList.Add(ruler);
+
+        returnList.Add(loc.localRuler);
         return returnList;
     }
 
@@ -33,5 +35,12 @@ public class RulerController : MonoBehaviour
         return null;
     }
 
-
+    public Ruler GetRulerFromID(string id)
+    {
+        foreach (Ruler ruler in EconomyController.Instance.rulerDictionary.Keys)
+            if (ruler.blockID == id)
+                return ruler;
+        Debug.Log("Tried to find Ruler but no id match for " + id);
+        return null;
+    }
 }

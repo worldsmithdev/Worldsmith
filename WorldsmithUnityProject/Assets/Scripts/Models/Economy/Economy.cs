@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class Economy 
 {
+    // Represents all the changing factors of a World - beyond the imported WorldElements.
 
-     
     Dictionary<Ruler, Ruler> rulerDictionary;    
     Dictionary<Warband, Ruler> warbandDictionary;    
     Dictionary<Territory, Ruler> territoryDictionary;
@@ -24,7 +24,7 @@ public class Economy
     }
     public void LoadEconomy()
     { 
-        // Loading here means taking this Economy's dictionaries and assigning them to the Controllers, which provide access to the data as the program runs
+        // Loading here means taking this Economy's dictionaries and assigning them to the Controller(s), which provide access to the data as the program runs
         EconomyController.Instance.rulerDictionary = rulerDictionary;
         EconomyController.Instance.warbandDictionary = warbandDictionary;
         EconomyController.Instance.populationDictionary = populationDictionary;

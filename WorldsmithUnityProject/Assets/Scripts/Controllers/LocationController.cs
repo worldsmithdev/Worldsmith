@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LocationController : MonoBehaviour
 {
+    // Tracks the application's selected location for the Location Section and ExploreScreen. Same for Building - will probably have its own Controller later.
+
     public static LocationController Instance { get; protected set; }
 
     [HideInInspector]
@@ -32,10 +34,9 @@ public class LocationController : MonoBehaviour
     }
 
   
-
+    // Setting a location selected on start to save a bit of exception-coding
     public void SetPreSelectedLocation()
-    {
-        
+    {        
         if (ContainerController.Instance.locationContainerList.Count > 0)
         {
             if (preselectLocationName == "")

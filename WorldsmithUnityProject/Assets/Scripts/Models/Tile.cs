@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Tile  
 {
+    // Data container for TileMaps that kind of messily is able to hold very different datatypes. 
+
     public string tileName;
     public int xCoord;
     public int yCoord;
 
      
     public enum TileTerrainType {  Sea, Land, Mountain, Forest}
-
-    // TileMap.TileMapCategory tileCategory;
+     
     public string originalTileMapName;
 
     public TileTerrainType tileTerrainType;
@@ -43,8 +44,7 @@ public class Tile
         tileWorldElementType = type;
     }
     public void SetTileTerrainType(TileTerrainType type)
-    {
-        //   tileCategory = TileMap.TileMapCategory.Terrain;
+    { 
         tileTerrainType = type;
     }
     public void SetTileBuildingType(Building.BuildingType type)

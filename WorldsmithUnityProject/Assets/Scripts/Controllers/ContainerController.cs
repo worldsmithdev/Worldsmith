@@ -45,6 +45,8 @@ public class ContainerController : MonoBehaviour
     {
         LoadContainersIntoList();
     }
+
+    // Reads content from all Background WorldMap objects, so you don't have to manually add LCs to a list.
     public void LoadContainersIntoList()
     {
         foreach (GameObject mapobj in MapController.Instance.mapHolderList) 
@@ -52,6 +54,8 @@ public class ContainerController : MonoBehaviour
                 foreach (Transform lc in categoryholder.gameObject.transform) 
                     locationContainerList.Add(lc.gameObject.GetComponent<LocationContainer>()); 
     }
+
+    // Loads initial scale of LC's child objects to a value that is used when scaling LCs with the scale sliders.
     void SetScalePresets(LocationContainer container)
     {
         centralSpriteScale = container.centralSprite.gameObject.transform.localScale.x;
@@ -59,6 +63,8 @@ public class ContainerController : MonoBehaviour
         selectionSpriteScale = container.selectionSprite.gameObject.transform.localScale.x;
         subSpriteScale = container.subIconSprite.gameObject.transform.localScale.x;
     }
+
+    // Called once to link each LC with respective imported Location.
     public void MatchLocationsToContainers()
     {
         // Call this once to link LC's with their imported Location
@@ -71,7 +77,7 @@ public class ContainerController : MonoBehaviour
             if (container != null)
                 container.SetContainerSprite();
 
-        // Check the first container to learn its scale values. And the slider to match its scale for its initial setting.
+        // Check the first container to learn its scale values. And for the slider to match its scale for its initial value.
         foreach (LocationContainer container in locationContainerList)
             if (container != null)
             {
@@ -82,6 +88,7 @@ public class ContainerController : MonoBehaviour
 
     }
    
+    // Called from LC's box collider on enter and exit
     public void SetHoveredContainer(LocationContainer cont)
     {
         hoveredContainer = cont;
@@ -98,17 +105,6 @@ public class ContainerController : MonoBehaviour
         }  
     }
 
-    void ShowTooltip (LocationContainer cont)
-    {
-        tooltipPanel.transform.localPosition = new Vector3(cont.gameObject.transform.position.x +5.5f , cont.gameObject.transform.position.y -1.6f , 0);
-        tooltipPanel.SetActive(true);
-        tooltipTitle.text = cont.GetContainedLocation().elementID;
-        tooltipText.text = cont.GetContainedLocation().description;
-    }
-    void HideTooltip()
-    {
-        tooltipPanel.SetActive(false); 
-    }
     public void ClickContainer(LocationContainer cont)
     {
         if (UIController.Instance.IsContentInteractionAllowed() == true)
@@ -128,6 +124,8 @@ public class ContainerController : MonoBehaviour
             } 
         } 
     }
+    
+    // Selecting the nearest LC in an N,E,S or W direction from the ExploreScreen
     public void ShiftSelectedContainer(LocationContainer cont)
     { 
             if (selectedContainer != null)
@@ -138,7 +136,22 @@ public class ContainerController : MonoBehaviour
             UIController.Instance.RefreshUI(); 
     }
 
- 
+    //To enable or disable tooltips
+    public void ToggleTooltips(bool checkmarked)
+    {
+        showTooltipOnHover = checkmarked;
+    }
+    void ShowTooltip(LocationContainer cont)
+    {
+        tooltipPanel.transform.localPosition = new Vector3(cont.gameObject.transform.position.x + 5.5f, cont.gameObject.transform.position.y - 1.6f, 0);
+        tooltipPanel.SetActive(true);
+        tooltipTitle.text = cont.GetContainedLocation().elementID;
+        tooltipText.text = cont.GetContainedLocation().description;
+    }
+    void HideTooltip()
+    {
+        tooltipPanel.SetActive(false);
+    }
 
     public LocationContainer GetSelectedContainer()
     {
@@ -153,11 +166,14 @@ public class ContainerController : MonoBehaviour
         return null;
     }
 
+    // Scale LC GameObject with children, called from the full scale slider
     public void ScaleLocationContainersFull()
     {
         foreach (LocationContainer container in locationContainerList)
             container.gameObject.transform.localScale = new Vector3(scaleFullSlider.value * 1.0f, scaleFullSlider.value * 1.0f, 1);
     }
+
+    // Scale only the icon objects, called from the icon scale slider
     public void ScaleLocationContainersSprites()
     {
         foreach (LocationContainer container in locationContainerList)
@@ -170,6 +186,9 @@ public class ContainerController : MonoBehaviour
             container.GetComponent<CircleCollider2D>().radius = scaleSpritesSlider.value * 0.5f;
         }
     }
+
+
+    //These toggle functions should probably get a better spot outside this class. Called from LeftPanel's various toggles.
     public void ToggleCentralIcons0()
     {
         foreach (LocationContainer container in locationContainerList)
@@ -326,6 +345,7 @@ public class ContainerController : MonoBehaviour
         lineList = new List<GameObject>();
     }
 
+    // Probably want to build a proper, dedicated line-drawing class if you start using this function extensively. 
     public void InstantiateDominationLines(Ruler ruler)
     {
         Location loc = ruler.GetHomeLocation();
@@ -372,8 +392,5 @@ public class ContainerController : MonoBehaviour
         GetContainerFromLocation(loc).bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteGreen;
     }
 
-    public void ToggleTooltips(bool checkmarked)
-    {
-        showTooltipOnHover = checkmarked;
-    }
+
 }

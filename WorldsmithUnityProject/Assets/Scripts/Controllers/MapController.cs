@@ -41,16 +41,20 @@ public class MapController : MonoBehaviour
         SyncMapClickables();
         ActivateInitialBackgroundMap(); 
     }
+
+    // Add each of the Background WorldMap gameobjects into a List.
     void LoadMapHoldersIntoList()
     {        
         foreach (Transform holder in mapsHolder.transform)
                 mapHolderList.Add(holder.gameObject);
     }
+    // Add each of the SubMAp gameobjects into a List.
     void LoadSubMapsIntoList()
     {
         foreach (Transform holder in greaterMap.transform)
             subMapList.Add(holder.gameObject.GetComponent<SubMap>());
     }
+    // Link the clickable text-fields in the LeftPanel's Greater section with the same-named SubMaps
     void SyncMapClickables()
     {
         foreach (GameObject mapobj in mapHolderList)
@@ -68,6 +72,7 @@ public class MapController : MonoBehaviour
                         break;
                     }
     }
+    // Find the Background WorldMap paired with the SubMap that is in the initial submap field
     void ActivateInitialBackgroundMap()
     {
         foreach (GameObject mapobj in mapHolderList)
@@ -78,7 +83,7 @@ public class MapController : MonoBehaviour
                     mapobj.SetActive(true);
             }
     } 
- 
+    // Called when switching to Greater in LeftPanel
     public void EnableGreaterMapView()
     {
         inGreaterMapView = true;
@@ -106,10 +111,9 @@ public class MapController : MonoBehaviour
                 if (mapobj != null)
                     if (mapobj.transform.name == activeSubMap.transform.name)
                         mapobj.SetActive(true);
-
         }
     } 
-  
+    
     public void HoverClickable(string name)
     {
         foreach (Clickable clickable in mapClickablesList)        
@@ -137,6 +141,7 @@ public class MapController : MonoBehaviour
                 ClickSubMap(subMap);
     }
 
+    // Activating a SubMap, either by clicking it or its paired Clickable in LeftPanel, will open that map's background
     public void ClickSubMap(SubMap submap)
     {
         bool foundMatch = false;

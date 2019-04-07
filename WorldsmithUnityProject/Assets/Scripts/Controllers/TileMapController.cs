@@ -67,6 +67,7 @@ public class TileMapController : MonoBehaviour
     }
 
 
+    // Create is not entirely accurate, since these TileMaps already exist in the Assets as ScriptableObject. Here Create means: to load the TileMap's tiles and fill em and stuff
     public void CreateTileMap (string mapname, TileMap.TileMapCategory mapcategory )
     { 
             TileMap createdMap = GetTileMapFromList(mapname);
@@ -143,6 +144,7 @@ public class TileMapController : MonoBehaviour
         return false;
     }
 
+    // Check if a Template TileMap exists for a specific Location
     public bool HasSpecificTemplate (Location loc)
     {
         foreach (TileMap map in tileMapList)
@@ -150,7 +152,7 @@ public class TileMapController : MonoBehaviour
                 return true;
         return false;
     }
-
+    // Check if a Template TileMap exists for a Location SubType
     public bool HasGeneralTemplate (Location loc)
     { 
             foreach (TileMap map in tileMapList)
