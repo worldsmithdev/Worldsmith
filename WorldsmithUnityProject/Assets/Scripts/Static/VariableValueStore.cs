@@ -5,7 +5,7 @@ using UnityEngine;
 public class VariableValueStore : MonoBehaviour
 {
     // Reference file for descriptions of each value of each variable in the database, as well as images. 
-    // 
+     
 
     public static VariableValueStore Instance { get; protected set; }
 

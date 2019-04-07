@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    // Handles selection of character for Section-view. Handles fetching of characters. 
+
     public static CharacterController Instance { get; protected set; }
+
 
 
     Character selectedCharacter;
@@ -15,6 +18,7 @@ public class CharacterController : MonoBehaviour
     }
 
 
+    // Fetches characters based on x and ypos. Might change this method in the future. 
     public List<Character> GetCharactersAtLocation(Location loc)
     {
         List<Character> returnList = new List<Character>();

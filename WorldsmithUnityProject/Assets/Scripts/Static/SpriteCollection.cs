@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpriteCollection : MonoBehaviour
 {
  
-    // Holds all sprites for the applications. Holds dictionaries that pair sprites with datatypes.
+    // Acts as general library for sprites across the application. Holds dictionaries that pair sprites with data types.
  
 
     public static SpriteCollection Instance { get; protected set; }

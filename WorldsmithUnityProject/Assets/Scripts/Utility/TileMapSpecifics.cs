@@ -41,7 +41,7 @@ public class TileMapSpecifics : MonoBehaviour
 
       
         // Add secondary rulers
-        foreach (Ruler ruler in EconomyController.Instance.GetLocationRulers(loc))
+        foreach (Ruler ruler in RulerController.Instance.GetLocationRulers(loc))
             if (ruler != null && ruler.isLocalRuler == false)
             {
                 xPos += 2;

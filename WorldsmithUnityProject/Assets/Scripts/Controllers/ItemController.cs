@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ItemController : MonoBehaviour
 {
-    public static ItemController Instance { get; protected set; }
+    // Handles selecting and fetching items. Probably more when items do more
 
+    public static ItemController Instance { get; protected set; }
 
 
     Item clickedItem;

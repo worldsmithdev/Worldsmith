@@ -4,16 +4,12 @@ using UnityEngine;
 
 [System.Serializable]
 public class Character : WorldElement
-{ 
-
-    public enum CharacterSkill {  RockControl, }
-     
+{  
    
     public int age;
     public bool hasPicture;
     public string itemString;
-
-    public CharacterSkill characterSkill;
+     
 
 
     public Character (string name )

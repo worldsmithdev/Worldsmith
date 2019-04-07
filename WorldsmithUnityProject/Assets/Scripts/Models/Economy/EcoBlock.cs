@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class EcoBlock  
 {
+    // Parent class for economic elements: Ruler, Warband, Territory, Population, Resource
 
     public enum BlockType { Unassigned, Ruler, Warband, Population, Territory, Resource}
 

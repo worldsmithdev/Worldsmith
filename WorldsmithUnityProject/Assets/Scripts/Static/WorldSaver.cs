@@ -8,7 +8,7 @@ using System.IO;
 
 public class WorldSaver : MonoBehaviour
 {
-    // Handles storage and loading of worlds, through the SavePanel
+    // Handles storage and loading of worlds, accessed through the SavePanel
 
     public static WorldSaver Instance { get; protected set; }
 

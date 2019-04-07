@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CreatureController : MonoBehaviour
 {
+    // Everything creature related. Which is currently not much at all
+
+
     public static CreatureController Instance { get; protected set; }
 
 

@@ -5,7 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class Ruler : EcoBlock
 {
-    
+    // Abstraction. More to follow.
+
     public enum Hierarchy {  Unassigned, Dominating, Independent, Dominated, Secondary   }
 
 

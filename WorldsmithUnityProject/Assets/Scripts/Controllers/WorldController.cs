@@ -5,6 +5,7 @@ using UnityEngine;
 public class WorldController : MonoBehaviour
 {
     // Creates Worlds and their content, and accesses the active World. 
+    // Sets things in motion on Play through its Start function.
 
     public static WorldController Instance { get; protected set; }
    
@@ -41,43 +42,18 @@ public class WorldController : MonoBehaviour
 
         LocationController.Instance.SetPreSelectedLocation();
         UIController.Instance.RefreshUI();
-    }
-    public World CreateNewWorld(string worldname)
-    {
-        World newWorld = new World(worldname);
-        activeWorld = newWorld;
-
-        CreateWorldElements();     
-
-        activeWorld.SetEconomy(new Economy());
-        EconomyController.Instance.BuildEconomy();
-        Debug.Log("Created World: " + worldname);
-
-        return newWorld;
-    }
+    }    
     void AutoCreateWorld()
     {
-        World newWorld = new World("AutoCreatedWorld");
+        World newWorld = new World("AutoWorld");
         activeWorld = newWorld;
 
         CreateWorldElements();
 
         newWorld.SetEconomy(new Economy());
-        EconomyController.Instance.BuildEconomy();
-  
+        EconomyController.Instance.BuildEconomy();  
     } 
-    void CreateWorldElements()
-    {
-        CreateLocations();
-        ContainerController.Instance.MatchLocationsToContainers();
-        CreateGods();
-        CreateItems();
-        CreateCharacters();
-        CreateCreatures();
-        CreateFactions();
-        CreateLaws();
-        CreateStories(); 
-    }
+    
     void LoadExistingWorld (string worldname)
     {
         WorldSaver.Instance.LoadWorldFromProgramStart(worldname);
@@ -89,15 +65,38 @@ public class WorldController : MonoBehaviour
         LocationController.Instance.SetPreSelectedLocation();
     }
 
+    public World CreateNewWorld(string worldname)
+    {
+        World newWorld = new World(worldname);
+        activeWorld = newWorld;
 
-     
-     
+        CreateWorldElements();
+
+        activeWorld.SetEconomy(new Economy());
+        EconomyController.Instance.BuildEconomy();
+        Debug.Log("Created World: " + worldname);
+
+        return newWorld;
+    }
+
+
     public World GetWorld()
     {
         return activeWorld;
-    } 
+    }
 
-     
+    void CreateWorldElements()
+    {
+        CreateLocations();
+        ContainerController.Instance.MatchLocationsToContainers();
+        CreateGods();
+        CreateItems();
+        CreateCharacters();
+        CreateCreatures();
+        CreateFactions();
+        CreateLaws();
+        CreateStories();
+    }
     void CreateLocations()
     {
         locationBuilder.CreateLocations( activeWorld); 

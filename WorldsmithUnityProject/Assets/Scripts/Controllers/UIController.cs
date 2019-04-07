@@ -62,6 +62,7 @@ public class UIController : MonoBehaviour
         //    Debug.Log("X " + Input.mousePosition.x + " Y: " + Input.mousePosition.y); 
     }
 
+    // Refreshes UI of all linked UI script that might need refreshing at general moments
     public void RefreshUI()
     {
         topLeftUI.RefreshUI();
@@ -116,6 +117,8 @@ public class UIController : MonoBehaviour
             characterUI.CloseSection(); 
         RefreshUI(); 
     } 
+
+    // Use the public Initial this and that fields to offer specific sections and tabs on Play
     void PresetView()
     {
         ToggleWorldSection(false);
