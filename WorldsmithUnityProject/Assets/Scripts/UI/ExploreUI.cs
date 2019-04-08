@@ -5,7 +5,7 @@ using TMPro;
 
 public class ExploreUI : MonoBehaviour
 {
-    // Any text and UI (and some additional) functionality relating the Explore panel
+    // Any text and UI (and some additional) functionality relating the Explore Screen
 
     public GameObject Content1;
     public GameObject Content2;
@@ -24,6 +24,7 @@ public class ExploreUI : MonoBehaviour
     public TextMeshProUGUI layoutTemplateText; 
     public TextMeshProUGUI layoutHoveredText; 
     public TextMeshProUGUI layoutClickedText;
+
 
     void Start()
     {
@@ -79,6 +80,8 @@ public class ExploreUI : MonoBehaviour
             layoutHoveredText.text = "";
             layoutClickedText.text = "";
 
+
+
             // Refreshing content specific to the selected location's LocationType
             if (selectedLoc.GetLocationType() == Location.LocationType.Settled)
                 RefreshSettled(selectedLoc);
@@ -95,6 +98,7 @@ public class ExploreUI : MonoBehaviour
     void RefreshSettled(Location selectedLoc)
     {
         overviewSubText.text = "xLocation: " + selectedLoc.GetPositionVector().x.ToString("F2") + "\nyLocation: " + selectedLoc.GetPositionVector().y.ToString("F2");
+
     }
     void RefreshProductive(Location selectedLoc)
     {

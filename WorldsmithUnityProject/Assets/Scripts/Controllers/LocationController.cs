@@ -30,7 +30,8 @@ public class LocationController : MonoBehaviour
         locationTypePairings.Add(Location.LocationSubType.Mine, Location.LocationType.Productive);
         locationTypePairings.Add(Location.LocationSubType.Outpost, Location.LocationType.Defensive);
         locationTypePairings.Add(Location.LocationSubType.Sanctuary, Location.LocationType.Cultural); 
-        locationTypePairings.Add(Location.LocationSubType.Hazard , Location.LocationType.Natural); 
+        locationTypePairings.Add(Location.LocationSubType.Hazard , Location.LocationType.Natural);
+
     }
 
   

@@ -81,7 +81,7 @@ public class LocationContainer : MonoBehaviour
        
         if (containedLocation == null)
         {
-            Debug.Log("Did not find a match in imports for container: " + this.transform.name + " with loctype: " + this.locationType + ". Please check that name and type matches with database.");
+            Debug.Log("Did not find a match in imports for container: " + this.transform.name + " with loctype: " + this.locationType + ". Please check that name and type matches with import file.");
         }
         else
         {

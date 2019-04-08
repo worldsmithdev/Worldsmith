@@ -237,6 +237,7 @@ public class ContainerController : MonoBehaviour
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.economicSprite5;
         }
     }
+
     public void ToggleSubIcons0()
     { 
         foreach (LocationContainer container in locationContainerList)
