@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class SpriteCollection : MonoBehaviour
 {
- 
- 
-    // Acts as general library for sprites across the application. Holds dictionaries that pair sprites with data types.
- 
- 
-
+    // Acts as general repository for sprites across the application. Holds dictionaries that pair sprites with data types. 
 
     public static SpriteCollection Instance { get; protected set; }
-
 
     [HideInInspector]
     public Dictionary<Location.LocationType, Sprite> locationTypePairings = new Dictionary<Location.LocationType, Sprite>();
@@ -21,14 +15,15 @@ public class SpriteCollection : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this; 
+        Instance = this;
         locationTypePairings.Add(Location.LocationType.Settled, locationSettled);
         locationTypePairings.Add(Location.LocationType.Productive, locationProductive);
         locationTypePairings.Add(Location.LocationType.Defensive, locationDefensive);
         locationTypePairings.Add(Location.LocationType.Cultural, locationCultural);
         locationTypePairings.Add(Location.LocationType.Natural, locationNatural);
-          
-        locationSubTypePairings.Add(Location.LocationSubType.Village, locationSubVillage); 
+
+        locationSubTypePairings.Add(Location.LocationSubType.Village, locationSubVillage);
+
     }
 
     public Sprite containerHighlightSprite;
@@ -49,14 +44,14 @@ public class SpriteCollection : MonoBehaviour
     public Sprite colorBallSpriteGreen;
     public Sprite colorBallSpriteYellow;
     public Sprite colorBallSpriteOrange;
-     
+
     public Sprite locationSettled;
     public Sprite locationProductive;
     public Sprite locationDefensive;
     public Sprite locationCultural;
-    public Sprite locationNatural;   
-     
-    public Sprite locationSubVillage;   
+    public Sprite locationNatural;
+
+    public Sprite locationSubVillage;
 
     public Sprite seaSprite;
     public Sprite landSprite;
@@ -66,16 +61,14 @@ public class SpriteCollection : MonoBehaviour
     public Sprite schematicCharacterSprite;
     public Sprite schematicCreatureSprite;
     public Sprite schematicItemSprite;
-    public Sprite schematicDominatingSprite; 
+    public Sprite schematicDominatingSprite;
     public Sprite schematicIndependentSprite;
     public Sprite schematicSecondarySprite;
     public Sprite schematicDominatedSprite;
     public Sprite schematicPopulationSprite;
     public Sprite schematicTerritorySprite;
-    public Sprite schematicWarbandSprite; 
-     
-    
-    
+    public Sprite schematicWarbandSprite;
+
     public Sprite colorTileDarkred;
     public Sprite colorTileRed;
     public Sprite colorTileYellow;

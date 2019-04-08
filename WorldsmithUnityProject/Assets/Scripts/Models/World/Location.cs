@@ -22,8 +22,6 @@ public class Location : WorldElement
     public int politicalType;
     public int economicType;
 
-
-
  
     public Location()
     {

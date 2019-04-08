@@ -138,7 +138,7 @@ public class LocationUI : MonoBehaviour
                     }
 
         if (foundContentMatch == false)
-            buildingText.text = "No content match found for type: " + LocationController.Instance.GetSelectedBuildingType();
+            buildingText.text = "No content holder found for type: " + LocationController.Instance.GetSelectedBuildingType();
     }
 
 

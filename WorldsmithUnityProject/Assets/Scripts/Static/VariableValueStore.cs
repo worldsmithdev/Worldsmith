@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class VariableValueStore : MonoBehaviour
 {
-    // Reference file for descriptions of each value of each variable in the database, as well as images. 
-     
+    // Storage and getter for text and images of database variables' specific values. 
 
     public static VariableValueStore Instance { get; protected set; }
 
@@ -42,6 +41,7 @@ public class VariableValueStore : MonoBehaviour
                     return "PoliticalType 5";
             } 
         }
+
         else if (worldElement.elementType == WorldElement.ElementType.God)
         {
 
@@ -81,7 +81,8 @@ public class VariableValueStore : MonoBehaviour
         {
             if (variableName == "PoliticalType")
                 if (politicalTypeSpritePairings.ContainsKey(variableValue))
-                    return politicalTypeSpritePairings[variableValue]; 
+                    return politicalTypeSpritePairings[variableValue];
+
 
         }
         else if (worldElement.elementType == WorldElement.ElementType.God)

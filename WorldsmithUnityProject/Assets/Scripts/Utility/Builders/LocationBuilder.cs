@@ -43,6 +43,7 @@ public class LocationBuilder : MonoBehaviour
         }
     }
 
+    // Assign all other variables, that are not passed through a constructor
     void AssignLocationVariables(LocationImportsData locdata, Location loc)
     {
         loc.description = locdata.Description;

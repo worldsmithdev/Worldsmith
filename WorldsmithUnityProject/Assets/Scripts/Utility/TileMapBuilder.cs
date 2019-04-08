@@ -34,13 +34,10 @@ public class TileMapBuilder : MonoBehaviour
     Dictionary<Ruler.Hierarchy, Sprite> ecoBlockHierarchySpritePairings = new Dictionary<Ruler.Hierarchy, Sprite>();
 
     public Dictionary<Color32, Building.BuildingType> buildingTemplateInputColorPairing = new Dictionary<Color32, Building.BuildingType>();
-    public Dictionary< Building.BuildingType, Sprite> buildingTemplateOutputSpritePairing = new Dictionary<Building.BuildingType, Sprite>();
-
-
+    public Dictionary< Building.BuildingType, Sprite> buildingTemplateOutputSpritePairing = new Dictionary<Building.BuildingType, Sprite>();    
 
     private void Start()
     { 
-
         colorInputRed = new Color32(255, 0, 0, 255);
         colorInputYellow = new Color32(255, 255, 0, 255);
         colorInputOrange = new Color32(243, 108, 79, 255);
