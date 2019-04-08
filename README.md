@@ -9,7 +9,7 @@ Grab the latest build with full tutorial for free at [itch.io](https://worldsmit
 
 
 ## Contributing
-Join and support the community at the [Subreddit](https://old.reddit.com/r/worldsmith/) or [Discord Server](https://discord.gg/pSqmgKc).
+Join and support the community at the [Subreddit](https://old.reddit.com/r/worldsmith/) or [Discord Server](https://discord.gg/YXjSpZF).
 
 For active development: feel free to start creating your own branches and forks. 
 
