@@ -11,7 +11,9 @@ Grab the latest build with full tutorial for free at [itch.io](https://worldsmit
 ## Contributing
 Join and support the community at the [Subreddit](https://old.reddit.com/r/worldsmith/) or [Discord Server](https://discord.gg/pSqmgKc).
 
-For active development: feel free to create your own branches and forks. I will outline a more formal contribution process in the near future.
+For active development: feel free to start creating your own branches and forks. 
+
+A more formal contribution process will be outlined in the near future.
 
 ## Permanent Links
 [Database Template](https://docs.google.com/spreadsheets/d/1L8oKZVdUQEbR-iIIhvDXUjvB4aUBy6X9hpIybN93Du8/edit?usp=sharing)
