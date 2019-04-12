@@ -10,6 +10,7 @@ It is not yet a quick-input, easy-output system; standalone software for this pu
 This is a collaborative world building platform: allowing people not only to work together on the worlds they want to model; but to contribute to shaping and reshaping the core of the  platform itself.
 
 Example WebGL build (non-mobile) at http://furion.net
+
 Navigation gif:  https://i.imgur.com/XsVQU7W
 
 ## Getting Started
