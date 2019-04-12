@@ -1,6 +1,15 @@
 # Worldsmith
 Worldsmith is a World Building Platform: a Unity framework with template database to organize and import your world, and tools to visualize, explore, simulate and gamify it.
 
+With a pre-configured but flexible layout and interface, and a data framework that is intuitive and powerful, the application is not only a quick-setup world explorer, but a solid foundation for simulation & game development potential.
+
+This is not an auto-generation tool: users shape their world specifically through a database of variables and values for each of their World Elements: Locations, Characters, Gods, Items, Creatures, Laws, Factions and Stories.
+
+It is not yet a quick-input, easy-output system; standalone software for this purpose is a desirable, but long-term goal.
+
+This is a collaborative world building platform: allowing people not only to work together on the worlds they want to model; but to contribute to shaping and reshaping the core of the  platform itself.
+
+
 
 ## Getting Started
 Every step from installing Unity to filling your database to customizing features is described in the tutorials below.
