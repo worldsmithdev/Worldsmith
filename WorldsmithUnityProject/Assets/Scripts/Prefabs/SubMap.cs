@@ -8,7 +8,7 @@ public class SubMap : MonoBehaviour
 
     public GameObject highlightObject;
 
-    // Hiding first map because it loads the default of the Background Map
+    // Hiding first map because MapController loads the default of the Background Map
     [HideInInspector]
     public Sprite fullMap1;
     public Sprite fullMap2;
