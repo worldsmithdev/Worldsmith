@@ -21048,6 +21048,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToggleBackgroundMap (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2869308899541102171, guid: b3605787fc383f14fb7affe285c166a8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2869308899792376683, guid: b3605787fc383f14fb7affe285c166a8,
         type: 3}
       propertyPath: m_havePropertiesChanged
