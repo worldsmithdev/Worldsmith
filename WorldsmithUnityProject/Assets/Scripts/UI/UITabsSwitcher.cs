@@ -447,7 +447,8 @@ public class UITabsSwitcher : MonoBehaviour
     }
     void DisableBasePanels()
     {
-        MapController.Instance.DisableGreaterMapView();
+        if (MapController.Instance != null)
+            MapController.Instance.DisableGreaterMapView();
 
         foreach (GameObject obj in basePanelsList)
         {
