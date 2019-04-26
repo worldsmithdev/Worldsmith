@@ -21256,7 +21256,7 @@ PrefabInstance:
     - target: {fileID: 2869308899541102165, guid: b3605787fc383f14fb7affe285c166a8,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleBackground2
+      value: ToggleBackground1
       objectReference: {fileID: 0}
     - target: {fileID: 2869308899541102165, guid: b3605787fc383f14fb7affe285c166a8,
         type: 3}

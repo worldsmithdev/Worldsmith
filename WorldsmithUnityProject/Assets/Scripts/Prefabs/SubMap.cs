@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SubMap : MonoBehaviour
 {
-    // Prefab script for SubMaps:  Data types that link with the background map holders and enable switching between background maps
+    // Prefab script for SubMaps:  Data types that link with the background map holders and enable switching between background maps.
 
     public GameObject highlightObject;
 
