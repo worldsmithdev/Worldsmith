@@ -8,6 +8,8 @@ public class SubMap : MonoBehaviour
 
     public GameObject highlightObject;
 
+    // Hiding first map because it loads the default of the Background Map
+    [HideInInspector]
     public Sprite fullMap1;
     public Sprite fullMap2;
     public Sprite fullMap3;
@@ -16,11 +18,11 @@ public class SubMap : MonoBehaviour
     private void Start()
     {
         //TODO: Scale highlight and box collider automatically here
-        //float xSize = this.GetComponent<SpriteRenderer>().bounds.size.x;
-        //float ySize = this.GetComponent<SpriteRenderer>().bounds.size.y;
-        //Debug.Log("x" + this.GetComponent<SpriteRenderer>().bounds.size.x);
-        //RectTransform rt = highlightObject.GetComponent(typeof(RectTransform)) as RectTransform;
-        //rt.sizeDelta = new Vector2(xSize, ySize); 
+                //float xSize = this.GetComponent<SpriteRenderer>().bounds.size.x;
+                //float ySize = this.GetComponent<SpriteRenderer>().bounds.size.y;
+                //Debug.Log("x" + this.GetComponent<SpriteRenderer>().bounds.size.x);
+                //RectTransform rt = highlightObject.GetComponent(typeof(RectTransform)) as RectTransform;
+                //rt.sizeDelta = new Vector2(xSize, ySize); 
     }
 
 
