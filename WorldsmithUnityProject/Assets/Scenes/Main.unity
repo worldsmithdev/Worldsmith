@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
@@ -62,6 +62,7 @@ LightmapSettings:
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -76,10 +77,16 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 500
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 1
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -88,6 +95,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
+    m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -691,16 +699,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2104490629}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: BuildingText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -886,6 +884,16 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 942791214}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: BuildingText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!224 &72776143 stripped
@@ -901,16 +909,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1711311876}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: IconText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1084,6 +1082,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: IconText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1456,11 +1464,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 245785616}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: InfoText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1640,6 +1643,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: InfoText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -3264,16 +3272,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 816676936}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HeaderText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3459,6 +3457,16 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 1631541005}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HeaderText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1 &174761723
@@ -3604,16 +3612,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 501579172}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HoveredText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3799,6 +3797,16 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 2053679500}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HoveredText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!224 &193961905 stripped
@@ -3955,17 +3963,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 887270337}
@@ -6749,16 +6760,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 332265417}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HoveredText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6932,6 +6933,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HoveredText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7999,17 +8010,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 422769774}
@@ -8073,16 +8087,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 332265417}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: ClickedText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8256,6 +8260,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: ClickedText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9827,9 +9841,10 @@ Camera:
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.3803922, g: 0.6392157, b: 0.87843144, a: 1}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -9956,17 +9971,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 532369970}
@@ -11089,16 +11107,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606585321}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: ClickedText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11296,6 +11304,16 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 33860805}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: ClickedText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1 &614949889
@@ -12143,11 +12161,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1882657427}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: NameText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12317,6 +12330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: NameText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -12818,16 +12836,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1711311876}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: SliderSpritesText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13003,6 +13011,16 @@ PrefabInstance:
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: SliderSpritesText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1 &731046008
@@ -13081,6 +13099,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!1 &734033856
 GameObject:
   m_ObjectHideFlags: 0
@@ -13248,16 +13268,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1765012424}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: LinesText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13433,6 +13443,16 @@ PrefabInstance:
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: LinesText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1 &740228047
@@ -13529,7 +13549,6 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_textAlignment: 257
-  m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -13556,6 +13575,7 @@ MonoBehaviour:
   m_verticalMapping: 0
   m_uvLineOffset: 0
   m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
@@ -13570,12 +13590,9 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
-  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -13932,17 +13949,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 344058630}
@@ -14030,17 +14050,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 796117006}
@@ -14871,11 +14894,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 245785616}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: NameText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15045,6 +15063,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: NameText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -16391,16 +16414,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 332265417}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: TemplateText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16574,6 +16587,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: TemplateText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -17212,16 +17235,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 495897928}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HeaderText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17412,6 +17425,16 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HeaderText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!224 &954487737 stripped
@@ -17439,16 +17462,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606585321}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HoveredElementText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17622,6 +17635,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HoveredElementText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -18339,16 +18362,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1765012424}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HighlightText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18524,6 +18537,16 @@ PrefabInstance:
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HighlightText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1001 &1027298573
@@ -18533,16 +18556,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1765012424}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: TooltipText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18716,6 +18729,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: TooltipText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -21372,17 +21395,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1133762670}
@@ -22233,16 +22259,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1765012424}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: SliderText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22418,6 +22434,16 @@ PrefabInstance:
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: SliderText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1 &1171617982
@@ -22481,11 +22507,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1007579975}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: BodyText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22660,6 +22681,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.lineCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: BodyText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -23061,11 +23087,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1007579975}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: TitleText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23241,6 +23262,11 @@ PrefabInstance:
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: TitleText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1 &1228594732
@@ -23374,17 +23400,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1243605613}
@@ -24084,17 +24113,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1654354502}
@@ -24995,16 +25027,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 501579172}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: ClickedText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25190,6 +25212,16 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 135799716}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: ClickedText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!224 &1398088873 stripped
@@ -25670,17 +25702,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1425609471}
@@ -26827,17 +26862,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1480095156}
@@ -28747,11 +28785,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1882657427}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: TypeText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28921,6 +28954,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: TypeText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -30245,17 +30283,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1704798487}
@@ -30636,16 +30677,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606585321}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: SubText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30825,6 +30856,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_lineSpacing
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: SubText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -32827,11 +32868,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1588586028}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: TextHeader
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32992,6 +33028,11 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 1893379214}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: TextHeader
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1 &1821281227
@@ -33132,7 +33173,6 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_textAlignment: 257
-  m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -33159,6 +33199,7 @@ MonoBehaviour:
   m_verticalMapping: 0
   m_uvLineOffset: 0
   m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
@@ -33173,12 +33214,9 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
-  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -33731,11 +33769,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2091590349}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: SelectedText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33905,6 +33938,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_lineSpacing
       value: 13.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: SelectedText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -34681,16 +34719,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1166086591}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HeaderText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34865,6 +34893,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.lineCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HeaderText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -35148,16 +35186,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606585321}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HoveredEcoBlockText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35331,6 +35359,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HoveredEcoBlockText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -35982,16 +36020,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606585321}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: DescriptionText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36166,6 +36194,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.lineCount
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: DescriptionText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -36572,16 +36610,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1711311876}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: SliderFullText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36755,6 +36783,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: SliderFullText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -37752,16 +37790,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1711311876}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: SubIconText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37935,6 +37963,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: SubIconText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -38933,16 +38971,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2091590349}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HeaderText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39071,6 +39099,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HeaderText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

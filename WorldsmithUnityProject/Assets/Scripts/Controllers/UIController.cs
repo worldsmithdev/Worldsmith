@@ -13,7 +13,7 @@ public class UIController : MonoBehaviour
 
     public UITabsSwitcher tabsSwitcher;
 
-    public enum Section { World, Location, Character} 
+    public enum Section { World, Location, Character }
 
     public GameObject worldSection;
     public GameObject locationSection;
@@ -24,14 +24,14 @@ public class UIController : MonoBehaviour
     public Toggle sectionToggle3;
 
     [HideInInspector]
-    public Section currentSection; 
+    public Section currentSection;
 
-    public WorldUI worldUI; 
-    public LocationUI locationUI; 
-    public CharacterUI characterUI;  
+    public WorldUI worldUI;
+    public LocationUI locationUI;
+    public CharacterUI characterUI;
     public TopLeftUI topLeftUI;
-    public LeftUI leftUI; 
-    public ExploreUI exploreUI; 
+    public LeftUI leftUI;
+    public ExploreUI exploreUI;
     public LookupUI lookopUI;
 
     public GameObject panelTopLeft;
@@ -40,20 +40,21 @@ public class UIController : MonoBehaviour
     public GameObject ExplorePanel;
 
     public Button hideButton;
-    public Button showButton; 
+    public Button showButton;
 
-    public  Section initialSection =  Section.World;
+    bool initialized = false;
+    public Section initialSection = Section.World;
     public int initialTopTab = 1;
     public int initialSubTab = 1;
 
     bool panelsHidden = false;
 
     void Awake()
-    { 
+    {
         Instance = this;
     }
     private void Start()
-    {  
+    {
         PresetView();
     }
     void Update()
@@ -65,17 +66,20 @@ public class UIController : MonoBehaviour
     // Refreshes UI of all linked UI script that might need refreshing at general moments
     public void RefreshUI()
     {
-        topLeftUI.RefreshUI();
-        leftUI.RefreshUI(); 
+        if (initialized == true)
+        {
+            topLeftUI.RefreshUI();
+            leftUI.RefreshUI();
 
-        if (worldUI.savePanelActive == true)
-            WorldSaver.Instance.RefreshSaveUI();
-        if (worldUI.explorePanelActive == true)
-            exploreUI.RefreshUI();
-    } 
+            if (worldUI.savePanelActive == true)
+                WorldSaver.Instance.RefreshSaveUI();
+            if (worldUI.explorePanelActive == true)
+                exploreUI.RefreshUI();
+        }
+    }
 
     public void ToggleWorldSection(bool checkmarked)
-    { 
+    {
         worldSection.SetActive(checkmarked);
         if (checkmarked == true)
         {
@@ -84,9 +88,9 @@ public class UIController : MonoBehaviour
             tabsSwitcher.ToggleWorldUI();
             worldUI.OpenSection();
         }
-        else        
-            worldUI.CloseSection();        
-        RefreshUI();  
+        else
+            worldUI.CloseSection();
+        RefreshUI();
     }
 
     public void ToggleLocationSection(bool checkmarked)
@@ -100,7 +104,7 @@ public class UIController : MonoBehaviour
             locationUI.OpenSection();
         }
         else
-            locationUI.CloseSection(); 
+            locationUI.CloseSection();
         RefreshUI();
     }
     public void ToggleCharacterSection(bool checkmarked)
@@ -114,16 +118,16 @@ public class UIController : MonoBehaviour
             characterUI.OpenSection();
         }
         else
-            characterUI.CloseSection(); 
-        RefreshUI(); 
-    } 
+            characterUI.CloseSection();
+        RefreshUI();
+    }
 
     // Use the public Initial this and that fields to offer specific sections and tabs on Play
     void PresetView()
     {
         ToggleWorldSection(false);
         ToggleLocationSection(false);
-        ToggleCharacterSection(false); 
+        ToggleCharacterSection(false);
         if (initialSection == Section.World)
         {
             sectionToggle1.isOn = true;
@@ -138,7 +142,7 @@ public class UIController : MonoBehaviour
         {
             sectionToggle3.isOn = true;
             ToggleCharacterSection(true);
-        } 
+        }
         if (initialTopTab == 1)
             tabsSwitcher.toggleTop1.isOn = true;
         else if (initialTopTab == 2)
@@ -151,9 +155,11 @@ public class UIController : MonoBehaviour
             tabsSwitcher.toggleBottom2.isOn = true;
         else if (initialSubTab == 3)
             tabsSwitcher.toggleBottom3.isOn = true;
+
+        initialized = true;
     }
     public void HideLeftPanels()
-    { 
+    {
         panelTopLeft.SetActive(false);
         panelLeft.SetActive(false);
         panelsHidden = true;
