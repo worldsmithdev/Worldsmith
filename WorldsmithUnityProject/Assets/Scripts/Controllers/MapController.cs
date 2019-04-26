@@ -11,9 +11,11 @@ public class MapController : MonoBehaviour
     public static MapController Instance { get; protected set; }
 
 
+    bool initialized = false;
+
     public GameObject greaterMap;
-    
-    public GameObject mapsHolder; 
+
+    public GameObject mapsHolder;
     [HideInInspector]
     public List<GameObject> mapHolderList = new List<GameObject>();
     [HideInInspector]
@@ -22,37 +24,48 @@ public class MapController : MonoBehaviour
 
     public SubMap initialSubMap;
 
-    [HideInInspector]
-    public SubMap activeSubMap; 
+    //  [HideInInspector]
+    public SubMap activeSubMap;
     [HideInInspector]
     public bool inGreaterMapView = false;
 
 
     private void Awake()
     {
-        Instance = this; 
+        Instance = this;
         activeSubMap = initialSubMap;
         greaterMap.SetActive(false);
         LoadMapHoldersIntoList();
         LoadSubMapsIntoList();
+
     }
     private void Start()
-    { 
+    {
         SyncMapClickables();
-        ActivateInitialBackgroundMap(); 
+        ActivateInitialBackgroundMap();
+        SetSubMapsSprite1();
+        initialized = true;
     }
 
     // Add each of the Background WorldMap gameobjects into a List.
     void LoadMapHoldersIntoList()
-    {        
+    {
         foreach (Transform holder in mapsHolder.transform)
-                mapHolderList.Add(holder.gameObject);
+            mapHolderList.Add(holder.gameObject);
     }
     // Add each of the SubMAp gameobjects into a List.
     void LoadSubMapsIntoList()
     {
         foreach (Transform holder in greaterMap.transform)
             subMapList.Add(holder.gameObject.GetComponent<SubMap>());
+    }
+    //Load the Background Worldmap's default image as its SubMap's Sprite1
+    void SetSubMapsSprite1()
+    {
+        foreach (SubMap subMap in subMapList)        
+            foreach (GameObject mapobj in mapHolderList)            
+                if (mapobj.name == subMap.name)                
+                    subMap.fullMap1 = mapobj.GetComponent<SpriteRenderer>().sprite;
     }
     // Link the clickable text-fields in the LeftPanel's Greater section with the same-named SubMaps
     void SyncMapClickables()
@@ -82,7 +95,7 @@ public class MapController : MonoBehaviour
                 if (mapobj.transform.name == initialSubMap.transform.name)
                     mapobj.SetActive(true);
             }
-    } 
+    }
     // Called when switching to Greater in LeftPanel
     public void EnableGreaterMapView()
     {
@@ -106,20 +119,20 @@ public class MapController : MonoBehaviour
             mapsHolder.SetActive(true);
             UIController.Instance.RefreshUI();
             if (activeSubMap == null)
-                activeSubMap = initialSubMap;            
+                activeSubMap = initialSubMap;
             foreach (GameObject mapobj in mapHolderList)
                 if (mapobj != null)
                     if (mapobj.transform.name == activeSubMap.transform.name)
                         mapobj.SetActive(true);
         }
-    } 
-    
+    }
+
     public void HoverClickable(string name)
     {
-        foreach (Clickable clickable in mapClickablesList)        
+        foreach (Clickable clickable in mapClickablesList)
             if (clickable.transform.name == name)
                 clickable.triggerSpriteObject.SetActive(true);
-        
+
         foreach (SubMap subMap in subMapList)
             if (subMap.transform.name == name)
                 subMap.highlightObject.SetActive(true);
@@ -127,10 +140,10 @@ public class MapController : MonoBehaviour
     public void ExitHoverClickable()
     {
         foreach (Clickable clickable in mapClickablesList)
-                clickable.triggerSpriteObject.SetActive(false);
+            clickable.triggerSpriteObject.SetActive(false);
 
-        foreach (SubMap subMap in subMapList)        
-            subMap.highlightObject.SetActive(false); 
+        foreach (SubMap subMap in subMapList)
+            subMap.highlightObject.SetActive(false);
     }
     public void ClickMapClickable(string name)
     {
@@ -147,7 +160,7 @@ public class MapController : MonoBehaviour
         bool foundMatch = false;
         foreach (GameObject mapobj in mapHolderList)
         {
-            if (mapobj != null)            
+            if (mapobj != null)
                 if (mapobj.transform.name == submap.transform.name)
                 {
                     submap.highlightObject.SetActive(false);
@@ -161,13 +174,13 @@ public class MapController : MonoBehaviour
                     UIController.Instance.RefreshUI();
                     foreach (Clickable clickable in mapClickablesList)
                         clickable.triggerSpriteObject.SetActive(false);
-                } 
+                }
         }
         if (foundMatch == false)
             Debug.Log("Tried to open submap but did not find gameobject match: " + submap.transform.name);
     }
 
-  
+
 
 
     public GameObject GetActiveMapHolder()
@@ -183,33 +196,48 @@ public class MapController : MonoBehaviour
 
 
     // Called from Maps - Background (World 1 Sub 1)
-    public void ToggleBackgroundNone()
+    public void ToggleBackgroundNone(bool checkmarked)
     {
-        foreach (GameObject mapobj in mapHolderList)
-            if (mapobj != null)
-                if (mapobj.transform.name == activeSubMap.transform.name)
-                    mapobj.GetComponent<SpriteRenderer>().sprite = null;
+        if (checkmarked == true && initialized == true)
+        {
+            foreach (GameObject mapobj in mapHolderList)
+                if (mapobj != null)
+                    if (mapobj.transform.name == activeSubMap.transform.name)
+                        mapobj.GetComponent<SpriteRenderer>().sprite = null;
+        }
+
     }
-    public void ToggleBackground1()
+    public void ToggleBackground1(bool checkmarked)
     {
-        foreach (GameObject mapobj in mapHolderList)
-            if (mapobj != null)
-                if (mapobj.transform.name == activeSubMap.transform.name)
-                    mapobj.GetComponent<SpriteRenderer>().sprite = activeSubMap.fullMap1;
+        if (checkmarked == true && initialized == true)
+        {
+            foreach (GameObject mapobj in mapHolderList)
+                if (mapobj != null)
+                    if (mapobj.transform.name == activeSubMap.transform.name)
+                        mapobj.GetComponent<SpriteRenderer>().sprite = activeSubMap.fullMap1;
+        }
+
     }
-    public void ToggleBackground2()
+    public void ToggleBackground2(bool checkmarked)
     {
-        foreach (GameObject mapobj in mapHolderList)
-            if (mapobj != null)
-                if (mapobj.transform.name == activeSubMap.transform.name)
-                    mapobj.GetComponent<SpriteRenderer>().sprite = activeSubMap.fullMap2;
+        if (checkmarked == true && initialized == true)
+        {
+            foreach (GameObject mapobj in mapHolderList)
+                if (mapobj != null)
+                    if (mapobj.transform.name == activeSubMap.transform.name)
+                        mapobj.GetComponent<SpriteRenderer>().sprite = activeSubMap.fullMap2;
+        }
+
     }
-    public void ToggleBackground3()
+    public void ToggleBackground3(bool checkmarked)
     {
-        foreach (GameObject mapobj in mapHolderList)
-            if (mapobj != null)
-                if (mapobj.transform.name == activeSubMap.transform.name)
-                    mapobj.GetComponent<SpriteRenderer>().sprite = activeSubMap.fullMap3;
+        if (checkmarked == true && initialized == true)
+        {
+            foreach (GameObject mapobj in mapHolderList)
+                if (mapobj != null)
+                    if (mapobj.transform.name == activeSubMap.transform.name)
+                        mapobj.GetComponent<SpriteRenderer>().sprite = activeSubMap.fullMap3;
+        }
     }
 
 }
