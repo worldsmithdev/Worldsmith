@@ -183,9 +183,9 @@ public class UITabsSwitcher : MonoBehaviour
         if (checkmarked == true)
         {
             UIController.Instance.RefreshUI();
-            currentTopToggle = 1;
-            DisableBasePanels();
+            currentTopToggle = 1;            
             ResetBottomToggles();
+            DisableBasePanels();
             if (UIController.Instance.currentSection == UIController.Section.World)
             {
                 world1.SetActive(true);
@@ -219,9 +219,9 @@ public class UITabsSwitcher : MonoBehaviour
         if (checkmarked == true)
         { 
             UIController.Instance.RefreshUI();
-            currentTopToggle = 2;
-            DisableBasePanels();
+            currentTopToggle = 2;            
             ResetBottomToggles();
+            DisableBasePanels();
             if (UIController.Instance.currentSection == UIController.Section.World)
             {
                 world2.SetActive(true);
@@ -255,9 +255,9 @@ public class UITabsSwitcher : MonoBehaviour
         if (checkmarked == true)
         { 
             UIController.Instance.RefreshUI();
-            currentTopToggle = 3;
-            DisableBasePanels();
+            currentTopToggle = 3;            
             ResetBottomToggles();
+            DisableBasePanels();
             if (UIController.Instance.currentSection == UIController.Section.World)
             {
                 world3.SetActive(true);
@@ -442,7 +442,7 @@ public class UITabsSwitcher : MonoBehaviour
         MapController.Instance.DisableGreaterMapView();
         foreach (GameObject obj in bottomPanelsList)
         {
-            obj.SetActive(false);
+          obj.SetActive(false);
         }
     }
     void DisableBasePanels()
