@@ -33,22 +33,31 @@ public class CameraController : MonoBehaviour
     }
 
     public void SetWorldSectionView()
-    { 
-        mainCamera.orthographicSize = worldCameraDefaultSize;
-        mainCamera.transform.localPosition = new Vector3(worldCameraX, worldCameraY, -10f);
+    {
+        if (mainCamera != null)
+        {
+            mainCamera.orthographicSize = worldCameraDefaultSize;
+            mainCamera.transform.localPosition = new Vector3(worldCameraX, worldCameraY, -10f);
+        }
     }
     public void SetLocationSectionView()
     {
-        mainCamera.orthographicSize = locationCameraDefaultSize;
-        mainCamera.transform.localPosition = new Vector3(locationCameraX, locationCameraY, -10f);
+        if (mainCamera != null)
+        {
+            mainCamera.orthographicSize = locationCameraDefaultSize;
+            mainCamera.transform.localPosition = new Vector3(locationCameraX, locationCameraY, -10f);
+        }
     }
     public void SetCharacterSectionView()
     {
-        mainCamera.orthographicSize = characterCameraDefaultSize;
-        mainCamera.transform.localPosition = new Vector3(characterCameraX, characterCameraY, -10f);
+        if (mainCamera != null)
+        {
+            mainCamera.orthographicSize = characterCameraDefaultSize;
+            mainCamera.transform.localPosition = new Vector3(characterCameraX, characterCameraY, -10f);
+        }
     }
 
-     
+
 
     void Update()
     {

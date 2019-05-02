@@ -30,13 +30,18 @@ public class MapController : MonoBehaviour
     public bool inGreaterMapView = false;
 
 
+    // Checking this UI holder for the background toggles as an ugly workaround for a Unity 2019 bug:
+    // https://issuetracker.unity3d.com/issues/re-enabling-game-object-with-toggle-group-loses-information-about-previously-checked-toggle 
+    [SerializeField]
+    GameObject backgroundToggleParent;
+
     private void Awake()
     {
         Instance = this;
         activeSubMap = initialSubMap;
         greaterMap.SetActive(false);
         LoadMapHoldersIntoList();
-        LoadSubMapsIntoList();
+        LoadSubMapsIntoList();         
 
     }
     private void Start()
@@ -197,8 +202,8 @@ public class MapController : MonoBehaviour
 
     // Called from Maps - Background (World 1 Sub 1)
     public void ToggleBackgroundNone(bool checkmarked)
-    {
-        if (checkmarked == true && initialized == true)
+    { 
+        if (checkmarked == true && initialized == true && backgroundToggleParent.activeSelf == true)
         {
             foreach (GameObject mapobj in mapHolderList)
                 if (mapobj != null)
@@ -209,7 +214,7 @@ public class MapController : MonoBehaviour
     }
     public void ToggleBackground1(bool checkmarked)
     {
-        if (checkmarked == true && initialized == true)
+        if (checkmarked == true && initialized == true && backgroundToggleParent.activeSelf == true)
         {
             foreach (GameObject mapobj in mapHolderList)
                 if (mapobj != null)
@@ -220,7 +225,7 @@ public class MapController : MonoBehaviour
     }
     public void ToggleBackground2(bool checkmarked)
     {
-        if (checkmarked == true && initialized == true)
+        if (checkmarked == true && initialized == true && backgroundToggleParent.activeSelf == true)
         {
             foreach (GameObject mapobj in mapHolderList)
                 if (mapobj != null)
@@ -231,7 +236,7 @@ public class MapController : MonoBehaviour
     }
     public void ToggleBackground3(bool checkmarked)
     {
-        if (checkmarked == true && initialized == true)
+        if (checkmarked == true && initialized == true && backgroundToggleParent.activeSelf == true)
         {
             foreach (GameObject mapobj in mapHolderList)
                 if (mapobj != null)
