@@ -195,8 +195,7 @@ public class ContainerController : MonoBehaviour
             container.centralSprite.GetComponent<SpriteRenderer>().sprite = null;
     }
     public void ToggleCentralIcons1()
-    {
-        Debug.Log("called tog2");
+    { 
         foreach (LocationContainer container in locationContainerList)
             container.SetContainerSprite();
     }
