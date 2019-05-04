@@ -32,10 +32,10 @@ public class MapController : MonoBehaviour
 
     // Checking these UI panels for the background toggles as an ugly workaround for a Unity 2019 bug:
     // https://issuetracker.unity3d.com/issues/re-enabling-game-object-with-toggle-group-loses-information-about-previously-checked-toggle 
-    [SerializeField]
-    GameObject backgroundToggleParentSub;
-    [SerializeField]
-    GameObject backgroundToggleParentTop;
+
+    public GameObject backgroundToggleParentSub;
+     
+    public GameObject backgroundToggleParentTop;
 
     private void Awake()
     {
