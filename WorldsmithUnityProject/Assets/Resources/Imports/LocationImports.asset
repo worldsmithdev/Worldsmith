@@ -15,195 +15,1571 @@ MonoBehaviour:
   SheetName: Assets/Resources/Imports/WorldsmithImports.xlsx
   WorksheetName: LocationImports
   dataArray:
-  - name: 
+  - name: Abakainon
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Abolla
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Adrane
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 1
     culturetype: 0
     dominates: 
-  - name: 
+  - name: Adranos
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
     dominates: 
-  - name: 
+  - name: Adryx
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
     dominates: 
-  - name: 
+  - name: Aegesta
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 2
+    culturetype: 3
     dominates: 
-  - name: 
+  - name: Aegeston Emporion
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 2
+    culturetype: 3
     dominates: 
-  - name: 
+  - name: Aereo
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 2
+    culturetype: 3
     dominates: 
-  - name: 
+  - name: Agathyrnon
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
     dominates: 
-  - name: 
+  - name: Agera
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 1
+    culturetype: 1
     dominates: 
-  - name: 
+  - name: Agrilla
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
     dominates: 
-  - name: 
+  - name: Agyrion
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 2
+    culturetype: 1
     dominates: 
-  - name: 
+  - name: Akragas
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 5
+    culturetype: 5
     dominates: 
-  - name: 
+  - name: Akrai
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 3
+    culturetype: 5
     dominates: 
-  - name: 
+  - name: Akrillai
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 4
+    culturetype: 5
     dominates: 
-  - name: 
+  - name: Alagene
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 2
     dominates: 
-  - name: 
+  - name: Alase
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
     dominates: 
-  - name: 
+  - name: Allisse
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
     dominates: 
-  - name: 
+  - name: Amaselos
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 2
+    economictype: 1
+    culturetype: 1
     dominates: 
-  - name: 
+  - name: Ambikos
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
     dominates: 
-  - name: 
+  - name: Ancyrai
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 3
     dominates: 
-  - name: 
+  - name: Apollonia
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
     dominates: 
-  - name: 
+  - name: Ariaiton
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
     dominates: 
-  - name: 
+  - name: Artemision
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 5
     dominates: 
-  - name: 
+  - name: Artesine
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
     dominates: 
-  - name: 
+  - name: Assoros
     description: 
-    locationtype: 
-    locationsubtype: 
-    politicaltype: 0
-    economictype: 0
-    culturetype: 0
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Babalon
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 2
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Bakra
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Balekena
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Balkonon
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Bidis
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 2
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Boukara
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 2
+    culturetype: 2
+    dominates: 
+  - name: Brikinniai
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Chersonos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 4
+    culturetype: 5
+    dominates: 
+  - name: Demena
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Digenos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Drepanon
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 2
+    culturetype: 3
+    dominates: 
+  - name: Echetla
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Edissa
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Egenimos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Eknomos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 2
+    culturetype: 5
+    dominates: 
+  - name: Elima
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 3
+    dominates: 
+  - name: Engyon
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 3
+    culturetype: 5
+    dominates: 
+  - name: Enna
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Entella
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 2
+    culturetype: 3
+    dominates: 
+  - name: Ergetion
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Erkenia
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 2
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Eryke
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Eryx
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 1
+    culturetype: 3
+    dominates: 
+  - name: Euboia
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Fiinoka
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Gela
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 5
+    culturetype: 5
+    dominates: 
+  - name: Gibol Gabol
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Gidinon
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Goraion
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Grannai
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Halfason
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Halikyai
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 2
+    culturetype: 3
+    dominates: 
+  - name: Halontion
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Hamiit
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 4
+    culturetype: 4
+    dominates: 
+  - name: Helketion
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Heloros
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 2
+    culturetype: 5
+    dominates: 
+  - name: Herbessos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Herbita
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Himera
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 5
+    culturetype: 5
+    dominates: 
+  - name: Hippana
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 2
+    culturetype: 2
+    dominates: 
+  - name: Hybla Geleatis
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Hybla Heraia
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Hykarra
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 4
+    culturetype: 2
+    dominates: 
+  - name: Iaitas
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 1
+    culturetype: 3
+    dominates: 
+  - name: Ichana
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Imachara
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Inessa
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Inikon
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 3
+    dominates: 
+  - name: Ispika
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 2
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Kakyron
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 3
+    culturetype: 5
+    dominates: 
+  - name: Kalakte
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Kaligenos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Kalkarak
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Kallipolis
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Kaloba
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 3
+    dominates: 
+  - name: Kaltigene
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 2
+    culturetype: 2
+    dominates: 
+  - name: Kamarina
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 5
+    culturetype: 5
+    dominates: 
+  - name: Kamerai
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Kamikos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 2
+    culturetype: 2
+    dominates: 
+  - name: Kamporale
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 3
+    dominates: 
+  - name: Kapod
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Kaprianon
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Kapution
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Karastele
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Karole
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Kasasi
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Kasgeraton
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Kasibe
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Kasmenai
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Katane
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 5
+    culturetype: 5
+    dominates: 
+  - name: Kataria
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 3
+    dominates: 
+  - name: Katulle
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Kaukanai
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Kausos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Kentoripa
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 3
+    culturetype: 1
+    dominates: 
+  - name: Kephaloidion
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 4
+    culturetype: 1
+    dominates: 
+  - name: Kibone
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 2
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Kilon
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Kimena
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 2
+    culturetype: 2
+    dominates: 
+  - name: Kolibra
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Kolle Kalos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Koor
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Koskon
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 2
+    culturetype: 5
+    dominates: 
+  - name: Krastos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Kronia
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Lavenka
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Leona
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 3
+    culturetype: 5
+    dominates: 
+  - name: Leontinoi
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 5
+    culturetype: 5
+    dominates: 
+  - name: Lipara
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 5
+    culturetype: 5
+    dominates: 
+  - name: Longane
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Madara
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 3
+    culturetype: 2
+    dominates: 
+  - name: Makella
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 3
+    culturetype: 2
+    dominates: 
+  - name: Maktorion
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 2
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Manikos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Markesa
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Maroi
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 3
+    culturetype: 1
+    dominates: 
+  - name: Mastrome
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 3
+    culturetype: 1
+    dominates: 
+  - name: Mazara
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 4
+    culturetype: 5
+    dominates: 
+  - name: Megara
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 5
+    culturetype: 5
+    dominates: 
+  - name: Menai
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Mentuse
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Merkane
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Minoa
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 4
+    culturetype: 5
+    dominates: 
+  - name: Montope
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 3
+    dominates: 
+  - name: Morankusa
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 3
+    dominates: 
+  - name: Morgantina
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Motya
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 5
+    culturetype: 4
+    dominates: 
+  - name: Motyka
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Motyon
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Murene
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Mylai
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 4
+    culturetype: 5
+    dominates: 
+  - name: Myttistratos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 4
+    culturetype: 5
+    dominates: 
+  - name: Nakone
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 3
+    dominates: 
+  - name: Naone
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Naulochos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Naxos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 5
+    culturetype: 5
+    dominates: 
+  - name: Neaition
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Nikos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Nilaios
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Noai
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Omphake
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 2
+    culturetype: 2
+    dominates: 
+  - name: Pachynos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 4
+    culturetype: 5
+    dominates: 
+  - name: Palike
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Panormos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 5
+    culturetype: 4
+    dominates: 
+  - name: Pantalika
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Parkenon
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Paropos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Pergane
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 3
+    dominates: 
+  - name: Pergusa
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Petrosa
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 3
+    dominates: 
+  - name: Phalarion
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Phoinix
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Piakos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Pikone
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Pipana
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 2
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Pirama
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Plemmyrion
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Pollike
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 3
+    dominates: 
+  - name: Rakine
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Ravanusa
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Rhegion
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 5
+    culturetype: 5
+    dominates: 
+  - name: Rokka
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 2
+    culturetype: 2
+    dominates: 
+  - name: Romnos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Rotonde
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 2
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Sabukina
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Saneka
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Schera
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Selefe
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Selinous
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 5
+    culturetype: 5
+    dominates: 
+  - name: Skiara
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 4
+    culturetype: 5
+    dominates: 
+  - name: Skikli
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Skornake
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Skurke
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Solous
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 4
+    dominates: 
+  - name: Spolion
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Styella
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Symaithos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Syrakousai
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 5
+    culturetype: 5
+    dominates: Akrillai,Abolla
+  - name: Tavake
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Thapsos
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 3
+    culturetype: 5
+    dominates: 
+  - name: Tigra
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Tirakii
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Tirnon
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 1
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Tissa
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 4
+    economictype: 2
+    culturetype: 1
+    dominates: 
+  - name: Triokala
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 2
+    dominates: 
+  - name: Trotilon
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Tyrrhene
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 5
+    dominates: 
+  - name: Xiphonia
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 4
+    culturetype: 5
+    dominates: 
+  - name: Xuthia
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 3
+    economictype: 1
+    culturetype: 1
+    dominates: 
+  - name: Zankle
+    description: 
+    locationtype: Settled
+    locationsubtype: City
+    politicaltype: 5
+    economictype: 5
+    culturetype: 5
     dominates: 

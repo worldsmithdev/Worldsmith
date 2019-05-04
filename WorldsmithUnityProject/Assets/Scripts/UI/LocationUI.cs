@@ -60,7 +60,8 @@ public class LocationUI : MonoBehaviour
             }
             else
             {
-                locationBackground.gameObject.SetActive(false);
+                if (locationBackground != null)
+                    locationBackground.gameObject.SetActive(false);
                 backgroundToggle.interactable = false;
                 backgroundToggle.isOn = false;
             }
