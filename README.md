@@ -16,7 +16,7 @@ Navigation gif:  https://i.imgur.com/XsVQU7W
 ## Getting Started
 Every step from installing Unity to filling your database to customizing features is described in the tutorials below.
 
-Grab the latest build with full tutorial for free at [itch.io](https://worldsmith.itch.io/), or download / clone the master branch directly.
+Grab the latest build with full tutorial for free at [itch.io](https://worldsmith.itch.io/), or download / fork the master branch directly.
 
 
 ## Contributing
