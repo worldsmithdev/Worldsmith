@@ -80,45 +80,72 @@ public class UIController : MonoBehaviour
 
     public void ToggleWorldSection(bool checkmarked)
     {
-        worldSection.SetActive(checkmarked);
-        if (checkmarked == true)
+        if (worldSection != null)
+            worldSection.SetActive(checkmarked);
+
+        if (checkmarked == false)
+        {
+            worldUI.CloseSection();
+        }
+        else if (currentSection == Section.World)
+        {
+            // do nothing 
+        }
+        else if (checkmarked == true   )
         {
             CameraController.Instance.SetWorldSectionView();
             currentSection = Section.World;
             tabsSwitcher.ToggleWorldUI();
             worldUI.OpenSection();
         }
-        else
-            worldUI.CloseSection();
+    
         RefreshUI();
     }
+    
 
     public void ToggleLocationSection(bool checkmarked)
     {
-        locationSection.SetActive(checkmarked);
-        if (checkmarked == true)
+        if (locationSection != null)
+            locationSection.SetActive(checkmarked);
+        if (checkmarked == false)
+        {
+            locationUI.CloseSection();
+        }
+        else if (currentSection == Section.Location)
+        {
+            // do nothing 
+        }
+        else if (checkmarked == true   )
         {
             CameraController.Instance.SetLocationSectionView();
             currentSection = Section.Location;
             tabsSwitcher.ToggleLocationUI();
             locationUI.OpenSection();
-        }
-        else
-            locationUI.CloseSection();
+        } 
+            
         RefreshUI();
     }
     public void ToggleCharacterSection(bool checkmarked)
     {
-        characterSection.SetActive(checkmarked);
-        if (checkmarked == true)
+        if (characterSection != null)
+            characterSection.SetActive(checkmarked);
+
+        if (checkmarked == false)
+        {
+            characterUI.CloseSection();
+        }
+        else if(currentSection == Section.Character)
+        {
+            // do nothing 
+        }
+        else if (checkmarked == true   )
         {
             CameraController.Instance.SetCharacterSectionView();
             currentSection = Section.Character;
             tabsSwitcher.ToggleCharacterUI();
             characterUI.OpenSection();
         }
-        else
-            characterUI.CloseSection();
+     
         RefreshUI();
     }
 
@@ -130,16 +157,19 @@ public class UIController : MonoBehaviour
         ToggleCharacterSection(false);
         if (initialSection == Section.World)
         {
+            currentSection = Section.Location; // ugly fix to let it toggle on start through the 'section already active' check in the ToggleSection function
             sectionToggle1.isOn = true;
             ToggleWorldSection(true);
         }
         else if (initialSection == Section.Location)
         {
+            currentSection = Section.World;
             sectionToggle2.isOn = true;
             ToggleLocationSection(true);
         }
         else if (initialSection == Section.Character)
         {
+            currentSection = Section.World;
             sectionToggle3.isOn = true;
             ToggleCharacterSection(true);
         }

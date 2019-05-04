@@ -26,7 +26,7 @@ public class WorldUI : MonoBehaviour
 
     }
     public void OpenSection()
-    { 
+    {  
         saveButton.gameObject.SetActive(true);
     }
     public void CloseSection()

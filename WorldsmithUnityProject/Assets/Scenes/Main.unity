@@ -22822,7 +22822,8 @@ MonoBehaviour:
   initialSubMap: {fileID: 1574887191725322180}
   activeSubMap: {fileID: 0}
   inGreaterMapView: 0
-  backgroundToggleParent: {fileID: 1166086590}
+  backgroundToggleParentSub: {fileID: 1166086590}
+  backgroundToggleParentTop: {fileID: 497776151}
 --- !u!224 &1208117155 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4209821935320957606, guid: 4c91629c74d7ab845beffd9cfd890d2b,
@@ -33056,7 +33057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1821281228
 RectTransform:
   m_ObjectHideFlags: 0
