@@ -10,9 +10,9 @@ public class SubMap : MonoBehaviour
 
     // Hiding first map because MapController loads the default of the Background Map
     [HideInInspector]
-    public Sprite fullMap1;
-    public Sprite fullMap2;
-    public Sprite fullMap3;
+    public Sprite fullMap1Sprite;
+    public Sprite fullMap2Sprite;
+    public Sprite fullMap3Sprite;
      
 
     private void Start()

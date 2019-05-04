@@ -196,6 +196,7 @@ public class ContainerController : MonoBehaviour
     }
     public void ToggleCentralIcons1()
     {
+        Debug.Log("called tog2");
         foreach (LocationContainer container in locationContainerList)
             container.SetContainerSprite();
     }

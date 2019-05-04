@@ -29,9 +29,11 @@ public class LocationUI : MonoBehaviour
         layoutToggle.isOn = false;
         hoveredText.text = "";
         clickedText.text = "";
-        landingContent.SetActive(true);
+        if (landingContent != null)
+            landingContent.SetActive(true);
         foreach (GameObject obj in buildingContents)
-            obj.SetActive(false);
+            if (obj != null)
+                  obj.SetActive(false);
 
         if (LocationController.Instance.GetSelectedLocation() != null)
         {
@@ -65,7 +67,8 @@ public class LocationUI : MonoBehaviour
         }
         else
         {
-            locationBackground.gameObject.SetActive(false);
+            if (locationBackground != null)
+                 locationBackground.gameObject.SetActive(false);
             backgroundToggle.interactable = false;
             backgroundToggle.isOn = false;
         }
@@ -144,9 +147,11 @@ public class LocationUI : MonoBehaviour
 
     public void ClearSectionContent()
     {
-        landingContent.SetActive(false);
+        if (landingContent != null)
+             landingContent.SetActive(false);
         foreach (GameObject obj in buildingContents)
-            obj.SetActive(false);
+            if (obj != null)
+                obj.SetActive(false);
         TileMapController.Instance.DestroyTemplateTileMaps();
     }
 }

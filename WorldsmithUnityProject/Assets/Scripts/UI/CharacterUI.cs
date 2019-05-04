@@ -36,7 +36,8 @@ public class CharacterUI : MonoBehaviour
         {
             nameText.text = "Name";
             infoText.text = "Info";
-            characterPicture.gameObject.SetActive(false);
+            if (characterPicture != null)
+                characterPicture.gameObject.SetActive(false);
         } 
     }
     public void CloseSection()

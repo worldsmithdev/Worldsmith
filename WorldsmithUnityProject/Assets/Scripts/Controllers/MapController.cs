@@ -30,10 +30,12 @@ public class MapController : MonoBehaviour
     public bool inGreaterMapView = false;
 
 
-    // Checking this UI holder for the background toggles as an ugly workaround for a Unity 2019 bug:
+    // Checking these UI panels for the background toggles as an ugly workaround for a Unity 2019 bug:
     // https://issuetracker.unity3d.com/issues/re-enabling-game-object-with-toggle-group-loses-information-about-previously-checked-toggle 
     [SerializeField]
-    GameObject backgroundToggleParent;
+    GameObject backgroundToggleParentSub;
+    [SerializeField]
+    GameObject backgroundToggleParentTop;
 
     private void Awake()
     {
@@ -70,7 +72,7 @@ public class MapController : MonoBehaviour
         foreach (SubMap subMap in subMapList)        
             foreach (GameObject mapobj in mapHolderList)            
                 if (mapobj.name == subMap.name)                
-                    subMap.fullMap1 = mapobj.GetComponent<SpriteRenderer>().sprite;
+                    subMap.fullMap1Sprite = mapobj.GetComponent<SpriteRenderer>().sprite;
     }
     // Link the clickable text-fields in the LeftPanel's Greater section with the same-named SubMaps
     void SyncMapClickables()
@@ -201,10 +203,11 @@ public class MapController : MonoBehaviour
 
 
     // Called from Maps - Background (World 1 Sub 1)
+    // Extravagant check for each as temp fix for Unity bug described at start of this class
     public void ToggleBackgroundNone(bool checkmarked)
-    { 
-        if (checkmarked == true && initialized == true && backgroundToggleParent.activeSelf == true)
-        {
+    {
+        if (checkmarked == true && initialized == true && backgroundToggleParentTop.activeSelf == true && UIController.Instance.tabsSwitcher.bottomLeftWorld.activeSelf == true && backgroundToggleParentSub.activeSelf == true)
+        { 
             foreach (GameObject mapobj in mapHolderList)
                 if (mapobj != null)
                     if (mapobj.transform.name == activeSubMap.transform.name)
@@ -213,35 +216,37 @@ public class MapController : MonoBehaviour
 
     }
     public void ToggleBackground1(bool checkmarked)
-    {
-        if (checkmarked == true && initialized == true && backgroundToggleParent.activeSelf == true)
-        {
+    { 
+        if (checkmarked == true && initialized == true && backgroundToggleParentTop.activeSelf == true && UIController.Instance.tabsSwitcher.bottomLeftWorld.activeSelf == true && backgroundToggleParentSub.activeSelf == true)
+        { 
             foreach (GameObject mapobj in mapHolderList)
                 if (mapobj != null)
                     if (mapobj.transform.name == activeSubMap.transform.name)
-                        mapobj.GetComponent<SpriteRenderer>().sprite = activeSubMap.fullMap1;
+                        mapobj.GetComponent<SpriteRenderer>().sprite = activeSubMap.fullMap1Sprite;
         }
 
     }
     public void ToggleBackground2(bool checkmarked)
     {
-        if (checkmarked == true && initialized == true && backgroundToggleParent.activeSelf == true)
-        {
+        
+        if (checkmarked == true && initialized == true && backgroundToggleParentTop.activeSelf == true && UIController.Instance.tabsSwitcher.bottomLeftWorld.activeSelf == true && backgroundToggleParentSub.activeSelf == true)
+        { 
             foreach (GameObject mapobj in mapHolderList)
                 if (mapobj != null)
                     if (mapobj.transform.name == activeSubMap.transform.name)
-                        mapobj.GetComponent<SpriteRenderer>().sprite = activeSubMap.fullMap2;
+                        mapobj.GetComponent<SpriteRenderer>().sprite = activeSubMap.fullMap2Sprite;
         }
 
     }
     public void ToggleBackground3(bool checkmarked)
     {
-        if (checkmarked == true && initialized == true && backgroundToggleParent.activeSelf == true)
-        {
+       
+        if (checkmarked == true && initialized == true && backgroundToggleParentTop.activeSelf == true && UIController.Instance.tabsSwitcher.bottomLeftWorld.activeSelf == true && backgroundToggleParentSub.activeSelf == true)
+        { 
             foreach (GameObject mapobj in mapHolderList)
                 if (mapobj != null)
                     if (mapobj.transform.name == activeSubMap.transform.name)
-                        mapobj.GetComponent<SpriteRenderer>().sprite = activeSubMap.fullMap3;
+                        mapobj.GetComponent<SpriteRenderer>().sprite = activeSubMap.fullMap3Sprite;
         }
     }
 

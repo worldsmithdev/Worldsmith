@@ -6,14 +6,14 @@ using TMPro;
 
 public class LeftUI : MonoBehaviour
 {
-    // Any text and UI functionality relating to any of the content specifically in the Left panel
+    // Any text and UI functionality relating to any of the content in any of the sub panels of the Left panel
 
     public Button terrainDataCreateButton;
     public Button terrainDataDestroyButton;
+     
 
     bool terrainDataMapActive = false;
-
-
+     
     public void RefreshUI()
     {
         RefreshWorld1Sub2();
