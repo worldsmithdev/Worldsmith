@@ -363,7 +363,7 @@ Transform:
   m_GameObject: {fileID: 6544901489758508222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.797, y: -10.440276, z: -0.921875}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children:
   - {fileID: 3812475893747879800}
   - {fileID: 8218060746568834963}
@@ -393,6 +393,8 @@ MonoBehaviour:
   selectionSprite: {fileID: 434700298020444426}
   subIconSprite: {fileID: 4501194745054218803}
   bubbleSprite: {fileID: 5558185438389575177}
+  hideIcon: 0
+  hideName: 0
 --- !u!58 &4182888054462011157
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -511,7 +513,6 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_textAlignment: 257
-  m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -538,6 +539,7 @@ MonoBehaviour:
   m_verticalMapping: 0
   m_uvLineOffset: 0
   m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
@@ -552,12 +554,9 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
-  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}

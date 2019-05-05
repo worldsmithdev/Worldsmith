@@ -239,8 +239,7 @@ public class MapController : MonoBehaviour
 
     }
     public void ToggleBackground3(bool checkmarked)
-    {
-       
+    { 
         if (checkmarked == true && initialized == true && backgroundToggleParentTop.activeSelf == true && UIController.Instance.tabsSwitcher.bottomLeftWorld.activeSelf == true && backgroundToggleParentSub.activeSelf == true)
         { 
             foreach (GameObject mapobj in mapHolderList)

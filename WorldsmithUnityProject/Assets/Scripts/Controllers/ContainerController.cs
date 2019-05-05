@@ -24,12 +24,12 @@ public class ContainerController : MonoBehaviour
     float subSpriteScale;
     float lineStartSize = 0.14f;
     float lineEndSize = 0.06f;
-    List<GameObject> lineList = new List<GameObject>(); 
+    List<GameObject> lineList = new List<GameObject>();
 
     LocationContainer hoveredContainer;
     LocationContainer selectedContainer;
 
-    [HideInInspector]
+   // [HideInInspector]
     public List<LocationContainer> locationContainerList = new List<LocationContainer>();
 
     [HideInInspector]
@@ -49,10 +49,10 @@ public class ContainerController : MonoBehaviour
     // Reads content from all Background WorldMap objects, so you don't have to manually add LCs to a list.
     public void LoadContainersIntoList()
     {
-        foreach (GameObject mapobj in MapController.Instance.mapHolderList) 
-            foreach (Transform categoryholder in mapobj.transform) 
-                foreach (Transform lc in categoryholder.gameObject.transform) 
-                    locationContainerList.Add(lc.gameObject.GetComponent<LocationContainer>()); 
+        foreach (GameObject mapobj in MapController.Instance.mapHolderList)
+            foreach (Transform categoryholder in mapobj.transform)
+                foreach (Transform lc in categoryholder.gameObject.transform)
+                    locationContainerList.Add(lc.gameObject.GetComponent<LocationContainer>());
     }
 
     // Loads initial scale of LC's child objects to a value that is used when scaling LCs with the scale sliders.
@@ -87,7 +87,7 @@ public class ContainerController : MonoBehaviour
             }
 
     }
-   
+
     // Called from LC's box collider on enter and exit
     public void SetHoveredContainer(LocationContainer cont)
     {
@@ -102,7 +102,7 @@ public class ContainerController : MonoBehaviour
             hoveringLocationContainer = true;
             if (showTooltipOnHover == true)
                 ShowTooltip(cont);
-        }  
+        }
     }
 
     public void ClickContainer(LocationContainer cont)
@@ -111,7 +111,7 @@ public class ContainerController : MonoBehaviour
         {
             if (cont == selectedContainer && UIController.Instance.worldUI.explorePanelActive == true)
             {
-                UIController.Instance.worldUI.CloseExplorePanel(); 
+                UIController.Instance.worldUI.CloseExplorePanel();
             }
             else
             {
@@ -121,19 +121,19 @@ public class ContainerController : MonoBehaviour
                 selectedContainer.SelectHighlight();
                 LocationController.Instance.SetSelectedLocation(selectedContainer.GetContainedLocation());
                 UIController.Instance.worldUI.OpenExplorePanel();
-            } 
-        } 
+            }
+        }
     }
-    
+
     // Selecting the nearest LC in an N,E,S or W direction from the ExploreScreen
     public void ShiftSelectedContainer(LocationContainer cont)
-    { 
-            if (selectedContainer != null)
-                selectedContainer.RemoveSelectHighlight();
-            selectedContainer = cont;
-            selectedContainer.SelectHighlight();
-            LocationController.Instance.SetSelectedLocation(selectedContainer.GetContainedLocation());
-            UIController.Instance.RefreshUI(); 
+    {
+        if (selectedContainer != null)
+            selectedContainer.RemoveSelectHighlight();
+        selectedContainer = cont;
+        selectedContainer.SelectHighlight();
+        LocationController.Instance.SetSelectedLocation(selectedContainer.GetContainedLocation());
+        UIController.Instance.RefreshUI();
     }
 
     //To enable or disable tooltips
@@ -196,7 +196,6 @@ public class ContainerController : MonoBehaviour
     }
     public void ToggleCentralIcons1()
     {
-        Debug.Log("called tog2");
         foreach (LocationContainer container in locationContainerList)
             container.SetContainerSprite();
     }
@@ -240,7 +239,7 @@ public class ContainerController : MonoBehaviour
     }
 
     public void ToggleSubIcons0()
-    { 
+    {
         foreach (LocationContainer container in locationContainerList)
         {
             container.subIconSprite.SetActive(false);
@@ -296,8 +295,8 @@ public class ContainerController : MonoBehaviour
 
     public void ToggleHighlights0()
     {
-   
-       foreach (LocationContainer container in locationContainerList)
+
+        foreach (LocationContainer container in locationContainerList)
         {
             container.bubbleSprite.SetActive(false);
             container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = null;
@@ -328,15 +327,15 @@ public class ContainerController : MonoBehaviour
     }
     public void ToggleLines1()
     {
-        DestroyLines(); 
+        DestroyLines();
 
         foreach (LocationContainer container in locationContainerList)
         {
             Location loc = container.GetContainedLocation();
             Ruler ruler = loc.localRuler;
-            if (ruler != null)            
+            if (ruler != null)
                 if (ruler.rulerHierarchy == Ruler.Hierarchy.Dominating)
-                    InstantiateDominationLines(ruler); 
+                    InstantiateDominationLines(ruler);
         }
     }
     public void DestroyLines()
@@ -351,25 +350,25 @@ public class ContainerController : MonoBehaviour
     public void InstantiateDominationLines(Ruler ruler)
     {
         Location loc = ruler.GetHomeLocation();
-        List<Location> lineLocations = new List<Location>(); 
+        List<Location> lineLocations = new List<Location>();
 
         foreach (Location location in ruler.GetControlledLocations())
-            lineLocations.Add(location); 
+            lineLocations.Add(location);
 
         foreach (Location lineloc in lineLocations)
         {
             GameObject lineObj = Instantiate(linePrefab);
-            LineRenderer line = lineObj.GetComponent<LineRenderer>(); 
+            LineRenderer line = lineObj.GetComponent<LineRenderer>();
             // Set false to not scale to map holder and go offpos. Alternatively set localscale to 1,1,1 at bottom.
-            lineObj.transform.SetParent(MapController.Instance.GetActiveMapHolder().transform, false);  
+            lineObj.transform.SetParent(MapController.Instance.GetActiveMapHolder().transform, false);
             lineList.Add(lineObj);
             line.startWidth = lineStartSize;
             line.endWidth = lineEndSize;
-            lineObj.transform.localPosition = new Vector3(0, 0, 0); 
+            lineObj.transform.localPosition = new Vector3(0, 0, 0);
             line.SetPosition(0, ruler.GetPositionVector());
             line.SetPosition(1, lineloc.GetPositionVector());
             line.startColor = Color.blue;
-            line.endColor = Color.red;   
+            line.endColor = Color.red;
         }
 
     }
@@ -396,3 +395,8 @@ public class ContainerController : MonoBehaviour
 
 
 }
+
+
+
+
+
