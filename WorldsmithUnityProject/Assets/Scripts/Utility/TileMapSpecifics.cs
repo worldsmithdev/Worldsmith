@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TileMapSpecifics : MonoBehaviour
-{ 
+{
     // Specific TileMap names, called from TileMapBuilder, are manually created here
-  
+
 
     public void BuildRuleMap(TileMap givenMap)
     {
@@ -20,15 +20,15 @@ public class TileMapSpecifics : MonoBehaviour
         int yPos = 0;
 
         Territory terr = TerritoryController.Instance.GetTerritoryAtLocation(loc);
-            if (terr != null)
-            {
-                givenMap.GetTileAt(xPos, yPos).SetTileEcoBlockType(EcoBlock.BlockType.Territory);
-                givenMap.GetTileAt(xPos, yPos).SetLinkedEcoBlock(terr);
-            }  
+        if (terr != null)
+        {
+            givenMap.GetTileAt(xPos, yPos).SetTileEcoBlockType(EcoBlock.BlockType.Territory);
+            givenMap.GetTileAt(xPos, yPos).SetLinkedEcoBlock(terr);
+        }
 
-        foreach (Population pop in PopulationController.Instance.GetPopulationsAtLocation(loc))        
+        foreach (Population pop in PopulationController.Instance.GetPopulationsAtLocation(loc))
             if (pop != null)
-            { 
+            {
                 xPos += 2;
                 givenMap.GetTileAt(xPos, yPos).SetTileEcoBlockType(EcoBlock.BlockType.Population);
                 givenMap.GetTileAt(xPos, yPos).SetLinkedEcoBlock(pop);
@@ -39,7 +39,7 @@ public class TileMapSpecifics : MonoBehaviour
         xPos = 5;
         yPos = 4;
 
-      
+
         // Add secondary rulers
         foreach (Ruler ruler in RulerController.Instance.GetLocationRulers(loc))
             if (ruler != null && ruler.isLocalRuler == false)
@@ -59,7 +59,8 @@ public class TileMapSpecifics : MonoBehaviour
                 foreach (Location contloc in localRuler.GetControlledLocations())
                 {
                     xPos += 2;
-                    givenMap.GetTileAt(xPos, yPos).SetLinkedLocation(contloc);
+                    if (xPos <= givenMap.xSize)
+                        givenMap.GetTileAt(xPos, yPos).SetLinkedLocation(contloc);
                 }
             }
             else if (localRuler.rulerHierarchy == Ruler.Hierarchy.Independent)
@@ -67,8 +68,8 @@ public class TileMapSpecifics : MonoBehaviour
                 xPos = 5;
                 yPos = 4;
                 givenMap.GetTileAt(xPos, yPos).SetLinkedEcoBlock(localRuler);
-            }      
-            
+            }
+
             else if (localRuler.rulerHierarchy == Ruler.Hierarchy.Dominated)
             {
                 xPos = 5;
@@ -81,7 +82,8 @@ public class TileMapSpecifics : MonoBehaviour
                 foreach (Location contloc in localRuler.GetController().GetControlledLocations())
                 {
                     xPos += 2;
-                    givenMap.GetTileAt(xPos, yPos).SetLinkedLocation(contloc);
+                    if (xPos <= givenMap.xSize)
+                        givenMap.GetTileAt(xPos, yPos).SetLinkedLocation(contloc);
                 }
             }
         }
@@ -95,15 +97,16 @@ public class TileMapSpecifics : MonoBehaviour
             foreach (Location contloc in loc.dominatingRuler.GetControlledLocations())
             {
                 xPos += 2;
-                givenMap.GetTileAt(xPos, yPos).SetLinkedLocation(contloc);
+                if (xPos <= givenMap.xSize)
+                    givenMap.GetTileAt(xPos, yPos).SetLinkedLocation(contloc);
             }
         }
-      
+
         xPos = 5;
         yPos = 2;
 
-         
-        foreach (Warband warband in WarbandController.Instance.GetWarbandsAtLocation(loc)) 
+
+        foreach (Warband warband in WarbandController.Instance.GetWarbandsAtLocation(loc))
             if (warband != null)
             {
                 xPos -= 2;
@@ -129,10 +132,10 @@ public class TileMapSpecifics : MonoBehaviour
                         givenMap.GetTileAt(xPos, yPos).SetLinkedEcoBlock(warband);
                     }
         }
-             
-           
-                
-        
+
+
+
+
     }
 
 
@@ -154,7 +157,7 @@ public class TileMapSpecifics : MonoBehaviour
                 xPos++;
                 givenMap.GetTileAt(xPos, yPos).SetLinkedCharacter(character);
             }
-        xPos += 1; 
+        xPos += 1;
         foreach (Creature creature in CreatureController.Instance.GetCreaturesAtLocation(loc))
             if (creature != null)
             {
