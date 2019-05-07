@@ -7,7 +7,7 @@ public class Location : WorldElement
 {
     
     public enum LocationType {  Settled, Productive, Defensive, Cultural, Natural}
-    public enum LocationSubType {  Unassigned, City, Town,  Village, Homestead, Dwelling, Mine, Outpost, Sanctuary, Hazard }
+    public enum LocationSubType {  Unassigned, Polis, UrbanCenter, Stronghold, Village,      Sanctuary, Hazard }
     
     // EcoBlock variables
     public Ruler localRuler;
@@ -18,9 +18,9 @@ public class Location : WorldElement
     protected LocationType locType;
     protected LocationSubType locSubType;
     public string[] dominateStrings;    
-    public int culturalType;
-    public int politicalType;
-    public int economicType;
+    public int currentFaction;
+    public int politicalHierarchy;
+    public int hubType;
 
  
     public Location()

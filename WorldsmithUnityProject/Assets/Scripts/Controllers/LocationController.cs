@@ -22,13 +22,10 @@ public class LocationController : MonoBehaviour
     {
         Instance = this; 
 
-        locationTypePairings.Add(Location.LocationSubType.City, Location.LocationType.Settled);
-        locationTypePairings.Add(Location.LocationSubType.Town, Location.LocationType.Settled); 
-        locationTypePairings.Add(Location.LocationSubType.Village, Location.LocationType.Settled);
-        locationTypePairings.Add(Location.LocationSubType.Homestead, Location.LocationType.Settled);
-        locationTypePairings.Add(Location.LocationSubType.Dwelling, Location.LocationType.Settled);
-        locationTypePairings.Add(Location.LocationSubType.Mine, Location.LocationType.Productive);
-        locationTypePairings.Add(Location.LocationSubType.Outpost, Location.LocationType.Defensive);
+        locationTypePairings.Add(Location.LocationSubType.Polis, Location.LocationType.Settled);
+        locationTypePairings.Add(Location.LocationSubType.UrbanCenter, Location.LocationType.Settled); 
+        locationTypePairings.Add(Location.LocationSubType.Stronghold, Location.LocationType.Settled);
+        locationTypePairings.Add(Location.LocationSubType.Village, Location.LocationType.Settled); 
         locationTypePairings.Add(Location.LocationSubType.Sanctuary, Location.LocationType.Cultural); 
         locationTypePairings.Add(Location.LocationSubType.Hazard , Location.LocationType.Natural);
 

@@ -221,46 +221,46 @@ public class LookupUI : MonoBehaviour
         if (combineDropdown.value == 1)  // Variable 1
         {
             if (compareDropdown.value == 0) // EQUALS            
-                if (loc.culturalType == valueDropdown.value)
+                if (loc.currentFaction == valueDropdown.value)
                     tempBool = true;          
             if (compareDropdown.value == 1) // DOES NOT EQUAL            
-                if (loc.culturalType != valueDropdown.value)
+                if (loc.currentFaction != valueDropdown.value)
                     tempBool = true;            
             if (compareDropdown.value == 2) // GREATER THAN            
-                if (loc.culturalType > valueDropdown.value)
+                if (loc.currentFaction > valueDropdown.value)
                     tempBool = true;            
             if (compareDropdown.value < 3) // SMALLER THAN            
-                if (loc.culturalType == valueDropdown.value)
+                if (loc.currentFaction == valueDropdown.value)
                     tempBool = true;            
         }
         if (combineDropdown.value == 2)  // Variable 2
         {
             if (compareDropdown.value == 0) // EQUALS            
-                if (loc.politicalType == valueDropdown.value)
+                if (loc.politicalHierarchy == valueDropdown.value)
                     tempBool = true;
             if (compareDropdown.value == 1) // DOES NOT EQUAL            
-                if (loc.politicalType != valueDropdown.value)
+                if (loc.politicalHierarchy != valueDropdown.value)
                     tempBool = true;
             if (compareDropdown.value == 2) // GREATER THAN            
-                if (loc.politicalType > valueDropdown.value)
+                if (loc.politicalHierarchy > valueDropdown.value)
                     tempBool = true;
             if (compareDropdown.value < 3) // SMALLER THAN            
-                if (loc.politicalType == valueDropdown.value)
+                if (loc.politicalHierarchy == valueDropdown.value)
                     tempBool = true;
         }      
         if (combineDropdown.value == 3)  // Variable 3
         {
             if (compareDropdown.value == 0) // EQUALS            
-                if (loc.economicType == valueDropdown.value)
+                if (loc.hubType == valueDropdown.value)
                     tempBool = true;
             if (compareDropdown.value == 1) // DOES NOT EQUAL            
-                if (loc.economicType != valueDropdown.value)
+                if (loc.hubType != valueDropdown.value)
                     tempBool = true;
             if (compareDropdown.value == 2) // GREATER THAN            
-                if (loc.economicType > valueDropdown.value)
+                if (loc.hubType > valueDropdown.value)
                     tempBool = true;
             if (compareDropdown.value < 3) // SMALLER THAN            
-                if (loc.economicType == valueDropdown.value)
+                if (loc.hubType == valueDropdown.value)
                     tempBool = true;
         }    
        

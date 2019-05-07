@@ -2,18 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class City : Location
+public class Stronghold : Location
 {
-
-
-
-    public City(LocationType type, LocationSubType subtype, string name)
+    public Stronghold(LocationType type, LocationSubType subtype, string name)
     {
         elementType = ElementType.Location;
         locType = type;
         elementID = name;
         locSubType = subtype;
     }
-
-
 }

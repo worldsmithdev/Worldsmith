@@ -204,17 +204,17 @@ public class ContainerController : MonoBehaviour
         foreach (LocationContainer container in locationContainerList)
         {
             Location loc = container.GetContainedLocation();
-            if (loc.politicalType == 0)
+            if (loc.politicalHierarchy == 0)
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = null;
-            else if (loc.politicalType == 1)
+            else if (loc.politicalHierarchy == 1)
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.politicalSprite1;
-            else if (loc.politicalType == 2)
+            else if (loc.politicalHierarchy == 2)
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.politicalSprite2;
-            else if (loc.politicalType == 3)
+            else if (loc.politicalHierarchy == 3)
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.politicalSprite3;
-            else if (loc.politicalType == 4)
+            else if (loc.politicalHierarchy == 4)
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.politicalSprite4;
-            else if (loc.politicalType == 5)
+            else if (loc.politicalHierarchy == 5)
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.politicalSprite5;
         }
     }
@@ -223,17 +223,17 @@ public class ContainerController : MonoBehaviour
         foreach (LocationContainer container in locationContainerList)
         {
             Location loc = container.GetContainedLocation();
-            if (loc.economicType == 0)
+            if (loc.hubType == 0)
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = null;
-            else if (loc.economicType == 1)
+            else if (loc.hubType == 1)
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.economicSprite1;
-            else if (loc.economicType == 2)
+            else if (loc.hubType == 2)
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.economicSprite2;
-            else if (loc.economicType == 3)
+            else if (loc.hubType == 3)
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.economicSprite3;
-            else if (loc.economicType == 4)
+            else if (loc.hubType == 4)
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.economicSprite4;
-            else if (loc.economicType == 5)
+            else if (loc.hubType == 5)
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.economicSprite5;
         }
     }
@@ -252,17 +252,17 @@ public class ContainerController : MonoBehaviour
         {
             container.subIconSprite.SetActive(true);
             Location loc = container.GetContainedLocation();
-            if (loc.politicalType == 0)
+            if (loc.politicalHierarchy == 0)
                 container.subIconSprite.GetComponent<SpriteRenderer>().sprite = null;
-            else if (loc.politicalType == 1)
+            else if (loc.politicalHierarchy == 1)
                 container.subIconSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.politicalSprite1;
-            else if (loc.politicalType == 2)
+            else if (loc.politicalHierarchy == 2)
                 container.subIconSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.politicalSprite2;
-            else if (loc.politicalType == 3)
+            else if (loc.politicalHierarchy == 3)
                 container.subIconSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.politicalSprite3;
-            else if (loc.politicalType == 4)
+            else if (loc.politicalHierarchy == 4)
                 container.subIconSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.politicalSprite4;
-            else if (loc.politicalType == 5)
+            else if (loc.politicalHierarchy == 5)
                 container.subIconSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.politicalSprite5;
         }
     }
@@ -272,17 +272,17 @@ public class ContainerController : MonoBehaviour
         {
             container.subIconSprite.SetActive(true);
             Location loc = container.GetContainedLocation();
-            if (loc.economicType == 0)
+            if (loc.hubType == 0)
                 container.subIconSprite.GetComponent<SpriteRenderer>().sprite = null;
-            else if (loc.economicType == 1)
+            else if (loc.hubType == 1)
                 container.subIconSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.economicSprite1;
-            else if (loc.economicType == 2)
+            else if (loc.hubType == 2)
                 container.subIconSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.economicSprite2;
-            else if (loc.economicType == 3)
+            else if (loc.hubType == 3)
                 container.subIconSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.economicSprite3;
-            else if (loc.economicType == 4)
+            else if (loc.hubType == 4)
                 container.subIconSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.economicSprite4;
-            else if (loc.economicType == 5)
+            else if (loc.hubType == 5)
                 container.subIconSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.economicSprite5;
         }
     }
@@ -309,15 +309,15 @@ public class ContainerController : MonoBehaviour
         {
             container.bubbleSprite.SetActive(true);
             Location loc = container.GetContainedLocation();
-            if (loc.culturalType == 1)
+            if (loc.currentFaction == 1)
                 container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteBlue;
-            else if (loc.culturalType == 2)
+            else if (loc.currentFaction == 2)
                 container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteRed;
-            else if (loc.culturalType == 3)
+            else if (loc.currentFaction == 3)
                 container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteGreen;
-            else if (loc.culturalType == 4)
+            else if (loc.currentFaction == 4)
                 container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteYellow;
-            else if (loc.culturalType == 5)
+            else if (loc.currentFaction == 5)
                 container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteOrange;
         }
     }

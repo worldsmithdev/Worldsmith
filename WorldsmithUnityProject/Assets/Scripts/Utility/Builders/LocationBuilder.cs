@@ -26,9 +26,27 @@ public class LocationBuilder : MonoBehaviour
                 else
                     locSubType = Location.LocationSubType.Unassigned;
                 
-                if (locSubType == Location.LocationSubType.City)
+                if (locSubType == Location.LocationSubType.Polis)
                 {
-                    City createdLoc = new City(locType, locSubType, locdata.Name);
+                    Polis createdLoc = new Polis(locType, locSubType, locdata.Name);
+                    AssignLocationVariables(locdata, createdLoc);
+                    activeWorld.locationList.Add(createdLoc);
+                }
+                else if (locSubType == Location.LocationSubType.UrbanCenter)
+                {
+                    UrbanCenter createdLoc = new UrbanCenter(locType, locSubType, locdata.Name);
+                    AssignLocationVariables(locdata, createdLoc);
+                    activeWorld.locationList.Add(createdLoc);
+                }
+                else if (locSubType == Location.LocationSubType.Stronghold)
+                {
+                    Stronghold createdLoc = new Stronghold(locType, locSubType, locdata.Name);
+                    AssignLocationVariables(locdata, createdLoc);
+                    activeWorld.locationList.Add(createdLoc);
+                }
+                else if (locSubType == Location.LocationSubType.Village)
+                {
+                    Village createdLoc = new Village(locType, locSubType, locdata.Name);
                     AssignLocationVariables(locdata, createdLoc);
                     activeWorld.locationList.Add(createdLoc);
                 }
@@ -47,9 +65,10 @@ public class LocationBuilder : MonoBehaviour
     void AssignLocationVariables(LocationImportsData locdata, Location loc)
     {
         loc.description = locdata.Description;
-        loc.culturalType = locdata.Culturetype;
-        loc.politicalType = locdata.Politicaltype;
-        loc.economicType = locdata.Economictype;
+        loc.currentFaction = locdata.Currentfaction;
+        loc.politicalHierarchy = locdata.Politicalhierarchy;
+        loc.hubType = locdata.Hubtype;
+
         if (locdata.Dominates != "")
             loc.dominateStrings = locdata.Dominates.Split(',');
 

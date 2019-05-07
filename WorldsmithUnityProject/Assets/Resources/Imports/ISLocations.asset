@@ -23,10 +23,6 @@ MonoBehaviour:
     isEnable: 0
     isArray: 0
   - type: 1
-    name: Description
-    isEnable: 0
-    isArray: 0
-  - type: 1
     name: LocationType
     isEnable: 0
     isArray: 0
@@ -35,19 +31,199 @@ MonoBehaviour:
     isEnable: 0
     isArray: 0
   - type: 3
-    name: PoliticalType
+    name: PopulationSize
     isEnable: 0
     isArray: 0
   - type: 3
-    name: EconomicType
+    name: Founded
     isEnable: 0
     isArray: 0
   - type: 3
-    name: CultureType
+    name: OriginalFaction
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: CurrentFaction
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: GreekType
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: Hellenized
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: TerritorySoil
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: TerritoryStatus
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: FoodFocus
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: BuildFocus
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: BuildRate
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: ResourceRate
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: IndustryRate
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: MintingRate
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: PrimaryResource
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: SecondaryResource
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: PrimaryIndustry
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: SecondaryIndustry
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: HarborQuality
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: HubType
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: PrimaryOffload
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: SecondaryOffload
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: ResourceOffload
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: PrimaryDifficulty
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: SecondaryDifficulty
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: Description
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: Summary
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: PoliticalHierarchy
     isEnable: 0
     isArray: 0
   - type: 1
     name: Dominates
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: PoliticalAuthority
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: PoliticalAttitude
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: PoliticalChallenge
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: Rival
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: Friend
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: ReligiousImportance
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: PrimaryCult
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: SecondaryCult
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: CoinageEmblem
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: Height
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: NaturalDefense
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: Fortification
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: PrimaryFighters
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: SecondaryFighters
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: PrimaryStrategic
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: SecondaryStrategic
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: TerrainString
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: MythString
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: ConstructionString
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: Surety
     isEnable: 0
     isArray: 0
   excelFilePath: Assets/Resources/Imports/WorldsmithImports.xlsx

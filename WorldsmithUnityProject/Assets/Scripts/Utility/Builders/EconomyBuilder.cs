@@ -61,23 +61,20 @@ public class EconomyBuilder : MonoBehaviour
     public void BuildWarbands()
     {
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
-            if (loc.GetLocationType() == Location.LocationType.Settled)
-                if (loc.GetLocationSubType() != Location.LocationSubType.Homestead && loc.GetLocationSubType() != Location.LocationSubType.Dwelling)
+            if (loc.GetLocationType() == Location.LocationType.Settled) 
                     BuildSettledWarbands(loc);
     }
     public void BuildTerritories()
     {
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
-            if (loc.GetLocationType() == Location.LocationType.Settled)
-                if (loc.GetLocationSubType() != Location.LocationSubType.Homestead && loc.GetLocationSubType() != Location.LocationSubType.Dwelling)
+            if (loc.GetLocationType() == Location.LocationType.Settled) 
                     BuildSettledTerritory(loc);
     }
 
     public void BuildPopulations()
     {
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
-            if (loc.GetLocationType() == Location.LocationType.Settled)
-                if (loc.GetLocationSubType() != Location.LocationSubType.Homestead && loc.GetLocationSubType() != Location.LocationSubType.Dwelling)
+            if (loc.GetLocationType() == Location.LocationType.Settled) 
                     BuildSettledPopulations(loc);
     }
     public void BuildResources()
@@ -89,7 +86,7 @@ public class EconomyBuilder : MonoBehaviour
     {          
         Ruler ruler = new Ruler(loc, true); 
         EconomyController.Instance.rulerDictionary.Add(ruler, null);
-        if (loc.GetLocationSubType() == Location.LocationSubType.City)
+        if (loc.GetLocationSubType() == Location.LocationSubType.Polis)
         {
             Ruler secondaryRuler = new Ruler(loc, false);
             EconomyController.Instance.rulerDictionary.Add(secondaryRuler, null);

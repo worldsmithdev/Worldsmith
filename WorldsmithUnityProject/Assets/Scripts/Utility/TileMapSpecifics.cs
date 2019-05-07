@@ -59,7 +59,8 @@ public class TileMapSpecifics : MonoBehaviour
                 foreach (Location contloc in localRuler.GetControlledLocations())
                 {
                     xPos += 2;
-                    givenMap.GetTileAt(xPos, yPos).SetLinkedLocation(contloc);
+                    if (xPos <= givenMap.xSize)
+                       givenMap.GetTileAt(xPos, yPos).SetLinkedLocation(contloc);
                 }
             }
             else if (localRuler.rulerHierarchy == Ruler.Hierarchy.Independent)
@@ -81,7 +82,8 @@ public class TileMapSpecifics : MonoBehaviour
                 foreach (Location contloc in localRuler.GetController().GetControlledLocations())
                 {
                     xPos += 2;
-                    givenMap.GetTileAt(xPos, yPos).SetLinkedLocation(contloc);
+                    if (xPos <= givenMap.xSize)
+                        givenMap.GetTileAt(xPos, yPos).SetLinkedLocation(contloc);
                 }
             }
         }
@@ -95,7 +97,8 @@ public class TileMapSpecifics : MonoBehaviour
             foreach (Location contloc in loc.dominatingRuler.GetControlledLocations())
             {
                 xPos += 2;
-                givenMap.GetTileAt(xPos, yPos).SetLinkedLocation(contloc);
+                if (xPos <= givenMap.xSize)
+                    givenMap.GetTileAt(xPos, yPos).SetLinkedLocation(contloc);
             }
         }
       
