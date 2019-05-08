@@ -7,9 +7,13 @@ public class WarbandBuilder : MonoBehaviour
     public void BuildWarbands()
     {
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
-            if (loc.GetLocationType() == Location.LocationType.Settled)
-                if (loc.GetLocationSubType() != Location.LocationSubType.Homestead && loc.GetLocationSubType() != Location.LocationSubType.Dwelling)
+            if (loc.GetLocationType() == Location.LocationType.Settled) 
                     BuildSettledWarbands(loc);
+    }
+
+    void BuildVillageWarbands()
+    {
+
     }
 
     void BuildSettledWarbands(Location loc)

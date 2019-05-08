@@ -19,7 +19,7 @@ public class RulerBuilder : MonoBehaviour
     {
         Ruler ruler = new Ruler(loc, true);
         EconomyController.Instance.rulerDictionary.Add(ruler, null);
-        if (loc.GetLocationSubType() == Location.LocationSubType.City)
+        if (loc.GetLocationSubType() == Location.LocationSubType.Polis)
         {
             Ruler secondaryRuler = new Ruler(loc, false);
             EconomyController.Instance.rulerDictionary.Add(secondaryRuler, null);
