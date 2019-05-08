@@ -21,6 +21,7 @@ public class Location : WorldElement
     public int culturalType;
     public int politicalType;
     public int economicType;
+    public int testVariable;
 
  
     public Location()
