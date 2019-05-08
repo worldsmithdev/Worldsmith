@@ -17,11 +17,10 @@ public class Location : WorldElement
     // Column Variables
     protected LocationType locType;
     protected LocationSubType locSubType;
-    public string[] dominateStrings;    
+    public string[] dominateStrings;     
     public int currentFaction;
     public int politicalHierarchy;
-    public int hubType;
-
+    public int hubType; 
  
     public Location()
     {
