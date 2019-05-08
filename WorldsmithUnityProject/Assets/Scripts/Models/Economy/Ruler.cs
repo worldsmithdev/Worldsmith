@@ -9,8 +9,10 @@ public class Ruler : EcoBlock
 
     public enum Hierarchy {  Unassigned, Dominating, Independent, Dominated, Secondary   }
 
+    public enum ClassType { Aristocrat, Oligarch, Monarchist, Tyrant, Democratic }
 
     public Hierarchy rulerHierarchy = Hierarchy.Unassigned;
+    public ClassType classType;
 
     public bool isLocalRuler;
 

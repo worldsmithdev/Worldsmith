@@ -709,11 +709,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e23939c12162a64eafa91e9f43b7aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rulerBuilder: {fileID: 0}
-  warbandBuilder: {fileID: 0}
-  territoryBuilder: {fileID: 0}
-  populationBuilder: {fileID: 0}
-  resourceBuilder: {fileID: 0}
+  rulerBuilder: {fileID: 18881790}
+  warbandBuilder: {fileID: 453555681}
+  territoryBuilder: {fileID: 1348223462}
+  populationBuilder: {fileID: 139219572}
+  resourceBuilder: {fileID: 84204549}
 --- !u!1001 &62369078
 PrefabInstance:
   m_ObjectHideFlags: 0

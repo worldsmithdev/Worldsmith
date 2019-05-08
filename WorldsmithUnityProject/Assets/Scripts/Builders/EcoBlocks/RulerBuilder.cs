@@ -17,11 +17,18 @@ public class RulerBuilder : MonoBehaviour
 
     void BuildSettledRulers(Location loc)
     {
-        Ruler ruler = new Ruler(loc, true);
-        EconomyController.Instance.rulerDictionary.Add(ruler, null);
+        // Create Location's primary ruler
+        Ruler localRuler = new Ruler(loc, true);
+        EconomyController.Instance.rulerDictionary.Add(localRuler, null);
+
+
+        // Assign class type
+
+         
+
         if (loc.GetLocationSubType() == Location.LocationSubType.Polis)
         {
-            Ruler secondaryRuler = new Ruler(loc, false);
+            Ruler secondaryRuler = new Ruler(loc, false); 
             EconomyController.Instance.rulerDictionary.Add(secondaryRuler, null);
         }
     }
