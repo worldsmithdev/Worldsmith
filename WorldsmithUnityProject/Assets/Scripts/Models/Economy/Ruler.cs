@@ -7,12 +7,14 @@ public class Ruler : EcoBlock
 {
     // Abstraction. More to follow.
 
-    public enum Hierarchy {  Unassigned, Dominating, Independent, Dominated, Secondary   }
+    public enum Hierarchy {  Unassigned, Dominating, Independent, Dominated, Secondary   }     
+    public enum AuthorityType { Unassigned, Aristocrat, Oligarch, Monarchist, Tyrant, Democratic }
+    public enum Attitude { Unassigned, Aggressive, Economic, Temperate, Mild, Independent }
 
-    public enum ClassType { Aristocrat, Oligarch, Monarchist, Tyrant, Democratic }
+    public Hierarchy rulerHierarchy = Hierarchy.Unassigned; 
+    public AuthorityType authorityType;
+    public Attitude attitude;
 
-    public Hierarchy rulerHierarchy = Hierarchy.Unassigned;
-    public ClassType classType;
 
     public bool isLocalRuler;
 

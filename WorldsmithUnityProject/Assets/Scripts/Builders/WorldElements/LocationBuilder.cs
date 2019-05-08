@@ -65,9 +65,55 @@ public class LocationBuilder : MonoBehaviour
     void AssignLocationVariables(LocationImportsData locdata, Location loc)
     {
         loc.description = locdata.Description;
+
+
+        loc.populationSize = locdata.Populationsize;
+        loc.founded = locdata.Founded;
+        loc.originalFaction = locdata.Originalfaction;
         loc.currentFaction = locdata.Currentfaction;
-        loc.politicalHierarchy = locdata.Politicalhierarchy;
+        loc.greekType = locdata.Greektype;
+        loc.hellenized = locdata.Hellenized;
+        loc.territorySoil = locdata.Territorysoil;
+        loc.territoryStatus = locdata.Territorystatus;
+        loc.focusFood = locdata.Foodfocus;
+        loc.focusBuild = locdata.Buildfocus;
+        loc.rateBuild = locdata.Buildrate;
+        loc.rateResource = locdata.Resourcerate;
+        loc.rateIndustry = locdata.Industryrate;
+        loc.rateMinting = locdata.Mintingrate;
+        loc.resourcePrimary = locdata.Primaryresource;
+        loc.recourceSecondary = locdata.Secondaryresource;
+        loc.industryPrimary = locdata.Primaryindustry;
+        loc.industrySecondary = locdata.Secondaryindustry;
+        loc.harborQuality = locdata.Harborquality;
         loc.hubType = locdata.Hubtype;
+        loc.offloadPrimary = locdata.Primaryoffload;
+        loc.offloadSecondary = locdata.Secondaryoffload;
+        loc.offloadResource = locdata.Resourceoffload;
+        loc.offloadDifficultyPrimary = locdata.Primarydifficulty;
+        loc.offloadDifficultySecondary = locdata.Secondarydifficulty;
+        loc.summary = locdata.Summary;
+        loc.politicalHierarchy = locdata.Politicalhierarchy;
+        loc.authorityPolitical = locdata.Politicalauthority;
+        loc.attitudePolitical = locdata.Politicalattitude;
+        loc.challengePolitical = locdata.Politicalchallenge;
+        loc.rival = locdata.Rival;
+        loc.friend = locdata.Friend;
+        loc.religiousImportance = locdata.Religiousimportance;
+        loc.cultPrimary = locdata.Primarycult;
+        loc.cultSecondary = locdata.Secondarycult;
+        loc.coinageEmblem = locdata.Coinageemblem;
+        loc.height = locdata.Height;
+        loc.naturalDefense = locdata.Naturaldefense;
+        loc.fortification = locdata.Fortification;
+        loc.fightersPrimary = locdata.Primaryfighters;
+        loc.fightersSecondary = locdata.Secondaryfighters;
+        loc.strategicPrimary = locdata.Primarystrategic;
+        loc.strategicSecondary = locdata.Secondarystrategic;
+        loc.terrainString = locdata.Terrainstring;
+        loc.mythString = locdata.Mythstring;
+        loc.constructionString = locdata.Constructionstring;
+        loc.surety = locdata.Surety;
 
         if (locdata.Dominates != "")
             loc.dominateStrings = locdata.Dominates.Split(',');

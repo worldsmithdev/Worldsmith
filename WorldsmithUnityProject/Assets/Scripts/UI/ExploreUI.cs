@@ -97,7 +97,7 @@ public class ExploreUI : MonoBehaviour
     } 
     void RefreshSettled(Location selectedLoc)
     {
-        overviewSubText.text = "xLocation: " + selectedLoc.GetPositionVector().x.ToString("F2") + "\nyLocation: " + selectedLoc.GetPositionVector().y.ToString("F2");
+        overviewSubText.text = "Authority Type: " + selectedLoc.authorityPolitical;
 
     }
     void RefreshProductive(Location selectedLoc)
@@ -300,8 +300,8 @@ public class ExploreUI : MonoBehaviour
     public void SetClickedRuler (Ruler ruler)
     {
         string line1 = "Ruler: " + ruler.blockID + "\n";
-        string line2 = "" + "\n";
-        string line3 = "" + "\n";
+        string line2 = "Ruler Authority Type: " + ruler.authorityType + "\n";
+        string line3 = "Ruler Attitude: " + ruler.attitude + "\n";
         string line4 = "" + "\n";
         string line5 = "" + "\n";
         string line6 = "" + "\n";

@@ -22,9 +22,17 @@ public class RulerBuilder : MonoBehaviour
         EconomyController.Instance.rulerDictionary.Add(localRuler, null);
 
 
-        // Assign class type
+        // Assign Directly Translated Types     
+        for (int i = 0; i < 10; i++)
+        {
+            if (loc.authorityPolitical == i)
+                localRuler.authorityType = (Ruler.AuthorityType)i;
+            if (loc.attitudePolitical == i)
+                localRuler.attitude = (Ruler.Attitude)i;
 
-         
+        }
+           
+        
 
         if (loc.GetLocationSubType() == Location.LocationSubType.Polis) 
         {
