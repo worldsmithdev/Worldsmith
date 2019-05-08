@@ -237,7 +237,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 0.5
+  m_padding: 1.25
   m_canvasRenderer: {fileID: 33860806}
   m_TextComponent: {fileID: 1580237460}
   m_materialReferenceIndex: 1
@@ -11392,6 +11392,11 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 33860805}
+    - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_lineSpacing
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1 &614949889
@@ -31042,7 +31047,7 @@ PrefabInstance:
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60.999996
+      value: -86.9
       objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
@@ -31052,7 +31057,7 @@ PrefabInstance:
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 78.9
+      value: 50.45
       objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}

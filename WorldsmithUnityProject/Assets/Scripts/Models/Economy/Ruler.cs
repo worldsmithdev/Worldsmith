@@ -8,9 +8,11 @@ public class Ruler : EcoBlock
     // Abstraction. More to follow.
 
     public enum Hierarchy {  Unassigned, Dominating, Independent, Dominated, Secondary   }
+    public enum CustomType {  Type0, Type1, Type2, Type3, Type4, Type5 }
 
 
     public Hierarchy rulerHierarchy = Hierarchy.Unassigned;
+    public CustomType customType;
 
     public bool isLocalRuler;
 

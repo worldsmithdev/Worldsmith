@@ -20,8 +20,7 @@ public class Location : WorldElement
     public string[] dominateStrings;    
     public int culturalType;
     public int politicalType;
-    public int economicType;
-    public int testVariable;
+    public int economicType; 
 
  
     public Location()

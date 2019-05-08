@@ -17,8 +17,24 @@ public class RulerBuilder : MonoBehaviour
 
     void BuildSettledRulers(Location loc)
     {
+        // Create Location's primary ruler
         Ruler localRuler = new Ruler(loc, true);
         EconomyController.Instance.rulerDictionary.Add(localRuler, null);
+
+
+        // Assign Directly Translated Types     
+        for (int i = 0; i < 10; i++)
+        {
+            if (loc.politicalType == i)
+                localRuler.customType = (Ruler.CustomType)i; 
+            // Etc
+        }
+  
+        // More to follow..
+
+
+
+        // Create additional rulers 
         if (loc.GetLocationSubType() == Location.LocationSubType.City)
         {
             Ruler secondaryRuler = new Ruler(loc, false);
