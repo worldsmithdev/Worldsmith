@@ -7,9 +7,12 @@ public class EconomyController : MonoBehaviour
     // Creates content for the World's Economy, holds dictionaries that contain all of the Economy's data
 
     public static EconomyController Instance { get; protected set; }
-
-    public EconomyBuilder economyBuilder;
-
+     
+    public RulerBuilder rulerBuilder;
+    public WarbandBuilder warbandBuilder;
+    public TerritoryBuilder territoryBuilder;
+    public PopulationBuilder populationBuilder;
+    public ResourceBuilder resourceBuilder;
 
     // Eventually probably move these dictionaries to RulerController, etc. 
     public Dictionary<Ruler, Ruler> rulerDictionary = new Dictionary<Ruler, Ruler>();
@@ -25,11 +28,11 @@ public class EconomyController : MonoBehaviour
     // Split these later into dedicated scripts. And call it create > build for consistency with WorldController.
     public void BuildEconomy()
     {
-        economyBuilder.BuildRulers(); 
-        economyBuilder.BuildWarbands();
-        economyBuilder.BuildTerritories();
-        economyBuilder.BuildPopulations();
-        economyBuilder.BuildResources();
+        rulerBuilder.BuildRulers();
+        warbandBuilder.BuildWarbands();
+        territoryBuilder.BuildTerritories();
+        populationBuilder.BuildPopulations();
+        resourceBuilder.BuildResources();
     } 
 
 
