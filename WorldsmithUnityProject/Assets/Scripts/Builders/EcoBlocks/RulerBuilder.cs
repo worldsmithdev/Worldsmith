@@ -17,6 +17,7 @@ public class RulerBuilder : MonoBehaviour
 
     void BuildSettledRulers(Location loc)
     { 
+
         // Create Location's primary ruler
         Ruler localRuler = new Ruler(loc, true);
         EconomyController.Instance.rulerDictionary.Add(localRuler, null);
@@ -35,6 +36,7 @@ public class RulerBuilder : MonoBehaviour
         
 
         if (loc.GetLocationSubType() == Location.LocationSubType.Polis) 
+
         {
             Ruler secondaryRuler = new Ruler(loc, false); 
             EconomyController.Instance.rulerDictionary.Add(secondaryRuler, null);

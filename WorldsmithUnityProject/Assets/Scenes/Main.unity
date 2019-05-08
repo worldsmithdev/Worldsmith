@@ -16340,6 +16340,11 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 33860805}
+    - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_lineSpacing
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1 &614949889
@@ -48283,8 +48288,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7205304929077687106, guid: 2b20ca17acecfd742837e369325bad2f,
         type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
+      propertyPath: m_AnchoredPosition.y
+      value: -86.9
       objectReference: {fileID: 0}
     - target: {fileID: 7205304929077687106, guid: 2b20ca17acecfd742837e369325bad2f,
         type: 3}
@@ -48293,8 +48298,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7205304929077687106, guid: 2b20ca17acecfd742837e369325bad2f,
         type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
+      propertyPath: m_SizeDelta.y
+      value: 50.45
       objectReference: {fileID: 0}
     - target: {fileID: 7205304929077687106, guid: 2b20ca17acecfd742837e369325bad2f,
         type: 3}

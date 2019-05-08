@@ -18,6 +18,7 @@ public class Location : WorldElement
     protected LocationType locType;
     protected LocationSubType locSubType;
 
+
         // Settled Locations   
     public int populationSize;
     public int founded;
