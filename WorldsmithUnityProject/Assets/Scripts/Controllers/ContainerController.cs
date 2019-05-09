@@ -22,8 +22,8 @@ public class ContainerController : MonoBehaviour
     float highlightSpriteScale;
     float selectionSpriteScale;
     float subSpriteScale;
-    float lineStartSize = 0.14f;
-    float lineEndSize = 0.06f;
+    float lineStartSize = 0.08f;
+    float lineEndSize = 0.03f;
     List<GameObject> lineList = new List<GameObject>();
 
     LocationContainer hoveredContainer;
@@ -237,6 +237,25 @@ public class ContainerController : MonoBehaviour
                 container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.economicSprite5;
         }
     }
+    public void ToggleCentralIcons4()
+    {
+        foreach (LocationContainer container in locationContainerList)
+        {
+            Location loc = container.GetContainedLocation();
+            if (loc.hubType == 0)
+                container.centralSprite.GetComponent<SpriteRenderer>().sprite = null;
+            else if (loc.strategicPrimary == 1)
+                container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.strategicSprite1;
+            else if (loc.strategicPrimary == 2)
+                container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.strategicSprite2;
+            else if (loc.strategicPrimary == 3)
+                container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.strategicSprite3;
+            else if (loc.strategicPrimary == 4)
+                container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.strategicSprite4;
+            else if (loc.strategicPrimary == 5)
+                container.centralSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.strategicSprite5;
+        }
+    }
 
     public void ToggleSubIcons0()
     {
@@ -310,15 +329,17 @@ public class ContainerController : MonoBehaviour
             container.bubbleSprite.SetActive(true);
             Location loc = container.GetContainedLocation();
             if (loc.currentFaction == 1)
-                container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteBlue;
-            else if (loc.currentFaction == 2)
-                container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteRed;
-            else if (loc.currentFaction == 3)
                 container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteGreen;
-            else if (loc.currentFaction == 4)
+            else if (loc.currentFaction == 2)
                 container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteYellow;
-            else if (loc.currentFaction == 5)
+            else if (loc.currentFaction == 3)
+                container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteRed;
+            else if (loc.currentFaction == 4)
                 container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteOrange;
+            else if (loc.currentFaction == 5)
+                container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteBlue;
+            else if (loc.currentFaction == 5)
+                container.bubbleSprite.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.colorBallSpriteBlue;
         }
     }
     public void ToggleLines0()

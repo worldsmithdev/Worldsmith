@@ -30,6 +30,14 @@ MonoBehaviour:
     name: LocationSubType
     isEnable: 0
     isArray: 0
+  - type: 1
+    name: Description
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: Summary
+    isEnable: 0
+    isArray: 0
   - type: 3
     name: PopulationSize
     isEnable: 0
@@ -56,6 +64,10 @@ MonoBehaviour:
     isArray: 0
   - type: 3
     name: TerritorySoil
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: TerritorySize
     isEnable: 0
     isArray: 0
   - type: 3
@@ -128,14 +140,6 @@ MonoBehaviour:
     isArray: 0
   - type: 3
     name: SecondaryDifficulty
-    isEnable: 0
-    isArray: 0
-  - type: 1
-    name: Description
-    isEnable: 0
-    isArray: 0
-  - type: 1
-    name: Summary
     isEnable: 0
     isArray: 0
   - type: 3

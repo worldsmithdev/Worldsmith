@@ -15,4 +15,6 @@ public class TerritoryBuilder : MonoBehaviour
         Territory terr = new Territory(loc);
         EconomyController.Instance.territoryDictionary.Add(terr, null);
     }
+
+ 
 }

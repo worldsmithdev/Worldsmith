@@ -46,6 +46,11 @@ public class SpriteCollection : MonoBehaviour
     public Sprite colorBallSpriteGreen;
     public Sprite colorBallSpriteYellow;
     public Sprite colorBallSpriteOrange;
+    public Sprite strategicSprite1;
+    public Sprite strategicSprite2;
+    public Sprite strategicSprite3;
+    public Sprite strategicSprite4;
+    public Sprite strategicSprite5;
 
     public Sprite locationSettled;
     public Sprite locationProductive;

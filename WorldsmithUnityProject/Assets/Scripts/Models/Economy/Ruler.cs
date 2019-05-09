@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Ruler : EcoBlock
 {
-    // Abstraction. More to follow.
+     
 
     public enum Hierarchy {  Unassigned, Dominating, Independent, Dominated, Secondary   }     
     public enum AuthorityType { Unassigned, Aristocrat, Oligarch, Monarchist, Tyrant, Democratic }
@@ -15,6 +15,7 @@ public class Ruler : EcoBlock
     public AuthorityType authorityType;
     public Attitude attitude;
 
+    public Dictionary<Resource.Type, Resource> resourcePortfolio;
 
     public bool isLocalRuler;
 

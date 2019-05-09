@@ -73,6 +73,7 @@ public class LocationBuilder : MonoBehaviour
         loc.currentFaction = locdata.Currentfaction;
         loc.greekType = locdata.Greektype;
         loc.hellenized = locdata.Hellenized;
+        loc.territorySize = locdata.Territorysize;
         loc.territorySoil = locdata.Territorysoil;
         loc.territoryStatus = locdata.Territorystatus;
         loc.focusFood = locdata.Foodfocus;

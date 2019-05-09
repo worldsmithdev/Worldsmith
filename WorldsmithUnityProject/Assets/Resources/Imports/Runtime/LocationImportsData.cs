@@ -21,6 +21,14 @@ public class LocationImportsData
   public string Locationsubtype { get {return locationsubtype; } set { locationsubtype = value;} }
   
   [SerializeField]
+  string description;
+  public string Description { get {return description; } set { description = value;} }
+  
+  [SerializeField]
+  string summary;
+  public string Summary { get {return summary; } set { summary = value;} }
+  
+  [SerializeField]
   int populationsize;
   public int Populationsize { get {return populationsize; } set { populationsize = value;} }
   
@@ -47,6 +55,10 @@ public class LocationImportsData
   [SerializeField]
   int territorysoil;
   public int Territorysoil { get {return territorysoil; } set { territorysoil = value;} }
+  
+  [SerializeField]
+  int territorysize;
+  public int Territorysize { get {return territorysize; } set { territorysize = value;} }
   
   [SerializeField]
   int territorystatus;
@@ -119,14 +131,6 @@ public class LocationImportsData
   [SerializeField]
   int secondarydifficulty;
   public int Secondarydifficulty { get {return secondarydifficulty; } set { secondarydifficulty = value;} }
-  
-  [SerializeField]
-  string description;
-  public string Description { get {return description; } set { description = value;} }
-  
-  [SerializeField]
-  string summary;
-  public string Summary { get {return summary; } set { summary = value;} }
   
   [SerializeField]
   int politicalhierarchy;

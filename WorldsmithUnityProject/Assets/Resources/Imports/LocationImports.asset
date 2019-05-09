@@ -18,6 +18,8 @@ MonoBehaviour:
   - name: Abakainon
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Exploitation of their rich wooded valley is hampered by Longane unfriendliness.
+    summary: Sikel Mountain Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -25,6 +27,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 3
     territorystatus: 4
     foodfocus: 5
     buildfocus: 2
@@ -43,8 +46,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 5
-    description: Exploitation of their rich wooded valley is hampered by Longane unfriendliness.
-    summary: Sikel Mountain Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 2
@@ -70,6 +71,9 @@ MonoBehaviour:
   - name: Abolla
     locationtype: Settled
     locationsubtype: Village
+    description: Hellenized at an early stage, and quickly conquered during initial
+      Syrakusan expansion.
+    summary: Sikel Farming Settlement
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -77,6 +81,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 4
+    territorysize: 1
     territorystatus: 4
     foodfocus: 2
     buildfocus: 1
@@ -95,9 +100,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Hellenized at an early stage, and quickly conquered during initial
-      Syrakusan expansion.
-    summary: Sikel Farming Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -123,6 +125,9 @@ MonoBehaviour:
   - name: Adrane
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Prosperous fusion of cultures that is inaccessible and well-defended
+      - but Greek presence is inching towards a garrison.
+    summary: Mixed Valley Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 2
@@ -130,6 +135,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -148,9 +154,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Prosperous fusion of cultures that is inaccessible and well-defended
-      - but Greek presence is inching towards a garrison.
-    summary: Mixed Valley Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 5
@@ -177,6 +180,8 @@ MonoBehaviour:
   - name: Adranos
     locationtype: Settled
     locationsubtype: Village
+    description: 'Friendly with neighbors while banking on its volcano cult dedications. '
+    summary: Sikel Sanctuary Settlement
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -184,6 +189,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 4
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -202,8 +208,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Friendly with neighbors while banking on its volcano cult dedications. '
-    summary: Sikel Sanctuary Settlement
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -230,6 +234,8 @@ MonoBehaviour:
   - name: Adryx
     locationtype: Settled
     locationsubtype: Village
+    description: 'Was quickly hellenized and so spared the most violent dominion. '
+    summary: Sikel Farming Settlement
     populationsize: 3
     founded: 1
     originalfaction: 1
@@ -237,6 +243,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 4
+    territorysize: 1
     territorystatus: 3
     foodfocus: 2
     buildfocus: 1
@@ -255,8 +262,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Was quickly hellenized and so spared the most violent dominion. '
-    summary: Sikel Farming Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -282,6 +287,8 @@ MonoBehaviour:
   - name: Aegesta
     locationtype: Settled
     locationsubtype: Polis
+    description: Primacy among Elymians for its central, fertile, strategic location.
+    summary: Elymian Local Capital
     populationsize: 8
     founded: 1
     originalfaction: 3
@@ -289,6 +296,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 3
+    territorysize: 5
     territorystatus: 4
     foodfocus: 6
     buildfocus: 1
@@ -307,8 +315,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Primacy among Elymians for its central, fertile, strategic location.
-    summary: Elymian Local Capital
     politicalhierarchy: 5
     dominates: Aegeston Emporion
     politicalauthority: 1
@@ -334,6 +340,8 @@ MonoBehaviour:
   - name: Aegeston Emporion
     locationtype: Settled
     locationsubtype: Village
+    description: Superior in its rich selection of West-Sicily foods.
+    summary: Elymian Port Outpost
     populationsize: 4
     founded: 1
     originalfaction: 3
@@ -341,6 +349,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -359,8 +368,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Superior in its rich selection of West-Sicily foods.
-    summary: Elymian Port Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -385,7 +392,9 @@ MonoBehaviour:
     surety: 1
   - name: Aereo
     locationtype: Settled
-    locationsubtype: Stronghold
+    locationsubtype: Village
+    description: Rich in animal industry - and fossils.
+    summary: Elymian Wild Village
     populationsize: 6
     founded: 1
     originalfaction: 3
@@ -393,6 +402,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 5
     buildfocus: 1
@@ -411,8 +421,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 2
-    description: Rich in animal industry - and fossils.
-    summary: Elymian Wild Village
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -439,6 +447,9 @@ MonoBehaviour:
   - name: Agathyrnon
     locationtype: Settled
     locationsubtype: Village
+    description: Isolated, scarcely known settlement. Occasional shelter for Liparan
+      pirates that know how to locate it.
+    summary: Sikel Coastal Village
     populationsize: 3
     founded: 1
     originalfaction: 1
@@ -446,6 +457,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 1
+    territorysize: 1
     territorystatus: 3
     foodfocus: 5
     buildfocus: 1
@@ -464,9 +476,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Isolated, scarcely known settlement. Occasional shelter for Liparan
-      pirates that know how to locate it.
-    summary: Sikel Coastal Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -492,6 +501,8 @@ MonoBehaviour:
   - name: Agera
     locationtype: Settled
     locationsubtype: Stronghold
+    description: 'Strong and combative sikel settlement with commanding views. '
+    summary: Sikel Commanding Stronghold
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -499,6 +510,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 4
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -517,8 +529,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Strong and combative sikel settlement with commanding views. '
-    summary: Sikel Commanding Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -544,6 +554,8 @@ MonoBehaviour:
   - name: Agrilla
     locationtype: Settled
     locationsubtype: Village
+    description: Holds out against Greek influence, but with a taste for their wares.
+    summary: Sikel Mountain Village
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -551,6 +563,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 1
     territorystatus: 4
     foodfocus: 1
     buildfocus: 1
@@ -569,8 +582,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Holds out against Greek influence, but with a taste for their wares.
-    summary: Sikel Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -596,6 +607,9 @@ MonoBehaviour:
   - name: Agyrion
     locationtype: Settled
     locationsubtype: UrbanCenter
+    description: Local dominance in its stone quarry, command of valleys, and abdundant
+      festivals.
+    summary: Sikel Urban Center
     populationsize: 8
     founded: 1
     originalfaction: 1
@@ -603,6 +617,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 4
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -621,9 +636,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 1
-    description: Local dominance in its stone quarry, command of valleys, and abdundant
-      festivals.
-    summary: Sikel Urban Center
     politicalhierarchy: 4
     dominates: Tavake
     politicalauthority: 1
@@ -651,6 +663,8 @@ MonoBehaviour:
   - name: Akragas
     locationtype: Settled
     locationsubtype: Polis
+    description: Commercial, aggressive, powerful.
+    summary: Greek Polis
     populationsize: 10
     founded: 4
     originalfaction: 5
@@ -658,6 +672,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 3
+    territorysize: 5
     territorystatus: 5
     foodfocus: 3
     buildfocus: 5
@@ -676,8 +691,6 @@ MonoBehaviour:
     resourceoffload: Carthage
     primarydifficulty: 2
     secondarydifficulty: 1
-    description: Commercial, aggressive, powerful.
-    summary: Greek Polis
     politicalhierarchy: 5
     dominates: Eknomos,Gidinon,Kakyron,Kalkarak,Kamikos,Koskon,Krastos,Rotonde,Tirnon
     politicalauthority: 2
@@ -703,6 +716,9 @@ MonoBehaviour:
   - name: Akrai
     locationtype: Settled
     locationsubtype: Village
+    description: 'Prosperous dependent fortress in a very defensible and commanding
+      position. '
+    summary: Greek Commanding Fortress
     populationsize: 6
     founded: 4
     originalfaction: 1
@@ -710,6 +726,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 2
+    territorysize: 1
     territorystatus: 4
     foodfocus: 4
     buildfocus: 5
@@ -728,9 +745,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Prosperous dependent fortress in a very defensible and commanding
-      position. '
-    summary: Greek Commanding Fortress
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -756,6 +770,8 @@ MonoBehaviour:
   - name: Akrillai
     locationtype: Settled
     locationsubtype: Village
+    description: 'Syrakusan fortress in a favorable trading position. '
+    summary: Greek Commercial Fortress
     populationsize: 6
     founded: 4
     originalfaction: 1
@@ -763,6 +779,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -781,8 +798,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Syrakusan fortress in a favorable trading position. '
-    summary: Greek Commercial Fortress
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -808,6 +823,9 @@ MonoBehaviour:
   - name: Alagene
     locationtype: Settled
     locationsubtype: Village
+    description: Small Sikanian settlement requested assistance and has been taken
+      over by Myttistratos for strategic lookout and Henna trade facilitation.
+    summary: Greek Lookout Settlement
     populationsize: 2
     founded: 1
     originalfaction: 2
@@ -815,6 +833,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 5
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -833,9 +852,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Small Sikanian settlement requested assistance and has been taken
-      over by Myttistratos for strategic lookout and Henna trade facilitation.
-    summary: Greek Lookout Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -861,6 +877,8 @@ MonoBehaviour:
   - name: Alase
     locationtype: Settled
     locationsubtype: Village
+    description: Small in everything but their dedication to olives.
+    summary: Sikel Coastal Village
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -868,6 +886,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 3
     buildfocus: 1
@@ -886,8 +905,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 2
-    description: Small in everything but their dedication to olives.
-    summary: Sikel Coastal Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -913,6 +930,9 @@ MonoBehaviour:
   - name: Allisse
     locationtype: Settled
     locationsubtype: Village
+    description: Strongly hellenized settlement is an offload for inferior Engyon
+      productions.
+    summary: Hellenized Sikel Settlement
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -920,6 +940,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -938,9 +959,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Strongly hellenized settlement is an offload for inferior Engyon
-      productions.
-    summary: Hellenized Sikel Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -966,6 +984,9 @@ MonoBehaviour:
   - name: Amaselos
     locationtype: Settled
     locationsubtype: Village
+    description: Local king is causing tension by raiding along the route that his
+      fortress commands.
+    summary: Sikel Raiding Fortress
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -973,6 +994,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 1
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -991,9 +1013,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Local king is causing tension by raiding along the route that his
-      fortress commands.
-    summary: Sikel Raiding Fortress
     politicalhierarchy: 2
     dominates: 
     politicalauthority: 3
@@ -1019,6 +1038,8 @@ MonoBehaviour:
   - name: Ambikos
     locationtype: Settled
     locationsubtype: Village
+    description: 'Overlooks, if not in full control of, the road from Himera to Enna. '
+    summary: Sikan Hilltop Village
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -1026,6 +1047,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -1044,8 +1066,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 1
-    description: 'Overlooks, if not in full control of, the road from Himera to Enna. '
-    summary: Sikan Hilltop Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -1071,6 +1091,8 @@ MonoBehaviour:
   - name: Ancyrai
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Claim of a legendary treasure to lay beyond their pass.
+    summary: Elymian Mysterious Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 3
@@ -1078,6 +1100,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 5
     buildfocus: 1
@@ -1096,8 +1119,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Claim of a legendary treasure to lay beyond their pass.
-    summary: Elymian Mysterious Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -1123,6 +1144,9 @@ MonoBehaviour:
   - name: Apollonia
     locationtype: Settled
     locationsubtype: Village
+    description: 'Rich small settlement protected by its natural position and nearby
+      Skurke. '
+    summary: Rich Minor Settlement
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -1130,6 +1154,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -1148,9 +1173,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Rich small settlement protected by its natural position and nearby
-      Skurke. '
-    summary: Rich Minor Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -1177,6 +1199,9 @@ MonoBehaviour:
   - name: Ariaiton
     locationtype: Settled
     locationsubtype: Village
+    description: Formerly flourishing Sikan hilltop is slowly recovering from early
+      Geloan aggression.
+    summary: Recovering Sikan Settlement
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -1184,6 +1209,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 3
+    territorysize: 1
     territorystatus: 2
     foodfocus: 1
     buildfocus: 2
@@ -1202,9 +1228,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Formerly flourishing Sikan hilltop is slowly recovering from early
-      Geloan aggression.
-    summary: Recovering Sikan Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -1230,6 +1253,9 @@ MonoBehaviour:
   - name: Artemision
     locationtype: Settled
     locationsubtype: Village
+    description: Small population with a smaller minority heavy handed in the regional
+      sanctuary's wealth.
+    summary: Greek Mountain Village
     populationsize: 2
     founded: 4
     originalfaction: 5
@@ -1237,6 +1263,7 @@ MonoBehaviour:
     greektype: 3
     hellenized: 0
     territorysoil: 1
+    territorysize: 1
     territorystatus: 3
     foodfocus: 5
     buildfocus: 3
@@ -1255,9 +1282,6 @@ MonoBehaviour:
     resourceoffload: Zankle
     primarydifficulty: 3
     secondarydifficulty: 2
-    description: Small population with a smaller minority heavy handed in the regional
-      sanctuary's wealth.
-    summary: Greek Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 2
@@ -1283,6 +1307,8 @@ MonoBehaviour:
   - name: Artesine
     locationtype: Settled
     locationsubtype: Village
+    description: Supplements a meager farming economy with an inventive figurine industry.
+    summary: Sikel Mountain Village
     populationsize: 3
     founded: 1
     originalfaction: 1
@@ -1290,6 +1316,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 1
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -1308,8 +1335,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: Supplements a meager farming economy with an inventive figurine industry.
-    summary: Sikel Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -1334,7 +1359,9 @@ MonoBehaviour:
     surety: 3
   - name: Assoros
     locationtype: Settled
-    locationsubtype: Stronghold
+    locationsubtype: Village
+    description: Here is little taste for Greek products and ideas.
+    summary: Sikel Mountain Village
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -1342,6 +1369,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -1360,8 +1388,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Here is little taste for Greek products and ideas.
-    summary: Sikel Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -1388,6 +1414,9 @@ MonoBehaviour:
   - name: Babalon
     locationtype: Settled
     locationsubtype: Village
+    description: 'Strong and fortified with an actively favorable disposition to Greek
+      influence. '
+    summary: Fortified Sikan Settlement
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -1395,6 +1424,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -1413,9 +1443,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Strong and fortified with an actively favorable disposition to Greek
-      influence. '
-    summary: Fortified Sikan Settlement
     politicalhierarchy: 2
     dominates: 
     politicalauthority: 1
@@ -1440,7 +1467,9 @@ MonoBehaviour:
     surety: 3
   - name: Bakra
     locationtype: Settled
-    locationsubtype: Stronghold
+    locationsubtype: Village
+    description: Local craftsmen make a brave attempt at quality pottery.
+    summary: Sikan Farming Village
     populationsize: 3
     founded: 1
     originalfaction: 1
@@ -1448,6 +1477,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 2
@@ -1466,8 +1496,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Local craftsmen make a brave attempt at quality pottery.
-    summary: Sikan Farming Village
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -1492,7 +1520,10 @@ MonoBehaviour:
     surety: 3
   - name: Balekena
     locationtype: Settled
-    locationsubtype: Stronghold
+    locationsubtype: Village
+    description: Ancient Sikan dwelling with small but settled populations of both
+      Greek and Carthaginian artisans.
+    summary: Sikan Valley Village
     populationsize: 5
     founded: 1
     originalfaction: 2
@@ -1500,6 +1531,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 3
     territorystatus: 4
     foodfocus: 1
     buildfocus: 2
@@ -1518,9 +1550,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Ancient Sikan dwelling with small but settled populations of both
-      Greek and Carthaginian artisans.
-    summary: Sikan Valley Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -1546,6 +1575,9 @@ MonoBehaviour:
   - name: Balkonon
     locationtype: Settled
     locationsubtype: Village
+    description: Chalkidian-Greek phrourion with its native population and traditions
+      still largely in place.
+    summary: Sikel-Greek Outpost
     populationsize: 3
     founded: 4
     originalfaction: 1
@@ -1553,6 +1585,7 @@ MonoBehaviour:
     greektype: 2
     hellenized: 6
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -1571,9 +1604,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Chalkidian-Greek phrourion with its native population and traditions
-      still largely in place.
-    summary: Sikel-Greek Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -1599,6 +1629,9 @@ MonoBehaviour:
   - name: Bidis
     locationtype: Settled
     locationsubtype: Village
+    description: 'Small Greek farming outlier with loyalties divided between Syrakusai
+      and Kamarina. '
+    summary: Greek Farming Outpost
     populationsize: 2
     founded: 4
     originalfaction: 5
@@ -1606,6 +1639,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 4
     territorysoil: 4
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -1624,9 +1658,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Small Greek farming outlier with loyalties divided between Syrakusai
-      and Kamarina. '
-    summary: Greek Farming Outpost
     politicalhierarchy: 2
     dominates: 
     politicalauthority: 2
@@ -1652,6 +1683,9 @@ MonoBehaviour:
   - name: Boukara
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Ancient and elaborate, especially in construction - but fearing loss
+      of independence where influence is already waning.
+    summary: Sikan Ancient Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 2
@@ -1659,6 +1693,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -1677,9 +1712,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 2
-    description: Ancient and elaborate, especially in construction - but fearing loss
-      of independence where influence is already waning.
-    summary: Sikan Ancient Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -1705,6 +1737,8 @@ MonoBehaviour:
   - name: Brikinniai
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Water-supplied and strengthened, overseeing splendid farmland valley.
+    summary: Sikel Valley Stronghold
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -1712,6 +1746,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 5
+    territorysize: 3
     territorystatus: 3
     foodfocus: 2
     buildfocus: 4
@@ -1730,8 +1765,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 1
-    description: Water-supplied and strengthened, overseeing splendid farmland valley.
-    summary: Sikel Valley Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -1757,6 +1790,9 @@ MonoBehaviour:
   - name: Chersonos
     locationtype: Settled
     locationsubtype: Village
+    description: Small port settlement with no strong allegiance except to opportunistic
+      coastal trade.
+    summary: Greek Trading Village
     populationsize: 2
     founded: 3
     originalfaction: 5
@@ -1764,6 +1800,7 @@ MonoBehaviour:
     greektype: 3
     hellenized: 0
     territorysoil: 3
+    territorysize: 1
     territorystatus: 2
     foodfocus: 1
     buildfocus: 2
@@ -1782,9 +1819,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Small port settlement with no strong allegiance except to opportunistic
-      coastal trade.
-    summary: Greek Trading Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -1810,6 +1844,9 @@ MonoBehaviour:
   - name: Demena
     locationtype: Settled
     locationsubtype: Village
+    description: 'In the dominion of Tissa, and reliant on them for Greek wares,  but
+      with some independent nature. '
+    summary: Minor Sikel Strongpoint
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -1817,6 +1854,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 1
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -1835,9 +1873,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'In the dominion of Tissa, and reliant on them for Greek wares,  but
-      with some independent nature. '
-    summary: Minor Sikel Strongpoint
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -1863,6 +1898,8 @@ MonoBehaviour:
   - name: Digenos
     locationtype: Settled
     locationsubtype: Village
+    description: Makes the best of otherwise average farmlands.
+    summary: Sikan Farming Village
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -1870,6 +1907,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 2
     territorystatus: 5
     foodfocus: 1
     buildfocus: 2
@@ -1888,8 +1926,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Makes the best of otherwise average farmlands.
-    summary: Sikan Farming Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -1915,6 +1951,9 @@ MonoBehaviour:
   - name: Drepanon
     locationtype: Settled
     locationsubtype: Village
+    description: 'Designated port for Eryx sees a strong Phoenician influence taking
+      advantage of its harbor. '
+    summary: Elymian Mixed Port
     populationsize: 6
     founded: 1
     originalfaction: 3
@@ -1922,6 +1961,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -1940,9 +1980,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Designated port for Eryx sees a strong Phoenician influence taking
-      advantage of its harbor. '
-    summary: Elymian Mixed Port
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -1967,7 +2004,10 @@ MonoBehaviour:
     surety: 1
   - name: Echetla
     locationtype: Settled
-    locationsubtype: Stronghold
+    locationsubtype: UrbanCenter
+    description: Native and Greek populations live in balanced power, working stronger
+      elements of both cultures.
+    summary: Sikel-Greek Center
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -1975,6 +2015,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -1993,9 +2034,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Native and Greek populations live in balanced power, working stronger
-      elements of both cultures.
-    summary: Sikel-Greek Hub
     politicalhierarchy: 3
     dominates: Kasasi
     politicalauthority: 2
@@ -2021,6 +2059,9 @@ MonoBehaviour:
   - name: Edissa
     locationtype: Settled
     locationsubtype: Village
+    description: Exploits a safe anchorage harbor - one where Odysseus is said to
+      have landed.
+    summary: Greek Harbor Village
     populationsize: 2
     founded: 5
     originalfaction: 5
@@ -2028,6 +2069,7 @@ MonoBehaviour:
     greektype: 3
     hellenized: 0
     territorysoil: 2
+    territorysize: 1
     territorystatus: 4
     foodfocus: 2
     buildfocus: 3
@@ -2046,9 +2088,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 1
-    description: Exploits a safe anchorage harbor - one where Odysseus is said to
-      have landed.
-    summary: Greek Harbor Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -2075,6 +2114,9 @@ MonoBehaviour:
   - name: Egenimos
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Controls the land- and river traffic its position dictates - sometimes
+      aggressively.
+    summary: Sikan Valley Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -2082,6 +2124,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 4
     territorysoil: 2
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -2100,9 +2143,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 2
-    description: Controls the land- and river traffic its position dictates - sometimes
-      aggressively.
-    summary: Sikan Valley Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -2128,6 +2168,9 @@ MonoBehaviour:
   - name: Eknomos
     locationtype: Settled
     locationsubtype: Village
+    description: Akragan hilltop fortress that dominates the surrounding farmlands
+      and coastal route.
+    summary: Greek Coastal Outpost
     populationsize: 2
     founded: 4
     originalfaction: 2
@@ -2135,6 +2178,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 2
     buildfocus: 1
@@ -2153,9 +2197,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Akragan hilltop fortress that dominates the surrounding farmlands
-      and coastal route.
-    summary: Greek Coastal Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -2180,7 +2221,10 @@ MonoBehaviour:
     surety: 1
   - name: Elima
     locationtype: Settled
-    locationsubtype: Stronghold
+    locationsubtype: Village
+    description: Ancient heritage kept some people here, while most lower settlements
+      of the West saw a population shift to urban centers.
+    summary: Elymian Farming Village
     populationsize: 2
     founded: 1
     originalfaction: 3
@@ -2188,6 +2232,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 3
     territorystatus: 4
     foodfocus: 1
     buildfocus: 1
@@ -2206,9 +2251,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 1
-    description: Ancient heritage kept some people here, while most lower settlements
-      of the West saw a population shift to urban centers.
-    summary: Elymian Farming Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -2234,6 +2276,9 @@ MonoBehaviour:
   - name: Engyon
     locationtype: Settled
     locationsubtype: UrbanCenter
+    description: Colonized by Cretans long ago. Expansive and agrressive but limited
+      by inland connections.
+    summary: Semi-Greek Urban Center
     populationsize: 6
     founded: 5
     originalfaction: 1
@@ -2241,6 +2286,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 1
     territorysoil: 2
+    territorysize: 4
     territorystatus: 3
     foodfocus: 1
     buildfocus: 2
@@ -2259,9 +2305,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: Colonized by Cretans long ago. Expansive and agrressive but limited
-      by inland connections.
-    summary: Semi-Greek Urban Center
     politicalhierarchy: 5
     dominates: Allisse,Kapution
     politicalauthority: 1
@@ -2287,7 +2330,9 @@ MonoBehaviour:
     surety: 1
   - name: Enna
     locationtype: Settled
-    locationsubtype: Polis
+    locationsubtype: UrbanCenter
+    description: Ancient native capital of cultural and strategic dominance.
+    summary: Sikel Local Capital
     populationsize: 8
     founded: 1
     originalfaction: 2
@@ -2295,6 +2340,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 5
     territorystatus: 3
     foodfocus: 2
     buildfocus: 2
@@ -2313,8 +2359,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Ancient native capital of cultural and strategic dominance.
-    summary: Sikel Local Capital
     politicalhierarchy: 5
     dominates: Kapod
     politicalauthority: 3
@@ -2342,6 +2386,8 @@ MonoBehaviour:
   - name: Entella
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Riverbank settlement draws crowds on festivals and legends.
+    summary: Elymian Mythical Stronghold
     populationsize: 7
     founded: 1
     originalfaction: 3
@@ -2349,6 +2395,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -2367,8 +2414,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Riverbank settlement draws crowds on festivals and legends.
-    summary: Elymian Mythical Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 2
@@ -2393,7 +2438,9 @@ MonoBehaviour:
     surety: 1
   - name: Ergetion
     locationtype: Settled
-    locationsubtype: Village
+    locationsubtype: Stronghold
+    description: Strong fighting traditions and willingness to employ it for pay.
+    summary: Sikel Volcano Stronghold
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -2401,6 +2448,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 4
+    territorysize: 1
     territorystatus: 3
     foodfocus: 3
     buildfocus: 3
@@ -2419,8 +2467,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Strong fighting traditions and willingness to employ it for pay.
-    summary: Sikel Volcano Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -2446,6 +2492,8 @@ MonoBehaviour:
   - name: Erkenia
     locationtype: Settled
     locationsubtype: Village
+    description: Rich farmlands but weak in manpower and under threat of Murene power.
+    summary: Sikan Productive Settlement
     populationsize: 2
     founded: 1
     originalfaction: 2
@@ -2453,6 +2501,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 2
     buildfocus: 1
@@ -2471,8 +2520,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Rich farmlands but weak in manpower and under threat of Murene power.
-    summary: Sikan Productive Settlement
     politicalhierarchy: 2
     dominates: 
     politicalauthority: 2
@@ -2498,6 +2545,8 @@ MonoBehaviour:
   - name: Eryke
     locationtype: Settled
     locationsubtype: Stronghold
+    description: 'Great views of the valleys and their traffic. '
+    summary: Sikel Valley Stronghold
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -2505,6 +2554,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -2523,8 +2573,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 2
-    description: 'Great views of the valleys and their traffic. '
-    summary: Sikel Valley Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -2551,6 +2599,9 @@ MonoBehaviour:
   - name: Eryx
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Founded in legend on a commanding mountaintop. Agreeable towards
+      Segesta and the Phoenicians.
+    summary: Elymian Mountaintop Stronghold
     populationsize: 5
     founded: 1
     originalfaction: 3
@@ -2558,6 +2609,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 2
@@ -2576,9 +2628,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 3
-    description: Founded in legend on a commanding mountaintop. Agreeable towards
-      Segesta and the Phoenicians.
-    summary: Elymian Mountaintop Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -2606,6 +2655,9 @@ MonoBehaviour:
   - name: Euboia
     locationtype: Settled
     locationsubtype: Stronghold
+    description: 'Prosperous settlement, aided in part by local Greeks that are well
+      settled. '
+    summary: Sikel-Greek Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 1
@@ -2613,6 +2665,7 @@ MonoBehaviour:
     greektype: 2
     hellenized: 3
     territorysoil: 2
+    territorysize: 3
     territorystatus: 4
     foodfocus: 6
     buildfocus: 4
@@ -2631,9 +2684,6 @@ MonoBehaviour:
     resourceoffload: Maroi
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Prosperous settlement, aided in part by local Greeks that are well
-      settled. '
-    summary: Sikel-Greek Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -2659,6 +2709,9 @@ MonoBehaviour:
   - name: Fiinoka
     locationtype: Settled
     locationsubtype: Village
+    description: Former dependency of Noto has seen most of its population exploited
+      as farm laborers.
+    summary: Depleted Sikel Settlement
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -2666,6 +2719,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 3
+    territorysize: 1
     territorystatus: 2
     foodfocus: 1
     buildfocus: 1
@@ -2684,9 +2738,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Former dependency of Noto has seen most of its population exploited
-      as farm laborers.
-    summary: Depleted Sikel Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -2712,6 +2763,8 @@ MonoBehaviour:
   - name: Gela
     locationtype: Settled
     locationsubtype: Polis
+    description: Militaristic.
+    summary: Greek Polis
     populationsize: 10
     founded: 3
     originalfaction: 5
@@ -2719,6 +2772,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 3
+    territorysize: 5
     territorystatus: 5
     foodfocus: 2
     buildfocus: 5
@@ -2737,8 +2791,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 1
-    description: Militaristic.
-    summary: Greek Polis
     politicalhierarchy: 5
     dominates: Ariaiton,Kamerai,Kasgeraton,Maktorion,Mentuse,Omphake,Phalarion
     politicalauthority: 4
@@ -2764,6 +2816,8 @@ MonoBehaviour:
   - name: Gibol Gabol
     locationtype: Settled
     locationsubtype: Village
+    description: 'Sikan outpost that dominates the river valley below. '
+    summary: Sikan Valley Fortress
     populationsize: 6
     founded: 1
     originalfaction: 2
@@ -2771,6 +2825,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -2789,8 +2844,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Sikan outpost that dominates the river valley below. '
-    summary: Sikan Valley Fortress
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -2816,6 +2869,8 @@ MonoBehaviour:
   - name: Gidinon
     locationtype: Settled
     locationsubtype: Village
+    description: 'River dwellers. '
+    summary: Sikan River Settlement
     populationsize: 2
     founded: 1
     originalfaction: 2
@@ -2823,6 +2878,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -2841,8 +2897,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'River dwellers. '
-    summary: Sikan River Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -2867,7 +2921,9 @@ MonoBehaviour:
     surety: 3
   - name: Goraion
     locationtype: Settled
-    locationsubtype: Stronghold
+    locationsubtype: Village
+    description: Grand views allow for a beacon to warn for - or assist - pirates.
+    summary: Sikel Coastal Village
     populationsize: 3
     founded: 1
     originalfaction: 1
@@ -2875,6 +2931,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 1
+    territorysize: 3
     territorystatus: 3
     foodfocus: 5
     buildfocus: 1
@@ -2893,8 +2950,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Grand views allow for a beacon to warn for - or assist - pirates.
-    summary: Sikel Coastal Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -2920,6 +2975,8 @@ MonoBehaviour:
   - name: Grannai
     locationtype: Settled
     locationsubtype: Village
+    description: 'Exports quality timber at both sides of the mountain. '
+    summary: Sikan Mountain Village
     populationsize: 3
     founded: 1
     originalfaction: 2
@@ -2927,6 +2984,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 2
@@ -2945,8 +3003,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: 'Exports quality timber at both sides of the mountain. '
-    summary: Sikan Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 2
@@ -2972,6 +3028,8 @@ MonoBehaviour:
   - name: Halfason
     locationtype: Settled
     locationsubtype: Village
+    description: Isolated if not for outside interest in its timber exports.
+    summary: Sikel Mountain Village
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -2979,6 +3037,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -2997,8 +3056,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Isolated if not for outside interest in its timber exports.
-    summary: Sikel Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -3024,6 +3081,8 @@ MonoBehaviour:
   - name: Halikyai
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Strong and rich but in the political shadow of Aegesta.
+    summary: Elymian Valley Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 3
@@ -3031,6 +3090,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 5
+    territorysize: 3
     territorystatus: 4
     foodfocus: 1
     buildfocus: 2
@@ -3049,8 +3109,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Strong and rich but in the political shadow of Aegesta.
-    summary: Elymian Valley Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -3075,7 +3133,9 @@ MonoBehaviour:
     surety: 1
   - name: Halontion
     locationtype: Settled
-    locationsubtype: Village
+    locationsubtype: Stronghold
+    description: Independent tradition. Produces beautiful oils and jars.
+    summary: Sikel Mountain Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 0
@@ -3083,6 +3143,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 1
+    territorysize: 2
     territorystatus: 4
     foodfocus: 6
     buildfocus: 2
@@ -3101,8 +3162,6 @@ MonoBehaviour:
     resourceoffload: Skurke
     primarydifficulty: 1
     secondarydifficulty: 2
-    description: Independent tradition. Produces beautiful oils and jars.
-    summary: Sikel Mountain Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -3129,7 +3188,10 @@ MonoBehaviour:
     surety: 1
   - name: Hamiit
     locationtype: Settled
-    locationsubtype: Stronghold
+    locationsubtype: Village
+    description: 'Phoenician trading outpost providing this and thats in an otherwise
+      scarce location. '
+    summary: Phoenician Trading Village
     populationsize: 3
     founded: 2
     originalfaction: 4
@@ -3137,6 +3199,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 3
     territorystatus: 2
     foodfocus: 1
     buildfocus: 2
@@ -3155,9 +3218,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Phoenician trading outpost providing this and thats in an otherwise
-      scarce location. '
-    summary: Phoenician Trading Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 2
@@ -3184,6 +3244,9 @@ MonoBehaviour:
   - name: Helketion
     locationtype: Settled
     locationsubtype: Stronghold
+    description: 'Aggressively protects extensive farmlands from Greek curiosity and,
+      so far, incursions. '
+    summary: Sikan Valley Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -3191,6 +3254,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 4
     territorysoil: 2
+    territorysize: 3
     territorystatus: 4
     foodfocus: 1
     buildfocus: 4
@@ -3209,9 +3273,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: 'Aggressively protects extensive farmlands from Greek curiosity and,
-      so far, incursions. '
-    summary: Sikan Valley Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -3237,6 +3298,9 @@ MonoBehaviour:
   - name: Heloros
     locationtype: Settled
     locationsubtype: Village
+    description: Forward Syrakusan phrourion developed into a prosperous settlement
+      in its own right, due to its rich farmlands and supply of serf-labor.
+    summary: Greek Prosperous Outpost
     populationsize: 6
     founded: 4
     originalfaction: 5
@@ -3244,6 +3308,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 4
+    territorysize: 1
     territorystatus: 4
     foodfocus: 2
     buildfocus: 1
@@ -3262,9 +3327,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Forward Syrakusan phrourion developed into a prosperous settlement
-      in its own right, due to its rich farmlands and supply of serf-labor.
-    summary: Greek Prosperous Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -3290,6 +3352,8 @@ MonoBehaviour:
   - name: Herbessos
     locationtype: Settled
     locationsubtype: Village
+    description: Claims ties to Herakles who supposedly visited here on his labors.
+    summary: Sikel Mountain Village
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -3297,6 +3361,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -3315,8 +3380,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: Claims ties to Herakles who supposedly visited here on his labors.
-    summary: Sikel Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -3342,6 +3405,8 @@ MonoBehaviour:
   - name: Herbita
     locationtype: Settled
     locationsubtype: Village
+    description: Secluded and home to a mysterious, possibly gruesome cult.
+    summary: Sikel Mountain Village
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -3349,6 +3414,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 1
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -3367,8 +3433,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: Secluded and home to a mysterious, possibly gruesome cult.
-    summary: Sikel Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -3394,6 +3458,8 @@ MonoBehaviour:
   - name: Himera
     locationtype: Settled
     locationsubtype: Polis
+    description: Dominates important sea and land routes.
+    summary: Greek Polis
     populationsize: 10
     founded: 4
     originalfaction: 5
@@ -3401,6 +3467,7 @@ MonoBehaviour:
     greektype: 2
     hellenized: 0
     territorysoil: 2
+    territorysize: 5
     territorystatus: 4
     foodfocus: 1
     buildfocus: 5
@@ -3419,8 +3486,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Dominates important sea and land routes.
-    summary: Greek Polis
     politicalhierarchy: 5
     dominates: Kolle Kalos,Skiara
     politicalauthority: 2
@@ -3447,6 +3512,9 @@ MonoBehaviour:
   - name: Hippana
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Its position along the Akragas-Panormos road drives a commercial,
+      pro-Phoenician demeanor.
+    summary: Sikan Mountain Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 2
@@ -3454,6 +3522,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 3
     territorystatus: 4
     foodfocus: 1
     buildfocus: 1
@@ -3472,9 +3541,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: Its position along the Akragas-Panormos road drives a commercial,
-      pro-Phoenician demeanor.
-    summary: Sikan Mountain Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -3500,6 +3566,9 @@ MonoBehaviour:
   - name: Hybla Geleatis
     locationtype: Settled
     locationsubtype: UrbanCenter
+    description: Traditionally independent and strong, with a king that is happy to
+      cash in on Greek products for profit.
+    summary: Sikel Urban Center
     populationsize: 7
     founded: 1
     originalfaction: 1
@@ -3507,6 +3576,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 3
+    territorysize: 4
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -3525,9 +3595,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 1
-    description: Traditionally independent and strong, with a king that is happy to
-      cash in on Greek products for profit.
-    summary: Sikel Urban Center
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -3554,6 +3621,8 @@ MonoBehaviour:
   - name: Hybla Heraia
     locationtype: Settled
     locationsubtype: UrbanCenter
+    description: 'Traditionally dominating, now bracing for Syrakousan aggression. '
+    summary: Sikel Local Capital
     populationsize: 7
     founded: 1
     originalfaction: 1
@@ -3561,6 +3630,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 5
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -3579,8 +3649,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 2
-    description: 'Traditionally dominating, now bracing for Syrakousan aggression. '
-    summary: Sikel Local Capital
     politicalhierarchy: 4
     dominates: Motyka,Skikli
     politicalauthority: 3
@@ -3606,6 +3674,9 @@ MonoBehaviour:
   - name: Hykarra
     locationtype: Settled
     locationsubtype: Village
+    description: Fishing village that increasingly capitalizes on Phoenician trade
+      opportunities.
+    summary: Sikan Coastal Village
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -3613,6 +3684,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 2
     territorystatus: 4
     foodfocus: 1
     buildfocus: 2
@@ -3631,9 +3703,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Fishing village that increasingly capitalizes on Phoenician trade
-      opportunities.
-    summary: Sikan Coastal Settlement
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -3659,6 +3728,8 @@ MonoBehaviour:
   - name: Iaitas
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Strong and commanding while rapidly hellenizing.
+    summary: Elymian Valley Stronghold
     populationsize: 5
     founded: 1
     originalfaction: 3
@@ -3666,6 +3737,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 2
+    territorysize: 3
     territorystatus: 3
     foodfocus: 2
     buildfocus: 5
@@ -3684,8 +3756,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Strong and commanding while rapidly hellenizing.
-    summary: Elymian Valley Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -3711,6 +3781,9 @@ MonoBehaviour:
   - name: Ichana
     locationtype: Settled
     locationsubtype: Village
+    description: 'Greatly held out against Syrakusan domination of the territory -
+      at the cost of most of their population. '
+    summary: Sikel Coastal Settlement
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -3718,6 +3791,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 3
+    territorysize: 1
     territorystatus: 2
     foodfocus: 1
     buildfocus: 1
@@ -3736,9 +3810,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Greatly held out against Syrakusan domination of the territory -
-      at the cost of most of their population. '
-    summary: Sikel Coastal Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -3763,7 +3834,9 @@ MonoBehaviour:
     surety: 2
   - name: Imachara
     locationtype: Settled
-    locationsubtype: Village
+    locationsubtype: Stronghold
+    description: Rich lands, hardworking people and strong communal institutions.
+    summary: Sikel Mountain Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 1
@@ -3771,6 +3844,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 3
+    territorysize: 2
     territorystatus: 3
     foodfocus: 2
     buildfocus: 1
@@ -3789,8 +3863,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: Rich lands, hardworking people and strong communal institutions.
-    summary: Sikel Mountain Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -3816,6 +3888,8 @@ MonoBehaviour:
   - name: Inessa
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Waystation to top of Etna that is rich in strength and farmlands.
+    summary: Sikel Volcano Stronghold
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -3823,6 +3897,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 4
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 2
@@ -3841,8 +3916,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Waystation to top of Etna that is rich in strength and farmlands.
-    summary: Sikel Volcano Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -3869,6 +3942,8 @@ MonoBehaviour:
   - name: Inikon
     locationtype: Settled
     locationsubtype: Village
+    description: Sells its specialty wines along the Egesta trade system.
+    summary: Elymian Mountain Village
     populationsize: 4
     founded: 1
     originalfaction: 3
@@ -3876,6 +3951,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 4
     buildfocus: 1
@@ -3894,8 +3970,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Sells its specialty wines along the Egesta trade system.
-    summary: Elymian Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -3921,6 +3995,9 @@ MonoBehaviour:
   - name: Ispika
     locationtype: Settled
     locationsubtype: Village
+    description: 'Use of extensive nearby cave systems make this previously thriving
+      settlement hard to conquer. '
+    summary: Sikel Caves Settlement
     populationsize: 3
     founded: 1
     originalfaction: 1
@@ -3928,6 +4005,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 5
     territorysoil: 2
+    territorysize: 1
     territorystatus: 1
     foodfocus: 1
     buildfocus: 4
@@ -3946,9 +4024,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Use of extensive nearby cave systems make this previously thriving
-      settlement hard to conquer. '
-    summary: Sikel Caves Settlement
     politicalhierarchy: 2
     dominates: 
     politicalauthority: 1
@@ -3974,6 +4049,9 @@ MonoBehaviour:
   - name: Kakyron
     locationtype: Settled
     locationsubtype: Village
+    description: Flourishing Greek subcolony that was won by Akragas with Geloan help.
+      Dominates surrounding farmland economies.
+    summary: Greek Commercial Center
     populationsize: 4
     founded: 4
     originalfaction: 2
@@ -3981,6 +4059,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 3
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 2
     buildfocus: 1
@@ -3999,9 +4078,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Flourishing Greek subcolony that was won by Akragas with Geloan help.
-      Dominates surrounding farmland economies.
-    summary: Greek Commercial Center
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -4026,7 +4102,10 @@ MonoBehaviour:
     surety: 1
   - name: Kalakte
     locationtype: Settled
-    locationsubtype: Stronghold
+    locationsubtype: Village
+    description: Occasional trade with passing Greek and Etruscan merchant ships on
+      an otherwise secluded stretch of coast.
+    summary: Sikel Coastal Village
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -4034,6 +4113,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 3
     territorystatus: 4
     foodfocus: 1
     buildfocus: 2
@@ -4052,9 +4132,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Occasional trade with passing Greek and Etruscan merchant ships on
-      an otherwise secluded stretch of coast.
-    summary: Sikel Coastal Settlement
     politicalhierarchy: 4
     dominates: Kilon
     politicalauthority: 2
@@ -4080,6 +4157,9 @@ MonoBehaviour:
   - name: Kaligenos
     locationtype: Settled
     locationsubtype: Village
+    description: 'In an advantageous position, but dominated by its Northern Sikel
+      neighbors. Maintains a small sanctuary with meagre offerings. '
+    summary: Sikan Hilltop Frontier
     populationsize: 2
     founded: 1
     originalfaction: 2
@@ -4087,6 +4167,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -4105,9 +4186,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'In an advantageous position, but dominated by its Northern Sikel
-      neighbors. Maintains a small sanctuary with meagre offerings. '
-    summary: Sikan Hilltop Frontier
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -4133,6 +4211,9 @@ MonoBehaviour:
   - name: Kalkarak
     locationtype: Settled
     locationsubtype: Village
+    description: Its strategic and defensible position has seen its ancient inhabitants
+      entirely dominated by a strong Akragantine Garrison.
+    summary: Hilltop Fortress Settlement
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -4140,6 +4221,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 5
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -4158,9 +4240,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Its strategic and defensible position has seen its ancient inhabitants
-      entirely dominated by a strong Akragantine Garrison.
-    summary: Hilltop Fortress Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -4186,6 +4265,8 @@ MonoBehaviour:
   - name: Kallipolis
     locationtype: Settled
     locationsubtype: Village
+    description: Stronghold and food source to Naxos.
+    summary: Dependent Greek Polis
     populationsize: 4
     founded: 4
     originalfaction: 5
@@ -4193,6 +4274,7 @@ MonoBehaviour:
     greektype: 2
     hellenized: 0
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -4211,8 +4293,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Stronghold and food source to Naxos.
-    summary: Dependent Greek Polis
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -4238,6 +4318,8 @@ MonoBehaviour:
   - name: Kaloba
     locationtype: Settled
     locationsubtype: Village
+    description: Few remain from emigration, but they remain on the rock.
+    summary: Elymian Lowland Village
     populationsize: 1
     founded: 1
     originalfaction: 3
@@ -4245,6 +4327,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 2
     territorystatus: 2
     foodfocus: 1
     buildfocus: 1
@@ -4263,8 +4346,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Few remain from emigration, but they remain on the rock.
-    summary: Elymian Plains Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -4291,6 +4372,8 @@ MonoBehaviour:
   - name: Kaltigene
     locationtype: Settled
     locationsubtype: UrbanCenter
+    description: Ancient and conservative Sikan valley-controller.
+    summary: Sikan Urban Center
     populationsize: 6
     founded: 1
     originalfaction: 2
@@ -4298,6 +4381,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 4
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -4316,8 +4400,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: Ancient and conservative Sikan valley-controller.
-    summary: Sikan Urban Center
     politicalhierarchy: 5
     dominates: Gibol Gabol,Motyon
     politicalauthority: 1
@@ -4343,6 +4425,9 @@ MonoBehaviour:
   - name: Kamarina
     locationtype: Settled
     locationsubtype: Polis
+    description: Original Syrakusan foundation has already revolted, lost, and been
+      repopulated by Gelans.
+    summary: Greek Polis
     populationsize: 7
     founded: 4
     originalfaction: 5
@@ -4350,6 +4435,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 3
+    territorysize: 5
     territorystatus: 2
     foodfocus: 2
     buildfocus: 4
@@ -4368,9 +4454,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 1
-    description: Original Syrakusan foundation has already revolted, lost, and been
-      repopulated by Gelans.
-    summary: Greek Polis
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 2
@@ -4396,6 +4479,8 @@ MonoBehaviour:
   - name: Kamerai
     locationtype: Settled
     locationsubtype: Village
+    description: Nucleus of settlements around a fertile riverdelta.
+    summary: Productive Sikan Riverdelta
     populationsize: 3
     founded: 1
     originalfaction: 1
@@ -4403,6 +4488,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 4
+    territorysize: 1
     territorystatus: 4
     foodfocus: 2
     buildfocus: 1
@@ -4421,8 +4507,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Nucleus of settlements around a fertile riverdelta.
-    summary: Productive Sikan Riverdelta
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -4448,6 +4532,9 @@ MonoBehaviour:
   - name: Kamikos
     locationtype: Settled
     locationsubtype: Village
+    description: 'Powerful, defensible Sikanian site that dominates the lower river
+      and prime farmlands. '
+    summary: Conquered Sikanian Capital
     populationsize: 8
     founded: 1
     originalfaction: 2
@@ -4455,6 +4542,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -4473,9 +4561,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Powerful, defensible Sikanian site that dominates the lower river
-      and prime farmlands. '
-    summary: Conquered Sikanian Capital
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -4502,7 +4587,10 @@ MonoBehaviour:
     surety: 1
   - name: Kamporale
     locationtype: Settled
-    locationsubtype: Stronghold
+    locationsubtype: Village
+    description: Minor settlement suspected of playing a major role in mysterious
+      local hazards to road traffic.
+    summary: Elymian Mountain Village
     populationsize: 3
     founded: 1
     originalfaction: 3
@@ -4510,6 +4598,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -4528,9 +4617,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Minor settlement suspected of playing a major role in mysterious
-      local hazards to road traffic.
-    summary: Elymian Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -4556,6 +4642,8 @@ MonoBehaviour:
   - name: Kapod
     locationtype: Settled
     locationsubtype: Village
+    description: 'Sikel settlement has been fortified and serves as outpost now. '
+    summary: Sikel Fortress
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -4563,6 +4651,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -4581,8 +4670,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Sikel settlement has been fortified and serves as outpost now. '
-    summary: Sikel Fortress
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -4608,6 +4695,9 @@ MonoBehaviour:
   - name: Kaprianon
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Its defensive qualities and border-position have so far seen it spared
+      from overwhelming force.
+    summary: Sikan Hilltop Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -4615,6 +4705,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 4
     territorysoil: 2
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -4633,9 +4724,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 2
-    description: Its defensive qualities and border-position have so far seen it spared
-      from overwhelming force.
-    summary: Sikan Hilltop Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -4661,6 +4749,9 @@ MonoBehaviour:
   - name: Kapution
     locationtype: Settled
     locationsubtype: Village
+    description: Currently ruled by a cruel puppet-king installed by Engyon to ensure
+      resource extraction.
+    summary: Small Sikel Settlement
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -4668,6 +4759,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -4686,9 +4778,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Currently ruled by a cruel puppet-king installed by Engyon to ensure
-      resource extraction.
-    summary: Small Sikel Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 3
@@ -4714,6 +4803,8 @@ MonoBehaviour:
   - name: Karastele
     locationtype: Settled
     locationsubtype: Village
+    description: Stays out of sight and spheres of influence.
+    summary: Sikan Hidden Village
     populationsize: 2
     founded: 1
     originalfaction: 2
@@ -4721,6 +4812,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 1
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -4739,8 +4831,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: Stays out of sight and spheres of influence.
-    summary: Sikan Hidden Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -4766,6 +4856,8 @@ MonoBehaviour:
   - name: Karole
     locationtype: Settled
     locationsubtype: Village
+    description: Sits pretty amid riches of land and traffic.
+    summary: Sikel Hilltop Village
     populationsize: 3
     founded: 1
     originalfaction: 1
@@ -4773,6 +4865,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 1
     territorystatus: 4
     foodfocus: 3
     buildfocus: 1
@@ -4791,8 +4884,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 1
-    description: Sits pretty amid riches of land and traffic.
-    summary: Sikel Hilltop Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -4817,7 +4908,10 @@ MonoBehaviour:
     surety: 3
   - name: Kasasi
     locationtype: Settled
-    locationsubtype: Village
+    locationsubtype: Stronghold
+    description: Though with considerable fighting population, preference to be part
+      of a Sikel domain where Greeks are enchroaching.
+    summary: Sikel Hilltop Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -4825,6 +4919,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 1
     territorystatus: 4
     foodfocus: 1
     buildfocus: 1
@@ -4843,9 +4938,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 2
-    description: Though with considerable fighting population, preference to be part
-      of a Sikel domain where Greeks are enchroaching.
-    summary: Sikel Hilltop Stronghold
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -4871,6 +4963,9 @@ MonoBehaviour:
   - name: Kasgeraton
     locationtype: Settled
     locationsubtype: Village
+    description: 'Small colony of Geloan traders and farmers, in close cooperation
+      with Maroi. '
+    summary: Greek Commercial Outpost
     populationsize: 2
     founded: 4
     originalfaction: 5
@@ -4878,6 +4973,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 2
     buildfocus: 1
@@ -4896,9 +4992,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Small colony of Geloan traders and farmers, in close cooperation
-      with Maroi. '
-    summary: Greek Commercial Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -4924,6 +5017,9 @@ MonoBehaviour:
   - name: Kasibe
     locationtype: Settled
     locationsubtype: Village
+    description: Population center in a defensible position is now exploited for Syrakusan
+      labor demands.
+    summary: Sikel Hilltop Center
     populationsize: 6
     founded: 1
     originalfaction: 1
@@ -4931,6 +5027,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 3
+    territorysize: 1
     territorystatus: 2
     foodfocus: 2
     buildfocus: 1
@@ -4949,9 +5046,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Population center in a defensible position is now exploited for Syrakusan
-      labor demands.
-    summary: Sikel Hilltop Center
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -4977,6 +5071,8 @@ MonoBehaviour:
   - name: Kasmenai
     locationtype: Settled
     locationsubtype: Village
+    description: Poorly habitable but well-planned and well-populated military town.
+    summary: Greek Military Settlement
     populationsize: 4
     founded: 4
     originalfaction: 5
@@ -4984,6 +5080,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 0
     territorysoil: 1
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 5
@@ -5002,8 +5099,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Poorly habitable but well-planned and well-populated military town.
-    summary: Greek Military Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -5029,6 +5124,8 @@ MonoBehaviour:
   - name: Katane
     locationtype: Settled
     locationsubtype: Polis
+    description: 'Tradition of lawgiving: public order, family, justice, morality.'
+    summary: Greek Polis
     populationsize: 10
     founded: 4
     originalfaction: 5
@@ -5036,6 +5133,7 @@ MonoBehaviour:
     greektype: 2
     hellenized: 0
     territorysoil: 4
+    territorysize: 5
     territorystatus: 4
     foodfocus: 4
     buildfocus: 5
@@ -5054,8 +5152,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 1
-    description: 'Tradition of lawgiving: public order, family, justice, morality.'
-    summary: Greek Polis
     politicalhierarchy: 5
     dominates: 
     politicalauthority: 2
@@ -5081,6 +5177,8 @@ MonoBehaviour:
   - name: Kataria
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Controls rivers in several directions.
+    summary: Elymian Mountain Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 3
@@ -5088,6 +5186,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 3
     territorystatus: 3
     foodfocus: 2
     buildfocus: 2
@@ -5106,8 +5205,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Controls rivers in several directions.
-    summary: Elymian Mountain Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -5133,6 +5230,8 @@ MonoBehaviour:
   - name: Katulle
     locationtype: Settled
     locationsubtype: Village
+    description: 'Former native trading station is now mostly a small food provider. '
+    summary: Sikel Coastal Settlement
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -5140,6 +5239,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -5158,8 +5258,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Former native trading station is now mostly a small food provider. '
-    summary: Sikel Coastal Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -5185,6 +5283,8 @@ MonoBehaviour:
   - name: Kaukanai
     locationtype: Settled
     locationsubtype: Village
+    description: Nucleus of a productive farmlands cluster.
+    summary: Sikel Scattered Village
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -5192,6 +5292,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 2
     territorystatus: 3
     foodfocus: 2
     buildfocus: 1
@@ -5210,8 +5311,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 1
-    description: Nucleus of a productive farmlands cluster.
-    summary: Sikel Scattered Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -5237,6 +5336,8 @@ MonoBehaviour:
   - name: Kausos
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Overlooks a verdant river valley.
+    summary: Sikan Mountain Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -5244,6 +5345,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 6
     buildfocus: 1
@@ -5262,8 +5364,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: Overlooks a verdant river valley.
-    summary: Sikan Mountain Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -5289,6 +5389,8 @@ MonoBehaviour:
   - name: Kentoripa
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Strategic hub that re-exports and imitates Greek pottery and jewelry.
+    summary: Sikel Roadside Stronghold
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -5296,6 +5398,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 2
@@ -5314,8 +5417,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 2
-    description: Strategic hub that re-exports and imitates Greek pottery and jewelry.
-    summary: Sikel Roadside Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -5340,7 +5441,10 @@ MonoBehaviour:
     surety: 1
   - name: Kephaloidion
     locationtype: Settled
-    locationsubtype: Village
+    locationsubtype: Stronghold
+    description: Emulates Greek (building) traditions, significantly funded by passing
+      sea trade .
+    summary: Sikel Coastal Stronghold
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -5348,6 +5452,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 2
@@ -5366,9 +5471,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Emulates Greek (building) traditions, significantly funded by passing
-      sea trade .
-    summary: Sikel Coastal Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -5395,6 +5497,9 @@ MonoBehaviour:
   - name: Kibone
     locationtype: Settled
     locationsubtype: Village
+    description: 'Fortified ancient Sikanian town has fallen to Murene''s assault
+      troops recently. '
+    summary: Sikan Fortified Settlement
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -5402,6 +5507,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -5420,9 +5526,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Fortified ancient Sikanian town has fallen to Murene''s assault
-      troops recently. '
-    summary: Sikan Fortified Settlement
     politicalhierarchy: 2
     dominates: 
     politicalauthority: 1
@@ -5448,6 +5551,9 @@ MonoBehaviour:
   - name: Kilon
     locationtype: Settled
     locationsubtype: Village
+    description: Small, strong and fortified, placated by Phoenician imports, it protects
+      them and their Konika founders.
+    summary: Sikel Strategic Strongpoint
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -5455,6 +5561,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -5473,9 +5580,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Small, strong and fortified, placated by Phoenician imports, it protects
-      them and their Konika founders.
-    summary: Sikel Strategic Strongpoint
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -5500,7 +5604,10 @@ MonoBehaviour:
     surety: 3
   - name: Kimena
     locationtype: Settled
-    locationsubtype: Stronghold
+    locationsubtype: UrbanCenter
+    description: Productive and commercial settlement sees a confluence of Greek and
+      Phoenician cultures.
+    summary: Sikan Cultural Center
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -5508,6 +5615,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 3
+    territorysize: 3
     territorystatus: 4
     foodfocus: 1
     buildfocus: 3
@@ -5526,9 +5634,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: Productive and commercial settlement sees a confluence of Greek and
-      Phoenician cultures.
-    summary: Sikan Cultural Hub
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 2
@@ -5555,6 +5660,8 @@ MonoBehaviour:
   - name: Kolibra
     locationtype: Settled
     locationsubtype: Village
+    description: 'Out of sight and not easily accessible. '
+    summary: Sikan Mountain Village
     populationsize: 3
     founded: 1
     originalfaction: 2
@@ -5562,6 +5669,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 1
+    territorysize: 1
     territorystatus: 4
     foodfocus: 1
     buildfocus: 1
@@ -5580,8 +5688,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: 'Out of sight and not easily accessible. '
-    summary: Sikan Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -5607,6 +5713,8 @@ MonoBehaviour:
   - name: Kolle Kalos
     locationtype: Settled
     locationsubtype: Village
+    description: Dominated by Himeran Greek as a food source at an early stage.
+    summary: Minor Sikan Farmlands
     populationsize: 2
     founded: 1
     originalfaction: 2
@@ -5614,6 +5722,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 2
     buildfocus: 1
@@ -5632,8 +5741,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Dominated by Himeran Greek as a food source at an early stage.
-    summary: Minor Sikan Farmlands
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -5659,6 +5766,8 @@ MonoBehaviour:
   - name: Koor
     locationtype: Settled
     locationsubtype: Village
+    description: Local traditions are greatly impacted by outside religious influence.
+    summary: Sikel Mountain Village
     populationsize: 3
     founded: 1
     originalfaction: 1
@@ -5666,6 +5775,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -5684,8 +5794,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Local traditions are greatly impacted by outside religious influence.
-    summary: Sikel Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -5712,6 +5820,9 @@ MonoBehaviour:
   - name: Koskon
     locationtype: Settled
     locationsubtype: Village
+    description: 'Akragantine outpost that secures a major inland road, and an area
+      rich in water and fertility. '
+    summary: Greek Farming Outpost
     populationsize: 4
     founded: 4
     originalfaction: 5
@@ -5719,6 +5830,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 3
     buildfocus: 1
@@ -5737,9 +5849,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Akragantine outpost that secures a major inland road, and an area
-      rich in water and fertility. '
-    summary: Greek Farming Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -5765,6 +5874,9 @@ MonoBehaviour:
   - name: Krastos
     locationtype: Settled
     locationsubtype: Village
+    description: 'Most Northern outpost under direct Akragantine control. Fortifications
+      are still under construction. '
+    summary: Forward Greek Outpost
     populationsize: 2
     founded: 4
     originalfaction: 5
@@ -5772,6 +5884,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 4
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -5790,9 +5903,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Most Northern outpost under direct Akragantine control. Fortifications
-      are still under construction. '
-    summary: Forward Greek Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -5818,6 +5928,9 @@ MonoBehaviour:
   - name: Kronia
     locationtype: Settled
     locationsubtype: Village
+    description: Though overlooking the Panormos coast and fortress, its people are
+      drawn to Greek traditions.
+    summary: Sikan Hilltop Village
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -5825,6 +5938,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -5843,9 +5957,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 1
-    description: Though overlooking the Panormos coast and fortress, its people are
-      drawn to Greek traditions.
-    summary: Sikan Hilltop Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -5870,7 +5981,10 @@ MonoBehaviour:
     surety: 5
   - name: Lavenka
     locationtype: Settled
-    locationsubtype: Stronghold
+    locationsubtype: Village
+    description: Small but productive hilltop settlement that would be a first step
+      in Geloan expansion.
+    summary: Sikel Hilltop Village
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -5878,6 +5992,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 4
     territorysoil: 3
+    territorysize: 3
     territorystatus: 4
     foodfocus: 1
     buildfocus: 1
@@ -5896,9 +6011,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Small but productive hilltop settlement that would be a first step
-      in Geloan expansion.
-    summary: Sikel Hilltop Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -5924,6 +6036,9 @@ MonoBehaviour:
   - name: Leona
     locationtype: Settled
     locationsubtype: Village
+    description: Original native people displaced by a small productive Greek outpost
+      in an excellent strategic location.
+    summary: Strategic Greek Outpost
     populationsize: 4
     founded: 4
     originalfaction: 1
@@ -5931,6 +6046,7 @@ MonoBehaviour:
     greektype: 2
     hellenized: 0
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 2
     buildfocus: 4
@@ -5949,9 +6065,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Original native people displaced by a small productive Greek outpost
-      in an excellent strategic location.
-    summary: Strategic Greek Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -5977,6 +6090,8 @@ MonoBehaviour:
   - name: Leontinoi
     locationtype: Settled
     locationsubtype: Polis
+    description: Powerful agricultural economy and institutions.
+    summary: Greek Polis
     populationsize: 10
     founded: 3
     originalfaction: 5
@@ -5984,6 +6099,7 @@ MonoBehaviour:
     greektype: 2
     hellenized: 0
     territorysoil: 5
+    territorysize: 5
     territorystatus: 5
     foodfocus: 1
     buildfocus: 5
@@ -6002,8 +6118,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 1
-    description: Powerful agricultural economy and institutions.
-    summary: Greek Polis
     politicalhierarchy: 5
     dominates: Balkonon,Leona,Symaithos
     politicalauthority: 2
@@ -6029,6 +6143,9 @@ MonoBehaviour:
   - name: Lipara
     locationtype: Settled
     locationsubtype: Polis
+    description: Largest city of the largest Aiolian island. Successfully supports
+      a proto-socialist farming community.
+    summary: Greek Island Polis
     populationsize: 9
     founded: 5
     originalfaction: 5
@@ -6036,6 +6153,7 @@ MonoBehaviour:
     greektype: 2
     hellenized: 0
     territorysoil: 3
+    territorysize: 5
     territorystatus: 5
     foodfocus: 2
     buildfocus: 2
@@ -6054,9 +6172,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Largest city of the largest Aiolian island. Successfully supports
-      a proto-socialist farming community.
-    summary: Greek Island Polis
     politicalhierarchy: 5
     dominates: 
     politicalauthority: 5
@@ -6082,7 +6197,9 @@ MonoBehaviour:
     surety: 1
   - name: Longane
     locationtype: Settled
-    locationsubtype: UrbanCenter
+    locationsubtype: Stronghold
+    description: 'Competes for local dominance with Abakainon. '
+    summary: Sikel River Stronghold
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -6090,6 +6207,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 4
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -6108,8 +6226,6 @@ MonoBehaviour:
     resourceoffload: Zankle
     primarydifficulty: 1
     secondarydifficulty: 2
-    description: 'Competes for local dominance with Abakainon. '
-    summary: Sikel River Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -6136,6 +6252,9 @@ MonoBehaviour:
   - name: Madara
     locationtype: Settled
     locationsubtype: UrbanCenter
+    description: Commercial and Agricultaral center with strong Greek influence on
+      its cults and industries.
+    summary: Sikan Urban Center
     populationsize: 6
     founded: 1
     originalfaction: 2
@@ -6143,6 +6262,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 4
     territorystatus: 4
     foodfocus: 1
     buildfocus: 2
@@ -6161,9 +6281,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Commercial and Agricultaral center with strong Greek influence on
-      its cults and industries.
-    summary: Sikan Urban Center
     politicalhierarchy: 4
     dominates: Pikone
     politicalauthority: 1
@@ -6188,7 +6305,10 @@ MonoBehaviour:
     surety: 3
   - name: Makella
     locationtype: Settled
-    locationsubtype: UrbanCenter
+    locationsubtype: Stronghold
+    description: Controls an important intersection of Phoenician - Greek trade from
+      a rich and defensible position.
+    summary: Sikan Axis Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 2
@@ -6196,6 +6316,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 4
     territorystatus: 4
     foodfocus: 1
     buildfocus: 2
@@ -6214,9 +6335,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Controls an important intersection of Phoenician - Greek trade from
-      a rich and defensible position.
-    summary: Sikan Axis Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -6243,6 +6361,9 @@ MonoBehaviour:
   - name: Maktorion
     locationtype: Settled
     locationsubtype: Stronghold
+    description: 'A hybrid settlement where the Greek garrison protects the access
+      to the plains of Gela, but has little say about the local economy. '
+    summary: Sikel Hilltop Stronghold
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -6250,6 +6371,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 5
     territorysoil: 2
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -6268,9 +6390,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'A hybrid settlement where the Greek garrison protects the access
-      to the plains of Gela, but has little say about the local economy. '
-    summary: Sikel Hilltop Stronghold
     politicalhierarchy: 2
     dominates: 
     politicalauthority: 4
@@ -6295,7 +6414,9 @@ MonoBehaviour:
     surety: 2
   - name: Manikos
     locationtype: Settled
-    locationsubtype: Village
+    locationsubtype: Stronghold
+    description: Sikan outlier in a dominant hilltop position.
+    summary: Sikan Hillpass Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -6303,6 +6424,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -6321,8 +6443,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Sikan outlier in a dominant hilltop position.
-    summary: Sikan Hillpass Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -6348,6 +6468,8 @@ MonoBehaviour:
   - name: Markesa
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Wedged between greater powers.
+    summary: Sikan Hilltop Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -6355,6 +6477,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -6373,8 +6496,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Wedged between greater powers.
-    summary: Sikan Hilltop Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -6400,6 +6521,9 @@ MonoBehaviour:
   - name: Maroi
     locationtype: Settled
     locationsubtype: UrbanCenter
+    description: Several summit plateaus host workshops, sanctuaries, and both Ionian
+      and Dorian Greek subgroups.
+    summary: Sikel Commercial Center
     populationsize: 7
     founded: 1
     originalfaction: 1
@@ -6407,6 +6531,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 3
+    territorysize: 4
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -6425,9 +6550,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 2
-    description: Several summit plateaus host workshops, sanctuaries, and both Ionian
-      and Dorian Greek subgroups.
-    summary: Sikel Commercial Center
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -6453,6 +6575,9 @@ MonoBehaviour:
   - name: Mastrome
     locationtype: Settled
     locationsubtype: Village
+    description: Small trading base where the most crafty Sikel from surrounding settlements
+      peddle wares to road travelers.
+    summary: Sikel Coastal Waystation
     populationsize: 3
     founded: 1
     originalfaction: 1
@@ -6460,6 +6585,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 2
@@ -6478,9 +6604,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 1
-    description: Small trading base where the most crafty Sikel from surrounding settlements
-      peddle wares to road travelers.
-    summary: Sikel Coastal Waystation
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -6506,6 +6629,9 @@ MonoBehaviour:
   - name: Mazara
     locationtype: Settled
     locationsubtype: Village
+    description: 'Initial Phoenician settlement has been long vacated and established
+      as fortified emporion by Selinous. '
+    summary: Greek Trading Outpost
     populationsize: 4
     founded: 2
     originalfaction: 4
@@ -6513,6 +6639,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 4
+    territorysize: 1
     territorystatus: 4
     foodfocus: 1
     buildfocus: 1
@@ -6531,9 +6658,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Initial Phoenician settlement has been long vacated and established
-      as fortified emporion by Selinous. '
-    summary: Greek Trading Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -6558,7 +6682,9 @@ MonoBehaviour:
     surety: 1
   - name: Megara
     locationtype: Settled
-    locationsubtype: UrbanCenter
+    locationsubtype: Polis
+    description: Never quite found its footing. Progressive but hemmed in.
+    summary: Greek Polis
     populationsize: 9
     founded: 3
     originalfaction: 5
@@ -6566,6 +6692,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 3
+    territorysize: 4
     territorystatus: 4
     foodfocus: 2
     buildfocus: 4
@@ -6584,8 +6711,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Never quite found its footing. Progressive but hemmed in.
-    summary: Greek Polis
     politicalhierarchy: 5
     dominates: Katulle,Selefe,Styella
     politicalauthority: 5
@@ -6610,7 +6735,10 @@ MonoBehaviour:
     surety: 1
   - name: Menai
     locationtype: Settled
-    locationsubtype: Village
+    locationsubtype: Stronghold
+    description: 'Small but prosperous Sikel settlement, with strong adherence to
+      their old traditions. '
+    summary: Sikel Mountain Stronghold
     populationsize: 3
     founded: 1
     originalfaction: 1
@@ -6618,6 +6746,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 3
+    territorysize: 1
     territorystatus: 4
     foodfocus: 1
     buildfocus: 2
@@ -6636,9 +6765,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Small but prosperous Sikel settlement, with strong adherence to
-      their old traditions. '
-    summary: Sikel Mountain Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -6664,6 +6790,8 @@ MonoBehaviour:
   - name: Mentuse
     locationtype: Settled
     locationsubtype: Village
+    description: Nucleus of farmlands on the Eastern Gela plain.
+    summary: Productive Sikan Farmlands
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -6671,6 +6799,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 3
+    territorysize: 1
     territorystatus: 4
     foodfocus: 2
     buildfocus: 1
@@ -6689,8 +6818,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Nucleus of farmlands on the Eastern Gela plain.
-    summary: Productive Sikan Farmlands
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -6716,6 +6843,9 @@ MonoBehaviour:
   - name: Merkane
     locationtype: Settled
     locationsubtype: Village
+    description: Minorly concerned with Greek domination when they can keep access
+      to their beautiful coast and river trade.
+    summary: Sikan Coastal Settlement
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -6723,6 +6853,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -6741,9 +6872,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Minorly concerned with Greek domination when they can keep access
-      to their beautiful coast and river trade.
-    summary: Sikan Coastal Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -6769,6 +6897,9 @@ MonoBehaviour:
   - name: Minoa
     locationtype: Settled
     locationsubtype: Village
+    description: Previously-contested Selinous border outpost has seen its distant
+      support weaken recently.
+    summary: Greek Border Outpost
     populationsize: 6
     founded: 4
     originalfaction: 5
@@ -6776,6 +6907,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -6794,9 +6926,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Previously-contested Selinous border outpost has seen its distant
-      support weaken recently.
-    summary: Greek Border Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -6822,6 +6951,9 @@ MonoBehaviour:
   - name: Montope
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Particularly wealthy settlement is rumored to control a rare source
+      of metal.
+    summary: Elymian Mountain Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 3
@@ -6829,6 +6961,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 2
@@ -6847,9 +6980,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Particularly wealthy settlement is rumored to control a rare source
-      of metal.
-    summary: Elymian Mountain Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -6875,6 +7005,9 @@ MonoBehaviour:
   - name: Morankusa
     locationtype: Settled
     locationsubtype: Stronghold
+    description: A taste for quality wares leads it to occasional direct contact with
+      Selinous.
+    summary: Elymian Hilltop Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 3
@@ -6882,6 +7015,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 3
     territorystatus: 3
     foodfocus: 2
     buildfocus: 3
@@ -6900,9 +7034,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: A taste for quality wares leads it to occasional direct contact with
-      Selinous.
-    summary: Elymian Hilltop Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -6929,6 +7060,8 @@ MonoBehaviour:
   - name: Morgantina
     locationtype: Settled
     locationsubtype: UrbanCenter
+    description: Legends of an Italian foundation, now an entrepreneurial community.
+    summary: Sikel Urban Center
     populationsize: 7
     founded: 5
     originalfaction: 0
@@ -6936,6 +7069,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 3
+    territorysize: 4
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -6954,8 +7088,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Legends of an Italian foundation, now an entrepreneurial community.
-    summary: Sikel Active Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 3
@@ -6984,6 +7116,8 @@ MonoBehaviour:
   - name: Motya
     locationtype: Settled
     locationsubtype: UrbanCenter
+    description: 'Important commercial waystation, set on an island in a shallow lagoon. '
+    summary: Phoenician Local Capital
     populationsize: 8
     founded: 2
     originalfaction: 4
@@ -6991,6 +7125,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 4
     territorystatus: 5
     foodfocus: 1
     buildfocus: 1
@@ -7009,8 +7144,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Important commercial waystation, set on an island in a shallow lagoon. '
-    summary: Phoenician Local Capital
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 2
@@ -7037,6 +7170,9 @@ MonoBehaviour:
   - name: Motyka
     locationtype: Settled
     locationsubtype: Village
+    description: Prosperous Sikel settlement that is at the border of (and has experienced)
+      Syrakusan aggression.
+    summary: Sikel Hilltop Settlement
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -7044,6 +7180,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 4
     territorysoil: 3
+    territorysize: 1
     territorystatus: 2
     foodfocus: 1
     buildfocus: 4
@@ -7062,9 +7199,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Prosperous Sikel settlement that is at the border of (and has experienced)
-      Syrakusan aggression.
-    summary: Sikel Hilltop Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -7090,6 +7224,9 @@ MonoBehaviour:
   - name: Motyon
     locationtype: Settled
     locationsubtype: Village
+    description: Small settlement that was made into a fortress after previous incursions
+      by Phalaris.
+    summary: Sikan Valley Fortress
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -7097,6 +7234,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -7115,9 +7253,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Small settlement that was made into a fortress after previous incursions
-      by Phalaris.
-    summary: Sikan Valley Fortress
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -7143,6 +7278,9 @@ MonoBehaviour:
   - name: Murene
     locationtype: Settled
     locationsubtype: UrbanCenter
+    description: 'Less concerned with bordering Sikel / Sikanian culture than with
+      its own warrior and festival traditions. '
+    summary: Mixed Urban Center
     populationsize: 6
     founded: 1
     originalfaction: 1
@@ -7150,6 +7288,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 3
+    territorysize: 4
     territorystatus: 2
     foodfocus: 1
     buildfocus: 3
@@ -7168,9 +7307,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: 'Less concerned with bordering Sikel / Sikanian culture than with
-      its own warrior and festival traditions. '
-    summary: Mixed Warrior Center
     politicalhierarchy: 5
     dominates: Kaligenos,Kibone
     politicalauthority: 1
@@ -7196,6 +7332,9 @@ MonoBehaviour:
   - name: Mylai
     locationtype: Settled
     locationsubtype: Village
+    description: 'Has some drive to controls its own constitution independently of
+      Zankle, but has not got very far. '
+    summary: Phorurion of Zankle
     populationsize: 6
     founded: 4
     originalfaction: 5
@@ -7203,6 +7342,7 @@ MonoBehaviour:
     greektype: 2
     hellenized: 0
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -7221,9 +7361,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Has some drive to controls its own constitution independently of
-      Zankle, but has not got very far. '
-    summary: Phorurion of Zankle
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -7249,7 +7386,9 @@ MonoBehaviour:
     surety: 1
   - name: Myttistratos
     locationtype: Settled
-    locationsubtype: Village
+    locationsubtype: Stronghold
+    description: Founded as a forward post of Akragas, now self-serving in the distance.
+    summary: Greek Mountain Stronghold
     populationsize: 4
     founded: 4
     originalfaction: 5
@@ -7257,6 +7396,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 2
     buildfocus: 4
@@ -7275,8 +7415,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Founded as a forward post of Akragas, now self-serving in the distance.
-    summary: Greek Mountain Fortress
     politicalhierarchy: 3
     dominates: Alagene
     politicalauthority: 5
@@ -7302,6 +7440,9 @@ MonoBehaviour:
   - name: Nakone
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Rich farmlands, strong allies, and political strife over how to deal
+      with looming Selinous power.
+    summary: Productive Elymian Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 3
@@ -7309,6 +7450,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 3
     territorystatus: 5
     foodfocus: 1
     buildfocus: 4
@@ -7327,9 +7469,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Rich farmlands, strong allies, and political strife over how to deal
-      with looming Selinous power.
-    summary: Productive Elymian Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -7355,6 +7494,9 @@ MonoBehaviour:
   - name: Naone
     locationtype: Settled
     locationsubtype: Village
+    description: 'Small Sikan farming settlement that is feeling the heat from potential
+      Greek aggression. '
+    summary: Sikan Hilltop Village
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -7362,6 +7504,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -7380,9 +7523,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: 'Small Sikan farming settlement that is feeling the heat from potential
-      Greek aggression. '
-    summary: Sikan Hilltop Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -7408,6 +7548,9 @@ MonoBehaviour:
   - name: Naulochos
     locationtype: Settled
     locationsubtype: Village
+    description: A tiny but dedicated warship building industry - perhaps related
+      to pirate activity.
+    summary: Greek Coastal Village
     populationsize: 4
     founded: 4
     originalfaction: 5
@@ -7415,6 +7558,7 @@ MonoBehaviour:
     greektype: 3
     hellenized: 0
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 2
@@ -7433,9 +7577,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 1
-    description: A tiny but dedicated warship building industry - perhaps related
-      to pirate activity.
-    summary: Greek Coastal Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -7461,6 +7602,9 @@ MonoBehaviour:
   - name: Naxos
     locationtype: Settled
     locationsubtype: Polis
+    description: Foundational legend makes for stronger diplomatic than territorial
+      power.
+    summary: Greek Polis
     populationsize: 10
     founded: 3
     originalfaction: 5
@@ -7468,6 +7612,7 @@ MonoBehaviour:
     greektype: 2
     hellenized: 0
     territorysoil: 2
+    territorysize: 5
     territorystatus: 3
     foodfocus: 4
     buildfocus: 5
@@ -7486,9 +7631,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Foundational legend makes for stronger diplomatic than territorial
-      power.
-    summary: Greek Polis
     politicalhierarchy: 5
     dominates: Kallipolis,Phoinix
     politicalauthority: 4
@@ -7515,6 +7657,9 @@ MonoBehaviour:
   - name: Neaition
     locationtype: Settled
     locationsubtype: Village
+    description: Strong and central settlement that has maintained a small degree
+      of autonomy - so long as food is shipped out regularly.
+    summary: Sikel Hilltop Strongpoint
     populationsize: 6
     founded: 1
     originalfaction: 1
@@ -7522,6 +7667,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -7540,9 +7686,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Strong and central settlement that has maintained a small degree
-      of autonomy - so long as food is shipped out regularly.
-    summary: Sikel Hilltop Strongpoint
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -7568,6 +7711,8 @@ MonoBehaviour:
   - name: Nikos
     locationtype: Settled
     locationsubtype: Village
+    description: Base for Greek raiders that settled away out of Engyon for some reason.
+    summary: Greek Mountain Village
     populationsize: 2
     founded: 4
     originalfaction: 5
@@ -7575,6 +7720,7 @@ MonoBehaviour:
     greektype: 3
     hellenized: 0
     territorysoil: 1
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -7593,8 +7739,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 3
-    description: Base for Greek raiders that settled away out of Engyon for some reason.
-    summary: Greek Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 2
@@ -7620,6 +7764,8 @@ MonoBehaviour:
   - name: Nilaios
     locationtype: Settled
     locationsubtype: Stronghold
+    description: At the springs of rivers that are teeming with life.
+    summary: Elymian Mountain Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 2
@@ -7627,6 +7773,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 5
     buildfocus: 1
@@ -7645,8 +7792,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: At the springs of rivers that are teeming with life.
-    summary: Elymian Mountain Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -7672,6 +7817,9 @@ MonoBehaviour:
   - name: Noai
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Central valley position where local industries draw heavily on Greek
+      island-bound trade.
+    summary: Sikel Commercial Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 1
@@ -7679,6 +7827,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -7697,9 +7846,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Central valley position where local industries draw heavily on Greek
-      island-bound trade.
-    summary: Sikel Commercial Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -7725,6 +7871,9 @@ MonoBehaviour:
   - name: Omphake
     locationtype: Settled
     locationsubtype: Village
+    description: Critical hilltop settlement for defense of the Geloan plain. Recovering
+      its grip on native traditions.
+    summary: Captured Sikan Settlement
     populationsize: 5
     founded: 1
     originalfaction: 2
@@ -7732,6 +7881,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 4
     buildfocus: 4
@@ -7750,9 +7900,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Critical hilltop settlement for defense of the Geloan plain. Recovering
-      its grip on native traditions.
-    summary: Captured Sikan Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -7779,6 +7926,8 @@ MonoBehaviour:
   - name: Pachynos
     locationtype: Settled
     locationsubtype: Village
+    description: 'Draws on a a busy sea route and well-cultivated farmlands. '
+    summary: Greek Coastal Village
     populationsize: 4
     founded: 4
     originalfaction: 5
@@ -7786,6 +7935,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 4
+    territorysize: 1
     territorystatus: 5
     foodfocus: 2
     buildfocus: 2
@@ -7804,8 +7954,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Draws on a a busy sea route and well-cultivated farmlands. '
-    summary: Greek Coastal Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -7831,6 +7979,9 @@ MonoBehaviour:
   - name: Palike
     locationtype: Settled
     locationsubtype: Stronghold
+    description: A sizable population draws on the prestige of its nearby Palikoi
+      sanctuary.
+    summary: Sikel Hillside Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 1
@@ -7838,6 +7989,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -7856,9 +8008,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: A sizable population draws on the prestige of its nearby Palikoi
-      sanctuary.
-    summary: Sikel Hillside Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -7885,6 +8034,8 @@ MonoBehaviour:
   - name: Panormos
     locationtype: Settled
     locationsubtype: UrbanCenter
+    description: Principal Phoenician trading port that is surrounded by fruit trees.
+    summary: Phoenician Urban Port
     populationsize: 9
     founded: 2
     originalfaction: 4
@@ -7892,6 +8043,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 4
     territorystatus: 4
     foodfocus: 6
     buildfocus: 1
@@ -7910,8 +8062,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Principal Phoenician trading port that is surrounded by fruit trees.
-    summary: Major Carthage Port
     politicalhierarchy: 5
     dominates: Solous
     politicalauthority: 2
@@ -7936,7 +8086,10 @@ MonoBehaviour:
     surety: 1
   - name: Pantalika
     locationtype: Settled
-    locationsubtype: Stronghold
+    locationsubtype: UrbanCenter
+    description: 'Magnificent buildings of its primacy days remain. Syrakousai pressure
+      has left it unable to support its former, even larger population. '
+    summary: Sikel Local Capital
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -7944,6 +8097,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 4
     territorysoil: 3
+    territorysize: 3
     territorystatus: 2
     foodfocus: 1
     buildfocus: 4
@@ -7962,9 +8116,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Magnificent buildings of its primacy days remain. Syrakousai pressure
-      has left it unable to support its former, even larger population. '
-    summary: Sikel Local Capital
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -7991,6 +8142,8 @@ MonoBehaviour:
   - name: Parkenon
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Its extensive olive yields and trade are under threat of Murene raiders.
+    summary: Sikan Mountain Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 2
@@ -7998,6 +8151,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 3
     territorystatus: 4
     foodfocus: 3
     buildfocus: 2
@@ -8016,8 +8170,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 5
     secondarydifficulty: 5
-    description: Its extensive olive yields and trade are under threat of Murene raiders.
-    summary: Sikan Mountain Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -8043,6 +8195,8 @@ MonoBehaviour:
   - name: Paropos
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Joint control of river and roads, with a rich hunting tradition.
+    summary: Sikan Hilltop Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -8050,6 +8204,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 3
     territorystatus: 3
     foodfocus: 5
     buildfocus: 3
@@ -8068,8 +8223,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 1
-    description: Joint control of river and roads, with a rich hunting tradition.
-    summary: Sikan Hilltop Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -8095,6 +8248,8 @@ MonoBehaviour:
   - name: Pergane
     locationtype: Settled
     locationsubtype: Stronghold
+    description: Great view of valleys where from people flock to their sanctuary.
+    summary: Elymian Hilltop Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 3
@@ -8102,6 +8257,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 3
     territorystatus: 4
     foodfocus: 1
     buildfocus: 3
@@ -8120,8 +8276,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Great view of valleys where from people flock to their sanctuary.
-    summary: Elymian Hilltop Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 2
@@ -8147,6 +8301,9 @@ MonoBehaviour:
   - name: Pergusa
     locationtype: Settled
     locationsubtype: Village
+    description: 'Exerts clear control of its own slice of valleys, mostly towards
+      the West. '
+    summary: Sikel Lakeside Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -8154,6 +8311,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 3
+    territorysize: 2
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -8172,9 +8330,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: 'Exerts clear control of its own slice of valleys, mostly towards
-      the West. '
-    summary: Sikel Lakeside Stronghold
     politicalhierarchy: 4
     dominates: 
     politicalauthority: 1
@@ -8201,6 +8356,9 @@ MonoBehaviour:
   - name: Petrosa
     locationtype: Settled
     locationsubtype: Village
+    description: 'Its tower on a rock and command of the Hypsas river give it some
+      stature, but the settlement was quickly dominated by Selinous. '
+    summary: Elymian Riverbank Settlement
     populationsize: 4
     founded: 1
     originalfaction: 3
@@ -8208,6 +8366,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -8226,9 +8385,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Its tower on a rock and command of the Hypsas river give it some
-      stature, but the settlement was quickly dominated by Selinous. '
-    summary: Elymian Riverbank Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -8254,6 +8410,9 @@ MonoBehaviour:
   - name: Phalarion
     locationtype: Settled
     locationsubtype: Village
+    description: Well fortified and loyal. Gela's primary phrourion that dominates
+      and protects its Western entrance.
+    summary: Strong Geloan Outpost
     populationsize: 3
     founded: 4
     originalfaction: 5
@@ -8261,6 +8420,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -8279,9 +8439,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Well fortified and loyal. Gela's primary phrourion that dominates
-      and protects its Western entrance.
-    summary: Strong Geloan Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -8307,6 +8464,9 @@ MonoBehaviour:
   - name: Phoinix
     locationtype: Settled
     locationsubtype: Village
+    description: 'Originally a native port of Agrilla. Now it is under strong influence
+      by Naxos Greek. '
+    summary: Minor Sikel Port
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -8314,6 +8474,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -8332,9 +8493,6 @@ MonoBehaviour:
     resourceoffload: Zankle
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Originally a native port of Agrilla. Now it is under strong influence
-      by Naxos Greek. '
-    summary: Minor Sikel Port
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -8360,13 +8518,16 @@ MonoBehaviour:
   - name: Piakos
     locationtype: Settled
     locationsubtype: Village
+    description: Active export of skilled bronzework products. Friendly with Adranon.
+    summary: Sikel Volcanic Village
     populationsize: 4
     founded: 1
     originalfaction: 1
     currentfaction: 1
     greektype: 0
     hellenized: 1
-    territorysoil: 2
+    territorysoil: 4
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -8385,8 +8546,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Active export of skilled bronzework products. Friendly with Adranon.
-    summary: Sikel Volcano Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -8412,6 +8571,8 @@ MonoBehaviour:
   - name: Pikone
     locationtype: Settled
     locationsubtype: Village
+    description: Protects the Northern routes to Madora.
+    summary: Minor Sikan Outpost
     populationsize: 2
     founded: 1
     originalfaction: 2
@@ -8419,6 +8580,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -8437,8 +8599,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Protects the Northern routes to Madora.
-    summary: Minor Sikan Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -8464,6 +8624,9 @@ MonoBehaviour:
   - name: Pipana
     locationtype: Settled
     locationsubtype: Village
+    description: Effectively under Akragan control, but its domination of several
+      surrounding villages has provided it enough power to yet avoid a garrison.
+    summary: Central Hilltop Settlement
     populationsize: 6
     founded: 1
     originalfaction: 2
@@ -8471,6 +8634,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 4
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -8489,9 +8653,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Effectively under Akragan control, but its domination of several
-      surrounding villages has provided it enough power to yet avoid a garrison.
-    summary: Central Hilltop Settlement
     politicalhierarchy: 2
     dominates: 
     politicalauthority: 1
@@ -8517,6 +8678,9 @@ MonoBehaviour:
   - name: Pirama
     locationtype: Settled
     locationsubtype: Village
+    description: Small but in firm control of a higher, alternate route to Makella's
+      river connection.
+    summary: Sikan Mountain Village
     populationsize: 3
     founded: 1
     originalfaction: 2
@@ -8524,6 +8688,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 1
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 3
@@ -8542,9 +8707,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 3
     secondarydifficulty: 2
-    description: Small but in firm control of a higher, alternate route to Makella's
-      river connection.
-    summary: Sikan Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -8570,6 +8732,9 @@ MonoBehaviour:
   - name: Plemmyrion
     locationtype: Settled
     locationsubtype: Village
+    description: 'Sikel coastal settlement was already in decline when Syrakousai
+      was founded, and then quickly dominated for strategic purposes. '
+    summary: Greek-Sikel Outpost
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -8577,6 +8742,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -8595,9 +8761,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Sikel coastal settlement was already in decline when Syrakousai
-      was founded, and then quickly dominated for strategic purposes. '
-    summary: Greek-Sikel Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -8623,6 +8786,8 @@ MonoBehaviour:
   - name: Pollike
     locationtype: Settled
     locationsubtype: Village
+    description: Punches above its weight from its high mountain ridge.
+    summary: Elymian Mountaintop Village
     populationsize: 2
     founded: 1
     originalfaction: 3
@@ -8630,6 +8795,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 2
@@ -8648,8 +8814,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Punches above its weight from its high mountain ridge.
-    summary: Elymian Mountaintop Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -8675,6 +8839,8 @@ MonoBehaviour:
   - name: Rakine
     locationtype: Settled
     locationsubtype: Village
+    description: Tradition of fine native arts, with very little Greek influence.
+    summary: Sikan Mountain Village
     populationsize: 5
     founded: 1
     originalfaction: 2
@@ -8682,6 +8848,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 5
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -8700,8 +8867,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Tradition of fine native arts, with very little Greek influence.
-    summary: Sikan Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -8726,7 +8891,9 @@ MonoBehaviour:
     surety: 3
   - name: Ravanusa
     locationtype: Settled
-    locationsubtype: Village
+    locationsubtype: Stronghold
+    description: Tiny but greatly defensible stronghold commanding a major river.
+    summary: Sikan Hilltop Stronghold
     populationsize: 2
     founded: 1
     originalfaction: 2
@@ -8734,6 +8901,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 2
     buildfocus: 2
@@ -8752,8 +8920,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Tiny but greatly defensible stronghold commanding a major river.
-    summary: Sikan Hilltop Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -8779,6 +8945,8 @@ MonoBehaviour:
   - name: Rhegion
     locationtype: Settled
     locationsubtype: Polis
+    description: Rich and progressive but struggling with mainland alliances.
+    summary: Major Greek Polis
     populationsize: 9
     founded: 3
     originalfaction: 5
@@ -8786,6 +8954,7 @@ MonoBehaviour:
     greektype: 2
     hellenized: 0
     territorysoil: 2
+    territorysize: 5
     territorystatus: 3
     foodfocus: 4
     buildfocus: 5
@@ -8804,8 +8973,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Rich and progressive but struggling with mainland alliances.
-    summary: Major Greek Polis
     politicalhierarchy: 5
     dominates: 
     politicalauthority: 2
@@ -8831,6 +8998,9 @@ MonoBehaviour:
   - name: Rokka
     locationtype: Settled
     locationsubtype: Village
+    description: Minor settlement with strong strategic potential with its command
+      of the lower road and valley.
+    summary: Sikan Hillside Settlement
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -8838,6 +9008,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -8856,9 +9027,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Minor settlement with strong strategic potential with its command
-      of the lower road and valley.
-    summary: Sikan Hillside Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -8884,6 +9052,8 @@ MonoBehaviour:
   - name: Romnos
     locationtype: Settled
     locationsubtype: Village
+    description: Independent foresters and timber suppliers.
+    summary: Sikel Mountain Village
     populationsize: 3
     founded: 1
     originalfaction: 1
@@ -8891,6 +9061,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 5
     buildfocus: 1
@@ -8909,8 +9080,6 @@ MonoBehaviour:
     resourceoffload: Naulochos
     primarydifficulty: 3
     secondarydifficulty: 2
-    description: Independent foresters and timber suppliers.
-    summary: Sikel Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -8936,6 +9105,9 @@ MonoBehaviour:
   - name: Rotonde
     locationtype: Settled
     locationsubtype: Village
+    description: Nucleus of several productive farmland settlements, on the edge of
+      competing teritories.
+    summary: Valley Farming Settlement
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -8943,6 +9115,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 6
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 2
     buildfocus: 1
@@ -8961,9 +9134,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Nucleus of several productive farmland settlements, on the edge of
-      competing teritories.
-    summary: Valley Farming Settlement
     politicalhierarchy: 2
     dominates: 
     politicalauthority: 1
@@ -8989,6 +9159,9 @@ MonoBehaviour:
   - name: Sabukina
     locationtype: Settled
     locationsubtype: Village
+    description: Eastern-edge of Sikan territory. Thriving and overlooking an important
+      river valley, wary of Greek approaches.
+    summary: Sikan Mountain Village
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -8996,6 +9169,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 4
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -9014,9 +9188,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Eastern-edge of Sikan territory. Thriving and overlooking an important
-      river valley, wary of Greek approaches.
-    summary: Sikan Mountain Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -9042,6 +9213,8 @@ MonoBehaviour:
   - name: Saneka
     locationtype: Settled
     locationsubtype: Village
+    description: Tucked in at a lakeside, away from Phoenician and Greek influence.
+    summary: Sikan Hillside Village
     populationsize: 3
     founded: 1
     originalfaction: 2
@@ -9049,6 +9222,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -9067,8 +9241,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Tucked in at a lakeside, away from Phoenician and Greek influence.
-    summary: Sikan Hillside Village
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -9094,6 +9266,9 @@ MonoBehaviour:
   - name: Schera
     locationtype: Settled
     locationsubtype: Stronghold
+    description: With a beautiful, expansive view of their valley and whatever traverses
+      it.
+    summary: Sikan Valley Stronghold
     populationsize: 5
     founded: 1
     originalfaction: 2
@@ -9101,6 +9276,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 2
@@ -9119,9 +9295,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: With a beautiful, expansive view of their valley and whatever traverses
-      it.
-    summary: Sikan Valley Stronghold
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -9147,6 +9320,9 @@ MonoBehaviour:
   - name: Selefe
     locationtype: Settled
     locationsubtype: Village
+    description: 'Remains of its larger population in previous centuries is still
+      evident in its extensive cemeteries.  '
+    summary: Ancient Sikel Settlement
     populationsize: 3
     founded: 1
     originalfaction: 1
@@ -9154,6 +9330,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 3
+    territorysize: 1
     territorystatus: 4
     foodfocus: 1
     buildfocus: 1
@@ -9172,9 +9349,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Remains of its larger population in previous centuries is still
-      evident in its extensive cemeteries.  '
-    summary: Ancient Sikel Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -9200,6 +9374,8 @@ MonoBehaviour:
   - name: Selinous
     locationtype: Settled
     locationsubtype: Polis
+    description: Diplomatic outlier in a strong trading position.
+    summary: Greek Polis
     populationsize: 10
     founded: 4
     originalfaction: 5
@@ -9207,6 +9383,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 2
+    territorysize: 5
     territorystatus: 3
     foodfocus: 2
     buildfocus: 5
@@ -9225,8 +9402,6 @@ MonoBehaviour:
     resourceoffload: Carthage
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Diplomatic outlier in a strong trading position.
-    summary: Greek Polis
     politicalhierarchy: 5
     dominates: Mazara,Merkane,Minoa,Petrosa,Rokka
     politicalauthority: 2
@@ -9252,6 +9427,8 @@ MonoBehaviour:
   - name: Skiara
     locationtype: Settled
     locationsubtype: Village
+    description: Valley fortress recently set up by Himera.
+    summary: Greek Lookout Settlement
     populationsize: 2
     founded: 4
     originalfaction: 5
@@ -9259,6 +9436,7 @@ MonoBehaviour:
     greektype: 2
     hellenized: 0
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -9277,8 +9455,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Valley fortress recently set up by Himera.
-    summary: Greek Lookout Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -9305,6 +9481,8 @@ MonoBehaviour:
   - name: Skikli
     locationtype: Settled
     locationsubtype: Village
+    description: Simple farming community with some interest in Greek wares and traditions.
+    summary: Sikel Farming Settlement
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -9312,6 +9490,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 4
+    territorysize: 1
     territorystatus: 4
     foodfocus: 1
     buildfocus: 1
@@ -9330,8 +9509,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Simple farming community with some interest in Greek wares and traditions.
-    summary: Sikel Farming Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -9357,6 +9534,8 @@ MonoBehaviour:
   - name: Skornake
     locationtype: Settled
     locationsubtype: Village
+    description: Small farming community secures the road for Syrakusan interests.
+    summary: Greek Waystation Farmers
     populationsize: 2
     founded: 4
     originalfaction: 5
@@ -9364,6 +9543,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
@@ -9382,8 +9562,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Small farming community secures the road for Syrakusan interests.
-    summary: Greek Waystation Farmers
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -9409,6 +9587,8 @@ MonoBehaviour:
   - name: Skurke
     locationtype: Settled
     locationsubtype: UrbanCenter
+    description: 'Dominates proto-Greek settlements to the West. '
+    summary: Sikel Urban Center
     populationsize: 6
     founded: 1
     originalfaction: 1
@@ -9416,6 +9596,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 4
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -9434,8 +9615,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 1
-    description: 'Dominates proto-Greek settlements to the West. '
-    summary: Sikel Urban Center
     politicalhierarchy: 5
     dominates: Apollonia
     politicalauthority: 2
@@ -9464,6 +9643,8 @@ MonoBehaviour:
   - name: Solous
     locationtype: Settled
     locationsubtype: Village
+    description: On a strong rock that directly protects the coastal road to Panormos.
+    summary: Phoenician Coastal Outpost
     populationsize: 4
     founded: 2
     originalfaction: 4
@@ -9471,6 +9652,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -9489,8 +9671,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: On a strong rock that directly protects the coastal road to Panormos.
-    summary: Phoenician Coastal Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -9516,6 +9696,8 @@ MonoBehaviour:
   - name: Spolion
     locationtype: Settled
     locationsubtype: Village
+    description: In total command of the road that runs right below its steep hillsides.
+    summary: Sikan Defensible Waystation
     populationsize: 2
     founded: 1
     originalfaction: 2
@@ -9523,6 +9705,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -9541,8 +9724,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: In total command of the road that runs right below its steep hillsides.
-    summary: Sikan Defensible Waystation
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -9569,6 +9750,8 @@ MonoBehaviour:
   - name: Styella
     locationtype: Settled
     locationsubtype: Stronghold
+    description: 'Rich  hunting traditions turned heavily fortified outpost. '
+    summary: Sikel Hunting Stronghold
     populationsize: 5
     founded: 1
     originalfaction: 1
@@ -9576,6 +9759,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 3
+    territorysize: 3
     territorystatus: 4
     foodfocus: 5
     buildfocus: 4
@@ -9594,8 +9778,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 1
-    description: 'Rich  hunting traditions turned heavily fortified outpost. '
-    summary: Sikel Hunting Stronghold
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -9621,6 +9803,8 @@ MonoBehaviour:
   - name: Symaithos
     locationtype: Settled
     locationsubtype: Village
+    description: Tiny settlement around a small sanctuary to the river god Symaethus.
+    summary: Sikel Sanctuary Dwelling
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -9628,6 +9812,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 5
+    territorysize: 1
     territorystatus: 4
     foodfocus: 1
     buildfocus: 3
@@ -9646,8 +9831,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Tiny settlement around a small sanctuary to the river god Symaethus.
-    summary: Sikel Sanctuary Dwelling
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 5
@@ -9673,6 +9856,8 @@ MonoBehaviour:
   - name: Syrakousai
     locationtype: Settled
     locationsubtype: Polis
+    description: 'Key city for its prime harbor, defensibility, and shipping location. '
+    summary: Greek Polis
     populationsize: 10
     founded: 3
     originalfaction: 5
@@ -9680,6 +9865,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 3
+    territorysize: 5
     territorystatus: 4
     foodfocus: 1
     buildfocus: 5
@@ -9698,8 +9884,6 @@ MonoBehaviour:
     resourceoffload: Corinth
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Key city for its prime harbor, defensibility, and shipping location. '
-    summary: Greek Polis
     politicalhierarchy: 5
     dominates: Abolla,Adryx,Akrai,Akrillai,Bidis,Fiinoka,Heloros,Ichana,Kasibe,Kasmenai,Neaition,Plemmyrion,Skornake
     politicalauthority: 1
@@ -9725,6 +9909,8 @@ MonoBehaviour:
   - name: Tavake
     locationtype: Settled
     locationsubtype: Village
+    description: Provides dominating Agyrion with its plenitful harvests.
+    summary: Productive Sikel Settlement
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -9732,6 +9918,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 3
+    territorysize: 1
     territorystatus: 3
     foodfocus: 2
     buildfocus: 1
@@ -9750,8 +9937,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Provides dominating Agyrion with its plenitful harvests.
-    summary: Productive Sikel Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -9777,6 +9962,9 @@ MonoBehaviour:
   - name: Thapsos
     locationtype: Settled
     locationsubtype: Village
+    description: Bulk of previous settlers moved on to Megara. Small community of
+      Greek remains to build on previous trade networks and industries.
+    summary: Minor Greek Tradestation
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -9784,6 +9972,7 @@ MonoBehaviour:
     greektype: 3
     hellenized: 0
     territorysoil: 1
+    territorysize: 1
     territorystatus: 2
     foodfocus: 1
     buildfocus: 2
@@ -9802,9 +9991,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Bulk of previous settlers moved on to Megara. Small community of
-      Greek remains to build on previous trade networks and industries.
-    summary: Minor Greek Tradestation
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 2
@@ -9829,7 +10015,9 @@ MonoBehaviour:
     surety: 1
   - name: Tigra
     locationtype: Settled
-    locationsubtype: UrbanCenter
+    locationsubtype: Stronghold
+    description: Dominates surrounding Sikan farming settlements, if only economically.
+    summary: Sikel Hilltop Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 1
@@ -9837,6 +10025,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 1
     territorysoil: 2
+    territorysize: 4
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -9855,8 +10044,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Dominates surrounding Sikan farming settlements, if only economically.
-    summary: Sikel Hilltop Stronghold
     politicalhierarchy: 4
     dominates: Bakra
     politicalauthority: 1
@@ -9882,6 +10069,8 @@ MonoBehaviour:
   - name: Tirakii
     locationtype: Settled
     locationsubtype: Village
+    description: Dependent on Tissa for Greek products. Supplies them with raw goods.
+    summary: Minor Sikel Settlement
     populationsize: 2
     founded: 1
     originalfaction: 1
@@ -9889,6 +10078,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -9907,8 +10097,6 @@ MonoBehaviour:
     resourceoffload: Tissa
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Dependent on Tissa for Greek products. Supplies them with raw goods.
-    summary: Minor Sikel Settlement
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 1
@@ -9934,6 +10122,9 @@ MonoBehaviour:
   - name: Tirnon
     locationtype: Settled
     locationsubtype: Village
+    description: A small farming community supports this road-controlling Akragan
+      outpost.
+    summary: Greek Waystation Outpost
     populationsize: 2
     founded: 4
     originalfaction: 5
@@ -9941,6 +10132,7 @@ MonoBehaviour:
     greektype: 1
     hellenized: 0
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -9959,9 +10151,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: A small farming community supports this road-controlling Akragan
-      outpost.
-    summary: Greek Waystation Outpost
     politicalhierarchy: 1
     dominates: 
     politicalauthority: 2
@@ -9986,7 +10175,9 @@ MonoBehaviour:
     surety: 4
   - name: Tissa
     locationtype: Settled
-    locationsubtype: UrbanCenter
+    locationsubtype: Stronghold
+    description: Local dominion with a favorable trade position.
+    summary: Sikel Urban Stronghold
     populationsize: 6
     founded: 1
     originalfaction: 1
@@ -9994,6 +10185,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 4
+    territorysize: 4
     territorystatus: 3
     foodfocus: 1
     buildfocus: 2
@@ -10012,8 +10204,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 1
     secondarydifficulty: 3
-    description: Local dominion with a favorable trade position.
-    summary: Sikel Urban Stronghold
     politicalhierarchy: 4
     dominates: Demena,Tirakii
     politicalauthority: 3
@@ -10039,6 +10229,8 @@ MonoBehaviour:
   - name: Triokala
     locationtype: Settled
     locationsubtype: Village
+    description: 'Near-impregnable mountaintop fortress.  '
+    summary: Sikan Hilltop Fortress
     populationsize: 2
     founded: 1
     originalfaction: 2
@@ -10046,6 +10238,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 4
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -10064,8 +10257,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Near-impregnable mountaintop fortress.  '
-    summary: Sikan Hilltop Fortress
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -10091,6 +10282,9 @@ MonoBehaviour:
   - name: Trotilon
     locationtype: Settled
     locationsubtype: Village
+    description: 'Small community stayed behind from earlier Megaran settlement. Hidden
+      caves and creek allow for preying on passing ships. '
+    summary: Greek Sheltered Harbor
     populationsize: 2
     founded: 3
     originalfaction: 5
@@ -10098,6 +10292,7 @@ MonoBehaviour:
     greektype: 3
     hellenized: 0
     territorysoil: 1
+    territorysize: 1
     territorystatus: 2
     foodfocus: 1
     buildfocus: 1
@@ -10116,9 +10311,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Small community stayed behind from earlier Megaran settlement. Hidden
-      caves and creek allow for preying on passing ships. '
-    summary: Greek Sheltered Harbor
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 2
@@ -10144,6 +10336,9 @@ MonoBehaviour:
   - name: Tyrrhene
     locationtype: Settled
     locationsubtype: Village
+    description: Small, fortified Greeks of unclear origin. Connected to Herbita's
+      cult practices.
+    summary: Mysterious Greek Settlement
     populationsize: 2
     founded: 4
     originalfaction: 5
@@ -10151,6 +10346,7 @@ MonoBehaviour:
     greektype: 3
     hellenized: 1
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -10169,9 +10365,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: Small, fortified Greeks of unclear origin. Connected to Herbita's
-      cult practices.
-    summary: Mysterious Greek Settlement
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 5
@@ -10197,6 +10390,9 @@ MonoBehaviour:
   - name: Xiphonia
     locationtype: Settled
     locationsubtype: Village
+    description: 'Refugees from Sybaris have set up a small community and trading
+      station. '
+    summary: Minor Greek Refuge
     populationsize: 4
     founded: 5
     originalfaction: 5
@@ -10204,6 +10400,7 @@ MonoBehaviour:
     greektype: 3
     hellenized: 0
     territorysoil: 2
+    territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
@@ -10222,9 +10419,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Refugees from Sybaris have set up a small community and trading
-      station. '
-    summary: Minor Greek Refuge
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 2
@@ -10250,6 +10444,9 @@ MonoBehaviour:
   - name: Xuthia
     locationtype: Settled
     locationsubtype: Village
+    description: 'Hellenized but never conquered by Greeks, due to its wooded and
+      high position. '
+    summary: Sikel Wooded Hilltop
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -10257,6 +10454,7 @@ MonoBehaviour:
     greektype: 0
     hellenized: 3
     territorysoil: 2
+    territorysize: 1
     territorystatus: 2
     foodfocus: 1
     buildfocus: 1
@@ -10275,9 +10473,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 2
-    description: 'Hellenized but never conquered by Greeks, due to its wooded and
-      high position. '
-    summary: Sikel Wooded Hilltop
     politicalhierarchy: 3
     dominates: 
     politicalauthority: 1
@@ -10303,6 +10498,9 @@ MonoBehaviour:
   - name: Zankle
     locationtype: Settled
     locationsubtype: Polis
+    description: Founded and sometimes plagued by pirates. Prime harbor for maintaining
+      a fleet.
+    summary: Greek Polis
     populationsize: 10
     founded: 3
     originalfaction: 5
@@ -10310,6 +10508,7 @@ MonoBehaviour:
     greektype: 2
     hellenized: 0
     territorysoil: 2
+    territorysize: 5
     territorystatus: 2
     foodfocus: 3
     buildfocus: 5
@@ -10328,9 +10527,6 @@ MonoBehaviour:
     resourceoffload: 
     primarydifficulty: 2
     secondarydifficulty: 3
-    description: Founded and sometimes plagued by pirates. Prime harbor for maintaining
-      a fleet.
-    summary: Greek Polis
     politicalhierarchy: 5
     dominates: Mylai
     politicalauthority: 2

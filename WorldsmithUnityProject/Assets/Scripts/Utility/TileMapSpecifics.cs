@@ -16,7 +16,7 @@ public class TileMapSpecifics : MonoBehaviour
             for (int y = 0; y < givenMap.ySize; y += 1)
                 givenMap.GetTileAt(x, y).SetTileEcoBlockType(EcoBlock.BlockType.Unassigned);
 
-        int xPos = 5;
+        int xPos = 2;
         int yPos = 0;
 
         Territory terr = TerritoryController.Instance.GetTerritoryAtLocation(loc);
@@ -24,14 +24,19 @@ public class TileMapSpecifics : MonoBehaviour
         {
             givenMap.GetTileAt(xPos, yPos).SetTileEcoBlockType(EcoBlock.BlockType.Territory);
             givenMap.GetTileAt(xPos, yPos).SetLinkedEcoBlock(terr);
+            xPos += 1;
         }
 
         foreach (Population pop in PopulationController.Instance.GetPopulationsAtLocation(loc))
             if (pop != null)
             {
-                xPos += 2;
-                givenMap.GetTileAt(xPos, yPos).SetTileEcoBlockType(EcoBlock.BlockType.Population);
-                givenMap.GetTileAt(xPos, yPos).SetLinkedEcoBlock(pop);
+                xPos += 1;
+                if (xPos <= givenMap.xSize)
+                {
+                    givenMap.GetTileAt(xPos, yPos).SetTileEcoBlockType(EcoBlock.BlockType.Population);
+                    givenMap.GetTileAt(xPos, yPos).SetLinkedEcoBlock(pop);
+                }
+                    
             }
         xPos = 5;
         yPos = 2;

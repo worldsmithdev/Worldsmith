@@ -13,6 +13,8 @@ public class Location : WorldElement
     public Ruler localRuler;
     public Ruler dominatingRuler;
     public List<Ruler> secondaryRulers = new List<Ruler>();
+    public Territory locationTerritory;
+    public List<Population> populationList = new List<Population>();
 
     // Column Variables
     protected LocationType locType;
@@ -26,6 +28,7 @@ public class Location : WorldElement
     public int currentFaction;
     public int greekType;
     public int hellenized;
+    public int territorySize;
     public int territorySoil;
     public int territoryStatus;
     public int focusFood;

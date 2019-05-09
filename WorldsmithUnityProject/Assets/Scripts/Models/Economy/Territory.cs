@@ -5,6 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class Territory  : EcoBlock
 {
+    public enum Size { Unassigned, Core, Cluster, Valley, Urban, Chora }
+    public enum SoilQuality { Unassigned, Poor, Average, Rich, Volcanic, Splendid }
+    public enum Status { Unassigned, Destroyed, Neglected, Maintained, Optimised, Industrialized }
 
 
     public Territory(Location loc)
