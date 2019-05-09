@@ -9,6 +9,7 @@ public class World
     public enum WorldElement { Unassigned, Location, God,Item,Character,Creature,Faction,Story,Law}
     string worldName;
     Economy worldEconomy;
+    public int completedCycles = 0;
 
     public List<Character> characterList;
     public List<Location> locationList; 

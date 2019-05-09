@@ -9,10 +9,12 @@ public class TopLeftUI : MonoBehaviour
 
     public TextMeshProUGUI headerText;
     public TextMeshProUGUI selectedText; 
+    public TextMeshProUGUI cycleText; 
 
 
     public void RefreshUI()
-    {  
+    {
+        cycleText.text = "" + WorldController.Instance.GetWorld().completedCycles;
         if (UIController.Instance.currentSection == UIController.Section.World)
         {
             headerText.text = "World";

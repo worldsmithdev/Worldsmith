@@ -33,7 +33,6 @@ public class RulerBuilder : MonoBehaviour
         // More to follow..
 
 
-
         // Create additional rulers 
         if (loc.GetLocationSubType() == Location.LocationSubType.City)
         {
