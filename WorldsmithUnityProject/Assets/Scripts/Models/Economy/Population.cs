@@ -5,10 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class Population : EcoBlock
 {
+    public Dictionary<Resource.Type, Resource> resourcePortfolio;
 
     public Population(Location loc)
-    {
-        blockID = "PopulationOf" + loc.elementID;
+    { 
         blockType = BlockType.Population;
         xLocation = loc.GetPositionVector().x;
         yLocation = loc.GetPositionVector().y;

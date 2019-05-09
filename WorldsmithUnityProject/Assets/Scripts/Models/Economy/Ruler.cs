@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Ruler : EcoBlock
 {
-    // Abstraction. More to follow.
+     
 
     public enum Hierarchy {  Unassigned, Dominating, Independent, Dominated, Secondary   }
     public enum CustomType {  Type0, Type1, Type2, Type3, Type4, Type5 }
@@ -15,6 +15,9 @@ public class Ruler : EcoBlock
     public CustomType customType;
 
     public bool isLocalRuler;
+
+    public Dictionary<Resource.Type, Resource> resourcePortfolio;
+
 
     public Ruler(Location loc, bool localRuler)
     {
