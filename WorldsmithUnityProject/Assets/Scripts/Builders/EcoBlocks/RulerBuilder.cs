@@ -34,9 +34,8 @@ public class RulerBuilder : MonoBehaviour
         }
            
         
-
-        if (loc.GetLocationSubType() == Location.LocationSubType.Polis) 
-
+         
+        if (loc.GetLocationSubType() == Location.LocationSubType.Polis)  
         {
             Ruler secondaryRuler = new Ruler(loc, false); 
             EconomyController.Instance.rulerDictionary.Add(secondaryRuler, null);

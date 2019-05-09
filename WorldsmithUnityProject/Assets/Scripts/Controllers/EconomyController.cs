@@ -14,7 +14,7 @@ public class EconomyController : MonoBehaviour
     public PopulationBuilder populationBuilder;
     public ResourceBuilder resourceBuilder;
 
-    // Eventually probably move these dictionaries to RulerController, etc. 
+    // Eventually probably move these dictionaries to either the Economy object or each of their respective Controllers, etc. 
     public Dictionary<Ruler, Ruler> rulerDictionary = new Dictionary<Ruler, Ruler>();
     public Dictionary<Warband, Ruler> warbandDictionary = new Dictionary<Warband, Ruler>(); 
     public Dictionary<Population, Ruler> populationDictionary = new Dictionary<Population, Ruler>(); 
@@ -23,6 +23,14 @@ public class EconomyController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+
+
+    public void ForwardCycle()
+    {      
+        StepsController.Instance.FullCycle();
+        WorldController.Instance.GetWorld().completedCycles++;
+        UIController.Instance.RefreshUI();
     }
 
     // Split these later into dedicated scripts. And call it create > build for consistency with WorldController.
