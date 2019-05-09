@@ -24,14 +24,18 @@ public class TileMapSpecifics : MonoBehaviour
         {
             givenMap.GetTileAt(xPos, yPos).SetTileEcoBlockType(EcoBlock.BlockType.Territory);
             givenMap.GetTileAt(xPos, yPos).SetLinkedEcoBlock(terr);
+            xPos += 1;
         }
 
         foreach (Population pop in PopulationController.Instance.GetPopulationsAtLocation(loc))
             if (pop != null)
             {
                 xPos += 2;
-                givenMap.GetTileAt(xPos, yPos).SetTileEcoBlockType(EcoBlock.BlockType.Population);
-                givenMap.GetTileAt(xPos, yPos).SetLinkedEcoBlock(pop);
+                if (xPos <= givenMap.xSize)
+                {
+                    givenMap.GetTileAt(xPos, yPos).SetTileEcoBlockType(EcoBlock.BlockType.Population);
+                    givenMap.GetTileAt(xPos, yPos).SetLinkedEcoBlock(pop);
+                }
             }
         xPos = 5;
         yPos = 2;

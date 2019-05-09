@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Warband : EcoBlock
 {
-
+    public Dictionary<Resource.Type, Resource> resourcePortfolio;
 
     public Warband(Location loc)
     { 

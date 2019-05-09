@@ -22,8 +22,8 @@ public class ContainerController : MonoBehaviour
     float highlightSpriteScale;
     float selectionSpriteScale;
     float subSpriteScale;
-    float lineStartSize = 0.14f;
-    float lineEndSize = 0.06f;
+    float lineStartSize = 0.08f;
+    float lineEndSize = 0.03f;
     List<GameObject> lineList = new List<GameObject>(); 
 
     LocationContainer hoveredContainer;
