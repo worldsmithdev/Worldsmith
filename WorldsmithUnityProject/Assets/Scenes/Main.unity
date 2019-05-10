@@ -223,7 +223,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 745002574}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &22527767
 MonoBehaviour:
@@ -4341,7 +4341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 745002574}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &224214693
 MonoBehaviour:
@@ -13768,10 +13768,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 224214692}
   - {fileID: 22527766}
-  - {fileID: 1709712994}
   - {fileID: 1015081649}
+  - {fileID: 224214692}
+  - {fileID: 1709712994}
   - {fileID: 1464642857}
   - {fileID: 1863618909}
   - {fileID: 1326533878}
@@ -13791,10 +13791,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40cb020ea750c0346a153305ad561460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  populationStep: {fileID: 224214693}
   generationStep: {fileID: 22527767}
-  industryStep: {fileID: 1709712995}
   localPoliticsStep: {fileID: 1015081650}
+  populationStep: {fileID: 224214693}
+  industryStep: {fileID: 1709712995}
   constructionStep: {fileID: 1464642858}
   regionalPoliticsStep: {fileID: 1863618910}
   exchangeStep: {fileID: 1326533879}
@@ -18551,7 +18551,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 745002574}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1015081650
 MonoBehaviour:
@@ -31003,7 +31003,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 745002574}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1709712995
 MonoBehaviour:
