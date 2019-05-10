@@ -34,30 +34,31 @@ public class LocationController : MonoBehaviour
 
     }
 
-  
+
     // Setting a location selected on start to save a bit of exception-coding
     public void SetPreSelectedLocation()
-    {        
+    {
         if (ContainerController.Instance.locationContainerList.Count > 0)
         {
             if (preselectLocationName == "")
                 Debug.Log("No preselect location set - please do so in LocationController - Preselect Location Name");
             else
-             selectedLocation = GetSpecificLocation(preselectLocationName);
+                selectedLocation = GetSpecificLocation(preselectLocationName);
         }
 
-    } 
+    }
     public void SetSelectedLocation(Location loc)
     {
         selectedLocation = loc;
         selectedBuildingType = Building.BuildingType.Unassigned;
         UIController.Instance.RefreshUI();
+        UIController.Instance.exploreUI.SwitchLocation();
     }
     public void SetSelectedBuildingType(Building.BuildingType type)
     {
-        selectedBuildingType = type; 
+        selectedBuildingType = type;
         UIController.Instance.RefreshUI();
-    } 
+    }
     public Location GetSelectedLocation()
     {
         return selectedLocation;
@@ -69,10 +70,10 @@ public class LocationController : MonoBehaviour
 
     public Location GetSpecificLocation(string locname)
     {
-        foreach (Location location in WorldController.Instance.GetWorld().locationList) 
+        foreach (Location location in WorldController.Instance.GetWorld().locationList)
             if (location.elementID == locname)
-                return location; 
-          
+                return location;
+
         Debug.Log("Did not find location for name: " + locname);
         return null;
     }

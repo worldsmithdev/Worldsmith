@@ -31,6 +31,7 @@ public class WorldController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        WorldConstants.SetDictionaries();
     }
 
     private void Start()

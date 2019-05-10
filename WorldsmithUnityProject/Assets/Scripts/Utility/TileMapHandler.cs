@@ -9,7 +9,7 @@ public class TileMapHandler : MonoBehaviour
     TileMap activeMap;
 
 
-    public void HandleTileHover (Tile tile)
+    public void HandleTileHover(Tile tile)
     {
         activeMap = TileMapController.Instance.GetTileMapFromList(tile.originalTileMapName);
         if (tile.tileWorldElementType == World.WorldElement.Character)
@@ -21,7 +21,7 @@ public class TileMapHandler : MonoBehaviour
         else if (tile.tileWorldElementType == World.WorldElement.Location)
             UIController.Instance.exploreUI.overviewHoveredElementText.text = "World Element: " + tile.linkedLocation.elementID;
         else if (tile.tileWorldElementType == World.WorldElement.Unassigned)
-            UIController.Instance.exploreUI.overviewHoveredElementText.text = "World Elements" ;
+            UIController.Instance.exploreUI.overviewHoveredElementText.text = "World Elements";
 
         if (tile.tileEcoBlockType == EcoBlock.BlockType.Ruler)
             UIController.Instance.exploreUI.overviewHoveredRulerText.text = "Economy Block: " + tile.linkedEcoBlock.blockID;
@@ -32,7 +32,7 @@ public class TileMapHandler : MonoBehaviour
         else if (tile.tileEcoBlockType == EcoBlock.BlockType.Territory)
             UIController.Instance.exploreUI.overviewHoveredRulerText.text = "Economy Block: " + tile.linkedEcoBlock.blockID;
         else if (tile.tileEcoBlockType == EcoBlock.BlockType.Unassigned)
-            UIController.Instance.exploreUI.overviewHoveredRulerText.text = "Economy Blocks" ;
+            UIController.Instance.exploreUI.overviewHoveredRulerText.text = "Economy Blocks";
 
         //TODO: more elegant way to check which map is active: explore layout, Locationsection layout, perhaps other future option
         if (UIController.Instance.currentSection == UIController.Section.World)
@@ -59,37 +59,49 @@ public class TileMapHandler : MonoBehaviour
         if (tile.tileWorldElementType == World.WorldElement.Character)
         {
             CharacterController.Instance.SetSelectedCharacter(tile.linkedCharacter);
-            UIController.Instance.exploreUI.SetClickedCharacterText(tile.linkedCharacter);
+            UIController.Instance.exploreUI.SetClickedCharacter(tile.linkedCharacter);
         }
         else if (tile.tileWorldElementType == World.WorldElement.Creature)
         {
-            CreatureController.Instance.SetClickedCreature(tile.linkedCreature);
-            UIController.Instance.exploreUI.SetClickedCreatureText(tile.linkedCreature);
+            CreatureController.Instance.SetSelectedCreature(tile.linkedCreature);
+            UIController.Instance.exploreUI.SetClickedCreature(tile.linkedCreature);
         }
         else if (tile.tileWorldElementType == World.WorldElement.Item)
         {
-            ItemController.Instance.SetClickedItem(tile.linkedItem);
-            UIController.Instance.exploreUI.SetClickedItemText(tile.linkedItem);
+            ItemController.Instance.SetSelectedItem(tile.linkedItem);
+            UIController.Instance.exploreUI.SetClickedItem(tile.linkedItem);
         }
         else if (tile.tileWorldElementType == World.WorldElement.Location)
         {
-           ContainerController.Instance.ShiftSelectedContainer( ContainerController.Instance.GetContainerFromLocation (tile.linkedLocation)); 
+            ContainerController.Instance.ShiftSelectedContainer(ContainerController.Instance.GetContainerFromLocation(tile.linkedLocation));
         }
 
-        if (tile.tileEcoBlockType == EcoBlock.BlockType.Ruler)        
-            UIController.Instance.exploreUI.SetClickedRuler((Ruler) tile.linkedEcoBlock);
-        else if (tile.tileEcoBlockType == EcoBlock.BlockType.Warband)
-            UIController.Instance.exploreUI.SetClickedWarband((Warband)tile.linkedEcoBlock);
-        else if (tile.tileEcoBlockType == EcoBlock.BlockType.Population)
-            UIController.Instance.exploreUI.SetClickedPopulation((Population)tile.linkedEcoBlock);
-        else if (tile.tileEcoBlockType == EcoBlock.BlockType.Territory)
-            UIController.Instance.exploreUI.SetClickedTerritory((Territory)tile.linkedEcoBlock);
+        if (tile.tileEcoBlockType == EcoBlock.BlockType.Ruler)
+        {
+            RulerController.Instance.SetSelectedRuler((Ruler)tile.linkedEcoBlock);
+            UIController.Instance.exploreUI.SetClickedRuler((Ruler)tile.linkedEcoBlock);
+        }
 
+        else if (tile.tileEcoBlockType == EcoBlock.BlockType.Warband)
+        {
+            WarbandController.Instance.SetSelectedWarband((Warband)tile.linkedEcoBlock);
+            UIController.Instance.exploreUI.SetClickedWarband((Warband)tile.linkedEcoBlock);
+        }
+        else if (tile.tileEcoBlockType == EcoBlock.BlockType.Population)
+        {
+            PopulationController.Instance.SetSelectedPopulation((Population)tile.linkedEcoBlock);
+            UIController.Instance.exploreUI.SetClickedPopulation((Population)tile.linkedEcoBlock);
+        }
+        else if (tile.tileEcoBlockType == EcoBlock.BlockType.Territory)
+        {
+            TerritoryController.Instance.SetSelectedTerritory((Territory)tile.linkedEcoBlock);
+            UIController.Instance.exploreUI.SetClickedTerritory((Territory)tile.linkedEcoBlock);
+        }
 
         if (UIController.Instance.currentSection == UIController.Section.World)
         {
             if (tile.tileBuildingType != Building.BuildingType.Unassigned)
-                UIController.Instance.exploreUI.SetClickedBuildingText(tile.tileBuildingType);  
+                UIController.Instance.exploreUI.SetClickedBuildingText(tile.tileBuildingType);
         }
         else if (UIController.Instance.currentSection == UIController.Section.Location)
         {
