@@ -8,10 +8,10 @@ public class StepsController : MonoBehaviour
 
     public static StepsController Instance { get; protected set; }
 
-    public PopulationStep populationStep;
     public GenerationStep generationStep;
-    public IndustryStep industryStep;
     public LocalPoliticsStep localPoliticsStep;
+    public PopulationStep populationStep;    
+    public IndustryStep industryStep;    
     public ConstructionStep constructionStep;
     public RegionalPoliticsStep regionalPoliticsStep;
     public ExchangeStep exchangeStep;
@@ -32,14 +32,6 @@ public class StepsController : MonoBehaviour
     {
         // Each of the 8 types of steps is dictated by one type of EcoBlock
 
-        // Population
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            populationStep.ConfigureStep(ecoblock);
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            populationStep.CycleStep(ecoblock);
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            populationStep.ResolveStep(ecoblock);
-
         // Generation
         foreach (Territory ecoblock in EconomyController.Instance.territoryDictionary.Keys)
             generationStep.ConfigureStep(ecoblock);
@@ -48,14 +40,6 @@ public class StepsController : MonoBehaviour
         foreach (Territory ecoblock in EconomyController.Instance.territoryDictionary.Keys)
             generationStep.ResolveStep(ecoblock);
 
-        // Industry
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            industryStep.ConfigureStep(ecoblock);
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            industryStep.CycleStep(ecoblock);
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            industryStep.ResolveStep(ecoblock);
-
         // LocalPolitics
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             localPoliticsStep.ConfigureStep(ecoblock);
@@ -63,6 +47,22 @@ public class StepsController : MonoBehaviour
             localPoliticsStep.CycleStep(ecoblock);
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             localPoliticsStep.ResolveStep(ecoblock);
+
+        // Population
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            populationStep.ConfigureStep(ecoblock);
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            populationStep.CycleStep(ecoblock);
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            populationStep.ResolveStep(ecoblock);
+
+        // Industry
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            industryStep.ConfigureStep(ecoblock);
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            industryStep.CycleStep(ecoblock);
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            industryStep.ResolveStep(ecoblock);
 
         // Construction
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
