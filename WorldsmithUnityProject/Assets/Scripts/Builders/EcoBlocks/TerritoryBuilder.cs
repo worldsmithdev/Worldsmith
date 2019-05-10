@@ -14,6 +14,19 @@ public class TerritoryBuilder : MonoBehaviour
     {
         Territory terr = new Territory(loc);
         EconomyController.Instance.territoryDictionary.Add(terr, null);
+
+        loc.locationTerritory = terr;
+        for (int i = 0; i < 10; i++)
+        {
+            if (loc.territorySize == i)
+                terr.territorySize = (Territory.Size)i;
+            if (loc.territorySoil == i)
+                terr.territorySoilQuality = (Territory.SoilQuality)i;
+            if (loc.territoryStatus == i)
+                terr.territoryStatus = (Territory.Status)i;
+
+
+        }
     }
 
  

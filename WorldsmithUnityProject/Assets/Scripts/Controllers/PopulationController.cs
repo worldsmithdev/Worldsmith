@@ -6,6 +6,8 @@ public class PopulationController : MonoBehaviour
 {
     public static PopulationController Instance { get; protected set; }
 
+    Population selectedPopulation;
+
     private void Awake()
     {
         Instance = this;
@@ -24,6 +26,16 @@ public class PopulationController : MonoBehaviour
             
             
         return returnList;
+    }
+
+    public void SetSelectedPopulation (Population population)
+    {
+        selectedPopulation = population;
+    }
+
+    public Population GetSelectedPopulation()
+    {
+        return selectedPopulation;
     }
 }
 

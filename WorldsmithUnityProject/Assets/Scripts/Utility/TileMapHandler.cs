@@ -59,32 +59,44 @@ public class TileMapHandler : MonoBehaviour
         if (tile.tileWorldElementType == World.WorldElement.Character)
         {
             CharacterController.Instance.SetSelectedCharacter(tile.linkedCharacter);
-            UIController.Instance.exploreUI.SetClickedCharacterText(tile.linkedCharacter);
+            UIController.Instance.exploreUI.SetClickedCharacter(tile.linkedCharacter);
         }
         else if (tile.tileWorldElementType == World.WorldElement.Creature)
         {
-            CreatureController.Instance.SetClickedCreature(tile.linkedCreature);
-            UIController.Instance.exploreUI.SetClickedCreatureText(tile.linkedCreature);
+            CreatureController.Instance.SetSelectedCreature(tile.linkedCreature);
+            UIController.Instance.exploreUI.SetClickedCreature(tile.linkedCreature);
         }
         else if (tile.tileWorldElementType == World.WorldElement.Item)
         {
-            ItemController.Instance.SetClickedItem(tile.linkedItem);
-            UIController.Instance.exploreUI.SetClickedItemText(tile.linkedItem);
+            ItemController.Instance.SetSelectedItem(tile.linkedItem);
+            UIController.Instance.exploreUI.SetClickedItem(tile.linkedItem);
         }
         else if (tile.tileWorldElementType == World.WorldElement.Location)
         {
            ContainerController.Instance.ShiftSelectedContainer( ContainerController.Instance.GetContainerFromLocation (tile.linkedLocation)); 
         }
 
-        if (tile.tileEcoBlockType == EcoBlock.BlockType.Ruler)        
-            UIController.Instance.exploreUI.SetClickedRuler((Ruler) tile.linkedEcoBlock);
+        if (tile.tileEcoBlockType == EcoBlock.BlockType.Ruler)
+        {
+            RulerController.Instance.SetSelectedRuler((Ruler) tile.linkedEcoBlock);
+            UIController.Instance.exploreUI.SetClickedRuler((Ruler)tile.linkedEcoBlock);
+        }
+       
         else if (tile.tileEcoBlockType == EcoBlock.BlockType.Warband)
+        {
+            WarbandController.Instance.SetSelectedWarband((Warband)tile.linkedEcoBlock); 
             UIController.Instance.exploreUI.SetClickedWarband((Warband)tile.linkedEcoBlock);
+        }
         else if (tile.tileEcoBlockType == EcoBlock.BlockType.Population)
+        {
+            PopulationController.Instance.SetSelectedPopulation ((Population)tile.linkedEcoBlock);
             UIController.Instance.exploreUI.SetClickedPopulation((Population)tile.linkedEcoBlock);
+        }
         else if (tile.tileEcoBlockType == EcoBlock.BlockType.Territory)
+        {
+            TerritoryController.Instance.SetSelectedTerritory((Territory)tile.linkedEcoBlock);
             UIController.Instance.exploreUI.SetClickedTerritory((Territory)tile.linkedEcoBlock);
-
+        }
 
         if (UIController.Instance.currentSection == UIController.Section.World)
         {

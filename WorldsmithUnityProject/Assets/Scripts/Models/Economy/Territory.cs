@@ -9,6 +9,15 @@ public class Territory  : EcoBlock
     public enum SoilQuality { Unassigned, Poor, Average, Rich, Volcanic, Splendid }
     public enum Status { Unassigned, Destroyed, Neglected, Maintained, Optimised, Industrialized }
 
+    public Size territorySize;
+    public SoilQuality territorySoilQuality;
+    public Status territoryStatus;
+
+
+    // STEPS
+
+    public float cycleFoodGeneration;
+    public Dictionary<Resource.Type, float> cycleGeneratedResources = new Dictionary<Resource.Type, float>();
 
     public Territory(Location loc)
     { 
@@ -28,6 +37,14 @@ public class Territory  : EcoBlock
         }
 
 
+    }
+
+
+    public void GenerateFoodResources()
+    {
+        float foodGenerated = this.cycleFoodGeneration * WorldConstants.RESOURCETYPEQUANTIFIER[Resource.Type.Wheat] * Random.Range(0.95f, 1f);
+
+        cycleGeneratedResources.Add(Resource.Type.Wheat, foodGenerated);
     }
 
 }

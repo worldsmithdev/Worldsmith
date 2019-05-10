@@ -11,6 +11,7 @@ public class RulerController : MonoBehaviour
         Instance = this;
     }
 
+    Ruler selectedRuler;
 
     public List<Ruler> GetLocationRulers(Location loc)
     {
@@ -42,5 +43,15 @@ public class RulerController : MonoBehaviour
                 return ruler;
         Debug.Log("Tried to find Ruler but no id match for " + id);
         return null;
+    }
+
+
+    public void SetSelectedRuler (Ruler ruler)
+    {
+        selectedRuler = ruler;
+    }
+    public Ruler GetSelectedRuler()
+    {
+        return selectedRuler;
     }
 }

@@ -49,6 +49,7 @@ public class LocationController : MonoBehaviour
         selectedLocation = loc;
         selectedBuildingType = Building.BuildingType.Unassigned;
         UIController.Instance.RefreshUI();
+        UIController.Instance.exploreUI.SwitchLocation();
     }
     public void SetSelectedBuildingType(Building.BuildingType type)
     {

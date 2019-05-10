@@ -7,6 +7,11 @@ public class ExploreUI : MonoBehaviour
 {
     // Any text and UI (and some additional) functionality relating the Explore Screen
 
+
+    public enum ClickedTypes {None, Character, Item, Creature, Ruler, Warband, Population, Territory, Building}
+
+    public ClickedTypes clickedType;
+    
     public GameObject Content1;
     public GameObject Content2;
     public GameObject Content3; 
@@ -54,6 +59,12 @@ public class ExploreUI : MonoBehaviour
         }
     }
 
+    public void SwitchLocation()
+    {
+             overviewClickedText.text = "";
+        clickedType = ClickedTypes.None;
+    }
+
     public void RefreshUI()
     {
         if (LocationController.Instance.GetSelectedLocation() != null)
@@ -72,7 +83,25 @@ public class ExploreUI : MonoBehaviour
             overviewDescriptionText.text = selectedLoc.description;
             overviewHoveredElementText.text = "World Elements";
             overviewHoveredRulerText.text = "Economy Blocks";
-            overviewClickedText.text = "";
+             
+            if (clickedType == ClickedTypes.Character)
+                SetClickedCharacter(CharacterController.Instance.GetSelectedCharacter());
+            if (clickedType == ClickedTypes.Item)
+                SetClickedItem(ItemController.Instance.GetSelectedItem());
+            if (clickedType == ClickedTypes.Creature)
+                SetClickedCreature(CreatureController.Instance.GetSelectedCreature());
+            if (clickedType == ClickedTypes.Ruler)
+                SetClickedRuler(RulerController.Instance.GetSelectedRuler());
+            if (clickedType == ClickedTypes.Warband)
+                SetClickedWarband(WarbandController.Instance.GetSelectedWarband());
+            if (clickedType == ClickedTypes.Population)
+                SetClickedPopulation(PopulationController.Instance.GetSelectedPopulation());
+            if (clickedType == ClickedTypes.Territory)
+                SetClickedTerritory(TerritoryController.Instance.GetSelectedTerritory());
+
+             
+
+
             RefreshExploreMaps();
 
             // Layout content
@@ -97,7 +126,7 @@ public class ExploreUI : MonoBehaviour
     } 
     void RefreshSettled(Location selectedLoc)
     {
-        overviewSubText.text = "Authority Type: " + selectedLoc.authorityPolitical;
+        overviewSubText.text = "";
 
     }
     void RefreshProductive(Location selectedLoc)
@@ -263,8 +292,9 @@ public class ExploreUI : MonoBehaviour
     }
 
 
-    public void SetClickedCharacterText(Character character)
+    public void SetClickedCharacter(Character character)
     {
+        clickedType = ClickedTypes.Character;
         string line1 = "Character: " + character.elementID + "\n";
         string line2 = "Description: " + character.description + "\n";
         string line3 = "" + "\n";
@@ -275,8 +305,9 @@ public class ExploreUI : MonoBehaviour
         overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
     }
 
-    public void SetClickedItemText(Item item)
+    public void SetClickedItem(Item item)
     {
+        clickedType = ClickedTypes.Item;
         string line1 = "Item: " + item.elementID + "\n";
         string line2 = "Description: " + item.description + "\n";
         string line3 = "" + "\n";
@@ -286,8 +317,9 @@ public class ExploreUI : MonoBehaviour
         string line7 = "" + "\n";
         overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
     }
-    public void SetClickedCreatureText(Creature creature)
+    public void SetClickedCreature(Creature creature)
     {
+        clickedType = ClickedTypes.Creature;
         string line1 = "Creature: " + creature.elementID + "\n";
         string line2 = "Description: " + creature.description + "\n";
         string line3 = "" + "\n";
@@ -299,6 +331,7 @@ public class ExploreUI : MonoBehaviour
     }
     public void SetClickedRuler (Ruler ruler)
     {
+        clickedType = ClickedTypes.Ruler;
         string line1 = "Ruler: " + ruler.blockID + "\n";
         string line2 = "Ruler Authority Type: " + ruler.authorityType + "\n";
         string line3 = "Ruler Attitude: " + ruler.attitude + "\n";
@@ -310,6 +343,7 @@ public class ExploreUI : MonoBehaviour
     }
     public void SetClickedWarband (Warband warband)
     {
+        clickedType = ClickedTypes.Warband;
         string line1 = "Warband: " + warband.blockID + "\n";
         string line2 = "" + "\n";
         string line3 = "" + "\n";
@@ -321,6 +355,7 @@ public class ExploreUI : MonoBehaviour
     }
     public void SetClickedPopulation (Population population)
     {
+        clickedType = ClickedTypes.Population; 
         string line1 = "Population: " + population.blockID + "\n";
         string line2 = "" + "\n";
         string line3 = "" + "\n";
@@ -332,8 +367,13 @@ public class ExploreUI : MonoBehaviour
     }
     public void SetClickedTerritory (Territory territory)
     {
+        clickedType = ClickedTypes.Territory;
         string line1 = "Territory: " + territory.blockID + "\n";
-        string line2 = "" + "\n";
+        string line2;
+        if (territory.cycleGeneratedResources.ContainsKey(Resource.Type.Wheat)) 
+             line2 = "Wheat Generation: " + territory.cycleGeneratedResources[Resource.Type.Wheat].ToString("F2") + "\n";
+        else
+            line2 = "Wheat Generation: 0"   + "\n";
         string line3 = "" + "\n";
         string line4 = "" + "\n";
         string line5 = "" + "\n";
@@ -343,6 +383,7 @@ public class ExploreUI : MonoBehaviour
     }
     public void SetClickedBuildingText(Building.BuildingType type)
     {
+        clickedType = ClickedTypes.Building;
         string line1 = "Building Type: " + type + "\n";
         string line2 = "" + "\n";
         string line3 = "" + "\n";

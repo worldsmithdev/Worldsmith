@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tile  
+public class Tile
 {
     // Data container for TileMaps that kind of messily is able to hold very different datatypes. 
 
@@ -10,9 +10,9 @@ public class Tile
     public int xCoord;
     public int yCoord;
 
-     
-    public enum TileTerrainType {  Sea, Land, Mountain, Forest}
-     
+
+    public enum TileTerrainType { Sea, Land, Mountain, Forest }
+
     public string originalTileMapName;
 
     public TileTerrainType tileTerrainType;
@@ -25,7 +25,7 @@ public class Tile
     public Character linkedCharacter;
     public Creature linkedCreature;
     public Item linkedItem;
-     
+
     public Tile(int xloc, int yloc, string mapname)
     {
         originalTileMapName = mapname;
@@ -44,7 +44,7 @@ public class Tile
         tileWorldElementType = type;
     }
     public void SetTileTerrainType(TileTerrainType type)
-    { 
+    {
         tileTerrainType = type;
     }
     public void SetTileBuildingType(Building.BuildingType type)
@@ -58,9 +58,9 @@ public class Tile
     public void SetLinkedEcoBlock(EcoBlock ecoBlock)
     {
         tileEcoBlockType = ecoBlock.blockType;
-        linkedEcoBlock = ecoBlock;  
+        linkedEcoBlock = ecoBlock;
     }
-    public void SetLinkedLocation (Location loc)
+    public void SetLinkedLocation(Location loc)
     {
         tileWorldElementType = World.WorldElement.Location;
         linkedLocation = loc;
@@ -80,6 +80,6 @@ public class Tile
         tileWorldElementType = World.WorldElement.Item;
         linkedItem = item;
     }
- 
+
 
 }

@@ -13257,7 +13257,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 745002574}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &480225669
 MonoBehaviour:
@@ -20209,10 +20209,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1081530278}
   - {fileID: 1876426476}
-  - {fileID: 480225668}
   - {fileID: 1015081649}
+  - {fileID: 1081530278}
+  - {fileID: 480225668}
   - {fileID: 1464642857}
   - {fileID: 1820022277}
   - {fileID: 710613573}
@@ -20232,10 +20232,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40cb020ea750c0346a153305ad561460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  populationStep: {fileID: 1081530279}
   generationStep: {fileID: 1876426477}
-  industryStep: {fileID: 480225669}
   localPoliticsStep: {fileID: 1015081650}
+  populationStep: {fileID: 1081530279}
+  industryStep: {fileID: 480225669}
   constructionStep: {fileID: 1464642858}
   regionalPoliticsStep: {fileID: 1820022278}
   exchangeStep: {fileID: 710613574}
@@ -27812,7 +27812,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 745002574}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1015081650
 MonoBehaviour:
@@ -30015,7 +30015,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 745002574}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1081530279
 MonoBehaviour:
@@ -53399,7 +53399,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 745002574}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1876426477
 MonoBehaviour:

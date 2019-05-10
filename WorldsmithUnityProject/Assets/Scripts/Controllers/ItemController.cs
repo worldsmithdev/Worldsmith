@@ -9,7 +9,7 @@ public class ItemController : MonoBehaviour
     public static ItemController Instance { get; protected set; }
 
 
-    Item clickedItem;
+    Item selectedItem;
 
     private void Awake()
     {
@@ -27,8 +27,12 @@ public class ItemController : MonoBehaviour
     }
 
 
-    public void SetClickedItem (Item item)
+    public void SetSelectedItem (Item item)
     {
-        clickedItem = item;
+        selectedItem = item;
+    }
+    public Item GetSelectedItem( )
+    {
+        return selectedItem;
     }
 }

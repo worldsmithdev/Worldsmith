@@ -6,6 +6,8 @@ public class WarbandController : MonoBehaviour
 {
     public static WarbandController Instance { get; protected set; }
 
+    Warband selectedWarband;
+
     private void Awake()
     {
         Instance = this;
@@ -20,5 +22,14 @@ public class WarbandController : MonoBehaviour
                 if (warband.xLocation == loc.GetPositionVector().x&& warband.yLocation == loc.GetPositionVector().y)
                     returnList.Add(warband);
         return returnList;
+    }
+
+    public void SetSelectedWarband (Warband warband)
+    {
+        selectedWarband = warband;
+    }
+    public Warband GetSelectedWarband(  )
+    {
+       return selectedWarband ;
     }
 }
