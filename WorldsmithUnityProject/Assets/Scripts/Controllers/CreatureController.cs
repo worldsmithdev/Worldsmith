@@ -10,7 +10,7 @@ public class CreatureController : MonoBehaviour
     public static CreatureController Instance { get; protected set; }
 
 
-    Creature clickedCreature;
+    Creature selectedCreature;
 
     private void Awake()
     {
@@ -27,8 +27,12 @@ public class CreatureController : MonoBehaviour
         return returnList;
     }
 
-    public void SetClickedCreature(Creature creature)
+    public void SetSelectedCreature(Creature creature)
     {
-        clickedCreature = creature;
+        selectedCreature = creature;
+    }
+    public Creature GetSelectedCreature()
+    {
+        return selectedCreature;
     }
 }

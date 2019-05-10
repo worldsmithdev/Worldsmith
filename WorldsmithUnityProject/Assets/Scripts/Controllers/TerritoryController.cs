@@ -6,6 +6,9 @@ public class TerritoryController : MonoBehaviour
 {
     public static TerritoryController Instance { get; protected set; }
 
+
+    Territory selectedTerritory;
+
     private void Awake()
     {
         Instance = this;
@@ -19,6 +22,26 @@ public class TerritoryController : MonoBehaviour
                 if (terr.xLocation == loc.GetPositionVector().x && terr.yLocation == loc.GetPositionVector().y)
                     return terr;
         return null;
-      
+
+    }
+
+    public Location GetLocationForTerritory(Territory terr)
+    {
+        foreach (Location loc in WorldController.Instance.GetWorld().locationList)
+            if (loc.locationTerritory == terr)
+                return loc;
+
+        Debug.Log("Returning null Location for: " + terr.blockID);
+        return null;
+
+    }
+
+    public void SetSelectedTerritory(Territory territory)
+    {
+        selectedTerritory = territory;
+    }
+    public Territory GetSelectedTerritory()
+    {
+        return selectedTerritory;
     }
 }
