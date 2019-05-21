@@ -9,10 +9,7 @@ public class WorldController : MonoBehaviour
 
     public static WorldController Instance { get; protected set; }
    
-    World activeWorld; 
-
-    Location.LocationType loctype;
-    Location.LocationSubType subtype;
+    World activeWorld;  
 
     public LocationBuilder locationBuilder;
     public GodBuilder godBuilder;
