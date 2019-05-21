@@ -10,7 +10,7 @@ public class RulerBuilder : MonoBehaviour
             if (loc.GetLocationType() == Location.LocationType.Settled)
                 BuildSettledRulers(loc);
 
-        OrganizeRulerHierarchy();
+        OrganizeRulerDictionaryHierarchy();
     }
 
 
@@ -43,7 +43,7 @@ public class RulerBuilder : MonoBehaviour
     }
 
 
-    void OrganizeRulerHierarchy()
+    void OrganizeRulerDictionaryHierarchy()
     {
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
         {

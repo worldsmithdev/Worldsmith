@@ -9,13 +9,15 @@ public class GenerationStep : Step
         Territory territory = (Territory)ecoblock;
         ClearGeneratedResources(territory);
 
-        DetermineFoodGeneration(territory);
+        DetermineFood(territory);
+        DetermineSecondary(territory);
     }
 
     public override void CycleStep(EcoBlock ecoblock)
     {
         Territory territory = (Territory)ecoblock;
-        GenerateResources(territory);
+        GenerateFood(territory);
+        GenerateSecondary(territory); 
 
     }
 
@@ -26,37 +28,49 @@ public class GenerationStep : Step
 
     }
 
-    void DetermineFoodGeneration (Territory terr)
+    void DetermineFood (Territory terr)
     {
         Location loc = TerritoryController.Instance.GetLocationForTerritory(terr);
-        int housekeeperPop = 0;
-        float baseAmount = 0; 
-        float totalnaturaloutput = 0;
+        float manpower;
 
+        int housekeeperPop = 0;
         foreach (Population population in loc.populationList)
             if (population.laborType == Population.LaborType.Housekeeper) housekeeperPop += population.peopleAmount;
+        manpower = housekeeperPop;
 
-        baseAmount += housekeeperPop;
-
-        baseAmount *= WorldConstants.TERRITORYSIZE_MULTIPLIER[terr.territorySize];
-        baseAmount *= WorldConstants.TERRITORYSOIL_MULTIPLIER[terr.territorySoilQuality];
-        baseAmount *= WorldConstants.TERRITORYSTATUS_MULTIPLIER[terr.territoryStatus];
-        totalnaturaloutput += (WorldConstants.RATE_MULTIPLIER[loc.rateResource] * baseAmount);
-        baseAmount *= (1 - WorldConstants.RATE_MULTIPLIER[loc.rateResource]);
-
-        terr.cycleFoodGeneration = baseAmount; 
-    //    terr.CycleSpecifiedGeneration = totalnaturaloutput;
-
-
-
-
+        manpower *= WorldConstants.TERRITORYSIZE_MULTIPLIER[terr.territorySize];
+        manpower *= WorldConstants.TERRITORYSOIL_MULTIPLIER[terr.territorySoilQuality];
+        manpower *= WorldConstants.TERRITORYSTATUS_MULTIPLIER[terr.territoryStatus];         
+        manpower *= (1 - WorldConstants.SECONDARY_RATE[loc.rateResource]);
+        terr.cycleStoredFood = ResourceConverter.GetResourceForManpower (Resource.Type.Wheat, manpower).amount;   
     }
+    void DetermineSecondary(Territory terr)
+    {
+        Location loc = TerritoryController.Instance.GetLocationForTerritory(terr);
+        float manpower;
 
-    void GenerateResources(Territory terr)
+        int housekeeperPop = 0;
+        foreach (Population population in loc.populationList)
+            if (population.laborType == Population.LaborType.Housekeeper) housekeeperPop += population.peopleAmount;
+        manpower = housekeeperPop;
+
+        manpower *= WorldConstants.TERRITORYSIZE_MULTIPLIER[terr.territorySize];
+        manpower *= WorldConstants.TERRITORYSOIL_MULTIPLIER[terr.territorySoilQuality];
+        manpower *= WorldConstants.TERRITORYSTATUS_MULTIPLIER[terr.territoryStatus];
+        manpower *=  WorldConstants.SECONDARY_RATE[loc.rateResource];
+
+
+        // add in primary and secondary
+        terr.cycleStoredFood = ResourceConverter.GetResourceForManpower(Resource.Type.Wheat, manpower).amount;
+    }
+    void GenerateFood(Territory terr)
     {
         terr.GenerateFoodResources();
 
       
+    }
+    void GenerateSecondary(Territory terr)
+    {  
     }
 
     void ClearGeneratedResources (Territory terr)

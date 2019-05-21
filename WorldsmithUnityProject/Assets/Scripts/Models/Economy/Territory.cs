@@ -16,7 +16,7 @@ public class Territory  : EcoBlock
 
     // STEPS
 
-    public float cycleFoodGeneration;
+    public float cycleStoredFood; 
     public Dictionary<Resource.Type, float> cycleGeneratedResources = new Dictionary<Resource.Type, float>();
 
     public Territory(Location loc)
@@ -42,7 +42,7 @@ public class Territory  : EcoBlock
 
     public void GenerateFoodResources()
     {
-        float foodGenerated = this.cycleFoodGeneration * WorldConstants.RESOURCETYPEQUANTIFIER[Resource.Type.Wheat] * Random.Range(0.95f, 1f);
+        float foodGenerated = this.cycleStoredFood * WorldConstants.RESOURCETYPEQUANTIFIER[Resource.Type.Wheat] * Random.Range(0.95f, 1f);
 
         cycleGeneratedResources.Add(Resource.Type.Wheat, foodGenerated);
     }

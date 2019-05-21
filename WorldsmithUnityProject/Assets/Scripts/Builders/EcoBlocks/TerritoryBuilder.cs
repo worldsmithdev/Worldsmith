@@ -9,6 +9,8 @@ public class TerritoryBuilder : MonoBehaviour
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
             if (loc.GetLocationType() == Location.LocationType.Settled) 
                     BuildSettledTerritory(loc);
+
+        SetTerritoryDictionaryHierarchy();
     }
     void BuildSettledTerritory(Location loc)
     {
@@ -29,5 +31,12 @@ public class TerritoryBuilder : MonoBehaviour
         }
     }
 
- 
+
+
+    void SetTerritoryDictionaryHierarchy()
+    {
+        foreach (Location loc in WorldController.Instance.GetWorld().locationList)
+                EconomyController.Instance.territoryDictionary[loc.locationTerritory] = loc.localRuler;
+    }
+
 }

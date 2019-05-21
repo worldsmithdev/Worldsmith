@@ -22,4 +22,13 @@ public class ResourceController : MonoBehaviour
         resourceCompendium.Add(Resource.Type.Marble, Resource.Category.Natural ); 
     }
      
+
+
+    public Resource.Category GetResourceCategory(Resource res)
+    {
+        return resourceCompendium[res.type];
+    }
+
+ 
+
 }

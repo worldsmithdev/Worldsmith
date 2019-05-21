@@ -14,10 +14,11 @@ public class Ruler : EcoBlock
     public Hierarchy rulerHierarchy = Hierarchy.Unassigned; 
     public AuthorityType authorityType;
     public Attitude attitude;
+    public bool isLocalRuler;
 
     public Dictionary<Resource.Type, Resource> resourcePortfolio;
 
-    public bool isLocalRuler;
+    
 
     public Ruler(Location loc, bool localRuler)
     {

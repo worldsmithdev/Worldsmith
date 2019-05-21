@@ -14,15 +14,6 @@ public class PopulationBuilder : MonoBehaviour
         SetPopulationDictionaryHierarchy();
     }
 
-
-    void SetPopulationDictionaryHierarchy()
-    {
-        foreach (Location loc in WorldController.Instance.GetWorld().locationList)
-            foreach (Population pop in loc.populationList)
-                EconomyController.Instance.populationDictionary[pop] = loc.localRuler;
-    }
-
-
     void BuildSettledPopulations(Location loc)
     {
 
@@ -36,7 +27,12 @@ public class PopulationBuilder : MonoBehaviour
             BuildVillagePopulations(loc);
          
     }
-
+    void SetPopulationDictionaryHierarchy()
+    {
+        foreach (Location loc in WorldController.Instance.GetWorld().locationList)
+            foreach (Population pop in loc.populationList)
+                EconomyController.Instance.populationDictionary[pop] = loc.localRuler;
+    }
 
     void BuildPolisPopulations (Location loc)
     {
