@@ -14,10 +14,8 @@ public class Territory  : EcoBlock
     public Status territoryStatus;
 
 
-    // STEPS
-
+    // GENERATION Step
     public Dictionary<Resource.Type, float> storedResources = new Dictionary<Resource.Type, float>();
-
     public float cycleFoodManpower;     
     public float cycleSecondaryManpower;     
     public Dictionary<Resource.Type, float> cycleGeneratedResources = new Dictionary<Resource.Type, float>();

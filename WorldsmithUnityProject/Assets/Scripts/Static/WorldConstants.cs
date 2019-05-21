@@ -22,8 +22,8 @@ public class WorldConstants
         NATURAL_RESOURCES_RATE.Add(4, 0.55f);
         NATURAL_RESOURCES_RATE.Add(5, 0.85f);
 
-        // Must equal 1.0 total
-        DEFAULT_NATURAL_RESOURCETYPES.Add(Resource.Type.Timber, 0.75f);
+       
+        DEFAULT_NATURAL_RESOURCETYPES.Add(Resource.Type.Timber, 0.75f);  // Must equal 1.0 total
         DEFAULT_NATURAL_RESOURCETYPES.Add(Resource.Type.Stone, 0.25f);
 
         TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Core, 0.6f);
@@ -51,7 +51,13 @@ public class WorldConstants
     public static float GENERATION_RANDOMIZER_LO = 0.95f;
     public static float GENERATION_RANDOMIZER_HI = 1.05f;
     public static float NATURALRESOURCEPERCENTAGE = 0.35f;
-    
+
+
+    // LOCALPOLITICS
+    public static float GENERATION_LEVY_RATE_HI = 0.12f;
+    public static float GENERATION_LEVY_RATE_MID = 0.06f;
+    public static float GENERATION_LEVY_RATE_LO = 0.03f;
+
 
     // POPULATION
     public static int POPSIZE1LO = 80;

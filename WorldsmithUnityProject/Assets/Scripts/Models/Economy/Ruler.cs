@@ -9,16 +9,19 @@ public class Ruler : EcoBlock
 
     public enum Hierarchy {  Unassigned, Dominating, Independent, Dominated, Secondary   }     
     public enum AuthorityType { Unassigned, Aristocrat, Oligarch, Monarchist, Tyrant, Democratic }
-    public enum Attitude { Unassigned, Aggressive, Economic, Temperate, Mild, Independent }
+    public enum Attitude { Unassigned, Aggressive, Economic, Temperate, Independent, Submissive }
 
     public Hierarchy rulerHierarchy = Hierarchy.Unassigned; 
     public AuthorityType authorityType;
     public Attitude attitude;
     public bool isLocalRuler;
 
-    public Dictionary<Resource.Type, Resource> resourcePortfolio;
+    public Dictionary<Resource.Type, Resource> resourcePortfolio = new Dictionary<Resource.Type, Resource>();
 
-    
+
+    // LOCALPOLITICS Step
+    public float cycleGenerationLevyPercentage;
+
 
     public Ruler(Location loc, bool localRuler)
     {
@@ -49,8 +52,9 @@ public class Ruler : EcoBlock
                 blockID = "Secondary";
             blockID += "RulerOf" + loc.elementID;
             blockID += nr;
-        }
-
+        } 
+        foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)
+            resourcePortfolio.Add(restype, new Resource(restype, 0));
     }
 
     public Location GetHomeLocation()
@@ -65,8 +69,15 @@ public class Ruler : EcoBlock
         Debug.Log("Failed to get Location for Ruler " + blockID);
         return null;
     }
-     
-     
+
+    public Ruler GetController()
+    {
+
+        if (EconomyController.Instance.rulerDictionary[this] == null)
+            return this;
+        else
+            return EconomyController.Instance.rulerDictionary[this];
+    }
 
     public List<Ruler> GetControlledRulers()
     {
@@ -108,13 +119,6 @@ public class Ruler : EcoBlock
         return returnList;
     }
 
-    public Ruler GetController()
-    { 
-
-        if (EconomyController.Instance.rulerDictionary[this] == null)
-            return this;
-        else
-            return EconomyController.Instance.rulerDictionary[this];
-    }
+ 
 
 }

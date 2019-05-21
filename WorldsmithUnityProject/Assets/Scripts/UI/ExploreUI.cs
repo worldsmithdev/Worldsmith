@@ -341,8 +341,8 @@ public class ExploreUI : MonoBehaviour
         string line1 = "Ruler: " + ruler.blockID + "\n";
         string line2 = "Ruler Authority Type: " + ruler.authorityType + "\n";
         string line3 = "Ruler Attitude: " + ruler.attitude + "\n";
-        string line4 = "" + "\n";
-        string line5 = "" + "\n";
+        string line4 = "Owned Wheat: " + ruler.resourcePortfolio[Resource.Type.Wheat].amount +  "\n";
+        string line5 = "Owned Salt: " + ruler.resourcePortfolio[Resource.Type.Salt].amount + "\n";
         string line6 = "" + "\n";
         string line7 = "" + "\n";
         overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;

@@ -13,7 +13,7 @@ public class Population : EcoBlock
 
     public int peopleAmount;
 
-    public Dictionary<Resource.Type, Resource> resourcePortfolio;
+    public Dictionary<Resource.Type, Resource> resourcePortfolio = new Dictionary<Resource.Type, Resource>();
 
     public Population(ClassType givenclasstype, LaborType givenlabortype, float proportion, Location loc)
     {
@@ -35,6 +35,8 @@ public class Population : EcoBlock
             nr++;
             blockID = classType.ToString() + laborType.ToString() + "PopulationOf" + loc.elementID;
             blockID += nr;
-        }
+        } 
+        foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)
+            resourcePortfolio.Add(restype, new Resource(restype, 0));
     }
 }
