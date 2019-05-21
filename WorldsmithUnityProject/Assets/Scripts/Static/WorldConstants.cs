@@ -2,28 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WorldConstants : MonoBehaviour
+public class WorldConstants  
 {
     // Hosts static constant valuables for any (economic) variables and some methods for receving them
 
 
-    public static Dictionary<int, float> SECONDARY_RATE = new Dictionary<int, float>();
+    public static Dictionary<int, float> NATURAL_RESOURCES_RATE = new Dictionary<int, float>();
+    public static Dictionary<Resource.Type, float> DEFAULT_NATURAL_RESOURCETYPES = new Dictionary<Resource.Type, float>();
     public static Dictionary<Territory.Size, float> TERRITORYSIZE_MULTIPLIER = new Dictionary<Territory.Size, float>();
     public static Dictionary<Territory.SoilQuality, float> TERRITORYSOIL_MULTIPLIER = new Dictionary<Territory.SoilQuality, float>();
-    public static Dictionary<Territory.Status, float> TERRITORYSTATUS_MULTIPLIER = new Dictionary<Territory.Status, float>();
-    public static Dictionary<Resource.Type, float> RESOURCETYPEQUANTIFIER = new Dictionary<Resource.Type, float>();
+    public static Dictionary<Territory.Status, float> TERRITORYSTATUS_MULTIPLIER = new Dictionary<Territory.Status, float>(); 
+    
 
     public static void SetDictionaries()
-    {
+    { 
+        NATURAL_RESOURCES_RATE.Add(1, 0.04f);
+        NATURAL_RESOURCES_RATE.Add(2, 0.1f);
+        NATURAL_RESOURCES_RATE.Add(3, 0.25f);
+        NATURAL_RESOURCES_RATE.Add(4, 0.55f);
+        NATURAL_RESOURCES_RATE.Add(5, 0.85f);
 
-        RESOURCETYPEQUANTIFIER.Add(Resource.Type.Wheat, 1.0f); // in HectoLiter
-
-
-        SECONDARY_RATE.Add(1, 0.04f);
-        SECONDARY_RATE.Add(2, 0.1f);
-        SECONDARY_RATE.Add(3, 0.25f);
-        SECONDARY_RATE.Add(4, 0.55f);
-        SECONDARY_RATE.Add(5, 0.85f);
+        // Must equal 1.0 total
+        DEFAULT_NATURAL_RESOURCETYPES.Add(Resource.Type.Timber, 0.75f);
+        DEFAULT_NATURAL_RESOURCETYPES.Add(Resource.Type.Stone, 0.25f);
 
         TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Core, 0.6f);
         TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Cluster,0.8f );
@@ -41,20 +42,16 @@ public class WorldConstants : MonoBehaviour
         TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Neglected, 0.5f);
         TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Maintained, 1.0f);
         TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Optimised, 1.4f);
-        TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Industrialized, 1.8f);
-
-
- 
+        TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Industrialized, 1.8f);  
     }
-
- 
-
-
-
-    // GENERATION
      
 
-    public static float SECONDARYRESOURCEPERCENTAGE = 0.35f;
+    // GENERATION
+
+    public static float GENERATION_RANDOMIZER_LO = 0.95f;
+    public static float GENERATION_RANDOMIZER_HI = 1.05f;
+    public static float NATURALRESOURCEPERCENTAGE = 0.35f;
+    
 
     // POPULATION
     public static int POPSIZE1LO = 80;

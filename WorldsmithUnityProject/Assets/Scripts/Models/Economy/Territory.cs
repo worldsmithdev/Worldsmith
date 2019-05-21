@@ -16,7 +16,10 @@ public class Territory  : EcoBlock
 
     // STEPS
 
-    public float cycleStoredFood; 
+    public Dictionary<Resource.Type, float> storedResources = new Dictionary<Resource.Type, float>();
+
+    public float cycleFoodManpower;     
+    public float cycleSecondaryManpower;     
     public Dictionary<Resource.Type, float> cycleGeneratedResources = new Dictionary<Resource.Type, float>();
 
     public Territory(Location loc)
@@ -36,15 +39,12 @@ public class Territory  : EcoBlock
             blockID += nr;
         }
 
+        foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)        
+            storedResources.Add(restype, 0);
+        
 
     }
 
-
-    public void GenerateFoodResources()
-    {
-        float foodGenerated = this.cycleStoredFood * WorldConstants.RESOURCETYPEQUANTIFIER[Resource.Type.Wheat] * Random.Range(0.95f, 1f);
-
-        cycleGeneratedResources.Add(Resource.Type.Wheat, foodGenerated);
-    }
+ 
 
 }

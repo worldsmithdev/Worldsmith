@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class GenerationStep : Step
 {
+
+    bool randomizeAmount = true;
+
     public override void ConfigureStep(EcoBlock ecoblock)
     {
         Territory territory = (Territory)ecoblock;
-        ClearGeneratedResources(territory);
+        ClearStepVariables(territory);
 
         DetermineFood(territory);
-        DetermineSecondary(territory);
+        DetermineNatural(territory);
     }
 
     public override void CycleStep(EcoBlock ecoblock)
     {
         Territory territory = (Territory)ecoblock;
         GenerateFood(territory);
-        GenerateSecondary(territory); 
-
+        StoreFood(territory);
+        GenerateNatural(territory);
+        StoreNatural(territory);
     }
 
     public override void ResolveStep(EcoBlock ecoblock)
     {
-        Territory territory = (Territory)ecoblock;
-        
-
+        Territory territory = (Territory)ecoblock; 
     }
 
     void DetermineFood (Territory terr)
@@ -41,10 +43,10 @@ public class GenerationStep : Step
         manpower *= WorldConstants.TERRITORYSIZE_MULTIPLIER[terr.territorySize];
         manpower *= WorldConstants.TERRITORYSOIL_MULTIPLIER[terr.territorySoilQuality];
         manpower *= WorldConstants.TERRITORYSTATUS_MULTIPLIER[terr.territoryStatus];         
-        manpower *= (1 - WorldConstants.SECONDARY_RATE[loc.rateResource]);
-        terr.cycleStoredFood = ResourceConverter.GetResourceForManpower (Resource.Type.Wheat, manpower).amount;   
+        manpower *= (1 - WorldConstants.NATURAL_RESOURCES_RATE[loc.rateResource]);
+        terr.cycleFoodManpower = manpower;   
     }
-    void DetermineSecondary(Territory terr)
+    void DetermineNatural(Territory terr)
     {
         Location loc = TerritoryController.Instance.GetLocationForTerritory(terr);
         float manpower;
@@ -57,23 +59,70 @@ public class GenerationStep : Step
         manpower *= WorldConstants.TERRITORYSIZE_MULTIPLIER[terr.territorySize];
         manpower *= WorldConstants.TERRITORYSOIL_MULTIPLIER[terr.territorySoilQuality];
         manpower *= WorldConstants.TERRITORYSTATUS_MULTIPLIER[terr.territoryStatus];
-        manpower *=  WorldConstants.SECONDARY_RATE[loc.rateResource];
-
-
-        // add in primary and secondary
-        terr.cycleStoredFood = ResourceConverter.GetResourceForManpower(Resource.Type.Wheat, manpower).amount;
+        manpower *= WorldConstants.NATURAL_RESOURCES_RATE[loc.rateResource];
+        terr.cycleSecondaryManpower = manpower;
     }
     void GenerateFood(Territory terr)
+    { 
+        Resource generatedFood = Converter.GetResourceForManpower(Resource.Type.Wheat, terr.cycleFoodManpower);
+        if (randomizeAmount == true)
+            generatedFood.amount *= Random.Range(WorldConstants.GENERATION_RANDOMIZER_LO, WorldConstants.GENERATION_RANDOMIZER_HI);
+        terr.cycleGeneratedResources.Add(generatedFood.type, generatedFood.amount);
+    }
+    void GenerateNatural(Territory terr)
     {
-        terr.GenerateFoodResources();
+        Location loc = TerritoryController.Instance.GetLocationForTerritory(terr); 
 
-      
+        if (loc.primaryResourceType == Resource.Type.Unassigned) // Location has no specified resource, so generate default resources
+        {
+            foreach (Resource.Type restype in WorldConstants.DEFAULT_NATURAL_RESOURCETYPES.Keys)
+            { 
+                Resource createdResource = Converter.GetResourceForManpower(restype, (terr.cycleSecondaryManpower * WorldConstants.DEFAULT_NATURAL_RESOURCETYPES[restype]));
+                if (randomizeAmount == true)
+                    createdResource.amount *= Random.Range(WorldConstants.GENERATION_RANDOMIZER_LO, WorldConstants.GENERATION_RANDOMIZER_HI);
+                terr.cycleGeneratedResources.Add(createdResource.type, createdResource.amount);
+            } 
+        }
+        else if (loc.primaryResourceType != Resource.Type.Unassigned && loc.secondaryResourceType == Resource.Type.Unassigned) // Location has one specific resource
+        {
+            if (Converter.RESOURCE_PER_MANPOWER_INDEX.ContainsKey(loc.primaryResourceType))
+            {
+                Resource createdResource = Converter.GetResourceForManpower(loc.primaryResourceType, terr.cycleSecondaryManpower);
+                if (randomizeAmount == true)
+                    createdResource.amount *= Random.Range(WorldConstants.GENERATION_RANDOMIZER_LO, WorldConstants.GENERATION_RANDOMIZER_HI);
+                terr.cycleGeneratedResources.Add(createdResource.type, createdResource.amount);
+            } 
+        }
+        else // Location has primary and secondary resource specified
+        {
+            if (Converter.RESOURCE_PER_MANPOWER_INDEX.ContainsKey(loc.primaryResourceType) && Converter.RESOURCE_PER_MANPOWER_INDEX.ContainsKey(loc.secondaryResourceType))
+            {
+                Resource primaryCreatedResource = Converter.GetResourceForManpower(loc.primaryResourceType, (terr.cycleSecondaryManpower * (1 - WorldConstants.NATURALRESOURCEPERCENTAGE)));
+                Resource secondaryCreatedResource = Converter.GetResourceForManpower(loc.secondaryResourceType, (terr.cycleSecondaryManpower * WorldConstants.NATURALRESOURCEPERCENTAGE));
+                if (randomizeAmount == true)
+                {
+                    primaryCreatedResource.amount *= Random.Range(WorldConstants.GENERATION_RANDOMIZER_LO, WorldConstants.GENERATION_RANDOMIZER_HI);
+                    secondaryCreatedResource.amount *= Random.Range(WorldConstants.GENERATION_RANDOMIZER_LO, WorldConstants.GENERATION_RANDOMIZER_HI);
+                }
+                terr.cycleGeneratedResources.Add(primaryCreatedResource.type, primaryCreatedResource.amount);
+                terr.cycleGeneratedResources.Add(secondaryCreatedResource.type, secondaryCreatedResource.amount); 
+            }
+        } 
     }
-    void GenerateSecondary(Territory terr)
-    {  
+    void StoreFood(Territory terr)
+    {
+        foreach (Resource.Type restype in terr.cycleGeneratedResources.Keys)
+            if (ResourceController.Instance.resourceCompendium[restype] == Resource.Category.Farmed)
+                 terr.storedResources[restype] += terr.cycleGeneratedResources[restype];
+        
     }
-
-    void ClearGeneratedResources (Territory terr)
+    void StoreNatural(Territory terr)
+    {
+        foreach (Resource.Type restype in terr.cycleGeneratedResources.Keys)
+            if (ResourceController.Instance.resourceCompendium[restype] == Resource.Category.Natural)
+                terr.storedResources[restype] += terr.cycleGeneratedResources[restype];
+    }
+    void ClearStepVariables (Territory terr)
     { 
         terr.cycleGeneratedResources = new Dictionary<Resource.Type, float>();
     }

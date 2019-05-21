@@ -29,6 +29,7 @@ public class WorldController : MonoBehaviour
     {
         Instance = this;
         WorldConstants.SetDictionaries();
+        Converter.SetDictionaries();
     }
 
     private void Start()

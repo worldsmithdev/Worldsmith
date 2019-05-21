@@ -61,8 +61,14 @@ public class ExploreUI : MonoBehaviour
 
     public void SwitchLocation()
     {
-             overviewClickedText.text = "";
-        clickedType = ClickedTypes.None;
+             overviewClickedText.text = ""; 
+        if (clickedType == ClickedTypes.Territory)
+        {
+            TerritoryController.Instance.SetSelectedTerritory(LocationController.Instance.GetSelectedLocation().locationTerritory);
+            SetClickedTerritory(TerritoryController.Instance.GetSelectedTerritory());
+        }
+        else
+            clickedType = ClickedTypes.None;
     }
 
     public void RefreshUI()
@@ -368,17 +374,28 @@ public class ExploreUI : MonoBehaviour
     public void SetClickedTerritory (Territory territory)
     {
         clickedType = ClickedTypes.Territory;
+        Location loc = TerritoryController.Instance.GetLocationForTerritory(territory);
         string line1 = "Territory: " + territory.blockID + "\n";
         string line2;
         if (territory.cycleGeneratedResources.ContainsKey(Resource.Type.Wheat)) 
-             line2 = "Wheat Generation: " + territory.cycleGeneratedResources[Resource.Type.Wheat].ToString("F2") + "\n";
+             line2 = "Wheat Generation: " + territory.cycleGeneratedResources[Resource.Type.Wheat].ToString("F2") + "HL\n";
         else
             line2 = "Wheat Generation: 0"   + "\n";
-        string line3 = "" + "\n";
-        string line4 = "" + "\n";
-        string line5 = "" + "\n";
-        string line6 = "" + "\n";
-        string line7 = "" + "\n";
+        string line3 = "Stored Wheat: " + territory.storedResources[Resource.Type.Wheat] + "HL\n";
+
+        string line4 = "";
+        if (loc.primaryResourceType == Resource.Type.Unassigned)
+            line4 += "\n";
+        else
+            line4 += "Stored " + loc.primaryResourceType + ": " + territory.storedResources[loc.primaryResourceType] + "\n";
+        string line5 = "";
+        if (loc.secondaryResourceType == Resource.Type.Unassigned)
+            line5 += "\n";
+        else
+            line5 += "Stored " + loc.secondaryResourceType + ": " + territory.storedResources[loc.secondaryResourceType] + "\n";
+
+        string line6 = "\n";
+        string line7 = "\n"; 
         overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
     }
     public void SetClickedBuildingText(Building.BuildingType type)

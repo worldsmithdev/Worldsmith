@@ -83,7 +83,7 @@ public class LocationBuilder : MonoBehaviour
         loc.rateIndustry = locdata.Industryrate;
         loc.rateMinting = locdata.Mintingrate;
         loc.resourcePrimary = locdata.Primaryresource;
-        loc.recourceSecondary = locdata.Secondaryresource;
+        loc.resourceSecondary = locdata.Secondaryresource;
         loc.industryPrimary = locdata.Primaryindustry;
         loc.industrySecondary = locdata.Secondaryindustry;
         loc.harborQuality = locdata.Harborquality;

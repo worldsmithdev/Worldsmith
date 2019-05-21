@@ -38,7 +38,7 @@ public class Location : WorldElement
     public int rateIndustry;
     public int rateMinting;
     public string resourcePrimary;
-    public string recourceSecondary;
+    public string resourceSecondary;
     public string industryPrimary;
     public string industrySecondary;
     public int harborQuality;
@@ -72,7 +72,8 @@ public class Location : WorldElement
     public string constructionString;
     public int surety;
 
-
+    public Resource.Type primaryResourceType = Resource.Type.Unassigned;
+    public Resource.Type secondaryResourceType = Resource.Type.Unassigned;
     public Location()
     {
 
@@ -105,6 +106,9 @@ public class Location : WorldElement
 
     public virtual void SetSpecialProperties()
     {
-
+        if (resourcePrimary != "")
+            primaryResourceType = (Resource.Type)System.Enum.Parse(typeof(Resource.Type), resourcePrimary);
+        if (resourceSecondary != "")
+            secondaryResourceType = (Resource.Type)System.Enum.Parse(typeof(Resource.Type), resourceSecondary); 
     }
 }

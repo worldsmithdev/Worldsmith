@@ -6,8 +6,16 @@ using UnityEngine;
 public class Resource : EcoBlock
 {
 
-    public enum Type { Wheat, Wares, Silver, Timber, Stone, Salt, Marble }
-    public enum Category { Unassigned, Food, Natural, Manufactured, Metal }
+ //   public enum Type { Unassigned, Wheat, Wares, Silver, Timber, Stone, Salt, Marble, Pork, Amber }
+    public enum Category { Unassigned, Farmed, Natural, Manufactured, Metal }
+
+    public enum Type
+    {
+        Unassigned, Wheat, Barley, Olives, Grapes, Fruits, Pulses, Honey, Wine, Livestock,    // FARMED 
+        Timber, Stone, Limestone, Marble, Clay, Salt, Sulfur, Amber, Travertine, Pork, Fish,   // NATURAL
+        Glass, Arms, Wares, LocalWares, LocalGreekWares, GreekWares,                    // MANUFACTURED
+        Silver, Gold, Bronze, Iron, Copper, Lead, Tin                          // METALS
+    }
 
     public Type type;
     public Category category;

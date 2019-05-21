@@ -26,8 +26,8 @@ public class LookupUI : MonoBehaviour
     public TMP_Dropdown value3;
     public TMP_Dropdown value4;
     public TMP_Dropdown value5;
-    public TMP_Dropdown value6; 
-
+    public TMP_Dropdown value6;
+     
     public List<TMP_Dropdown> blueDropdownsList;
     public List<TMP_Dropdown> redDropdownsList;
     public List<TMP_Dropdown> greenDropdownsList;
@@ -57,36 +57,36 @@ public class LookupUI : MonoBehaviour
             dropdown.onValueChanged.AddListener(delegate { ValueChangedHandler(); });        
         foreach (TMP_Dropdown dropdown in greenDropdownsList)        
             dropdown.onValueChanged.AddListener(delegate { ValueChangedHandler(); });
-    } 
-     
-
+    }     
     public void SearchForLocation()
     {
-        ResetSearchVisuals();
+        ContainerController.Instance.ToggleHighlights0();
         string str = searchField.text;
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
             if (str == loc.elementID.ToLower() || str == loc.elementID)
                 locationSearchList.Add(loc); 
         foreach (Location loc in locationSearchList)
-            ContainerController.Instance.HighlightLocationOrange(loc); 
-    }
-    public void ResetSearchVisuals()
-    {
-        ContainerController.Instance.ToggleHighlights0();
+            ContainerController.Instance.HighlightLocationRed(loc);
+
         locationSearchList = new List<Location>();
-    }
+    } 
     void Update()
     {
         if (searchField.isFocused && searchField.text != "" && Input.GetKey(KeyCode.Return))
         {
             foreach (Location loc in WorldController.Instance.GetWorld().locationList)
-                // Add more variables here to expand the search field functionality
+            {
                 if (loc.elementID == searchField.text || loc.elementID.ToLower() == searchField.text)
                 {
                     LocationController.Instance.SetSelectedLocation(loc);
                     CameraController.Instance.CenterCameraOnSelectedLocation();
                 }
-            
+                // Add multi-location qualifiers here - description variable given as example
+                else if (loc.resourcePrimary == searchField.text || loc.resourcePrimary.ToLower() == searchField.text || loc.resourceSecondary == searchField.text || loc.resourceSecondary.ToLower() == searchField.text)
+                {
+                    locationSearchList.Add(loc); 
+                }
+            }    
             SearchForLocation();
         }
     }
@@ -179,7 +179,7 @@ public class LookupUI : MonoBehaviour
 
         public void ResetHighlights()
     {
-        ContainerController.Instance.ToggleHighlights0();
+        ContainerController.Instance.ToggleHighlights0(); 
         tempBlueLocList = new List<Location>();
         tempRedLocList = new List<Location>();
         tempGreenLocList = new List<Location>();
