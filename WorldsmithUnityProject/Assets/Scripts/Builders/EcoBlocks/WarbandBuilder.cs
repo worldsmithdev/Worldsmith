@@ -7,9 +7,12 @@ public class WarbandBuilder : MonoBehaviour
     public void BuildWarbands()
     {
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
-            if (loc.GetLocationType() == Location.LocationType.Settled) 
-                    BuildSettledWarbands(loc);
+            if (loc.GetLocationType() == Location.LocationType.Settled)
+                BuildSettledWarbands(loc);
+
+        SetWarbandDictionaryHierarchy();
     }
+
 
     void BuildSettledWarbands(Location loc)
     {
@@ -17,4 +20,8 @@ public class WarbandBuilder : MonoBehaviour
         EconomyController.Instance.warbandDictionary.Add(warband, null);
     }
 
+    void SetWarbandDictionaryHierarchy()
+    {
+
+    }
 }
