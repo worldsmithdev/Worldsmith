@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Warband : EcoBlock
 {
-    public Dictionary<Resource.Type, Resource> resourcePortfolio;
+    public Dictionary<Resource.Type, Resource> resourcePortfolio = new Dictionary<Resource.Type, Resource>();
 
     public Warband(Location loc)
     { 
@@ -24,6 +24,8 @@ public class Warband : EcoBlock
             blockID = "WarbandOf" + loc.elementID;
             blockID += nr;
         }
+        foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)
+            resourcePortfolio.Add(restype, new Resource(restype, 0));
     }
 
 }

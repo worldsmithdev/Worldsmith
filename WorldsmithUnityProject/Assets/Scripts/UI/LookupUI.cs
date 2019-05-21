@@ -57,22 +57,17 @@ public class LookupUI : MonoBehaviour
             dropdown.onValueChanged.AddListener(delegate { ValueChangedHandler(); });        
         foreach (TMP_Dropdown dropdown in greenDropdownsList)        
             dropdown.onValueChanged.AddListener(delegate { ValueChangedHandler(); });
-    } 
-     
-
+    }
     public void SearchForLocation()
     {
-        ResetSearchVisuals();
+        ContainerController.Instance.ToggleHighlights0();
         string str = searchField.text;
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
             if (str == loc.elementID.ToLower() || str == loc.elementID)
-                locationSearchList.Add(loc); 
+                locationSearchList.Add(loc);
         foreach (Location loc in locationSearchList)
-            ContainerController.Instance.HighlightLocationOrange(loc); 
-    }
-    public void ResetSearchVisuals()
-    {
-        ContainerController.Instance.ToggleHighlights0();
+            ContainerController.Instance.HighlightLocationRed(loc);
+
         locationSearchList = new List<Location>();
     }
     void Update()
@@ -80,13 +75,18 @@ public class LookupUI : MonoBehaviour
         if (searchField.isFocused && searchField.text != "" && Input.GetKey(KeyCode.Return))
         {
             foreach (Location loc in WorldController.Instance.GetWorld().locationList)
-                // Add more variables here to expand the search field functionality
+            {
                 if (loc.elementID == searchField.text || loc.elementID.ToLower() == searchField.text)
                 {
                     LocationController.Instance.SetSelectedLocation(loc);
                     CameraController.Instance.CenterCameraOnSelectedLocation();
                 }
-            
+                // Add multi-location qualifiers here - description variable given as example
+                else if (loc.description == searchField.text || loc.description.ToLower() == searchField.text )
+                {
+                    locationSearchList.Add(loc);
+                }
+            }
             SearchForLocation();
         }
     }

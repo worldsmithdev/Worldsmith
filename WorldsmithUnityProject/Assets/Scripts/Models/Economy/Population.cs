@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Population : EcoBlock
 {
-    public Dictionary<Resource.Type, Resource> resourcePortfolio;
+    public Dictionary<Resource.Type, Resource> resourcePortfolio = new Dictionary<Resource.Type, Resource>();
 
     public Population(Location loc)
     { 
@@ -23,5 +23,7 @@ public class Population : EcoBlock
             blockID = "PopulationOf" + loc.elementID;
             blockID += nr;
         }
+        foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)
+            resourcePortfolio.Add(restype, new Resource(restype, 0));
     }
 }

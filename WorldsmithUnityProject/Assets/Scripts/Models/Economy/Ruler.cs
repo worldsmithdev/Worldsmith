@@ -16,7 +16,7 @@ public class Ruler : EcoBlock
 
     public bool isLocalRuler;
 
-    public Dictionary<Resource.Type, Resource> resourcePortfolio;
+    public Dictionary<Resource.Type, Resource> resourcePortfolio = new Dictionary<Resource.Type, Resource>();
 
 
     public Ruler(Location loc, bool localRuler)
@@ -49,7 +49,8 @@ public class Ruler : EcoBlock
             blockID += "RulerOf" + loc.elementID;
             blockID += nr;
         }
-
+        foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)
+            resourcePortfolio.Add(restype, new Resource(restype, 0));
     }
 
     public Location GetHomeLocation()
@@ -64,8 +65,15 @@ public class Ruler : EcoBlock
         Debug.Log("Failed to get Location for Ruler " + blockID);
         return null;
     }
-     
-     
+
+    public Ruler GetController()
+    {
+
+        if (EconomyController.Instance.rulerDictionary[this] == null)
+            return this;
+        else
+            return EconomyController.Instance.rulerDictionary[this];
+    }
 
     public List<Ruler> GetControlledRulers()
     {
@@ -107,13 +115,6 @@ public class Ruler : EcoBlock
         return returnList;
     }
 
-    public Ruler GetController()
-    { 
-
-        if (EconomyController.Instance.rulerDictionary[this] == null)
-            return this;
-        else
-            return EconomyController.Instance.rulerDictionary[this];
-    }
+  
 
 }

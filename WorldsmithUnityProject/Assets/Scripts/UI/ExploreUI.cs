@@ -62,7 +62,13 @@ public class ExploreUI : MonoBehaviour
     public void SwitchLocation()
     {
         overviewClickedText.text = "";
-        clickedType = ClickedTypes.None;
+        if (clickedType == ClickedTypes.Territory)
+        {
+            TerritoryController.Instance.SetSelectedTerritory(LocationController.Instance.GetSelectedLocation().locationTerritory);
+            SetClickedTerritory(TerritoryController.Instance.GetSelectedTerritory());
+        }
+        else
+            clickedType = ClickedTypes.None;
     }
 
     public void RefreshUI()
