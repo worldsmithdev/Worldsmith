@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PopulationBuilder : MonoBehaviour
 {
+
+    float artisanAddition = 0f;
+
     public void BuildPopulations()
     {
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
@@ -16,6 +19,8 @@ public class PopulationBuilder : MonoBehaviour
 
     void BuildSettledPopulations(Location loc)
     {
+
+        artisanAddition = WorldConstants.INDUSTRY_RATE_POPULATION_ADDITION[loc.rateIndustry];
 
         if (loc.GetLocationSubType() == Location.LocationSubType.Polis)
             BuildPolisPopulations(loc);
@@ -36,15 +41,14 @@ public class PopulationBuilder : MonoBehaviour
 
     void BuildPolisPopulations (Location loc)
     {
+        artisanAddition /= 2;
 
-        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Citizen, Population.LaborType.Housekeeper, 0.4f, loc), null);
-        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Citizen, Population.LaborType.Builder, 0.02f, loc), null);
-        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Citizen, Population.LaborType.Artisan, 0.05f, loc), null);
-        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Habitant, Population.LaborType.Housekeeper, 0.35f, loc), null);
-        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Habitant, Population.LaborType.Builder, 0.05f, loc), null);
-        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Habitant, Population.LaborType.Artisan, 0.03f, loc), null);
-        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Slave, Population.LaborType.Housekeeper, 0.04f, loc), null);
-        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Slave, Population.LaborType.Builder, 0.05f, loc), null);
+        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Citizen, Population.LaborType.Leisure, 0.08f, loc), null); 
+        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Citizen, Population.LaborType.Housekeeper, 0.38f - artisanAddition, loc), null); 
+        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Citizen, Population.LaborType.Artisan, 0.05f + artisanAddition, loc), null);
+        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Habitant, Population.LaborType.Housekeeper, 0.4f - artisanAddition, loc), null); 
+        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Habitant, Population.LaborType.Artisan, 0.03f + artisanAddition, loc), null);
+        EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Slave, Population.LaborType.Housekeeper, 0.09f, loc), null); 
         EconomyController.Instance.populationDictionary.Add  ( new Population(Population.ClassType.Slave, Population.LaborType.Artisan, 0.01f, loc), null);
 
     }
@@ -65,24 +69,40 @@ public class PopulationBuilder : MonoBehaviour
     {
         if (loc.currentFaction >= 4) // Greek and Phoenician cities have citizens
         {
-            EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Citizen, Population.LaborType.Housekeeper, 0.39f, loc), null);
-            EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Citizen, Population.LaborType.Artisan, 0.05f, loc), null);
-            EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Housekeeper, 0.5f, loc), null);
-            EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Builder, 0.06f, loc), null);
+            if (loc.hubType == 3 || loc.hubType == 5)
+            {
+                artisanAddition /= 2;
+
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Citizen, Population.LaborType.Leisure, 0.06f, loc), null);
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Citizen, Population.LaborType.Housekeeper, 0.34f - artisanAddition, loc), null);
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Citizen, Population.LaborType.Artisan, 0.08f + artisanAddition, loc), null);
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Housekeeper, 0.5f - artisanAddition, loc), null);
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Artisan, 0.06f + artisanAddition, loc), null); 
+            }
+            else
+            {
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Citizen, Population.LaborType.Leisure, 0.04f, loc), null);
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Citizen, Population.LaborType.Housekeeper, 0.38f - artisanAddition, loc), null);
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Citizen, Population.LaborType.Artisan, 0.04f + artisanAddition, loc), null);
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Housekeeper, 0.54f - artisanAddition, loc), null);
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Artisan, 0.02f + artisanAddition, loc), null); 
+            }
+        
         }
         else
         {
 
-            if (loc.hubType >= 3 || loc.rateIndustry > 1)
+            if (loc.hubType == 3 || loc.hubType == 5)
             {
-                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Housekeeper, 0.88f, loc), null);
-                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Builder, 0.04f, loc), null);
-                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Artisan, 0.08f, loc), null);
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Leisure, 0.04f, loc), null); 
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Housekeeper, 0.9f - artisanAddition, loc), null); 
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Artisan, 0.08f + artisanAddition, loc), null);
             }
             else
             {
-                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Housekeeper, 0.92f, loc), null);
-                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Builder, 0.08f, loc), null);
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Leisure, 0.03f, loc), null); 
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Housekeeper, 0.96f - artisanAddition, loc), null); 
+                EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Artisan, 0.02f + artisanAddition, loc), null);
             }
         }
     }

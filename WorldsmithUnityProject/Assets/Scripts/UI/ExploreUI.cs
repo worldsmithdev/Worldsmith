@@ -341,10 +341,18 @@ public class ExploreUI : MonoBehaviour
         string line1 = "Ruler: " + ruler.blockID + "\n";
         string line2 = "Ruler Authority Type: " + ruler.authorityType + "\n";
         string line3 = "Ruler Attitude: " + ruler.attitude + "\n";
-        string line4 = "Owned Wheat: " + ruler.resourcePortfolio[Resource.Type.Wheat].amount +  "\n";
-        string line5 = "Owned Salt: " + ruler.resourcePortfolio[Resource.Type.Salt].amount + "\n";
-        string line6 = "" + "\n";
-        string line7 = "" + "\n";
+        float wheatAmount = 0f;
+        foreach (Resource res in ruler.cycleLeviedResources)
+            if (res.type == Resource.Type.Wheat)
+                wheatAmount += res.amount;
+        string line4 = "Levied Wheat: " + wheatAmount +  "\n";
+        string line5 = "Owned Wheat: " + ruler.resourcePortfolio[Resource.Type.Wheat].amount + "\n";
+        float waresAmount = 0f;
+        foreach (Resource res in ruler.cycleLeviedResources)
+            if (res.type == Resource.Type.Wares)
+                waresAmount += res.amount;
+        string line6 = "Levied Wares: " + waresAmount + "\n";
+        string line7 = "Owned Wares: " + ruler.resourcePortfolio[Resource.Type.Wares].amount + "\n";
         overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
     }
     public void SetClickedWarband (Warband warband)
@@ -363,12 +371,12 @@ public class ExploreUI : MonoBehaviour
     {
         clickedType = ClickedTypes.Population; 
         string line1 = "Population: " + population.blockID + "\n";
-        string line2 = "" + "\n";
-        string line3 = "" + "\n";
-        string line4 = "" + "\n";
-        string line5 = "" + "\n";
-        string line6 = "" + "\n";
-        string line7 = "" + "\n";
+        string line2 = "Amount: " + population.amount + " / "+ population.GetHomeLocation().GetTotalPopulation() +  "\n";
+        string line3 = "Created Wares: " + population.cycleCreatedResources[Resource.Type.Wares] + "\n";
+        string line4 = "Wares in Porrtfolio: " + population.resourcePortfolio[Resource.Type.Wares].amount + "\n";
+        string line5 = "Wheat in Porrtfolio: " + population.resourcePortfolio[Resource.Type.Wheat].amount + "\n";
+        string line6 = "Timber in Porrtfolio: " + population.resourcePortfolio[Resource.Type.Timber].amount + "\n";
+        string line7 = "Salt in Porrtfolio: " + population.resourcePortfolio[Resource.Type.Salt].amount + "\n";
         overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
     }
     public void SetClickedTerritory (Territory territory)
@@ -376,24 +384,12 @@ public class ExploreUI : MonoBehaviour
         clickedType = ClickedTypes.Territory;
         Location loc = TerritoryController.Instance.GetLocationForTerritory(territory);
         string line1 = "Territory: " + territory.blockID + "\n";
-        string line2;
-        if (territory.cycleGeneratedResources.ContainsKey(Resource.Type.Wheat)) 
-             line2 = "Wheat Generation: " + territory.cycleGeneratedResources[Resource.Type.Wheat].ToString("F2") + "HL\n";
-        else
-            line2 = "Wheat Generation: 0"   + "\n";
-        string line3 = "Stored Wheat: " + territory.storedResources[Resource.Type.Wheat] + "HL\n";
+    
+        string line2 = "Cycle Farmed Manpower: " + territory.cycleFarmedManpower   + "\n";
+        string line3 = "Cycle Natural Manpower: " + territory.cycleNaturalManpower + "\n";
 
-        string line4 = "";
-        if (loc.primaryResourceType == Resource.Type.Unassigned)
-            line4 += "\n";
-        else
-            line4 += "Stored " + loc.primaryResourceType + ": " + territory.storedResources[loc.primaryResourceType] + "\n";
-        string line5 = "";
-        if (loc.secondaryResourceType == Resource.Type.Unassigned)
-            line5 += "\n";
-        else
-            line5 += "Stored " + loc.secondaryResourceType + ": " + territory.storedResources[loc.secondaryResourceType] + "\n";
-
+        string line4 = "\n";
+        string line5 = "\n";
         string line6 = "\n";
         string line7 = "\n"; 
         overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;

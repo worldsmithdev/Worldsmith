@@ -6,14 +6,30 @@ using UnityEngine;
 public class Population : EcoBlock
 {
     public enum ClassType { Unassigned, Citizen, Habitant, Slave }
-    public enum LaborType { Unassigned, Leisure, Artisan, Housekeeper, Builder }
+    public enum LaborType { Unassigned, Leisure, Artisan, Housekeeper }
 
     public ClassType classType;
     public LaborType laborType;
 
-    public int peopleAmount;
+    public int amount;
 
     public Dictionary<Resource.Type, Resource> resourcePortfolio = new Dictionary<Resource.Type, Resource>();
+
+    // INDUSTRY Step
+    public float cycleWaresManpower;
+    public Dictionary<Resource.Type, float> cycleGeneratedResources = new Dictionary<Resource.Type, float>();
+    public Dictionary<Resource.Type, float> cycleCreatedResources = new Dictionary<Resource.Type, float>();
+    public Dictionary<Resource.Type, float> cycleAvailableResources = new Dictionary<Resource.Type, float>();
+
+    // POPULATION Step
+    public float cycleDesiredFoodConsumption;
+    public float cycleActualFoodConsumption;
+    public float cycleDesiredLuxuryConsumption;
+    public float cycleActualLuxuryConsumption;
+    public int successiveFoodConsumtpionShortage;
+    public float averageFoodConsumptionShortage;
+    public int successiveLuxuryConsumtpionShortage;
+    public float averageLuxuryConsumptionShortage;
 
     public Population(ClassType givenclasstype, LaborType givenlabortype, float proportion, Location loc)
     {
@@ -27,7 +43,7 @@ public class Population : EcoBlock
         blockID = classType.ToString() +laborType.ToString() + "PopulationOf" + loc.elementID;
         blockID += nr;
          
-        peopleAmount = (int) (WorldConstants.GetPopulationAmount(loc) * proportion);
+        amount = (int) (WorldConstants.GetPopulationAmount(loc) * proportion);
         loc.populationList.Add(this);
 
         while (EconomyController.Instance.BlockIDExists(this.blockID, this.blockType) == true)
@@ -37,6 +53,22 @@ public class Population : EcoBlock
             blockID += nr;
         } 
         foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)
+        {
             resourcePortfolio.Add(restype, new Resource(restype, 0));
+            cycleAvailableResources.Add(restype, 0);
+        }
+    }
+    public void ShiftLabor (ClassType classtype, LaborType fromLabor, LaborType toLabor)
+    {
+
+    }
+    public Location GetHomeLocation()
+    {
+        foreach (Location location in WorldController.Instance.GetWorld().locationList)        
+            if (location.populationList.Contains(this))
+                return location;
+
+        Debug.LogWarning("Trying to find Location for Population " + this.blockID + " - no Location found!");
+        return null;        
     }
 }

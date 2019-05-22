@@ -10,7 +10,10 @@ public class LocalPoliticsStep : Step
         ClearStepVariables(ruler);
 
         if (ruler.isLocalRuler)
-            DetermineGenerationLevy(ruler); 
+        {
+            DetermineGenerationLevy(ruler);
+            DetermineIndustryLevy(ruler);
+        }
     }
 
     public override void CycleStep(EcoBlock ecoblock)
@@ -18,13 +21,27 @@ public class LocalPoliticsStep : Step
         Ruler ruler = (Ruler)ecoblock;
 
         if (ruler.isLocalRuler)
+        {
             LevyGeneration(ruler);
+            LevyIndustry(ruler);
+        }
     }
 
-    public override void ResolveStep(EcoBlock ecoblock)
+    public override void ResolveStep()
     {
-        Ruler ruler = (Ruler)ecoblock;
+        StoreAvailableResources();
 
+    }
+    void StoreAvailableResources()
+    { 
+        foreach (Population population in EconomyController.Instance.populationDictionary.Keys)
+        {
+            foreach (Resource.Type restype in population.cycleAvailableResources.Keys)
+                if (population.cycleAvailableResources[restype] > 0)
+                { 
+                    population.resourcePortfolio[restype].amount += population.cycleAvailableResources[restype]; 
+                }
+        }       
     }
 
     void DetermineGenerationLevy (Ruler ruler)
@@ -36,27 +53,67 @@ public class LocalPoliticsStep : Step
         else if (ruler.attitude == Ruler.Attitude.Submissive)
             ruler.cycleGenerationLevyPercentage = WorldConstants.GENERATION_LEVY_RATE_LO;
     }
+    void DetermineIndustryLevy(Ruler ruler)
+    {
+        if (ruler.attitude == Ruler.Attitude.Aggressive || ruler.attitude == Ruler.Attitude.Economic)
+            ruler.cycleIndustryLevyPercentage = WorldConstants.INDUSTRY_LEVY_RATE_HI;
+        else if (ruler.attitude == Ruler.Attitude.Independent || ruler.attitude == Ruler.Attitude.Temperate)
+            ruler.cycleIndustryLevyPercentage = WorldConstants.INDUSTRY_LEVY_RATE_MID;
+        else if (ruler.attitude == Ruler.Attitude.Submissive)
+            ruler.cycleIndustryLevyPercentage = WorldConstants.INDUSTRY_LEVY_RATE_LO;
+    }
     void LevyGeneration(Ruler ruler)
     {
-        Territory terr = ruler.GetHomeLocation().locationTerritory;
+        Location loc = ruler.GetHomeLocation();
+        List<Population> housekeeperPopulations = new List<Population>();
+        foreach (Population pop in loc.populationList)
+            if (pop.laborType == Population.LaborType.Housekeeper)
+                housekeeperPopulations.Add(pop);
         float leviedAmount;
-        Dictionary<Resource.Type, float> leviedResources = new Dictionary<Resource.Type, float>();
-        foreach (Resource.Type restype in terr.storedResources.Keys)        
-            if (terr.storedResources[restype] > 0)
-            {
-                leviedAmount = terr.storedResources[restype] * ruler.cycleGenerationLevyPercentage;
-                leviedResources.Add(restype, leviedAmount);
-            }
-        foreach (Resource.Type restype in leviedResources.Keys)
+        foreach (Population pop in housekeeperPopulations)
         {
-            terr.storedResources[restype] -= leviedResources[restype];
-            ruler.resourcePortfolio[restype].amount += leviedResources[restype];
+            foreach (Resource.Type restype in pop.cycleGeneratedResources.Keys)
+            { 
+                if (pop.cycleGeneratedResources[restype] > 0)
+                {
+                    if (pop.classType == Population.ClassType.Slave)
+                        leviedAmount = pop.cycleGeneratedResources[restype];
+                    else
+                         leviedAmount = pop.cycleGeneratedResources[restype] * ruler.cycleGenerationLevyPercentage;
+                    ruler.cycleLeviedResources.Add(new Resource(restype, leviedAmount));
+                    pop.cycleAvailableResources[restype] -= leviedAmount;
+                    ruler.resourcePortfolio[restype].amount += leviedAmount; 
+                }
+            }
+        } 
+    }
+    void LevyIndustry(Ruler ruler)
+    {
+        Location loc = ruler.GetHomeLocation();
+        List<Population> artisanPopulations = new List<Population>();
+        foreach (Population pop in loc.populationList)
+            if (pop.laborType == Population.LaborType.Artisan)
+                artisanPopulations.Add(pop);
+        float leviedAmount = 0f;
+        foreach (Population pop in artisanPopulations)
+        {
+            foreach (Resource.Type restype in pop.cycleCreatedResources.Keys)
+            { 
+                if (pop.cycleCreatedResources[restype] > 0)
+                {
+                    if (pop.classType == Population.ClassType.Slave)
+                        leviedAmount = pop.cycleCreatedResources[restype];
+                    else                     
+                         leviedAmount = pop.cycleCreatedResources[restype] * ruler.cycleIndustryLevyPercentage;
+                    ruler.cycleLeviedResources.Add(new Resource (restype, leviedAmount) );
+                    pop.cycleAvailableResources[restype] -= leviedAmount;
+                    ruler.resourcePortfolio[restype].amount += leviedAmount;
+                }
+            }           
         }
-
-
     }
     void ClearStepVariables(Ruler ruler)
-    { 
-
+    {
+        ruler.cycleLeviedResources = new List<Resource>();
     }
 }

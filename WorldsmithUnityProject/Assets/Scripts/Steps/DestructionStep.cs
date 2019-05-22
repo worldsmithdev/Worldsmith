@@ -16,9 +16,8 @@ public class DestructionStep : Step
 
     }
 
-    public override void ResolveStep(EcoBlock ecoblock)
+    public override void ResolveStep()
     {
-        Warband warband = (Warband)ecoblock;
 
     }
 }

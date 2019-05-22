@@ -14,11 +14,10 @@ public class Territory  : EcoBlock
     public Status territoryStatus;
 
 
+
     // GENERATION Step
-    public Dictionary<Resource.Type, float> storedResources = new Dictionary<Resource.Type, float>();
-    public float cycleFoodManpower;     
-    public float cycleSecondaryManpower;     
-    public Dictionary<Resource.Type, float> cycleGeneratedResources = new Dictionary<Resource.Type, float>();
+    public float cycleFarmedManpower;     
+    public float cycleNaturalManpower;      
 
     public Territory(Location loc)
     { 
@@ -35,12 +34,8 @@ public class Territory  : EcoBlock
             nr++;
             blockID = "TerritoryOf" + loc.elementID;
             blockID += nr;
-        }
-
-        foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)        
-            storedResources.Add(restype, 0);
-        
-
+        } 
+     
     }
 
  

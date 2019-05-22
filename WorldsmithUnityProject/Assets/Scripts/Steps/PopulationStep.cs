@@ -7,18 +7,45 @@ public class PopulationStep : Step
     public override void ConfigureStep (EcoBlock ecoblock)
     {
         Population population = (Population)ecoblock;
+        ClearStepVariables(population);
 
+        DetermineFoodConsumption(population);
+        DetermineLuxuryConsumption(population);
     }
 
     public override void CycleStep(EcoBlock ecoblock)
     {
         Population population = (Population)ecoblock;
+        ConsumeFood(population);
+        ConsumeLuxury(population);
+    }
+
+    public override void ResolveStep()
+    {
+        
 
     }
 
-    public override void ResolveStep(EcoBlock ecoblock)
+    void DetermineFoodConsumption(Population population)
     {
-        Population population = (Population)ecoblock;
+        population.cycleDesiredFoodConsumption = population.amount * WorldConstants.FOOD_CONSUMPTION_RATE;
+    }
+    void DetermineLuxuryConsumption(Population population)
+    {
+        population.cycleDesiredLuxuryConsumption = population.amount * WorldConstants.FOOD_CONSUMPTION_RATE;
 
+    }
+    void ConsumeFood(Population population)
+    {
+
+    }
+    void ConsumeLuxury(Population population)
+    {
+
+    }
+
+    void ClearStepVariables(Population population)
+    {
+ 
     }
 }

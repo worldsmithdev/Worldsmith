@@ -5,59 +5,24 @@ using UnityEngine;
 public class WorldConstants  
 {
     // Hosts static constant valuables for any (economic) variables and some methods for receving them
-
-
-    public static Dictionary<int, float> NATURAL_RESOURCES_RATE = new Dictionary<int, float>();
-    public static Dictionary<Resource.Type, float> DEFAULT_NATURAL_RESOURCETYPES = new Dictionary<Resource.Type, float>();
-    public static Dictionary<Territory.Size, float> TERRITORYSIZE_MULTIPLIER = new Dictionary<Territory.Size, float>();
-    public static Dictionary<Territory.SoilQuality, float> TERRITORYSOIL_MULTIPLIER = new Dictionary<Territory.SoilQuality, float>();
-    public static Dictionary<Territory.Status, float> TERRITORYSTATUS_MULTIPLIER = new Dictionary<Territory.Status, float>(); 
-    
-
-    public static void SetDictionaries()
-    { 
-        NATURAL_RESOURCES_RATE.Add(1, 0.04f);
-        NATURAL_RESOURCES_RATE.Add(2, 0.1f);
-        NATURAL_RESOURCES_RATE.Add(3, 0.25f);
-        NATURAL_RESOURCES_RATE.Add(4, 0.55f);
-        NATURAL_RESOURCES_RATE.Add(5, 0.85f);
-
-       
-        DEFAULT_NATURAL_RESOURCETYPES.Add(Resource.Type.Timber, 0.75f);  // Must equal 1.0 total
-        DEFAULT_NATURAL_RESOURCETYPES.Add(Resource.Type.Stone, 0.25f);
-
-        TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Core, 0.6f);
-        TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Cluster,0.8f );
-        TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Valley, 1.0f);
-        TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Urban, 1.3f);
-        TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Chora, 1.6f);
-
-        TERRITORYSOIL_MULTIPLIER.Add(Territory.SoilQuality.Poor, 0.7f);
-        TERRITORYSOIL_MULTIPLIER.Add(Territory.SoilQuality.Average,  1.0f);
-        TERRITORYSOIL_MULTIPLIER.Add(Territory.SoilQuality.Rich, 1.3f);
-        TERRITORYSOIL_MULTIPLIER.Add(Territory.SoilQuality.Volcanic, 1.6f);
-        TERRITORYSOIL_MULTIPLIER.Add(Territory.SoilQuality.Splendid, 1.8f);
-
-        TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Destroyed, 0.25f);
-        TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Neglected, 0.5f);
-        TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Maintained, 1.0f);
-        TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Optimised, 1.4f);
-        TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Industrialized, 1.8f);  
-    }
-     
+          
 
     // GENERATION
-
     public static float GENERATION_RANDOMIZER_LO = 0.95f;
     public static float GENERATION_RANDOMIZER_HI = 1.05f;
-    public static float NATURALRESOURCEPERCENTAGE = 0.35f;
+    public static float CITIZEN_GENERATION_ADVANTAGE= 0.65f; // Proportion of generated resources that go to citizen populations
+    public static float NATURAL_RESOURCE_PERCENTAGE = 0.35f;
 
+    // INDUSTRY
+    public static float WARES_FOCUS_BONUS = 1.2f;  
 
     // LOCALPOLITICS
     public static float GENERATION_LEVY_RATE_HI = 0.12f;
     public static float GENERATION_LEVY_RATE_MID = 0.06f;
     public static float GENERATION_LEVY_RATE_LO = 0.03f;
-
+    public static float INDUSTRY_LEVY_RATE_HI = 0.2f;
+    public static float INDUSTRY_LEVY_RATE_MID = 0.1f;
+    public static float INDUSTRY_LEVY_RATE_LO = 0.05f;
 
     // POPULATION
     public static int POPSIZE1LO = 80;
@@ -81,8 +46,73 @@ public class WorldConstants
     public static int POPSIZE10LO = 7500;
     public static int POPSIZE10HI = 8000;
 
+    public static float FOOD_CONSUMPTION_RATE = 3.0f; // HL wheat
+    public static float LUXURY_CONSUMPTION_RATE = 1.0f; // Wares piece
 
-   
+    // Dictionaries
+
+    // All
+    public static Dictionary<int, float> GENERATION_RATES_MODIFIER = new Dictionary<int, float>();
+
+
+    // GENERATION
+    public static Dictionary<Resource.Type, float> DEFAULT_NATURAL_RESOURCETYPES = new Dictionary<Resource.Type, float>();
+    public static Dictionary<Territory.Size, float> TERRITORYSIZE_MULTIPLIER = new Dictionary<Territory.Size, float>();
+    public static Dictionary<Territory.SoilQuality, float> TERRITORYSOIL_MULTIPLIER = new Dictionary<Territory.SoilQuality, float>();
+    public static Dictionary<Territory.Status, float> TERRITORYSTATUS_MULTIPLIER = new Dictionary<Territory.Status, float>();
+
+    // INDUSTRY
+    public static Dictionary<int, float> INDUSTRY_RATE_MODIFIER = new Dictionary<int, float>();
+
+
+
+    // POPULATION
+    public static Dictionary<int, float> INDUSTRY_RATE_POPULATION_ADDITION = new Dictionary<int, float>();
+
+
+
+    public static void SetDictionaries()
+    {
+        // GENERATION
+        GENERATION_RATES_MODIFIER.Add(1, 0.04f);
+        GENERATION_RATES_MODIFIER.Add(2, 0.1f);
+        GENERATION_RATES_MODIFIER.Add(3, 0.25f);
+        GENERATION_RATES_MODIFIER.Add(4, 0.55f);
+        GENERATION_RATES_MODIFIER.Add(5, 0.85f);
+        DEFAULT_NATURAL_RESOURCETYPES.Add(Resource.Type.Timber, 0.75f);  // Must equal 1.0 total
+        DEFAULT_NATURAL_RESOURCETYPES.Add(Resource.Type.Stone, 0.25f);
+        TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Core, 0.6f);
+        TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Cluster, 0.8f);
+        TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Valley, 1.0f);
+        TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Urban, 1.3f);
+        TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Chora, 1.6f);
+        TERRITORYSOIL_MULTIPLIER.Add(Territory.SoilQuality.Poor, 0.7f);
+        TERRITORYSOIL_MULTIPLIER.Add(Territory.SoilQuality.Average, 1.0f);
+        TERRITORYSOIL_MULTIPLIER.Add(Territory.SoilQuality.Rich, 1.3f);
+        TERRITORYSOIL_MULTIPLIER.Add(Territory.SoilQuality.Volcanic, 1.6f);
+        TERRITORYSOIL_MULTIPLIER.Add(Territory.SoilQuality.Splendid, 1.8f);
+        TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Destroyed, 0.25f);
+        TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Neglected, 0.5f);
+        TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Maintained, 1.0f);
+        TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Optimised, 1.4f);
+        TERRITORYSTATUS_MULTIPLIER.Add(Territory.Status.Industrialized, 1.8f);
+
+        // POPULATION
+        INDUSTRY_RATE_POPULATION_ADDITION.Add(1, 0.0f);
+        INDUSTRY_RATE_POPULATION_ADDITION.Add(2, 0.02f);
+        INDUSTRY_RATE_POPULATION_ADDITION.Add(3, 0.04f);
+        INDUSTRY_RATE_POPULATION_ADDITION.Add(4, 0.08f);
+        INDUSTRY_RATE_POPULATION_ADDITION.Add(5, 0.16f);
+
+        // INDUSTRY
+        INDUSTRY_RATE_MODIFIER.Add(1 , 0.9f);
+        INDUSTRY_RATE_MODIFIER.Add(2 , 1.0f);
+        INDUSTRY_RATE_MODIFIER.Add(3 , 1.1f);
+        INDUSTRY_RATE_MODIFIER.Add(4 , 1.2f);
+        INDUSTRY_RATE_MODIFIER.Add(5 , 1.3f);
+
+    }
+
 
     public static int GetPopulationAmount(Location loc)
     {

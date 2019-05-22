@@ -30,71 +30,87 @@ public class StepsController : MonoBehaviour
 
     public void CycleSteps()
     {
-        // Each of the 8 types of steps is dictated by one type of EcoBlock
-
         // Generation
         foreach (Territory ecoblock in EconomyController.Instance.territoryDictionary.Keys)
             generationStep.ConfigureStep(ecoblock);
         foreach (Territory ecoblock in EconomyController.Instance.territoryDictionary.Keys)
             generationStep.CycleStep(ecoblock);
-        foreach (Territory ecoblock in EconomyController.Instance.territoryDictionary.Keys)
-            generationStep.ResolveStep(ecoblock);
-
-        // LocalPolitics
-        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
-            localPoliticsStep.ConfigureStep(ecoblock);
-        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
-            localPoliticsStep.CycleStep(ecoblock);
-        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
-            localPoliticsStep.ResolveStep(ecoblock);
-
-        // Population
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            populationStep.ConfigureStep(ecoblock);
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            populationStep.CycleStep(ecoblock);
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            populationStep.ResolveStep(ecoblock);
+    
+            generationStep.ResolveStep();
 
         // Industry
         foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
             industryStep.ConfigureStep(ecoblock);
         foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
             industryStep.CycleStep(ecoblock);
+        
+            industryStep.ResolveStep();
+
+        // LocalPolitics
+        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
+            localPoliticsStep.ConfigureStep(ecoblock);
+        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
+            localPoliticsStep.CycleStep(ecoblock);
+        
+            localPoliticsStep.ResolveStep();
+
+        // Population
         foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            industryStep.ResolveStep(ecoblock);
+            populationStep.ConfigureStep(ecoblock);
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            populationStep.CycleStep(ecoblock);
+        
+            populationStep.ResolveStep();
 
         // Construction
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             constructionStep.ConfigureStep(ecoblock);
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             constructionStep.CycleStep(ecoblock);
-        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
-            constructionStep.ResolveStep(ecoblock);
+       
+            constructionStep.ResolveStep();
 
         // RegionalPolitics
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             regionalPoliticsStep.ConfigureStep(ecoblock);
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             regionalPoliticsStep.CycleStep(ecoblock);
-        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
-            regionalPoliticsStep.ResolveStep(ecoblock);
+       
+            regionalPoliticsStep.ResolveStep();
 
         // Exchange
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             exchangeStep.ConfigureStep(ecoblock);
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             exchangeStep.CycleStep(ecoblock);
-        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
-            exchangeStep.ResolveStep(ecoblock);
+        
+            exchangeStep.ResolveStep();
 
         // Destruction
         foreach (Warband ecoblock in EconomyController.Instance.warbandDictionary.Keys)
             destructionStep.ConfigureStep(ecoblock);
         foreach (Warband ecoblock in EconomyController.Instance.warbandDictionary.Keys)
             destructionStep.CycleStep(ecoblock);
-        foreach (Warband ecoblock in EconomyController.Instance.warbandDictionary.Keys)
-            destructionStep.ResolveStep(ecoblock);
+       
+            destructionStep.ResolveStep();
+
+        //// Each
+        //foreach (Territory ecoblock in EconomyController.Instance.territoryDictionary.Keys)
+        //    generationStep.ResolveStep(ecoblock);
+        //foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+        //    industryStep.ResolveStep(ecoblock);
+        //foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
+        //    localPoliticsStep.ResolveStep(ecoblock);
+        //foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+        //    populationStep.ResolveStep(ecoblock);
+        //foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
+        //    constructionStep.ResolveStep(ecoblock);
+        //foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
+        //    regionalPoliticsStep.ResolveStep(ecoblock);
+        //foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
+        //    exchangeStep.ResolveStep(ecoblock);
+        //foreach (Warband ecoblock in EconomyController.Instance.warbandDictionary.Keys)
+        //    destructionStep.ResolveStep(ecoblock);
     }
 
     public void CycleEvents()

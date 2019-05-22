@@ -14,7 +14,7 @@ public class Step : MonoBehaviour
 
     }
 
-    public virtual void ResolveStep(EcoBlock ecoblock)
+    public virtual void ResolveStep()
     {
 
     }

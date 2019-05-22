@@ -16,9 +16,9 @@ public class ConstructionStep : Step
 
     }
 
-    public override void ResolveStep(EcoBlock ecoblock)
+    public override void ResolveStep()
     {
-        Ruler ruler = (Ruler)ecoblock;
+       
 
     }
 }

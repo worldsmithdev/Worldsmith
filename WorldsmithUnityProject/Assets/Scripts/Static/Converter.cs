@@ -9,7 +9,7 @@ public class Converter
 
     public static void SetDictionaries()
     {
-
+        // NATURAL
         RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Wheat, 1.0f); //  HectoLiter
         RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Timber, 15.0f); //  KG
         RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Stone, 10.0f); //  KG
@@ -21,9 +21,12 @@ public class Converter
         RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Amber, 0.05f); //  KG
         RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Travertine, 5.0f); //  KG        
         RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Pork, 20.0f); //  KG
-        RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Fish, 20.0f); //  KG           
+        RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Fish, 20.0f); //  KG        
+        // MANUFACTURED
+        RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Wares, 10.0f); //  piece        
+
     }
-    
+
 
     public static Resource GetResourceForManpower(Resource.Type restype, float manpower)
     {

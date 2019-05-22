@@ -111,4 +111,13 @@ public class Location : WorldElement
         if (resourceSecondary != "")
             secondaryResourceType = (Resource.Type)System.Enum.Parse(typeof(Resource.Type), resourceSecondary); 
     }
+
+    public int GetTotalPopulation()
+    {
+        int total = 0;
+        foreach (Population pop in populationList)
+            total += pop.amount;
+
+        return total;
+    }
 }

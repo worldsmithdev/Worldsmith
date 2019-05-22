@@ -21,7 +21,8 @@ public class Ruler : EcoBlock
 
     // LOCALPOLITICS Step
     public float cycleGenerationLevyPercentage;
-
+    public float cycleIndustryLevyPercentage;
+    public List<Resource> cycleLeviedResources = new List<Resource>();
 
     public Ruler(Location loc, bool localRuler)
     {
