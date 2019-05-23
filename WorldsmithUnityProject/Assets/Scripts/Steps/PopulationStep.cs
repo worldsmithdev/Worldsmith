@@ -32,20 +32,45 @@ public class PopulationStep : Step
     }
     void DetermineLuxuryConsumption(Population population)
     {
-        population.cycleDesiredLuxuryConsumption = population.amount * WorldConstants.FOOD_CONSUMPTION_RATE;
+        population.cycleDesiredLuxuryConsumption = population.amount * WorldConstants.LUXURY_CONSUMPTION_RATE;
 
     }
     void ConsumeFood(Population population)
     {
-
+        if (population.resourcePortfolio[Resource.Type.Wheat].amount >= population.cycleDesiredFoodConsumption) // Enough food available
+        {
+            population.cycleActualFoodConsumption = population.cycleDesiredFoodConsumption;
+            population.successiveFoodConsumptionShortage = 0;
+            population.foodConsumptionShortageList.Add(0);            
+        }
+        else if (population.resourcePortfolio[Resource.Type.Wheat].amount < population.cycleDesiredFoodConsumption) // Too little food available
+        {
+            population.cycleActualFoodConsumption = population.resourcePortfolio[Resource.Type.Wheat].amount;
+            population.successiveFoodConsumptionShortage += 1;
+            population.foodConsumptionShortageList.Add( (population.cycleDesiredFoodConsumption  - population.cycleActualFoodConsumption));
+        }
+        population.resourcePortfolio[Resource.Type.Wheat].amount -= population.cycleActualFoodConsumption;
     }
     void ConsumeLuxury(Population population)
     {
-
+        if (population.resourcePortfolio[Resource.Type.Wares].amount >= population.cycleDesiredLuxuryConsumption) // Enough food available
+        {
+            population.cycleActualLuxuryConsumption = population.cycleDesiredLuxuryConsumption;
+            population.successiveLuxuryConsumptionShortage = 0;
+            population.luxuryConsumptionShortageList.Add(0);
+        }
+        else if (population.resourcePortfolio[Resource.Type.Wares].amount < population.cycleDesiredLuxuryConsumption) // Too little food available
+        {
+            population.cycleActualLuxuryConsumption = population.resourcePortfolio[Resource.Type.Wares].amount;
+            population.successiveLuxuryConsumptionShortage += 1;
+            population.luxuryConsumptionShortageList.Add((population.cycleDesiredLuxuryConsumption - population.cycleActualLuxuryConsumption));
+        } 
+        population.resourcePortfolio[Resource.Type.Wares].amount -= population.cycleActualLuxuryConsumption;
     }
 
     void ClearStepVariables(Population population)
     {
  
+
     }
 }

@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class StepsController : MonoBehaviour
 {
-    // Drives world simulation through a divison of eight steps, each of which can be filled with custom fucntionality
+    // Drives world simulation through a divison of ten steps, each of which can be filled with custom fucntionality
 
     public static StepsController Instance { get; protected set; }
 
     public GenerationStep generationStep;
-    public LocalPoliticsStep localPoliticsStep;
-    public PopulationStep populationStep;
     public IndustryStep industryStep;
+    public LocalPoliticsStep localPoliticsStep;
+    public LocalExchangeStep localExchangeStep;
+    public PopulationStep populationStep;
     public ConstructionStep constructionStep;
     public RegionalPoliticsStep regionalPoliticsStep;
-    public ExchangeStep exchangeStep;
+    public RegionalExchangeStep regionalExchangeStep;
     public DestructionStep destructionStep;
+    public GlobalExchangeStep globalExchangeStep;
 
     private void Awake()
     {
@@ -54,6 +56,18 @@ public class StepsController : MonoBehaviour
         
             localPoliticsStep.ResolveStep();
 
+        // LocalExchange
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            localExchangeStep.ConfigureStep(ecoblock);
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            localExchangeStep.CycleStep(ecoblock);
+        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
+            localExchangeStep.ConfigureStep(ecoblock);
+        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
+            localExchangeStep.CycleStep(ecoblock);
+
+        localExchangeStep.ResolveStep();
+
         // Population
         foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
             populationStep.ConfigureStep(ecoblock);
@@ -78,13 +92,18 @@ public class StepsController : MonoBehaviour
        
             regionalPoliticsStep.ResolveStep();
 
-        // Exchange
+        // RegionalExchange
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            regionalExchangeStep.ConfigureStep(ecoblock);
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            regionalExchangeStep.CycleStep(ecoblock);
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
-            exchangeStep.ConfigureStep(ecoblock);
+            regionalExchangeStep.ConfigureStep(ecoblock);
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
-            exchangeStep.CycleStep(ecoblock);
-        
-            exchangeStep.ResolveStep();
+            regionalExchangeStep.CycleStep(ecoblock);
+
+        regionalExchangeStep.ResolveStep();
+         
 
         // Destruction
         foreach (Warband ecoblock in EconomyController.Instance.warbandDictionary.Keys)
@@ -93,6 +112,16 @@ public class StepsController : MonoBehaviour
             destructionStep.CycleStep(ecoblock);
        
             destructionStep.ResolveStep();
+
+        // GlobalExchange
+        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
+            globalExchangeStep.ConfigureStep(ecoblock);
+        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
+            globalExchangeStep.CycleStep(ecoblock);
+
+        globalExchangeStep.ResolveStep();
+
+
 
         //// Each
         //foreach (Territory ecoblock in EconomyController.Instance.territoryDictionary.Keys)

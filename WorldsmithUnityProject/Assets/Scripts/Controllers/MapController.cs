@@ -135,8 +135,9 @@ public class MapController : MonoBehaviour
     public void HoverClickable(string name)
     {
         foreach (Clickable clickable in mapClickablesList)
-            if (clickable.transform.name == name)
-                clickable.triggerSpriteObject.SetActive(true);
+            if (clickable.gameObject != null)
+                if (clickable.transform.name == name)
+                  clickable.triggerSpriteObject.SetActive(true);
 
         foreach (SubMap subMap in subMapList)
             if (subMap.transform.name == name)
@@ -145,15 +146,17 @@ public class MapController : MonoBehaviour
     public void ExitHoverClickable()
     {
         foreach (Clickable clickable in mapClickablesList)
-            clickable.triggerSpriteObject.SetActive(false);
+            if (clickable.gameObject != null)
+                clickable.triggerSpriteObject.SetActive(false);
 
         foreach (SubMap subMap in subMapList)
             subMap.highlightObject.SetActive(false);
     }
     public void ClickMapClickable(string name)
     {
-        foreach (Clickable clickable in mapClickablesList)
-            clickable.triggerSpriteObject.SetActive(false);
+        //foreach (Clickable clickable in mapClickablesList)
+        //    if (clickable != null)
+        //        clickable.triggerSpriteObject.SetActive(false);
         foreach (SubMap subMap in subMapList)
             if (subMap.transform.name == name)
                 ClickSubMap(subMap);
@@ -176,9 +179,10 @@ public class MapController : MonoBehaviour
                     DisableGreaterMapView();
                     CameraController.Instance.SetWorldSectionView();
                     UIController.Instance.tabsSwitcher.toggleBottom1.isOn = true;
-                    UIController.Instance.RefreshUI();
-                    foreach (Clickable clickable in mapClickablesList)
-                        clickable.triggerSpriteObject.SetActive(false);
+                    //UIController.Instance.RefreshUI();
+                    //foreach (Clickable clickable in mapClickablesList)
+                    //    if (clickable != null)
+                    //        clickable.triggerSpriteObject.SetActive(false);
                 }
         }
         if (foundMatch == false)

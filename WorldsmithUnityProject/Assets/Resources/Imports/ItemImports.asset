@@ -15,9 +15,9 @@ MonoBehaviour:
   SheetName: Assets/Resources/Imports/WorldsmithImports.xlsx
   WorksheetName: ItemImports
   dataArray:
-  - name: 
-    description: 
-    location: 
+  - name: PricyDagger
+    description: Shiny
+    location: Egenimos
   - name: 
     description: 
     location: 

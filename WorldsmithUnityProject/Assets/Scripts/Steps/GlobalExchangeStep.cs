@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExchangeStep : Step
+public class GlobalExchangeStep : Step
 {
     public override void ConfigureStep(EcoBlock ecoblock)
     {
@@ -18,7 +18,7 @@ public class ExchangeStep : Step
 
     public override void ResolveStep()
     {
-       
+
 
     }
 }

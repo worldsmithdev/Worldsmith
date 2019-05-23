@@ -10,7 +10,7 @@ public class Converter
     public static void SetDictionaries()
     {
         // NATURAL
-        RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Wheat, 1.0f); //  HectoLiter
+        RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Wheat, 3.0f); //  HectoLiter
         RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Timber, 15.0f); //  KG
         RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Stone, 10.0f); //  KG
         RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Limestone, 10.0f); //  KG 

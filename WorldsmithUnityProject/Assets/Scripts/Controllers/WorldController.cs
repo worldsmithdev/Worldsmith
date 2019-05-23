@@ -41,6 +41,7 @@ public class WorldController : MonoBehaviour
 
         LocationController.Instance.SetPreSelectedLocation();
         UIController.Instance.RefreshUI();
+        EconomyController.Instance.ForwardCycle();
     }    
     void AutoCreateWorld()
     {

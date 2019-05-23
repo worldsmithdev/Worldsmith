@@ -80,9 +80,11 @@ public class LocalPoliticsStep : Step
                         leviedAmount = pop.cycleGeneratedResources[restype];
                     else
                          leviedAmount = pop.cycleGeneratedResources[restype] * ruler.cycleGenerationLevyPercentage;
-                    ruler.cycleLeviedResources.Add(new Resource(restype, leviedAmount));
-                    pop.cycleAvailableResources[restype] -= leviedAmount;
-                    ruler.resourcePortfolio[restype].amount += leviedAmount; 
+                    Resource leviedResource = new Resource(restype, leviedAmount);
+                    ruler.cycleLeviedResources.Add(leviedResource); 
+                    pop.cyclePaidLevyResources.Add(leviedResource);
+                    pop.cycleAvailableResources[restype] -= leviedResource.amount;
+                    ruler.resourcePortfolio[restype].amount += leviedResource.amount; 
                 }
             }
         } 
@@ -105,9 +107,11 @@ public class LocalPoliticsStep : Step
                         leviedAmount = pop.cycleCreatedResources[restype];
                     else                     
                          leviedAmount = pop.cycleCreatedResources[restype] * ruler.cycleIndustryLevyPercentage;
-                    ruler.cycleLeviedResources.Add(new Resource (restype, leviedAmount) );
-                    pop.cycleAvailableResources[restype] -= leviedAmount;
-                    ruler.resourcePortfolio[restype].amount += leviedAmount;
+                    Resource leviedResource = new Resource(restype, leviedAmount);
+                    ruler.cycleLeviedResources.Add(leviedResource);
+                    pop.cyclePaidLevyResources.Add(leviedResource);
+                    pop.cycleAvailableResources[restype] -= leviedResource.amount;
+                    ruler.resourcePortfolio[restype].amount += leviedResource.amount;
                 }
             }           
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Building 
 {
-    public enum BuildingType { Unassigned,  Granary  }
+    public enum BuildingType { Unassigned, Citadel, Dwelling, Market, Granary , Walls, Temple }
 
     public string buildingName;
     public BuildingType buildingType;

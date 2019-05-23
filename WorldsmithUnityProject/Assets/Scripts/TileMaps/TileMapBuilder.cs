@@ -51,10 +51,21 @@ public class TileMapBuilder : MonoBehaviour
         colorInputWhite = new Color32(255, 255, 255, 255);
         colorInputGrey = new Color32(149, 149, 149, 255);
         colorInputDarkRed = new Color32(121, 0, 0, 255);
-         
-        buildingTemplateInputColorPairing.Add(colorInputLightgreen, Building.BuildingType.Granary); 
-         
-        buildingTemplateOutputSpritePairing.Add(Building.BuildingType.Granary, SpriteCollection.Instance.colorTileYellow);  
+          
+        buildingTemplateInputColorPairing.Add(colorInputGrey, Building.BuildingType.Walls);
+        buildingTemplateInputColorPairing.Add(colorInputDarkRed, Building.BuildingType.Temple);
+        buildingTemplateInputColorPairing.Add(colorInputBlack, Building.BuildingType.Citadel);
+        buildingTemplateInputColorPairing.Add(colorInputLightgreen, Building.BuildingType.Dwelling);
+        buildingTemplateInputColorPairing.Add(colorInputOrange, Building.BuildingType.Market);
+        buildingTemplateInputColorPairing.Add(colorInputRed, Building.BuildingType.Granary);
+        buildingTemplateOutputSpritePairing.Add(Building.BuildingType.Granary, SpriteCollection.Instance.colorTileYellow);      
+        buildingTemplateOutputSpritePairing.Add(Building.BuildingType.Walls, SpriteCollection.Instance.colorTileBlack);
+        buildingTemplateOutputSpritePairing.Add(Building.BuildingType.Temple, SpriteCollection.Instance.colorTileRed);
+        buildingTemplateOutputSpritePairing.Add(Building.BuildingType.Citadel, SpriteCollection.Instance.locationSettled);
+        buildingTemplateOutputSpritePairing.Add(Building.BuildingType.Dwelling, SpriteCollection.Instance.colorTilePurple);
+        buildingTemplateOutputSpritePairing.Add(Building.BuildingType.Market, SpriteCollection.Instance.economicSprite2);
+      //  buildingTemplateOutputSpritePairing.Add(Building.BuildingType.Unassigned, SpriteCollection.Instance.colorTileWhite);
+
 
         worldElementSpritePairings.Add(World.WorldElement.Unassigned, null);
         worldElementSpritePairings.Add(World.WorldElement.Character, SpriteCollection.Instance.schematicCharacterSprite);
@@ -84,6 +95,8 @@ public class TileMapBuilder : MonoBehaviour
                 TileMapController.Instance.tileMapSpecifics.BuildElementsMap(givenMap);
             else if (givenMap.tileMapName == "Rule")
                 TileMapController.Instance.tileMapSpecifics.BuildRuleMap(givenMap);
+            else if (givenMap.tileMapName == "Exchanges")
+                TileMapController.Instance.tileMapSpecifics.BuildExchangesMap(givenMap);
         }
         else if (givenMap.tileMapCategory == TileMap.TileMapCategory.Dynamic)
         {

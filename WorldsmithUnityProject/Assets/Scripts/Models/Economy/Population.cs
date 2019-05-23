@@ -20,16 +20,21 @@ public class Population : EcoBlock
     public Dictionary<Resource.Type, float> cycleGeneratedResources = new Dictionary<Resource.Type, float>();
     public Dictionary<Resource.Type, float> cycleCreatedResources = new Dictionary<Resource.Type, float>();
     public Dictionary<Resource.Type, float> cycleAvailableResources = new Dictionary<Resource.Type, float>();
+    public List<Resource> cyclePaidLevyResources = new List<Resource>();
 
     // POPULATION Step
     public float cycleDesiredFoodConsumption;
     public float cycleActualFoodConsumption;
     public float cycleDesiredLuxuryConsumption;
     public float cycleActualLuxuryConsumption;
-    public int successiveFoodConsumtpionShortage;
-    public float averageFoodConsumptionShortage;
-    public int successiveLuxuryConsumtpionShortage;
-    public float averageLuxuryConsumptionShortage;
+    public int successiveFoodConsumptionShortage = 0;
+    public List<float> foodConsumptionShortageList = new List<float>();
+    public int successiveLuxuryConsumptionShortage = 0;
+    public List<float> luxuryConsumptionShortageList = new List<float>();
+
+    // LOCALEXCHANGE Step
+    public Dictionary<Resource.Type, float> cycleLocalSurplusResources = new Dictionary<Resource.Type, float>();
+
 
     public Population(ClassType givenclasstype, LaborType givenlabortype, float proportion, Location loc)
     {
@@ -70,5 +75,26 @@ public class Population : EcoBlock
 
         Debug.LogWarning("Trying to find Location for Population " + this.blockID + " - no Location found!");
         return null;        
+    }
+
+    public float GetAverageFoodShortage()
+    { 
+        float totalshortage = 0f;
+        foreach (float entry in this.foodConsumptionShortageList)
+            totalshortage += entry;
+        float avg = totalshortage / this.foodConsumptionShortageList.Count;
+        float level = (avg * 100) / this.cycleDesiredFoodConsumption;
+
+        return level;
+    }
+    public float GetAverageLuxuryShortage()
+    {
+        float totalshortage = 0f;
+        foreach (float entry in this.luxuryConsumptionShortageList)
+            totalshortage += entry;
+        float avg = totalshortage / this.luxuryConsumptionShortageList.Count;
+        float level = (avg * 100) / this.cycleActualLuxuryConsumption;
+
+        return level;
     }
 }

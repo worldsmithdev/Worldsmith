@@ -15,15 +15,15 @@ MonoBehaviour:
   SheetName: Assets/Resources/Imports/WorldsmithImports.xlsx
   WorksheetName: CreatureImports
   dataArray:
-  - name: 
+  - name: Snake
+    description: Snaky
+    location: Egenimos
+  - name: RattyThing
     description: 
-    location: 
-  - name: 
+    location: Egenimos
+  - name: BlobBeast
     description: 
-    location: 
-  - name: 
-    description: 
-    location: 
+    location: Egenimos
   - name: 
     description: 
     location: 

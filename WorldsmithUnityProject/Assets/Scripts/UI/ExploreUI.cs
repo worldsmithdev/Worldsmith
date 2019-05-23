@@ -8,9 +8,11 @@ public class ExploreUI : MonoBehaviour
     // Any text and UI (and some additional) functionality relating the Explore Screen
 
 
-    public enum ClickedTypes {None, Character, Item, Creature, Ruler, Warband, Population, Territory, Building}
+    public enum ClickedTypes {None, Location, Character, Item, Creature, Ruler, Warband, Population, Territory, Building, Exchange}
 
     public ClickedTypes clickedType;
+
+    public ExploreTextSetter exploreTextSetter;
     
     public GameObject Content1;
     public GameObject Content2;
@@ -18,17 +20,23 @@ public class ExploreUI : MonoBehaviour
 
     int activeToggle = 1;
 
+    // All 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI typeText;
 
-    public TextMeshProUGUI overviewDescriptionText; 
-    public TextMeshProUGUI overviewSubText;
+    // Overview
+    public TextMeshProUGUI overviewDescriptionText;  
     public TextMeshProUGUI overviewClickedText;
-    public TextMeshProUGUI overviewHoveredElementText; 
-    public TextMeshProUGUI overviewHoveredRulerText; 
-    public TextMeshProUGUI layoutTemplateText; 
-    public TextMeshProUGUI layoutHoveredText; 
+    public TextMeshProUGUI overviewSchematicHeaderText;
+    
+    // Layout
     public TextMeshProUGUI layoutClickedText;
+    public TextMeshProUGUI layoutSchematicHeaderText;
+    public TextMeshProUGUI layoutTemplateText;
+
+    // Exchange
+    public TextMeshProUGUI exchangeClickedText;
+    public TextMeshProUGUI exchangeSchematicHeaderText;
 
 
     void Start()
@@ -61,14 +69,39 @@ public class ExploreUI : MonoBehaviour
 
     public void SwitchLocation()
     {
-             overviewClickedText.text = ""; 
-        if (clickedType == ClickedTypes.Territory)
+        overviewClickedText.text = "";
+        // Reset the Clicked Text, then check for loading an element/ecoblock into an equivalent to which was selected for the previous location
+        Location selectedLoc = LocationController.Instance.GetSelectedLocation();         
+        if (clickedType == ClickedTypes.Ruler && RulerController.Instance.GetSelectedRuler().isLocalRuler == true)
         {
-            TerritoryController.Instance.SetSelectedTerritory(LocationController.Instance.GetSelectedLocation().locationTerritory);
-            SetClickedTerritory(TerritoryController.Instance.GetSelectedTerritory());
+            RulerController.Instance.SetSelectedRuler(selectedLoc.localRuler);
+            exploreTextSetter.SetClickedRuler(RulerController.Instance.GetSelectedRuler());
+        }
+        else if (clickedType == ClickedTypes.Territory)
+        {
+            TerritoryController.Instance.SetSelectedTerritory(selectedLoc.locationTerritory);
+            exploreTextSetter.SetClickedTerritory(TerritoryController.Instance.GetSelectedTerritory());
+        }
+        else if (clickedType == ClickedTypes.Population)
+        {
+            // Check if new Location has an equivalent population. If so, select it.
+            Population selectedPop = PopulationController.Instance.GetSelectedPopulation();
+            bool popMatchFound = false;
+            foreach (Population pop in selectedLoc.populationList)
+            {
+                if (pop.classType == selectedPop.classType && pop.laborType == selectedPop.laborType)
+                {
+                    popMatchFound = true;
+                    PopulationController.Instance.SetSelectedPopulation(pop);
+                }
+            }
+            if (popMatchFound == true)
+                exploreTextSetter.SetClickedPopulation(PopulationController.Instance.GetSelectedPopulation());
+            else
+                clickedType = ClickedTypes.Location;
         }
         else
-            clickedType = ClickedTypes.None;
+            clickedType = ClickedTypes.Location;
     }
 
     public void RefreshUI()
@@ -83,74 +116,67 @@ public class ExploreUI : MonoBehaviour
 
             // General content
             nameText.text = selectedLoc.elementID;
-            typeText.text = "" + selectedLoc.GetLocationType() + " - " + selectedLoc.GetLocationSubType();            
+            typeText.text = "" + VariableValueStore.Instance.factionAdjectiveValues[selectedLoc.currentFaction] + " " + selectedLoc.GetLocationSubType();
+            overviewSchematicHeaderText.text = "Schematic";
 
             // Overview content
             overviewDescriptionText.text = selectedLoc.description;
-            overviewHoveredElementText.text = "World Elements";
-            overviewHoveredRulerText.text = "Economy Blocks";
-             
-            if (clickedType == ClickedTypes.Character)
-                SetClickedCharacter(CharacterController.Instance.GetSelectedCharacter());
-            if (clickedType == ClickedTypes.Item)
-                SetClickedItem(ItemController.Instance.GetSelectedItem());
-            if (clickedType == ClickedTypes.Creature)
-                SetClickedCreature(CreatureController.Instance.GetSelectedCreature());
-            if (clickedType == ClickedTypes.Ruler)
-                SetClickedRuler(RulerController.Instance.GetSelectedRuler());
-            if (clickedType == ClickedTypes.Warband)
-                SetClickedWarband(WarbandController.Instance.GetSelectedWarband());
-            if (clickedType == ClickedTypes.Population)
-                SetClickedPopulation(PopulationController.Instance.GetSelectedPopulation());
-            if (clickedType == ClickedTypes.Territory)
-                SetClickedTerritory(TerritoryController.Instance.GetSelectedTerritory());
 
-             
+            if (clickedType == ClickedTypes.Location)
+                exploreTextSetter.SetClickedLocation(selectedLoc);
+            else if (clickedType == ClickedTypes.Character)
+                exploreTextSetter.SetClickedCharacter(CharacterController.Instance.GetSelectedCharacter());
+            else if(clickedType == ClickedTypes.Item)
+                exploreTextSetter.SetClickedItem(ItemController.Instance.GetSelectedItem());
+            else if(clickedType == ClickedTypes.Creature)
+                exploreTextSetter.SetClickedCreature(CreatureController.Instance.GetSelectedCreature());
+            else if(clickedType == ClickedTypes.Ruler)
+                exploreTextSetter.SetClickedRuler(RulerController.Instance.GetSelectedRuler());
+            else if(clickedType == ClickedTypes.Warband)
+                exploreTextSetter.SetClickedWarband(WarbandController.Instance.GetSelectedWarband());
+            else  if (clickedType == ClickedTypes.Population)
+                exploreTextSetter.SetClickedPopulation(PopulationController.Instance.GetSelectedPopulation());
+            else  if (clickedType == ClickedTypes.Territory)
+                exploreTextSetter.SetClickedTerritory(TerritoryController.Instance.GetSelectedTerritory());             
+            
 
+            // Layout content
+            layoutTemplateText.text = ""; 
+            layoutClickedText.text = "";
+
+            // Exchange content
+            exchangeClickedText.text = "";
 
             RefreshExploreMaps();
 
-            // Layout content
-            layoutTemplateText.text = "";
-            layoutHoveredText.text = "";
-            layoutClickedText.text = "";
-
-
-
             // Refreshing content specific to the selected location's LocationType
-            if (selectedLoc.GetLocationType() == Location.LocationType.Settled)
-                RefreshSettled(selectedLoc);
-            else if (selectedLoc.GetLocationType() == Location.LocationType.Productive)
-                RefreshProductive(selectedLoc);
-            else if (selectedLoc.GetLocationType() == Location.LocationType.Defensive)
-                RefreshDefensive(selectedLoc);
-            else if (selectedLoc.GetLocationType() == Location.LocationType.Cultural)
-                RefreshCultural(selectedLoc);
-            else if (selectedLoc.GetLocationType() == Location.LocationType.Natural)
-                RefreshNatural(selectedLoc);
+            //if (selectedLoc.GetLocationType() == Location.LocationType.Settled)
+            //    RefreshSettled(selectedLoc);
+            //else if (selectedLoc.GetLocationType() == Location.LocationType.Productive)
+            //    RefreshProductive(selectedLoc);
+            //else if (selectedLoc.GetLocationType() == Location.LocationType.Defensive)
+            //    RefreshDefensive(selectedLoc);
+            //else if (selectedLoc.GetLocationType() == Location.LocationType.Cultural)
+            //    RefreshCultural(selectedLoc);
+            //else if (selectedLoc.GetLocationType() == Location.LocationType.Natural)
+            //    RefreshNatural(selectedLoc);
         }      
     } 
-    void RefreshSettled(Location selectedLoc)
-    {
-        overviewSubText.text = "";
-
-    }
-    void RefreshProductive(Location selectedLoc)
-    {
-        overviewSubText.text = "";
-    }
-    void RefreshDefensive(Location selectedLoc)
-    {
-        overviewSubText.text = "";
-    }
-    void RefreshCultural(Location selectedLoc)
-    {
-        overviewSubText.text = "";
-    }
-    void RefreshNatural(Location selectedLoc)
-    {
-        overviewSubText.text = "";
-    }
+    //void RefreshSettled(Location selectedLoc)
+    //{ 
+    //}
+    //void RefreshProductive(Location selectedLoc)
+    //{ 
+    //}
+    //void RefreshDefensive(Location selectedLoc)
+    //{ 
+    //}
+    //void RefreshCultural(Location selectedLoc)
+    //{ 
+    //}
+    //void RefreshNatural(Location selectedLoc)
+    //{ 
+    //}
     void RefreshExploreMaps()
     {
         Location selectedLoc = LocationController.Instance.GetSelectedLocation();
@@ -163,13 +189,17 @@ public class ExploreUI : MonoBehaviour
         else if (activeToggle == 2) // LAYOUT
         {
             if (TileMapController.Instance.HasSpecificTemplate(selectedLoc) == false && TileMapController.Instance.HasGeneralTemplate(selectedLoc) == false)
-                layoutTemplateText.text = "No Specific or General Template Found";
+                layoutTemplateText.text = "No Template Found";
             else if (TileMapController.Instance.HasSpecificTemplate(selectedLoc) == true)
-                layoutTemplateText.text = "Specific Template";
+                layoutTemplateText.text = "Location-Specific Template";
             else if (TileMapController.Instance.HasGeneralTemplate(selectedLoc) == true)
-                layoutTemplateText.text = "General Template";
+                layoutTemplateText.text = "SubType Template";
 
             TileMapController.Instance.CreateTemplateTileMap(selectedLoc);
+        }
+        else if (activeToggle == 3) // EXCHANGE
+        {
+            TileMapController.Instance.CreateTileMap("Exchanges", TileMap.TileMapCategory.Schematic);
         }
     }
     public void RefreshClose()
@@ -297,113 +327,4 @@ public class ExploreUI : MonoBehaviour
         }
     }
 
-
-    public void SetClickedCharacter(Character character)
-    {
-        clickedType = ClickedTypes.Character;
-        string line1 = "Character: " + character.elementID + "\n";
-        string line2 = "Description: " + character.description + "\n";
-        string line3 = "" + "\n";
-        string line4 = "" + "\n";
-        string line5 = "" + "\n";
-        string line6 = "" + "\n";
-        string line7 = "" + "\n";
-        overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
-    }
-
-    public void SetClickedItem(Item item)
-    {
-        clickedType = ClickedTypes.Item;
-        string line1 = "Item: " + item.elementID + "\n";
-        string line2 = "Description: " + item.description + "\n";
-        string line3 = "" + "\n";
-        string line4 = "" + "\n";
-        string line5 = "" + "\n";
-        string line6 = "" + "\n";
-        string line7 = "" + "\n";
-        overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
-    }
-    public void SetClickedCreature(Creature creature)
-    {
-        clickedType = ClickedTypes.Creature;
-        string line1 = "Creature: " + creature.elementID + "\n";
-        string line2 = "Description: " + creature.description + "\n";
-        string line3 = "" + "\n";
-        string line4 = "" + "\n";
-        string line5 = "" + "\n";
-        string line6 = "" + "\n";
-        string line7 = "" + "\n";
-        overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
-    }
-    public void SetClickedRuler (Ruler ruler)
-    {
-        clickedType = ClickedTypes.Ruler;
-        string line1 = "Ruler: " + ruler.blockID + "\n";
-        string line2 = "Ruler Authority Type: " + ruler.authorityType + "\n";
-        string line3 = "Ruler Attitude: " + ruler.attitude + "\n";
-        float wheatAmount = 0f;
-        foreach (Resource res in ruler.cycleLeviedResources)
-            if (res.type == Resource.Type.Wheat)
-                wheatAmount += res.amount;
-        string line4 = "Levied Wheat: " + wheatAmount +  "\n";
-        string line5 = "Owned Wheat: " + ruler.resourcePortfolio[Resource.Type.Wheat].amount + "\n";
-        float waresAmount = 0f;
-        foreach (Resource res in ruler.cycleLeviedResources)
-            if (res.type == Resource.Type.Wares)
-                waresAmount += res.amount;
-        string line6 = "Levied Wares: " + waresAmount + "\n";
-        string line7 = "Owned Wares: " + ruler.resourcePortfolio[Resource.Type.Wares].amount + "\n";
-        overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
-    }
-    public void SetClickedWarband (Warband warband)
-    {
-        clickedType = ClickedTypes.Warband;
-        string line1 = "Warband: " + warband.blockID + "\n";
-        string line2 = "" + "\n";
-        string line3 = "" + "\n";
-        string line4 = "" + "\n";
-        string line5 = "" + "\n";
-        string line6 = "" + "\n";
-        string line7 = "" + "\n";
-        overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
-    }
-    public void SetClickedPopulation (Population population)
-    {
-        clickedType = ClickedTypes.Population; 
-        string line1 = "Population: " + population.blockID + "\n";
-        string line2 = "Amount: " + population.amount + " / "+ population.GetHomeLocation().GetTotalPopulation() +  "\n";
-        string line3 = "Created Wares: " + population.cycleCreatedResources[Resource.Type.Wares] + "\n";
-        string line4 = "Wares in Porrtfolio: " + population.resourcePortfolio[Resource.Type.Wares].amount + "\n";
-        string line5 = "Wheat in Porrtfolio: " + population.resourcePortfolio[Resource.Type.Wheat].amount + "\n";
-        string line6 = "Timber in Porrtfolio: " + population.resourcePortfolio[Resource.Type.Timber].amount + "\n";
-        string line7 = "Salt in Porrtfolio: " + population.resourcePortfolio[Resource.Type.Salt].amount + "\n";
-        overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
-    }
-    public void SetClickedTerritory (Territory territory)
-    {
-        clickedType = ClickedTypes.Territory;
-        Location loc = TerritoryController.Instance.GetLocationForTerritory(territory);
-        string line1 = "Territory: " + territory.blockID + "\n";
-    
-        string line2 = "Cycle Farmed Manpower: " + territory.cycleFarmedManpower   + "\n";
-        string line3 = "Cycle Natural Manpower: " + territory.cycleNaturalManpower + "\n";
-
-        string line4 = "\n";
-        string line5 = "\n";
-        string line6 = "\n";
-        string line7 = "\n"; 
-        overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
-    }
-    public void SetClickedBuildingText(Building.BuildingType type)
-    {
-        clickedType = ClickedTypes.Building;
-        string line1 = "Building Type: " + type + "\n";
-        string line2 = "" + "\n";
-        string line3 = "" + "\n";
-        string line4 = "" + "\n";
-        string line5 = "" + "\n";
-        string line6 = "" + "\n";
-        string line7 = "" + "\n";
-        layoutClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
-    }
 }

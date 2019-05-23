@@ -206,6 +206,7 @@ public class GenerationStep : Step
         {
             population.cycleGeneratedResources = new Dictionary<Resource.Type, float>();
             population.cycleAvailableResources = new Dictionary<Resource.Type, float>();
+            population.cyclePaidLevyResources = new List<Resource>();
             foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)            
                 population.cycleAvailableResources.Add(restype, 0); 
         } 

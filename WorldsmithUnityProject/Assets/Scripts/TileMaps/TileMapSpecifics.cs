@@ -188,4 +188,10 @@ public class TileMapSpecifics : MonoBehaviour
             yPos--;
         }
     }
+
+
+    public void BuildExchangesMap(TileMap givenMap)
+    {
+
+    }
 }

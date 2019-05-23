@@ -8,6 +8,7 @@ public class VariableValueStore : MonoBehaviour
 
     public static VariableValueStore Instance { get; protected set; }
 
+    public Dictionary<int, string> factionAdjectiveValues = new Dictionary<int, string>();
     public Dictionary<int, Sprite> politicalTypeSpritePairings = new Dictionary<int, Sprite>(); 
 
     private void Awake()
@@ -16,6 +17,12 @@ public class VariableValueStore : MonoBehaviour
     }
     private void Start()
     {
+        factionAdjectiveValues.Add(1 , "Sikel");
+        factionAdjectiveValues.Add(2 , "Sikan");
+        factionAdjectiveValues.Add(3 , "Elymian");
+        factionAdjectiveValues.Add(4 , "Phoenician");
+        factionAdjectiveValues.Add(5 , "Greek");
+
         politicalTypeSpritePairings.Add(1, SpriteCollection.Instance.politicalSprite1);
         politicalTypeSpritePairings.Add(2, SpriteCollection.Instance.politicalSprite2);
         politicalTypeSpritePairings.Add(3, SpriteCollection.Instance.politicalSprite3);
