@@ -53,6 +53,13 @@ public class TileMapHandler : MonoBehaviour
                 UIController.Instance.locationUI.hoveredText.text = "";
         }
 
+        if (tile.tileAbstractionType == Tile.TileAbstractionType.LocalMarket)
+            UIController.Instance.exploreUI.exchangeSchematicHeaderText.text = "LocalMarket: " + tile.linkedLocalMarket.marketName;
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.Participant)
+            UIController.Instance.exploreUI.exchangeSchematicHeaderText.text = "Participant: " + tile.linkedParticipant.participantName;
+        else
+            UIController.Instance.exploreUI.exchangeSchematicHeaderText.text = "Schematic";
+
 
     }
     public void HandleTileClick(Tile tile)
@@ -76,7 +83,8 @@ public class TileMapHandler : MonoBehaviour
         }
         else if (tile.tileWorldElementType == World.WorldElement.Location)
         {
-           ContainerController.Instance.ShiftSelectedContainer( ContainerController.Instance.GetContainerFromLocation (tile.linkedLocation)); 
+           ContainerController.Instance.ShiftSelectedContainer( ContainerController.Instance.GetContainerFromLocation (tile.linkedLocation));
+            UIController.Instance.exploreUI.exploreTextSetter.SetClickedLocation(tile.linkedLocation);
         }
 
         if (tile.tileEcoBlockType == EcoBlock.BlockType.Ruler)
@@ -112,5 +120,17 @@ public class TileMapHandler : MonoBehaviour
                 UIController.Instance.locationUI.ClickLayoutBuilding(tile.tileBuildingType);
         }
 
+        if (tile.tileAbstractionType == Tile.TileAbstractionType.LocalMarket)
+        {
+            MarketController.Instance.SetSelectedLocalMarket(tile.linkedLocalMarket);
+            UIController.Instance.exploreUI.exploreTextSetter.SetClickedMarketText((LocalMarket)tile.linkedLocalMarket);
+        }
+         
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.Participant)
+        {
+            MarketController.Instance.SetSelectedParticipant(tile.linkedParticipant);
+            UIController.Instance.exploreUI.exploreTextSetter.SetClickedParticipantText(tile.linkedParticipant);
+        }
+           
     }
 }

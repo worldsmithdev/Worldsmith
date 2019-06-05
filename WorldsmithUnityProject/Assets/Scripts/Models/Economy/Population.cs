@@ -12,8 +12,7 @@ public class Population : EcoBlock
     public LaborType laborType;
 
     public int amount;
-
-    public Dictionary<Resource.Type, Resource> resourcePortfolio = new Dictionary<Resource.Type, Resource>();
+     
 
     // INDUSTRY Step
     public float cycleWaresManpower;
@@ -34,6 +33,7 @@ public class Population : EcoBlock
 
     // LOCALEXCHANGE Step
     public Dictionary<Resource.Type, float> cycleLocalSurplusResources = new Dictionary<Resource.Type, float>();
+    public Dictionary<Resource.Type, float> cycleLocalWantedResources = new Dictionary<Resource.Type, float>();
 
 
     public Population(ClassType givenclasstype, LaborType givenlabortype, float proportion, Location loc)
@@ -45,7 +45,7 @@ public class Population : EcoBlock
         yLocation = loc.GetPositionVector().y;
 
         int nr = 1;
-        blockID = classType.ToString() +laborType.ToString() + "PopulationOf" + loc.elementID;
+        blockID = classType.ToString().Substring(0, 1) + laborType.ToString().Substring(0, 1) + "Pop"   +loc.elementID + nr;
         blockID += nr;
          
         amount = (int) (WorldConstants.GetPopulationAmount(loc) * proportion);
@@ -54,7 +54,7 @@ public class Population : EcoBlock
         while (EconomyController.Instance.BlockIDExists(this.blockID, this.blockType) == true)
         {
             nr++;
-            blockID = classType.ToString() + laborType.ToString() + "PopulationOf" + loc.elementID;
+            blockID = classType.ToString() + laborType.ToString() + "Pop" + loc.elementID + nr;
             blockID += nr;
         } 
         foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)
@@ -84,7 +84,8 @@ public class Population : EcoBlock
             totalshortage += entry;
         float avg = totalshortage / this.foodConsumptionShortageList.Count;
         float level = (avg * 100) / this.cycleDesiredFoodConsumption;
-
+        if (level > 100)
+            level = 100;
         return level;
     }
     public float GetAverageLuxuryShortage()
@@ -94,7 +95,8 @@ public class Population : EcoBlock
             totalshortage += entry;
         float avg = totalshortage / this.luxuryConsumptionShortageList.Count;
         float level = (avg * 100) / this.cycleActualLuxuryConsumption;
-
+        if (level > 100)
+            level = 100;
         return level;
     }
 }

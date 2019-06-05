@@ -192,6 +192,34 @@ public class TileMapSpecifics : MonoBehaviour
 
     public void BuildExchangesMap(TileMap givenMap)
     {
+        Location selectedLoc = LocationController.Instance.GetSelectedLocation();
+        for (int x = 0; x < givenMap.xSize; x += 1)
+            for (int y = 0; y < givenMap.ySize; y += 1)
+                givenMap.GetTileAt(x, y).SetBlank();
 
+        int xPos = -1;
+        int yPos = givenMap.ySize - 1;
+
+        foreach (Location loc in MarketController.Instance.archivedLocalMarkets.Keys)
+        {
+            if (loc == selectedLoc)
+            {
+                foreach (LocalMarket locmarket in MarketController.Instance.archivedLocalMarkets[loc])
+                {                   
+                    if (xPos < givenMap.xSize)
+                    {
+                        yPos = givenMap.ySize - 1;
+                        xPos++;
+                        givenMap.GetTileAt(xPos, yPos).SetLinkedLocalMarket(locmarket);
+                        foreach (Market.Participant participant in locmarket.participantList)
+                        {
+                            yPos--;
+                            givenMap.GetTileAt(xPos, yPos).SetLinkedParticipant(participant); 
+                        }
+                    }
+                }
+            }
+         
+        }
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileMapName: Exchanges
   tileMapCategory: 1
-  xSize: 60
-  ySize: 24
+  xSize: 25
+  ySize: 10
   inputImage: {fileID: 0}
   onlyUsedInUICanvas: 1

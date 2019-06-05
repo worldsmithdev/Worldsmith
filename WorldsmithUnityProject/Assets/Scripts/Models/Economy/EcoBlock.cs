@@ -15,6 +15,7 @@ public class EcoBlock
     public float xLocation;
     public float yLocation;
 
+    public Dictionary<Resource.Type, Resource> resourcePortfolio = new Dictionary<Resource.Type, Resource>();
 
     public Vector3 GetPositionVector()
     {

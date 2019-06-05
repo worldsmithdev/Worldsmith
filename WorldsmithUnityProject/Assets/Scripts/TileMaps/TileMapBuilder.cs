@@ -28,16 +28,20 @@ public class TileMapBuilder : MonoBehaviour
      Color32 colorInputWhite;
      Color32 colorInputGrey;
      Color32 colorInputDarkRed;
+    Sprite blankSprite;
 
     Dictionary<World.WorldElement, Sprite> worldElementSpritePairings = new Dictionary<World.WorldElement, Sprite>();
     Dictionary<EcoBlock.BlockType, Sprite> ecoBlockSpritePairings = new Dictionary<EcoBlock.BlockType, Sprite>();
     Dictionary<Ruler.Hierarchy, Sprite> ecoBlockHierarchySpritePairings = new Dictionary<Ruler.Hierarchy, Sprite>();
+    Dictionary<Tile.TileAbstractionType, Sprite> marketSpritePairings = new Dictionary<Tile.TileAbstractionType, Sprite>();
 
     public Dictionary<Color32, Building.BuildingType> buildingTemplateInputColorPairing = new Dictionary<Color32, Building.BuildingType>();
     public Dictionary< Building.BuildingType, Sprite> buildingTemplateOutputSpritePairing = new Dictionary<Building.BuildingType, Sprite>();    
 
     private void Start()
-    { 
+    {
+        blankSprite = SpriteCollection.Instance.colorTileWhite;
+
         colorInputRed = new Color32(255, 0, 0, 255);
         colorInputYellow = new Color32(255, 255, 0, 255);
         colorInputOrange = new Color32(243, 108, 79, 255);
@@ -82,6 +86,10 @@ public class TileMapBuilder : MonoBehaviour
         ecoBlockHierarchySpritePairings.Add(Ruler.Hierarchy.Independent, SpriteCollection.Instance.schematicIndependentSprite);
         ecoBlockHierarchySpritePairings.Add(Ruler.Hierarchy.Secondary, SpriteCollection.Instance.schematicSecondarySprite);
         ecoBlockHierarchySpritePairings.Add(Ruler.Hierarchy.Dominated, SpriteCollection.Instance.schematicDominatedSprite);
+
+
+        marketSpritePairings.Add(Tile.TileAbstractionType.LocalMarket, SpriteCollection.Instance.colorTileOrange);
+        marketSpritePairings.Add(Tile.TileAbstractionType.Participant, SpriteCollection.Instance.colorTileLightblue);
   
     }
     public void FillMapTiles (TileMap givenMap)
@@ -255,33 +263,53 @@ public class TileMapBuilder : MonoBehaviour
                     blockObj.transform.localPosition = new Vector3(x, y, 0);
 
                 TileMapController.Instance.activeSchematicTileMapBlocksList.Add(blockObj);
-                 
-                foreach (World.WorldElement type in worldElementSpritePairings.Keys)
-                    if (type != World.WorldElement.Unassigned && tileDrawn == false && linkedTile.tileWorldElementType == type)
-                    {
-                        if (type == World.WorldElement.Location)
-                        {
-                            if (SpriteCollection.Instance.locationSubTypePairings.ContainsKey(linkedTile.linkedLocation.GetLocationSubType()) )
-                                blockObj.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.locationSubTypePairings[linkedTile.linkedLocation.GetLocationSubType()];
-                            else
-                                blockObj.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.locationTypePairings[linkedTile.linkedLocation.GetLocationType()];
 
-                            blockObj.transform.localScale *= 3;   
+                if (linkedTile.tileDataType == Tile.TileDataType.Blank)
+                {
+                    blockObj.GetComponent<SpriteRenderer>().sprite = blankSprite; 
+                    tileDrawn = true;
+                }
+                else if (linkedTile.tileDataType == Tile.TileDataType.WorldElement)
+                {
+                    foreach (World.WorldElement type in worldElementSpritePairings.Keys)
+                        if (type != World.WorldElement.Unassigned && tileDrawn == false && linkedTile.tileWorldElementType == type)
+                        {
+                            if (type == World.WorldElement.Location)
+                            {
+                                if (SpriteCollection.Instance.locationSubTypePairings.ContainsKey(linkedTile.linkedLocation.GetLocationSubType()))
+                                    blockObj.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.locationSubTypePairings[linkedTile.linkedLocation.GetLocationSubType()];
+                                else
+                                    blockObj.GetComponent<SpriteRenderer>().sprite = SpriteCollection.Instance.locationTypePairings[linkedTile.linkedLocation.GetLocationType()];
+
+                                blockObj.transform.localScale *= 3;
+                            }
+                            else
+                                blockObj.GetComponent<SpriteRenderer>().sprite = worldElementSpritePairings[type];
+                            tileDrawn = true;
                         }
-                        else
-                            blockObj.GetComponent<SpriteRenderer>().sprite = worldElementSpritePairings[type];
-                        tileDrawn = true;
-                    }
-                       
-                foreach (EcoBlock.BlockType type in ecoBlockSpritePairings.Keys)
-                    if (type != EcoBlock.BlockType.Unassigned && tileDrawn == false && linkedTile.tileEcoBlockType == type)
-                    {
-                        blockObj.GetComponent<SpriteRenderer>().sprite = ecoBlockSpritePairings[type];
-                        tileDrawn = true;
-                    }
-                if (linkedTile.tileEcoBlockType == EcoBlock.BlockType.Ruler)                
-                    blockObj.GetComponent<SpriteRenderer>().sprite = ecoBlockHierarchySpritePairings[RulerController.Instance.GetRulerFromID(linkedEB.blockID).rulerHierarchy];
-             }
+                }
+                 else if (linkedTile.tileDataType == Tile.TileDataType.EcoBlock)
+                {
+                    foreach (EcoBlock.BlockType type in ecoBlockSpritePairings.Keys)
+                        if (type != EcoBlock.BlockType.Unassigned && tileDrawn == false && linkedTile.tileEcoBlockType == type)
+                        {
+                            blockObj.GetComponent<SpriteRenderer>().sprite = ecoBlockSpritePairings[type];
+                            tileDrawn = true;
+                        }
+                    if (linkedTile.tileEcoBlockType == EcoBlock.BlockType.Ruler)
+                        blockObj.GetComponent<SpriteRenderer>().sprite = ecoBlockHierarchySpritePairings[RulerController.Instance.GetRulerFromID(linkedEB.blockID).rulerHierarchy];
+                }
+                else if (linkedTile.tileDataType == Tile.TileDataType.Abstraction)
+                {
+                    foreach (Tile.TileAbstractionType type in marketSpritePairings.Keys)
+                        if (  tileDrawn == false && linkedTile.tileAbstractionType == type)
+                        {
+                            blockObj.GetComponent<SpriteRenderer>().sprite = marketSpritePairings[type];
+                            tileDrawn = true;
+                        } 
+                }
+
+            }
         }
     }
     public void CreateDynamicTileBlocks(TileMap givenMap)

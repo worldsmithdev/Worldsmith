@@ -26,11 +26,11 @@ public class PopulationStep : Step
 
     }
 
-    void DetermineFoodConsumption(Population population)
+   public void DetermineFoodConsumption(Population population)
     {
         population.cycleDesiredFoodConsumption = population.amount * WorldConstants.FOOD_CONSUMPTION_RATE;
     }
-    void DetermineLuxuryConsumption(Population population)
+   public  void DetermineLuxuryConsumption(Population population)
     {
         population.cycleDesiredLuxuryConsumption = population.amount * WorldConstants.LUXURY_CONSUMPTION_RATE;
 

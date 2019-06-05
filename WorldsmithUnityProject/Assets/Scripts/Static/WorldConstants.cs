@@ -50,14 +50,15 @@ public class WorldConstants
 
     // LOCALEXCHANGE
     public static float POPULATION_FOOD_STORAGE = 6.0f; // Number of cycles-worth to set apart for safety
+    public static float POPULATION_LUXURY_STORAGE = 1.0f; // Number of cycles-worth to set apart for comfort
 
     // Dictionaries
 
-    // All
-    public static Dictionary<int, float> GENERATION_RATES_MODIFIER = new Dictionary<int, float>();
-
+    // All        
+   
 
     // GENERATION
+    public static Dictionary<int, float> GENERATION_RATES_MODIFIER = new Dictionary<int, float>();
     public static Dictionary<Resource.Type, float> DEFAULT_NATURAL_RESOURCETYPES = new Dictionary<Resource.Type, float>();
     public static Dictionary<Territory.Size, float> TERRITORYSIZE_MULTIPLIER = new Dictionary<Territory.Size, float>();
     public static Dictionary<Territory.SoilQuality, float> TERRITORYSOIL_MULTIPLIER = new Dictionary<Territory.SoilQuality, float>();
@@ -75,6 +76,10 @@ public class WorldConstants
 
     public static void SetDictionaries()
     {
+        // ALL
+
+     
+
         // GENERATION
         GENERATION_RATES_MODIFIER.Add(1, 0.04f);
         GENERATION_RATES_MODIFIER.Add(2, 0.1f);

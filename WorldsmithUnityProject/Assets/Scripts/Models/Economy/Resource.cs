@@ -55,4 +55,10 @@ public class Resource : EcoBlock
             blockID += nr;
         }
     }
+
+
+    public float GetSilverValue()
+    {
+        return Converter.GetSilverEquivalent(this);
+    }
 }

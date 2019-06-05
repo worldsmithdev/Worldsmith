@@ -56,33 +56,37 @@ public class StepsController : MonoBehaviour
         
             localPoliticsStep.ResolveStep();
 
-        // LocalExchange
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            localExchangeStep.ConfigureStep(ecoblock);
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            localExchangeStep.CycleStep(ecoblock);
-        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
-            localExchangeStep.ConfigureStep(ecoblock);
-        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
-            localExchangeStep.CycleStep(ecoblock);
-
-        localExchangeStep.ResolveStep();
-
         // Population
         foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
             populationStep.ConfigureStep(ecoblock);
         foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
             populationStep.CycleStep(ecoblock);
-        
-            populationStep.ResolveStep();
+
+        populationStep.ResolveStep();
+
 
         // Construction
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             constructionStep.ConfigureStep(ecoblock);
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             constructionStep.CycleStep(ecoblock);
-       
-            constructionStep.ResolveStep();
+
+        constructionStep.ResolveStep();
+
+
+
+        // LocalExchange
+        localExchangeStep.PrepareStep();
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            localExchangeStep.ConfigureStep(ecoblock);
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            localExchangeStep.CycleStep(ecoblock);
+        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
+            localExchangeStep.ConfigureStep(ecoblock);
+        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
+            localExchangeStep.CycleStep(ecoblock);
+        localExchangeStep.ResolveStep(); 
+  
 
         // RegionalPolitics
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)

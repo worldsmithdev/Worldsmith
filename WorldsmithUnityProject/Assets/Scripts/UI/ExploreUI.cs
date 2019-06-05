@@ -8,7 +8,7 @@ public class ExploreUI : MonoBehaviour
     // Any text and UI (and some additional) functionality relating the Explore Screen
 
 
-    public enum ClickedTypes {None, Location, Character, Item, Creature, Ruler, Warband, Population, Territory, Building, Exchange}
+    public enum ClickedTypes {None, Location, Character, Item, Creature, Ruler, Warband, Population, Territory, Building, Exchange, Market, Participant}
 
     public ClickedTypes clickedType;
 
@@ -71,37 +71,41 @@ public class ExploreUI : MonoBehaviour
     {
         overviewClickedText.text = "";
         // Reset the Clicked Text, then check for loading an element/ecoblock into an equivalent to which was selected for the previous location
-        Location selectedLoc = LocationController.Instance.GetSelectedLocation();         
-        if (clickedType == ClickedTypes.Ruler && RulerController.Instance.GetSelectedRuler().isLocalRuler == true)
+        Location selectedLoc = LocationController.Instance.GetSelectedLocation();   
+        
+        if (activeToggle == 1)
         {
-            RulerController.Instance.SetSelectedRuler(selectedLoc.localRuler);
-            exploreTextSetter.SetClickedRuler(RulerController.Instance.GetSelectedRuler());
-        }
-        else if (clickedType == ClickedTypes.Territory)
-        {
-            TerritoryController.Instance.SetSelectedTerritory(selectedLoc.locationTerritory);
-            exploreTextSetter.SetClickedTerritory(TerritoryController.Instance.GetSelectedTerritory());
-        }
-        else if (clickedType == ClickedTypes.Population)
-        {
-            // Check if new Location has an equivalent population. If so, select it.
-            Population selectedPop = PopulationController.Instance.GetSelectedPopulation();
-            bool popMatchFound = false;
-            foreach (Population pop in selectedLoc.populationList)
+            if (clickedType == ClickedTypes.Ruler && RulerController.Instance.GetSelectedRuler().isLocalRuler == true)
             {
-                if (pop.classType == selectedPop.classType && pop.laborType == selectedPop.laborType)
-                {
-                    popMatchFound = true;
-                    PopulationController.Instance.SetSelectedPopulation(pop);
-                }
+                RulerController.Instance.SetSelectedRuler(selectedLoc.localRuler);
+                exploreTextSetter.SetClickedRuler(RulerController.Instance.GetSelectedRuler());
             }
-            if (popMatchFound == true)
-                exploreTextSetter.SetClickedPopulation(PopulationController.Instance.GetSelectedPopulation());
+            else if (clickedType == ClickedTypes.Territory)
+            {
+                TerritoryController.Instance.SetSelectedTerritory(selectedLoc.locationTerritory);
+                exploreTextSetter.SetClickedTerritory(TerritoryController.Instance.GetSelectedTerritory());
+            }
+            else if (clickedType == ClickedTypes.Population)
+            {
+                // Check if new Location has an equivalent population. If so, select it.
+                Population selectedPop = PopulationController.Instance.GetSelectedPopulation();
+                bool popMatchFound = false;
+                foreach (Population pop in selectedLoc.populationList)
+                {
+                    if (pop.classType == selectedPop.classType && pop.laborType == selectedPop.laborType)
+                    {
+                        popMatchFound = true;
+                        PopulationController.Instance.SetSelectedPopulation(pop);
+                    }
+                }
+                if (popMatchFound == true)
+                    exploreTextSetter.SetClickedPopulation(PopulationController.Instance.GetSelectedPopulation());
+                else
+                    clickedType = ClickedTypes.Location;
+            }
             else
                 clickedType = ClickedTypes.Location;
-        }
-        else
-            clickedType = ClickedTypes.Location;
+        } 
     }
 
     public void RefreshUI()
@@ -122,30 +126,46 @@ public class ExploreUI : MonoBehaviour
             // Overview content
             overviewDescriptionText.text = selectedLoc.description;
 
-            if (clickedType == ClickedTypes.Location)
-                exploreTextSetter.SetClickedLocation(selectedLoc);
-            else if (clickedType == ClickedTypes.Character)
-                exploreTextSetter.SetClickedCharacter(CharacterController.Instance.GetSelectedCharacter());
-            else if(clickedType == ClickedTypes.Item)
-                exploreTextSetter.SetClickedItem(ItemController.Instance.GetSelectedItem());
-            else if(clickedType == ClickedTypes.Creature)
-                exploreTextSetter.SetClickedCreature(CreatureController.Instance.GetSelectedCreature());
-            else if(clickedType == ClickedTypes.Ruler)
-                exploreTextSetter.SetClickedRuler(RulerController.Instance.GetSelectedRuler());
-            else if(clickedType == ClickedTypes.Warband)
-                exploreTextSetter.SetClickedWarband(WarbandController.Instance.GetSelectedWarband());
-            else  if (clickedType == ClickedTypes.Population)
-                exploreTextSetter.SetClickedPopulation(PopulationController.Instance.GetSelectedPopulation());
-            else  if (clickedType == ClickedTypes.Territory)
-                exploreTextSetter.SetClickedTerritory(TerritoryController.Instance.GetSelectedTerritory());             
-            
-
             // Layout content
-            layoutTemplateText.text = ""; 
+            layoutTemplateText.text = "";
             layoutClickedText.text = "";
 
             // Exchange content
             exchangeClickedText.text = "";
+
+            if (activeToggle == 1)
+            {
+                if (clickedType == ClickedTypes.Location)
+                    exploreTextSetter.SetClickedLocation(selectedLoc);
+                else if (clickedType == ClickedTypes.Character)
+                    exploreTextSetter.SetClickedCharacter(CharacterController.Instance.GetSelectedCharacter());
+                else if (clickedType == ClickedTypes.Item)
+                    exploreTextSetter.SetClickedItem(ItemController.Instance.GetSelectedItem());
+                else if (clickedType == ClickedTypes.Creature)
+                    exploreTextSetter.SetClickedCreature(CreatureController.Instance.GetSelectedCreature());
+                else if (clickedType == ClickedTypes.Ruler)
+                    exploreTextSetter.SetClickedRuler(RulerController.Instance.GetSelectedRuler());
+                else if (clickedType == ClickedTypes.Warband)
+                    exploreTextSetter.SetClickedWarband(WarbandController.Instance.GetSelectedWarband());
+                else if (clickedType == ClickedTypes.Population)
+                    exploreTextSetter.SetClickedPopulation(PopulationController.Instance.GetSelectedPopulation());
+                else if (clickedType == ClickedTypes.Territory)
+                    exploreTextSetter.SetClickedTerritory(TerritoryController.Instance.GetSelectedTerritory());
+                else if (clickedType == ClickedTypes.Market)
+                    exploreTextSetter.SetClickedMarketText( MarketController.Instance.GetSelectedMarket());
+                else if (clickedType == ClickedTypes.Participant)
+                    exploreTextSetter.SetClickedParticipantText(MarketController.Instance.GetSelectedParticipant());
+            }
+            else if (activeToggle == 2)
+            {
+                exploreTextSetter.SetDefaultLayoutContentText();
+            }
+            else if (activeToggle == 3)
+            {
+                exploreTextSetter.SetDefaultExchangeContentText();
+            }
+
+     
 
             RefreshExploreMaps();
 
@@ -227,6 +247,7 @@ public class ExploreUI : MonoBehaviour
             activeToggle = 3;
         Content3.SetActive(checkmarked); 
         RefreshUI();
+        exploreTextSetter.SetDefaultExchangeContentText();
     } 
 
     public void ShiftRight()
@@ -248,8 +269,7 @@ public class ExploreUI : MonoBehaviour
         }
 
         if (hasSelected == true)
-        {
-            LocationController.Instance.SetSelectedLocation(newSelectedCont.GetContainedLocation());
+        { 
             ContainerController.Instance.ShiftSelectedContainer(newSelectedCont);
         }
     }
@@ -273,8 +293,7 @@ public class ExploreUI : MonoBehaviour
         }
 
         if (hasSelected == true)
-        {
-            LocationController.Instance.SetSelectedLocation(newSelectedCont.GetContainedLocation());
+        { 
             ContainerController.Instance.ShiftSelectedContainer(newSelectedCont);
         }
     }
@@ -297,8 +316,7 @@ public class ExploreUI : MonoBehaviour
         }
 
         if (hasSelected == true)
-        {
-            LocationController.Instance.SetSelectedLocation(newSelectedCont.GetContainedLocation());
+        { 
             ContainerController.Instance.ShiftSelectedContainer(newSelectedCont);
         }
     }
@@ -321,8 +339,7 @@ public class ExploreUI : MonoBehaviour
         }
 
         if (hasSelected == true)
-        {
-            LocationController.Instance.SetSelectedLocation(newSelectedCont.GetContainedLocation());
+        { 
             ContainerController.Instance.ShiftSelectedContainer(newSelectedCont);
         }
     }

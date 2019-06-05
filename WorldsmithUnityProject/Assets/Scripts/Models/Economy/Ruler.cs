@@ -16,7 +16,6 @@ public class Ruler : EcoBlock
     public Attitude attitude;
     public bool isLocalRuler;
 
-    public Dictionary<Resource.Type, Resource> resourcePortfolio = new Dictionary<Resource.Type, Resource>();
 
 
     // LOCALPOLITICS Step

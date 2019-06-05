@@ -6,6 +6,7 @@ public class Converter
 {
 
     public static Dictionary<Resource.Type, float> RESOURCE_PER_MANPOWER_INDEX = new Dictionary<Resource.Type, float>();
+    public static Dictionary<Resource.Type, float> unitSilverValues = new Dictionary<Resource.Type, float>();
 
     public static void SetDictionaries()
     {
@@ -25,6 +26,15 @@ public class Converter
         // MANUFACTURED
         RESOURCE_PER_MANPOWER_INDEX.Add(Resource.Type.Wares, 10.0f); //  piece        
 
+        unitSilverValues.Add(Resource.Type.Silver, 1f);
+        unitSilverValues.Add(Resource.Type.Wheat, 50f);
+        unitSilverValues.Add(Resource.Type.Wares, 1f);
+        unitSilverValues.Add(Resource.Type.Timber, 10f);
+        unitSilverValues.Add(Resource.Type.Stone, 10f);
+        unitSilverValues.Add(Resource.Type.Salt, 20f);
+        unitSilverValues.Add(Resource.Type.Marble, 20f);
+        unitSilverValues.Add(Resource.Type.Pork, 2f);
+
     }
 
 
@@ -37,4 +47,18 @@ public class Converter
         return null;
     }
 
+    public static float GetSilverEquivalent (Resource resource)
+    {
+        if (unitSilverValues.ContainsKey(resource.type))
+        return unitSilverValues[resource.type] *= resource.amount;
+        else
+        {
+            Debug.Log("Cannot get silver equivalent, entry missing for: " + resource.type);
+            return 0f;
+        }
+    }
+    public static Resource GetResourceEquivalent(Resource.Type restype, float silverAmount)
+    {
+        return  new Resource(restype, silverAmount/ unitSilverValues[restype]) ;
+    }
 }

@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Step : MonoBehaviour
 {
+    public virtual void PrepareStep()
+    {
+
+
+    }
+
     public virtual void ConfigureStep(EcoBlock ecoblock)
     {
 

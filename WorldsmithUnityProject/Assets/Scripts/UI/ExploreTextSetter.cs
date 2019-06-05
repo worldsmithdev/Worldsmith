@@ -5,6 +5,7 @@ using UnityEngine;
 public class ExploreTextSetter : MonoBehaviour
 {
     ExploreUI exploreUI; 
+    
     void Start()
     {
         exploreUI = UIController.Instance.exploreUI;
@@ -102,17 +103,16 @@ public class ExploreTextSetter : MonoBehaviour
     public void SetClickedPopulation(Population population)
     {
         exploreUI.clickedType = ExploreUI.ClickedTypes.Population;
-        string line1 = "Population: " + population.blockID + "\n";
-        string line2 = "People: " + population.amount + " / " + population.GetHomeLocation().GetTotalPopulation() + " Total\n";
-
-        string line3 = "Owns - ";
+        string line1 = "" + population.blockID + "  " + population.amount + " / " + population.GetHomeLocation().GetTotalPopulation() + "\n"; 
+        string line2 = "Owned ";
         foreach (Resource.Type restype in population.resourcePortfolio.Keys)
             if (population.resourcePortfolio[restype].amount > 0)
-                line3 += "" + restype + ": " + population.resourcePortfolio[restype].amount.ToString("F1") + ", ";
-        line3 += "\n\n";
+                line2 += "" + restype.ToString().Substring(0, 2).ToUpper() + "" + population.resourcePortfolio[restype].amount.ToString("F0") + " ";
+        line2 += "\n";
 
         bool generated = false;
         bool created = false;
+        string line3 = "";
         string line4 = "";
         string line5 = "";
         foreach (Resource.Type restype in population.cycleGeneratedResources.Keys)
@@ -123,28 +123,28 @@ public class ExploreTextSetter : MonoBehaviour
                 created = true;
         if (generated == true)
         {
-            line4 += "Generated - ";
-            line5 += "Levy Paid - ";
+            line4 += "Generated ";
+            line5 += "Levied ";
             foreach (Resource.Type restype in population.cycleGeneratedResources.Keys)
                 if (population.cycleGeneratedResources[restype] > 0)
                 {
-                    line4 += "" + restype + ": " + population.cycleGeneratedResources[restype].ToString("F1") + ", ";
+                    line4 += "+" + restype.ToString().Substring(0,2).ToUpper() + "" + population.cycleGeneratedResources[restype].ToString("F0") + "  ";
                     foreach (Resource res in population.cyclePaidLevyResources)
                         if (res.type == restype && res.amount > 0)
-                            line5 += "" + restype + ": " + res.amount.ToString("F1") + ", ";
+                            line5 += "-" + restype.ToString().Substring(0, 2).ToUpper() + " " + res.amount.ToString("F0") +  "  ";
                 }
         }
         else if (created == true)
         {
-            line4 += "Created - ";
-            line5 += "Levy Paid - ";
+            line4 += "Created ";
+            line5 += ":Levied ";
             foreach (Resource.Type restype in population.cycleCreatedResources.Keys)
                 if (population.cycleCreatedResources[restype] > 0)
                 {
-                    line4 += "" + restype + ": " + population.cycleCreatedResources[restype].ToString("F1") + ", ";
+                    line4 += "+" + restype.ToString().Substring(0, 2).ToUpper() + "" + population.cycleCreatedResources[restype].ToString("F0") +"  ";
                     foreach (Resource res in population.cyclePaidLevyResources)
                         if (res.type == restype && res.amount > 0)
-                            line5 += "" + restype + ": " + res.amount.ToString("F1") + ", ";
+                            line5 += "-" + restype.ToString().Substring(0, 2).ToUpper() + "" + res.amount.ToString("F0") + "  ";
                 }
         }
         else
@@ -153,15 +153,29 @@ public class ExploreTextSetter : MonoBehaviour
             line5 += "None Created";
         }
         line4 += "\n";
-        line5 += "\n\n";
+        line5 += "\n";
 
 
-        string line6 = "Food Consumption - Desired: " + population.cycleDesiredFoodConsumption.ToString("F1") + " Actual: " + population.cycleActualFoodConsumption.ToString("F1") + "\n";
-        string line7 = "Successive Food Shortages: " + population.successiveFoodConsumptionShortage + " Avg Hunger Level: " + population.GetAverageFoodShortage().ToString("F0") + "%\n";
-        string line8 = "Luxury Consumption - Desired: " + population.cycleDesiredLuxuryConsumption.ToString("F1") + " Actual: " + population.cycleActualLuxuryConsumption.ToString("F1") + "\n";
-        string line9 = "Successive Luxury Shortages: " + population.successiveLuxuryConsumptionShortage + " Avg Deprivation Level: " + population.GetAverageLuxuryShortage().ToString("F0") + "%\n";
+        string line6 = "Desired  WH" + population.cycleDesiredFoodConsumption.ToString("F0") + "Actual  -WH" + population.cycleActualFoodConsumption.ToString("F0") + "\n";
+        string line7 = "Shortages  WH "  + population.successiveFoodConsumptionShortage + "x  Hunger " + population.GetAverageFoodShortage().ToString("F0") + "%\n";
+        string line8  = "Desired  WA" + population.cycleDesiredLuxuryConsumption.ToString("F0") + "  Actual  -WA" + population.cycleActualLuxuryConsumption.ToString("F0") + "\n";
+        string line9 = "Shortages  WA" + population.successiveLuxuryConsumptionShortage + "x  Deprived  WA" + population.GetAverageLuxuryShortage().ToString("F0") + "%\n";
 
-        exploreUI.overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7 + line8 + line9;
+
+        string line10 = "Surplus  ";
+        foreach (Resource.Type restype in population.cycleLocalSurplusResources.Keys)
+            if (population.cycleLocalSurplusResources[restype] > 0)
+                line10 += "" + restype.ToString().Substring(0, 2).ToUpper() + "" + population.cycleLocalSurplusResources[restype].ToString("F0") + " ";
+        line10 += "\n";
+
+        string line11 = "Wanted  ";
+        foreach (Resource.Type restype in population.cycleLocalWantedResources.Keys)
+            if (population.cycleLocalWantedResources[restype] > 0)
+                line11 += "" + restype.ToString().Substring(0, 2).ToUpper() + "" + population.cycleLocalWantedResources[restype].ToString("F0") + " ";
+        line11 += "\n";
+        string line12 = "\n";
+
+        exploreUI.overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7 + line8 + line9 + line10 + line11 + line12;
     }
     public void SetClickedTerritory(Territory territory)
     {
@@ -180,10 +194,20 @@ public class ExploreTextSetter : MonoBehaviour
     }
 
 
-      // LAYOUT ----------------------------------
-
-
-    public void SetClickedBuildingText(Building.BuildingType type)
+    // LAYOUT ----------------------------------
+    public void SetDefaultLayoutContentText()
+    {
+        Location selectedLoc = LocationController.Instance.GetSelectedLocation();
+        string line1 = "\n";
+        string line2 = "" + "\n";
+        string line3 = "" + "\n";
+        string line4 = "" + "\n";
+        string line5 = "" + "\n";
+        string line6 = "" + "\n";
+        string line7 = "" + "\n";
+        exploreUI.layoutClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
+    }
+        public void SetClickedBuildingText(Building.BuildingType type)
     {
         exploreUI.clickedType = ExploreUI.ClickedTypes.Building;
         string line1 = "Building Type: " + type + "\n";
@@ -198,11 +222,73 @@ public class ExploreTextSetter : MonoBehaviour
 
     // EXCHANGE ----------------------------------
 
+    public void SetDefaultExchangeContentText()
+    {
+        Location selectedLoc = LocationController.Instance.GetSelectedLocation();
+        string line1 = "Local Market with "+ selectedLoc.localMarket.participantList.Count +" Participants\n";
+        string offer1 = "";
+        string wants1 = "";        
+        foreach (Resource.Type restype in selectedLoc.localMarket.participantList[0].offeredResources.Keys )        
+            if (selectedLoc.localMarket.participantList[0].offeredResources[restype] > 0)
+                offer1 += "" + selectedLoc.localMarket.participantList[0].offeredResources[restype] + " " + restype + ", ";
+        foreach (Resource.Type restype in selectedLoc.localMarket.participantList[0].wantedResources.Keys)
+            if (selectedLoc.localMarket.participantList[0].wantedResources[restype] > 0)
+                wants1 += "" + selectedLoc.localMarket.participantList[0].wantedResources[restype] + " " + restype + ", ";
+        string line2 = "" + selectedLoc.localMarket.participantList[0].linkedEcoBlock.blockID + " offers: " + offer1 + " - wants: "+ wants1 + "\n";
+
+        string offer2 = "";
+        string wants2 = "";
+        foreach (Resource.Type restype in selectedLoc.localMarket.participantList[1].offeredResources.Keys)
+            if (selectedLoc.localMarket.participantList[1].offeredResources[restype] > 0)
+                offer2 += "" + selectedLoc.localMarket.participantList[1].offeredResources[restype] + " " + restype + ", ";
+        foreach (Resource.Type restype in selectedLoc.localMarket.participantList[1].wantedResources.Keys)
+            if (selectedLoc.localMarket.participantList[1].wantedResources[restype] > 0)
+                wants2 += "" + selectedLoc.localMarket.participantList[1].wantedResources[restype] + " " + restype + ", ";
+        string line3 = "" + selectedLoc.localMarket.participantList[1].linkedEcoBlock.blockID + " offers: " + offer2 + " - wants: " + wants2 + "\n";
+
+        string offer3 = "";
+        string wants3 = "";
+        foreach (Resource.Type restype in selectedLoc.localMarket.participantList[2].offeredResources.Keys)
+            if (selectedLoc.localMarket.participantList[2].offeredResources[restype] > 0)
+                offer3 += "" + selectedLoc.localMarket.participantList[2].offeredResources[restype] + " " + restype + ", ";
+        foreach (Resource.Type restype in selectedLoc.localMarket.participantList[2].wantedResources.Keys)
+            if (selectedLoc.localMarket.participantList[2].wantedResources[restype] > 0)
+                wants3 += "" + selectedLoc.localMarket.participantList[2].wantedResources[restype] + " " + restype + ", ";
+        string line4 = "" + selectedLoc.localMarket.participantList[2].linkedEcoBlock.blockID + " offers: " + offer3 + " - wants: " + wants3 + "\n";
+        string line5 = "" + "\n";
+        string line6 = "" + "\n";
+        string line7 = "" + "\n";
+        exploreUI.exchangeClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
+    }
     public void SetClickedExchangeText(Building.BuildingType type)
     {
         exploreUI.clickedType = ExploreUI.ClickedTypes.Exchange;
         string line1 = "\n";
         string line2 = "" + "\n";
+        string line3 = "" + "\n";
+        string line4 = "" + "\n";
+        string line5 = "" + "\n";
+        string line6 = "" + "\n";
+        string line7 = "" + "\n";
+        exploreUI.exchangeClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
+    }
+    public void SetClickedMarketText(LocalMarket locmarket)
+    {
+        exploreUI.clickedType = ExploreUI.ClickedTypes.Market;
+        string line1 = "\n";
+        string line2 = "" + "\n";
+        string line3 = "" + "\n";
+        string line4 = "" + "\n";
+        string line5 = "" + "\n";
+        string line6 = "" + "\n";
+        string line7 = "" + "\n";
+        exploreUI.exchangeClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
+    }
+    public void SetClickedParticipantText(Market.Participant participant)
+    {
+        exploreUI.clickedType = ExploreUI.ClickedTypes.Participant;
+        string line1 = "\n";
+        string line2 = "Buy Value: " + participant.buyValue  + "\n";
         string line3 = "" + "\n";
         string line4 = "" + "\n";
         string line5 = "" + "\n";

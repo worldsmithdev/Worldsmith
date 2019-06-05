@@ -39,6 +39,7 @@ public class WorldController : MonoBehaviour
         else
             LoadExistingWorld(existingWorldName);
 
+        MarketController.Instance.SetDictionaries();
         LocationController.Instance.SetPreSelectedLocation();
         UIController.Instance.RefreshUI();
         EconomyController.Instance.ForwardCycle();

@@ -19,9 +19,6 @@ public class Location : WorldElement
     // Column Variables
     protected LocationType locType;
     protected LocationSubType locSubType;
-
-
-        // Settled Locations   
     public int populationSize;
     public int founded;
     public int originalFaction;
@@ -71,6 +68,9 @@ public class Location : WorldElement
     public string mythString;
     public string constructionString;
     public int surety;
+
+    // Steps
+    public LocalMarket localMarket;
 
     public Resource.Type primaryResourceType = Resource.Type.Unassigned;
     public Resource.Type secondaryResourceType = Resource.Type.Unassigned;
