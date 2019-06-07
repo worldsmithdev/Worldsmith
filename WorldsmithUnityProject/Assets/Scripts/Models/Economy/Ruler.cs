@@ -24,8 +24,8 @@ public class Ruler : EcoBlock
     public List<Resource> cycleLeviedResources = new List<Resource>();
 
     // LOCALEXCHANGE Step
-    public Dictionary<Resource.Type, float> cycleLocalSurplusResources = new Dictionary<Resource.Type, float>();
-
+    public Dictionary<Resource.Type, float> cycleLocalSurplusResources = new Dictionary<Resource.Type, float>(); 
+    public Dictionary<Resource.Type, float> cycleLocalWantedResources = new Dictionary<Resource.Type, float>();
 
     public Ruler(Location loc, bool localRuler)
     {

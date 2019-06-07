@@ -79,10 +79,10 @@ public class StepsController : MonoBehaviour
         localExchangeStep.PrepareStep();
         foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
             localExchangeStep.ConfigureStep(ecoblock);
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            localExchangeStep.CycleStep(ecoblock);
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             localExchangeStep.ConfigureStep(ecoblock);
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            localExchangeStep.CycleStep(ecoblock);
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             localExchangeStep.CycleStep(ecoblock);
         localExchangeStep.ResolveStep(); 

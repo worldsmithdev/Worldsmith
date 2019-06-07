@@ -34,6 +34,7 @@ public class Converter
         unitSilverValues.Add(Resource.Type.Salt, 20f);
         unitSilverValues.Add(Resource.Type.Marble, 20f);
         unitSilverValues.Add(Resource.Type.Pork, 2f);
+        unitSilverValues.Add(Resource.Type.Clay, 15f);
 
     }
 
@@ -50,7 +51,7 @@ public class Converter
     public static float GetSilverEquivalent (Resource resource)
     {
         if (unitSilverValues.ContainsKey(resource.type))
-        return unitSilverValues[resource.type] *= resource.amount;
+        return unitSilverValues[resource.type] * resource.amount;
         else
         {
             Debug.Log("Cannot get silver equivalent, entry missing for: " + resource.type);

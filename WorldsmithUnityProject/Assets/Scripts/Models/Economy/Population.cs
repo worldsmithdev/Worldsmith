@@ -24,12 +24,12 @@ public class Population : EcoBlock
     // POPULATION Step
     public float cycleDesiredFoodConsumption;
     public float cycleActualFoodConsumption;
-    public float cycleDesiredLuxuryConsumption;
-    public float cycleActualLuxuryConsumption;
+    public float cycleDesiredComfortConsumption;
+    public float cycleActualComfortConsumption;
     public int successiveFoodConsumptionShortage = 0;
     public List<float> foodConsumptionShortageList = new List<float>();
-    public int successiveLuxuryConsumptionShortage = 0;
-    public List<float> luxuryConsumptionShortageList = new List<float>();
+    public int successiveComfortConsumptionShortage = 0;
+    public List<float> comfortConsumptionShortageList = new List<float>();
 
     // LOCALEXCHANGE Step
     public Dictionary<Resource.Type, float> cycleLocalSurplusResources = new Dictionary<Resource.Type, float>();
@@ -91,10 +91,10 @@ public class Population : EcoBlock
     public float GetAverageLuxuryShortage()
     {
         float totalshortage = 0f;
-        foreach (float entry in this.luxuryConsumptionShortageList)
+        foreach (float entry in this.comfortConsumptionShortageList)
             totalshortage += entry;
-        float avg = totalshortage / this.luxuryConsumptionShortageList.Count;
-        float level = (avg * 100) / this.cycleActualLuxuryConsumption;
+        float avg = totalshortage / this.comfortConsumptionShortageList.Count;
+        float level = (avg * 100) / this.cycleActualComfortConsumption;
         if (level > 100)
             level = 100;
         return level;

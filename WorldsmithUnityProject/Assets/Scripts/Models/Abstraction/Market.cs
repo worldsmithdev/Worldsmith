@@ -22,19 +22,22 @@ public class Market
         public string participantName;
         public EcoBlock linkedEcoBlock;
         public enum Type { Population, Ruler}
-        public enum PriorityLevel { Low, Mid, High}
+        public enum PriorityLevel { LO, MID, HI}
         public Type type;
         public PriorityLevel priorityLevel;
         public Dictionary<Resource.Type, float> offeredResources;
         public Dictionary<Resource.Type, float> wantedResources;
+        public Dictionary<Resource.Type, float> claimedResources; 
+        public Dictionary<Resource.Type, float> deductedResources; 
         public Dictionary<Resource.Type, float> outTradedResources;
         public Dictionary<Resource.Type, float> inTradedResources;
 
-        public List<Resource> purchasedResources;
-        public float buyValue;
-        public float soldValue;
+       
+        public float silverOwed;
+        public float silverOwing;
 
-     
+        public List<Resource> purchasedResources;
+
         public float GetSpendingPower()
         {
             float totalAmount = 0f;
@@ -52,5 +55,6 @@ public class Market
 
     }
 
+  
 
 }

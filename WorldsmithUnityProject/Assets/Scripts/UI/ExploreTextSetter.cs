@@ -104,7 +104,7 @@ public class ExploreTextSetter : MonoBehaviour
     {
         exploreUI.clickedType = ExploreUI.ClickedTypes.Population;
         string line1 = "" + population.blockID + "  " + population.amount + " / " + population.GetHomeLocation().GetTotalPopulation() + "\n"; 
-        string line2 = "Owned ";
+        string line2 = "Owns ";
         foreach (Resource.Type restype in population.resourcePortfolio.Keys)
             if (population.resourcePortfolio[restype].amount > 0)
                 line2 += "" + restype.ToString().Substring(0, 2).ToUpper() + "" + population.resourcePortfolio[restype].amount.ToString("F0") + " ";
@@ -137,7 +137,7 @@ public class ExploreTextSetter : MonoBehaviour
         else if (created == true)
         {
             line4 += "Created ";
-            line5 += ":Levied ";
+            line5 += "Levied ";
             foreach (Resource.Type restype in population.cycleCreatedResources.Keys)
                 if (population.cycleCreatedResources[restype] > 0)
                 {
@@ -156,10 +156,10 @@ public class ExploreTextSetter : MonoBehaviour
         line5 += "\n";
 
 
-        string line6 = "Desired  WH" + population.cycleDesiredFoodConsumption.ToString("F0") + "Actual  -WH" + population.cycleActualFoodConsumption.ToString("F0") + "\n";
+        string line6 = "Desired  WH" + population.cycleDesiredFoodConsumption.ToString("F0") + "  Actual  -WH" + population.cycleActualFoodConsumption.ToString("F0") + "\n";
         string line7 = "Shortages  WH "  + population.successiveFoodConsumptionShortage + "x  Hunger " + population.GetAverageFoodShortage().ToString("F0") + "%\n";
-        string line8  = "Desired  WA" + population.cycleDesiredLuxuryConsumption.ToString("F0") + "  Actual  -WA" + population.cycleActualLuxuryConsumption.ToString("F0") + "\n";
-        string line9 = "Shortages  WA" + population.successiveLuxuryConsumptionShortage + "x  Deprived  WA" + population.GetAverageLuxuryShortage().ToString("F0") + "%\n";
+        string line8  = "Desired  WA" + population.cycleDesiredComfortConsumption.ToString("F0") + "  Actual  -WA" + population.cycleActualComfortConsumption.ToString("F0") + "\n";
+        string line9 = "Shortages  WA" + population.successiveComfortConsumptionShortage + "x  Deprived  WA" + population.GetAverageLuxuryShortage().ToString("F0") + "%\n";
 
 
         string line10 = "Surplus  ";
@@ -275,25 +275,74 @@ public class ExploreTextSetter : MonoBehaviour
     public void SetClickedMarketText(LocalMarket locmarket)
     {
         exploreUI.clickedType = ExploreUI.ClickedTypes.Market;
-        string line1 = "\n";
-        string line2 = "" + "\n";
-        string line3 = "" + "\n";
-        string line4 = "" + "\n";
+        string line1 = "" + locmarket.marketName +  "\n";
+        string line2 = "participants: " + locmarket.participantList.Count  + "\n";
+        string line3 = "Traded: ";
+        foreach (Resource.Type restype in locmarket.tradedResourceTypes)        
+            line3 += " " + restype.ToString().Substring(0, 2).ToUpper() ;
+        line3 += "\n";
+        string line4 = "pledged silver: " + locmarket.pledgedSilver +  "\n";
         string line5 = "" + "\n";
-        string line6 = "" + "\n";
-        string line7 = "" + "\n";
+        string line6= "total offered: ";
+        foreach (Resource.Type restype in locmarket.totalOfferedResources.Keys)
+            line6 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + locmarket.totalOfferedResources[restype].ToString("F0") + " ";
+        line6 += "\n";
+
+        string line7 = "sold percentage: ";
+        foreach (Resource.Type restype in locmarket.resourceSoldPercentages.Keys)
+            line7 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + locmarket.resourceSoldPercentages[restype].ToString("F0") + " ";
+        line7 += "\n"; 
         exploreUI.exchangeClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
     }
     public void SetClickedParticipantText(Market.Participant participant)
     {
         exploreUI.clickedType = ExploreUI.ClickedTypes.Participant;
-        string line1 = "\n";
-        string line2 = "Buy Value: " + participant.buyValue  + "\n";
-        string line3 = "" + "\n";
-        string line4 = "" + "\n";
-        string line5 = "" + "\n";
-        string line6 = "" + "\n";
-        string line7 = "" + "\n";
+        string line1 = "" + participant.participantName + "  type: "  + participant.type +" prio: " + participant.priorityLevel + "\n";
+        string line2 = "Linked EB: " + participant.linkedEcoBlock.blockID  + "\n";
+
+        string line3 = "offered: ";
+        foreach (Resource.Type restype in participant.offeredResources.Keys)
+            line3 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + participant.offeredResources[restype].ToString("F0") + " ";
+        line3 += "\n";
+
+        string line4 = "wanted: ";
+        foreach (Resource.Type restype in participant.wantedResources.Keys)
+            line4 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + participant.wantedResources[restype].ToString("F0") + " ";
+        line4 += "\n";
+
+        string line5 = "claimed: ";
+        foreach (Resource.Type restype in participant.claimedResources.Keys)
+            line5 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + participant.claimedResources[restype].ToString("F0") + " ";
+        line5 += "\n";
+
+
+        string line6 = "deducted: ";
+        foreach (Resource.Type restype in participant.deductedResources.Keys)
+            line6 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + participant.deductedResources[restype].ToString("F0") + " ";
+        line6 += "\n";
+
+        string line7 = "silver Owed: " + participant.silverOwed + "  silver Owing: " + participant.silverOwing + "\n";
+        //string line8 = "spending power: " + participant.GetSpendingPower();
+
+        //string line6 = "out traded: ";
+        //foreach (Resource.Type restype in participant.outTradedResources.Keys)
+        //    line6 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + participant.outTradedResources[restype].ToString("F0") + " ";
+        //line6 += "\n";
+
+        //string line7 = "in traded: ";
+        //foreach (Resource.Type restype in participant.inTradedResources.Keys)
+        //    line7 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + participant.inTradedResources[restype].ToString("F0") + " ";
+        //line7 += "\n";
+
+
+        //string line8 = "purchased: ";
+        //foreach (Resource res in participant.purchasedResources)
+        //    line8 += " " + res.type.ToString().Substring(0, 2).ToUpper() + "" + res.amount.ToString("F0") + " ";
+        //line8 += "\n";
+
+
+
+
         exploreUI.exchangeClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
     }
 }

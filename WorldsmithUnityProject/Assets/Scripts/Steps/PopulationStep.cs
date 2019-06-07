@@ -32,7 +32,7 @@ public class PopulationStep : Step
     }
    public  void DetermineLuxuryConsumption(Population population)
     {
-        population.cycleDesiredLuxuryConsumption = population.amount * WorldConstants.LUXURY_CONSUMPTION_RATE;
+        population.cycleDesiredComfortConsumption = population.amount * WorldConstants.LUXURY_CONSUMPTION_RATE;
 
     }
     void ConsumeFood(Population population)
@@ -53,19 +53,19 @@ public class PopulationStep : Step
     }
     void ConsumeLuxury(Population population)
     {
-        if (population.resourcePortfolio[Resource.Type.Wares].amount >= population.cycleDesiredLuxuryConsumption) // Enough food available
+        if (population.resourcePortfolio[Resource.Type.Wares].amount >= population.cycleDesiredComfortConsumption) // Enough food available
         {
-            population.cycleActualLuxuryConsumption = population.cycleDesiredLuxuryConsumption;
-            population.successiveLuxuryConsumptionShortage = 0;
-            population.luxuryConsumptionShortageList.Add(0);
+            population.cycleActualComfortConsumption = population.cycleDesiredComfortConsumption;
+            population.successiveComfortConsumptionShortage = 0;
+            population.comfortConsumptionShortageList.Add(0);
         }
-        else if (population.resourcePortfolio[Resource.Type.Wares].amount < population.cycleDesiredLuxuryConsumption) // Too little food available
+        else if (population.resourcePortfolio[Resource.Type.Wares].amount < population.cycleDesiredComfortConsumption) // Too little food available
         {
-            population.cycleActualLuxuryConsumption = population.resourcePortfolio[Resource.Type.Wares].amount;
-            population.successiveLuxuryConsumptionShortage += 1;
-            population.luxuryConsumptionShortageList.Add((population.cycleDesiredLuxuryConsumption - population.cycleActualLuxuryConsumption));
+            population.cycleActualComfortConsumption = population.resourcePortfolio[Resource.Type.Wares].amount;
+            population.successiveComfortConsumptionShortage += 1;
+            population.comfortConsumptionShortageList.Add((population.cycleDesiredComfortConsumption - population.cycleActualComfortConsumption));
         } 
-        population.resourcePortfolio[Resource.Type.Wares].amount -= population.cycleActualLuxuryConsumption;
+        population.resourcePortfolio[Resource.Type.Wares].amount -= population.cycleActualComfortConsumption;
     }
 
     void ClearStepVariables(Population population)

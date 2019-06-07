@@ -57,13 +57,13 @@ public class ResourceBuilder : MonoBehaviour
     void AssignLeisureClassResources (Population population)
     {
         population.resourcePortfolio[Resource.Type.Wheat].amount += (population.cycleDesiredFoodConsumption * territoryStatusFoodModifier[population.GetHomeLocation().territoryStatus]) * 2;
-        population.resourcePortfolio[Resource.Type.Wares].amount += (population.cycleDesiredLuxuryConsumption * territoryStatusLuxuryModifier[population.GetHomeLocation().territoryStatus]) * 2;
+        population.resourcePortfolio[Resource.Type.Wares].amount += (population.cycleDesiredComfortConsumption * territoryStatusLuxuryModifier[population.GetHomeLocation().territoryStatus]) * 2;
         population.resourcePortfolio[Resource.Type.Silver].amount += (population.amount * 5f);
     }
     void AssignHousekeeperClassResources(Population population)
     {
         population.resourcePortfolio[Resource.Type.Wheat].amount += (population.cycleDesiredFoodConsumption * territoryStatusFoodModifier[population.GetHomeLocation().territoryStatus] ) * 2;
-        population.resourcePortfolio[Resource.Type.Wares].amount += (population.cycleDesiredLuxuryConsumption * territoryStatusLuxuryModifier[population.GetHomeLocation().territoryStatus] ) /2 ;
+        population.resourcePortfolio[Resource.Type.Wares].amount += (population.cycleDesiredComfortConsumption * territoryStatusLuxuryModifier[population.GetHomeLocation().territoryStatus] ) /2 ;
         if (population.classType == Population.ClassType.Citizen)
         {
             population.resourcePortfolio[Resource.Type.Wheat].amount *= citizenMultiplier;
@@ -73,7 +73,7 @@ public class ResourceBuilder : MonoBehaviour
     void AssignArtisanClassResources(Population population)
     {
         population.resourcePortfolio[Resource.Type.Wheat].amount += (population.cycleDesiredFoodConsumption * territoryStatusFoodModifier[population.GetHomeLocation().territoryStatus]) / 2 ;
-        population.resourcePortfolio[Resource.Type.Wares].amount += (population.cycleDesiredLuxuryConsumption * territoryStatusLuxuryModifier[population.GetHomeLocation().territoryStatus]) * 2;
+        population.resourcePortfolio[Resource.Type.Wares].amount += (population.cycleDesiredComfortConsumption * territoryStatusLuxuryModifier[population.GetHomeLocation().territoryStatus]) * 2;
     }
 
 }
