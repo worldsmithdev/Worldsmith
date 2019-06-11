@@ -15,11 +15,11 @@ MonoBehaviour:
   SheetName: Assets/Resources/Imports/WorldsmithImports.xlsx
   WorksheetName: CharacterImports
   dataArray:
-  - name: Medusalina
-    description: Scary
-    age: 1332
-    location: Egenimos
-    item: PricyDagger
+  - name: 
+    description: 
+    age: 0
+    location: 
+    item: 
   - name: 
     description: 
     age: 0
