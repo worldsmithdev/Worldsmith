@@ -28,7 +28,15 @@ public class TileMapController : MonoBehaviour
     {
         Instance = this;
     }
-
+    // Create is not entirely accurate, since these TileMaps already exist in the Assets as ScriptableObject. Here Create means: to load the TileMap's tiles and fill them
+    public void CreateTileMap(string mapname, TileMap.TileMapCategory mapcategory)
+    {
+        TileMap createdMap = GetTileMapFromList(mapname);
+        createdMap.CreateEmptyTiles();
+        tileMapPlacer.PlaceTileMap(createdMap);
+        tileMapBuilder.FillMapTiles(createdMap);
+        tileMapBuilder.CreateTileBlocks(createdMap);
+    }
     public void CreateTemplateTileMap(Location loc)
     {
         //Check if a specific map for the location exists. If not, check if a template exists for the location subtype. If not, no map is made. 
@@ -64,21 +72,7 @@ public class TileMapController : MonoBehaviour
         foreach (TileMap map in tileMapList)
             if (terrainMapName == (map.tileMapName))
                 CreateTileMap(terrainMapName, TileMap.TileMapCategory.Terrain);
-    }
-
-
-    // Create is not entirely accurate, since these TileMaps already exist in the Assets as ScriptableObject. Here Create means: to load the TileMap's tiles and fill em and stuff
-    public void CreateTileMap (string mapname, TileMap.TileMapCategory mapcategory )
-    { 
-            TileMap createdMap = GetTileMapFromList(mapname);
-            createdMap.CreateEmptyTiles();
-            tileMapPlacer.PlaceTileMap(createdMap);
-            tileMapBuilder.FillMapTiles(createdMap);
-            tileMapBuilder.CreateTileBlocks(createdMap); 
-    }
-     
-      
-
+    } 
     public TileMap GetTileMapFromList(string name)
     {
         foreach (TileMap map in tileMapList)        

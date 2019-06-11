@@ -29,8 +29,7 @@ public class StepsController : MonoBehaviour
     }
 
     public void CycleSteps()
-    {
-        // Each of the 8 types of steps is dictated by one type of EcoBlock
+    { 
 
         // Generation
         foreach (Territory ecoblock in EconomyController.Instance.territoryDictionary.Keys)
@@ -39,6 +38,14 @@ public class StepsController : MonoBehaviour
             generationStep.CycleStep(ecoblock);
         foreach (Territory ecoblock in EconomyController.Instance.territoryDictionary.Keys)
             generationStep.ResolveStep(ecoblock);
+
+        // Industry
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            industryStep.ConfigureStep(ecoblock);
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            industryStep.CycleStep(ecoblock);
+        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
+            industryStep.ResolveStep(ecoblock);
 
         // LocalPolitics
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
@@ -54,15 +61,7 @@ public class StepsController : MonoBehaviour
         foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
             populationStep.CycleStep(ecoblock);
         foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            populationStep.ResolveStep(ecoblock);
-
-        // Industry
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            industryStep.ConfigureStep(ecoblock);
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            industryStep.CycleStep(ecoblock);
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            industryStep.ResolveStep(ecoblock);
+            populationStep.ResolveStep(ecoblock); 
 
         // Construction
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)

@@ -745,16 +745,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2104490629}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: BuildingText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -940,6 +930,16 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 942791214}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: BuildingText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!224 &72776143 stripped
@@ -955,16 +955,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1711311876}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: IconText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1138,6 +1128,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: IconText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1510,11 +1510,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 245785616}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: InfoText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1694,6 +1689,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: InfoText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -2296,10 +2296,10 @@ MonoBehaviour:
   activeHolder: {fileID: 0}
   mainCanvas: {fileID: 1990794966}
   terrainTileMapHolder: {fileID: 237611248}
-  ruleTileMapOutline: {fileID: 359836159}
-  ruleTileMapHolder: {fileID: 90788694}
-  elementsTileMapOutline: {fileID: 678329106}
-  elementsTileMapHolder: {fileID: 1267315118}
+  exploreRuleTileMapOutline: {fileID: 359836159}
+  exploreRuleTileMapHolder: {fileID: 90788694}
+  exploreElementsTileMapOutline: {fileID: 678329106}
+  exploreElementsTileMapHolder: {fileID: 1267315118}
   exploreSquareLayoutTileMapOutline: {fileID: 1368980382}
   exploreFlatLayoutTileMapOutline: {fileID: 1548901664}
   exploreLayoutTileMapHolder: {fileID: 1920208342}
@@ -3318,16 +3318,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 816676936}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HeaderText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3513,6 +3503,16 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 1631541005}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HeaderText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1 &174761723
@@ -3658,16 +3658,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 501579172}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HoveredText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3853,6 +3843,16 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 2053679500}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HoveredText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!224 &193961905 stripped
@@ -4341,7 +4341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 745002574}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &224214693
 MonoBehaviour:
@@ -6850,16 +6850,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 332265417}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HoveredText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7033,6 +7023,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HoveredText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8220,16 +8220,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 332265417}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: ClickedText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8403,6 +8393,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: ClickedText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11272,16 +11272,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606585321}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: ClickedText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11483,6 +11473,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_lineSpacing
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: ClickedText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -12288,11 +12288,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1882657427}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: NameText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12462,6 +12457,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: NameText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -12963,16 +12963,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1711311876}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: SliderSpritesText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13146,6 +13136,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: SliderSpritesText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13395,16 +13395,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1765012424}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: LinesText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13578,6 +13568,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: LinesText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13769,9 +13769,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22527766}
+  - {fileID: 1709712994}
   - {fileID: 1015081649}
   - {fileID: 224214692}
-  - {fileID: 1709712994}
   - {fileID: 1464642857}
   - {fileID: 1863618909}
   - {fileID: 1326533878}
@@ -15158,11 +15158,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 245785616}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: NameText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15332,6 +15327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: NameText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -16678,16 +16678,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 332265417}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: TemplateText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16861,6 +16851,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: TemplateText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -17499,16 +17499,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 495897928}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HeaderText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17699,6 +17689,16 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HeaderText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!224 &954487737 stripped
@@ -17726,16 +17726,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606585321}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HoveredElementText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17909,6 +17899,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HoveredElementText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -18551,7 +18551,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 745002574}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1015081650
 MonoBehaviour:
@@ -18669,16 +18669,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1765012424}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HighlightText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18854,6 +18844,16 @@ PrefabInstance:
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HighlightText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1001 &1027298573
@@ -18863,16 +18863,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1765012424}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: TooltipText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19046,6 +19036,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: TooltipText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -22688,16 +22688,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1765012424}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: SliderText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22873,6 +22863,16 @@ PrefabInstance:
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: SliderText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1 &1171617982
@@ -22936,11 +22936,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1007579975}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: BodyText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23115,6 +23110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.lineCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: BodyText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -23518,11 +23518,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1007579975}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: TitleText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23697,6 +23692,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.lineCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: TitleText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -25587,16 +25587,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 501579172}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: ClickedText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25782,6 +25772,16 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 135799716}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: ClickedText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!224 &1398088873 stripped
@@ -29388,11 +29388,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1882657427}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: TypeText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29562,6 +29557,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: TypeText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -31003,7 +31003,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 745002574}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1709712995
 MonoBehaviour:
@@ -31366,16 +31366,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606585321}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: SubText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31555,6 +31545,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_lineSpacing
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: SubText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -32091,6 +32091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4fc90b5ff91d9409ce59a899ed944a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickedType: 0
   Content1: {fileID: 1606585320}
   Content2: {fileID: 332265416}
   Content3: {fileID: 1404163839}
@@ -33557,11 +33558,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1588586028}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: TextHeader
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33722,6 +33718,11 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 1893379214}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: TextHeader
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
 --- !u!1 &1821281227
@@ -34501,11 +34502,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2091590349}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: SelectedText
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34675,6 +34671,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_lineSpacing
       value: 13.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: SelectedText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -35451,16 +35452,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1166086591}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HeaderText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35635,6 +35626,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.lineCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HeaderText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -35918,16 +35919,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606585321}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HoveredEcoBlockText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36101,6 +36092,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HoveredEcoBlockText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -36752,16 +36753,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606585321}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: DescriptionText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36936,6 +36927,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.lineCount
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: DescriptionText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b0c8da9523c44408c0e1f4cf6d29fe, type: 3}
@@ -37342,16 +37343,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1711311876}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: SliderFullText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37525,6 +37516,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: SliderFullText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -38524,16 +38525,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1711311876}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: SubIconText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38707,6 +38698,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: SubIconText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -39995,16 +39996,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2091590349}
     m_Modifications:
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_Name
-      value: HeaderText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8549796696072407674, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40133,6 +40124,16 @@ PrefabInstance:
     - target: {fileID: 799710261602142397, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
         type: 3}
       propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_Name
+      value: HeaderText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023718564127545276, guid: d4b0c8da9523c44408c0e1f4cf6d29fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
