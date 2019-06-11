@@ -13,10 +13,10 @@ public class TileMapPlacer : MonoBehaviour
 
     public Canvas mainCanvas;
     public GameObject terrainTileMapHolder;
-    public GameObject ruleTileMapOutline;
-    public GameObject ruleTileMapHolder;
-    public GameObject elementsTileMapOutline;
-    public GameObject elementsTileMapHolder;
+    public GameObject exploreRuleTileMapOutline;
+    public GameObject exploreRuleTileMapHolder;
+    public GameObject exploreElementsTileMapOutline;
+    public GameObject exploreElementsTileMapHolder;
     public GameObject exploreSquareLayoutTileMapOutline;
     public GameObject exploreFlatLayoutTileMapOutline;
     public GameObject exploreLayoutTileMapHolder; 
@@ -79,13 +79,13 @@ public class TileMapPlacer : MonoBehaviour
         }
         else if (givenMap.tileMapName == "Rule")
         {
-            activeOutline = ruleTileMapOutline;
-            activeHolder = ruleTileMapHolder;
+            activeOutline = exploreRuleTileMapOutline;
+            activeHolder = exploreRuleTileMapHolder;
         }
         else if (givenMap.tileMapName == "Elements")
         {
-            activeOutline = elementsTileMapOutline;
-            activeHolder = elementsTileMapHolder;
+            activeOutline = exploreElementsTileMapOutline;
+            activeHolder = exploreElementsTileMapHolder;
         }
     }
     public GameObject GetHolderForTileMap (TileMap givenMap)
