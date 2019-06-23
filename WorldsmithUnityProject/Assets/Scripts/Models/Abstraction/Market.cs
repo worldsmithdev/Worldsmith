@@ -10,6 +10,15 @@ public class Market
     public List<Participant> participantList = new List<Participant>();
     public List<Resource.Type> tradedResourceTypes = new List<Resource.Type>();
 
+    public List<Resource.Type> wantedResourceTypes = new List<Resource.Type>();
+    public Dictionary<Resource.Type, float> totalWantedResources = new Dictionary<Resource.Type, float>();
+    public Dictionary<Resource.Type, float> totalOfferedResources = new Dictionary<Resource.Type, float>();
+    public Dictionary<Resource.Type, float> totalClaimedResources = new Dictionary<Resource.Type, float>(); 
+    public Dictionary<Resource.Type, float> totalDeductedResources = new Dictionary<Resource.Type, float>(); 
+
+
+    public Dictionary<Resource.Type, float> resourceSoldPercentages = new Dictionary<Resource.Type, float>();
+
     public float pledgedSilver;
 
         public Market()
@@ -17,36 +26,7 @@ public class Market
 
     }
 
-    public struct Participant
-    {
-        public string participantName;
-        public EcoBlock linkedEcoBlock;
-        public enum Type { Population, Ruler}
-        public enum PriorityLevel { LO, MID, HI}
-        public Type type;
-        public PriorityLevel priorityLevel;
-        public Dictionary<Resource.Type, float> offeredResources;
-        public Dictionary<Resource.Type, float> wantedResources;
-        public Dictionary<Resource.Type, float> claimedResources; 
-        public Dictionary<Resource.Type, float> deductedResources; 
-        public Dictionary<Resource.Type, float> outTradedResources;
-        public Dictionary<Resource.Type, float> inTradedResources;
-
-       
-        public float silverOwed;
-        public float silverOwing;
-
-        public List<Resource> purchasedResources;
-
-        public float GetSpendingPower()
-        {
-            float totalAmount = 0f;
-            totalAmount += linkedEcoBlock.resourcePortfolio[Resource.Type.Silver].amount;
-            foreach (Resource.Type restype in offeredResources.Keys)            
-                totalAmount += Converter.GetSilverEquivalent(new Resource(restype, offeredResources[restype]));
-            return totalAmount;
-        }
-    }
+  
 
    
 

@@ -88,8 +88,9 @@ public class LocationBuilder : MonoBehaviour
         loc.industrySecondary = locdata.Secondaryindustry;
         loc.harborQuality = locdata.Harborquality;
         loc.hubType = locdata.Hubtype;
-        loc.offloadPrimary = locdata.Primaryoffload;
-        loc.offloadSecondary = locdata.Secondaryoffload;
+        loc.offloadOne = locdata.Primaryoffload;
+        loc.offloadTwo = locdata.Secondaryoffload;
+     //   loc.offloadThree = locdata.Secondaryoffload;
         loc.offloadResource = locdata.Resourceoffload;
         loc.offloadDifficultyPrimary = locdata.Primarydifficulty;
         loc.offloadDifficultySecondary = locdata.Secondarydifficulty;

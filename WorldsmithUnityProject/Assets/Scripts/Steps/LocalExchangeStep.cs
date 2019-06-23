@@ -6,9 +6,9 @@ public class LocalExchangeStep : Step
 {
      
 
+    // Every location gets a new LocalMarket
     public override void PrepareStep()
-    { 
-        
+    {         
         MarketController.Instance.cycleLocalMarkets = new List<LocalMarket>();
         MarketController.Instance.cycleLocalExchanges = new List<LocalExchange>();
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
@@ -16,8 +16,8 @@ public class LocalExchangeStep : Step
             loc.localMarket = null;
             loc.localMarket = new LocalMarket(loc);
         }
-
     }
+    // Each potential Participant sets their haves and wants
     public override void ConfigureStep(EcoBlock ecoblock)
     {
         if (ecoblock.blockType == EcoBlock.BlockType.Population)
@@ -34,28 +34,27 @@ public class LocalExchangeStep : Step
             ClearStepVariables(ruler);
             DetermineSurplusResources(ruler);
             DetermineWantedResources(ruler);
-        }
-        
+        }        
     }
 
+    // Each Participant gets added to its LocalMarket
     public override void CycleStep(EcoBlock ecoblock)
     {
         if (ecoblock.blockType == EcoBlock.BlockType.Population)
         {
            Population population = (Population)ecoblock;
             RegisterToMarket(population);
-
         }
         else if (ecoblock.blockType == EcoBlock.BlockType.Ruler)
         {
             Ruler ruler = (Ruler)ecoblock;
             RegisterToMarket(ruler);
-
         }
     }
 
     public override void ResolveStep()
     {
+        // Make sure no Participant offers resources that they also want
         CheckForSurplusDesiredOverlap();
 
         foreach (LocalMarket locMarket in MarketController.Instance.cycleLocalMarkets)  //WorldController.Instance.GetWorld().locationList)        
@@ -67,6 +66,7 @@ public class LocalExchangeStep : Step
     }
 
 
+    // Reserve some amount of resources. Add the rest to localSurplusDict
     void DetermineSurplusResources (Population population)
     {
         Dictionary<Resource.Type, float> resourceReservationList = new Dictionary<Resource.Type, float>();
@@ -88,30 +88,9 @@ public class LocalExchangeStep : Step
             }
 
     }
-    void DetermineWantedResources(Population population)
-    {
-        float actualDesiredFoodAmount;
-        float actualDesiredWaresAmount;
-        float totalDesiredFoodAmount = population.cycleDesiredFoodConsumption * WorldConstants.POP_FOOD_WANTED_CYCLES;
-        float totalDesiredWaresAmount = population.cycleDesiredComfortConsumption * WorldConstants.POP_COMFORT_WANTED_CYCLES;
 
-        if (population.resourcePortfolio[Resource.Type.Wheat].amount < totalDesiredFoodAmount)
-            actualDesiredFoodAmount = totalDesiredFoodAmount - population.resourcePortfolio[Resource.Type.Wheat].amount  ;
-        else
-            actualDesiredFoodAmount = 0f;
 
-        if (actualDesiredFoodAmount > 0)
-            population.cycleLocalWantedResources.Add(Resource.Type.Wheat, actualDesiredFoodAmount);
-        
-        if (population.resourcePortfolio[Resource.Type.Wares].amount < totalDesiredWaresAmount)
-            actualDesiredWaresAmount = totalDesiredWaresAmount - population.resourcePortfolio[Resource.Type.Wares].amount  ;
-        else
-            actualDesiredWaresAmount = 0f;  
-        if (actualDesiredWaresAmount > 0)
-            population.cycleLocalWantedResources.Add(Resource.Type.Wares, actualDesiredWaresAmount);
-
-    }
- 
+    // Reserve some amount of resources. Add the rest to localSurplusDict
     void DetermineSurplusResources(Ruler ruler)
     {
         Dictionary<Resource.Type, float> resourceReservationList = new Dictionary<Resource.Type, float>();
@@ -151,12 +130,34 @@ public class LocalExchangeStep : Step
         else // non-local-ruler
         {
 
-        }
-    
-
+        } 
     }
 
+    // Determine what each pop needs for both types of consumption
+    void DetermineWantedResources(Population population)
+    {
+        float actualDesiredFoodAmount;
+        float actualDesiredWaresAmount;
+        float totalDesiredFoodAmount = population.cycleDesiredFoodConsumption * WorldConstants.POP_FOOD_WANTED_CYCLES;
+        float totalDesiredWaresAmount = population.cycleDesiredComfortConsumption * WorldConstants.POP_COMFORT_WANTED_CYCLES;
 
+        if (population.resourcePortfolio[Resource.Type.Wheat].amount < totalDesiredFoodAmount)
+            actualDesiredFoodAmount = totalDesiredFoodAmount - population.resourcePortfolio[Resource.Type.Wheat].amount;
+        else
+            actualDesiredFoodAmount = 0f;
+
+        if (actualDesiredFoodAmount > 0) 
+            population.cycleLocalWantedResources.Add(Resource.Type.Wheat, actualDesiredFoodAmount); 
+
+        if (population.resourcePortfolio[Resource.Type.Wares].amount < totalDesiredWaresAmount)
+            actualDesiredWaresAmount = totalDesiredWaresAmount - population.resourcePortfolio[Resource.Type.Wares].amount;
+        else
+            actualDesiredWaresAmount = 0f;
+        if (actualDesiredWaresAmount > 0)
+            population.cycleLocalWantedResources.Add(Resource.Type.Wares, actualDesiredWaresAmount);
+
+    }
+    // Determine what to want stockpile for each Pop's consumptions
     void DetermineWantedResources(Ruler ruler)
     {
         float actualDesiredFoodAmount;

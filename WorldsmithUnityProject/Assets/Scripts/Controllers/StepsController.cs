@@ -97,6 +97,8 @@ public class StepsController : MonoBehaviour
             regionalPoliticsStep.ResolveStep();
 
         // RegionalExchange
+
+        // wares, then food, then silver if profitable
         foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
             regionalExchangeStep.ConfigureStep(ecoblock);
         foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)

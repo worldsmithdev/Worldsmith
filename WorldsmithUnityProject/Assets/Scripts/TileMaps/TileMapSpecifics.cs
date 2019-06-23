@@ -211,7 +211,7 @@ public class TileMapSpecifics : MonoBehaviour
                         yPos = givenMap.ySize - 1;
                         xPos++;
                         givenMap.GetTileAt(xPos, yPos).SetLinkedLocalMarket(locmarket);
-                        foreach (Market.Participant participant in locmarket.participantList)
+                        foreach (Participant participant in locmarket.participantList)
                         {
                             yPos--;
                             givenMap.GetTileAt(xPos, yPos).SetLinkedParticipant(participant); 

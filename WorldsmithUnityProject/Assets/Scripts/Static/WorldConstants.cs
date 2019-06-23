@@ -17,9 +17,9 @@ public class WorldConstants
     public static float WARES_FOCUS_BONUS = 1.2f;  
 
     // LOCALPOLITICS
-    public static float GENERATION_LEVY_RATE_HI = 0.15f;
-    public static float GENERATION_LEVY_RATE_MID = 0.07f;
-    public static float GENERATION_LEVY_RATE_LO = 0.03f;
+    public static float GENERATION_LEVY_RATE_HI = 0.1f;
+    public static float GENERATION_LEVY_RATE_MID = 0.05f;
+    public static float GENERATION_LEVY_RATE_LO = 0.02f;
     public static float INDUSTRY_LEVY_RATE_HI = 0.2f;
     public static float INDUSTRY_LEVY_RATE_MID = 0.1f;
     public static float INDUSTRY_LEVY_RATE_LO = 0.05f;
@@ -45,13 +45,13 @@ public class WorldConstants
     public static int POPSIZE9HI = 6000;
     public static int POPSIZE10LO = 7500;
     public static int POPSIZE10HI = 8000;
-    public static float FOOD_CONSUMPTION_RATE = 2.5f; // HL wheat needed to survive
+    public static float FOOD_CONSUMPTION_RATE = 2.0f; // HL wheat needed to survive
     public static float LUXURY_CONSUMPTION_RATE = 1.0f; // Wares piece
 
     // LOCALEXCHANGE
-    public static float POP_FOOD_STORAGE_CYCLES = 6.0f; // Number of cycles-worth to set apart for safety
+    public static float POP_FOOD_STORAGE_CYCLES = 1.5f; // Number of cycles-worth to set apart for safety
     public static float POP_COMFORT_STORAGE_CYCLES = 1.0f; // Number of cycles-worth to set apart for comfort
-    public static float POP_FOOD_WANTED_CYCLES = 2.0f;  
+    public static float POP_FOOD_WANTED_CYCLES = 1.0f;  
     public static float POP_COMFORT_WANTED_CYCLES = 1.0f;  
     public static float RULER_FOOD_STORAGE_CYCLES = 3.0f;  
     public static float RULER_COMFORT_STORAGE_CYCLES = 3.0f;  

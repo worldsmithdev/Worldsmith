@@ -60,6 +60,13 @@ public class Converter
     }
     public static Resource GetResourceEquivalent(Resource.Type restype, float silverAmount)
     {
+    //    Debug.Log("For " + silverAmount + "value get " + (silverAmount / unitSilverValues[restype]) + " of type " + restype); 
         return  new Resource(restype, silverAmount/ unitSilverValues[restype]) ;
+    }
+
+    public static Resource GetResourceEquivalent(Participant part, Resource.Type restype, float silverAmount)
+    {
+     //   Debug.Log("For " + silverAmount + "value " + part.participantName +" gets " + (silverAmount / unitSilverValues[restype]) + " of type " + restype);
+        return new Resource(restype, silverAmount / unitSilverValues[restype]);
     }
 }

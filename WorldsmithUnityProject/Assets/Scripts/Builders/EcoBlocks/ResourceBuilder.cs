@@ -10,11 +10,11 @@ public class ResourceBuilder : MonoBehaviour
 
     void Awake()
     {
-        territoryStatusFoodModifier.Add( 1 , 2f);
-        territoryStatusFoodModifier.Add( 2 , 4f);
-        territoryStatusFoodModifier.Add( 3 , 6f);
-        territoryStatusFoodModifier.Add( 4 , 8f);
-        territoryStatusFoodModifier.Add( 5 , 12f);
+        territoryStatusFoodModifier.Add( 1 , 0.2f);
+        territoryStatusFoodModifier.Add( 2 , 0.4f);
+        territoryStatusFoodModifier.Add( 3 , 0.6f);
+        territoryStatusFoodModifier.Add( 4 , 0.8f);
+        territoryStatusFoodModifier.Add( 5 , 1.2f);
         territoryStatusLuxuryModifier.Add( 1 , 0.4f);
         territoryStatusLuxuryModifier.Add( 2 , 0.8f);
         territoryStatusLuxuryModifier.Add( 3 , 1.0f);
@@ -56,14 +56,14 @@ public class ResourceBuilder : MonoBehaviour
     }
     void AssignLeisureClassResources (Population population)
     {
-        population.resourcePortfolio[Resource.Type.Wheat].amount += (population.cycleDesiredFoodConsumption * territoryStatusFoodModifier[population.GetHomeLocation().territoryStatus]) * 2;
-        population.resourcePortfolio[Resource.Type.Wares].amount += (population.cycleDesiredComfortConsumption * territoryStatusLuxuryModifier[population.GetHomeLocation().territoryStatus]) * 2;
+    //    population.resourcePortfolio[Resource.Type.Wheat].amount += (population.cycleDesiredFoodConsumption * territoryStatusFoodModifier[population.GetHomeLocation().territoryStatus]) * 2;
+    //    population.resourcePortfolio[Resource.Type.Wares].amount += (population.cycleDesiredComfortConsumption * territoryStatusLuxuryModifier[population.GetHomeLocation().territoryStatus]) * 2;
         population.resourcePortfolio[Resource.Type.Silver].amount += (population.amount * 5f);
     }
     void AssignHousekeeperClassResources(Population population)
     {
-        population.resourcePortfolio[Resource.Type.Wheat].amount += (population.cycleDesiredFoodConsumption * territoryStatusFoodModifier[population.GetHomeLocation().territoryStatus] ) * 2;
-        population.resourcePortfolio[Resource.Type.Wares].amount += (population.cycleDesiredComfortConsumption * territoryStatusLuxuryModifier[population.GetHomeLocation().territoryStatus] ) /2 ;
+        population.resourcePortfolio[Resource.Type.Wheat].amount += ((population.cycleDesiredFoodConsumption * territoryStatusFoodModifier[population.GetHomeLocation().territoryStatus] ) * 2);
+    //    population.resourcePortfolio[Resource.Type.Wares].amount += (population.cycleDesiredComfortConsumption * territoryStatusLuxuryModifier[population.GetHomeLocation().territoryStatus] ) /2 ;
         if (population.classType == Population.ClassType.Citizen)
         {
             population.resourcePortfolio[Resource.Type.Wheat].amount *= citizenMultiplier;
@@ -72,7 +72,7 @@ public class ResourceBuilder : MonoBehaviour
     }
     void AssignArtisanClassResources(Population population)
     {
-        population.resourcePortfolio[Resource.Type.Wheat].amount += (population.cycleDesiredFoodConsumption * territoryStatusFoodModifier[population.GetHomeLocation().territoryStatus]) / 2 ;
+ //       population.resourcePortfolio[Resource.Type.Wheat].amount += (population.cycleDesiredFoodConsumption * territoryStatusFoodModifier[population.GetHomeLocation().territoryStatus]) / 2 ;
         population.resourcePortfolio[Resource.Type.Wares].amount += (population.cycleDesiredComfortConsumption * territoryStatusLuxuryModifier[population.GetHomeLocation().territoryStatus]) * 2;
     }
 

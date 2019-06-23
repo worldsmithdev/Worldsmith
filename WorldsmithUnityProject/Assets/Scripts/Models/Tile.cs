@@ -29,7 +29,7 @@ public class Tile
     public Creature linkedCreature;
     public Item linkedItem;
     public LocalMarket linkedLocalMarket;
-    public Market.Participant linkedParticipant;
+    public Participant linkedParticipant;
 
     public Tile(int xloc, int yloc, string mapname)
     {
@@ -101,7 +101,7 @@ public class Tile
         tileAbstractionType = TileAbstractionType.LocalMarket;
         linkedLocalMarket = market;
     }
-    public void SetLinkedParticipant(Market.Participant participant)
+    public void SetLinkedParticipant(Participant participant)
     {
         tileDataType = TileDataType.Abstraction;
         tileAbstractionType = TileAbstractionType.Participant;

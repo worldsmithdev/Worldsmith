@@ -359,6 +359,19 @@ public class ContainerController : MonoBehaviour
                     InstantiateDominationLines(ruler);
         }
     }
+    public void ToggleLines2()
+    {
+        DestroyLines();
+
+        foreach (LocationContainer container in locationContainerList)
+        {
+            Location loc = container.GetContainedLocation();
+            Ruler ruler = loc.localRuler;
+            if (ruler != null)
+                if (ruler.rulerHierarchy == Ruler.Hierarchy.Dominating)
+                    InstantiateDominationLines(ruler);
+        }
+    }
     public void DestroyLines()
     {
         foreach (GameObject obj in lineList)
@@ -390,8 +403,31 @@ public class ContainerController : MonoBehaviour
             line.SetPosition(1, lineloc.GetPositionVector());
             line.startColor = Color.blue;
             line.endColor = Color.red;
-        }
+        } 
+    }
+    public void InstantiateOffloadLines(Ruler ruler)
+    {
+        Location loc = ruler.GetHomeLocation();
+        List<Location> lineLocations = new List<Location>();
 
+        foreach (Location location in ruler.GetControlledLocations())
+            lineLocations.Add(location);
+
+        foreach (Location lineloc in lineLocations)
+        {
+            GameObject lineObj = Instantiate(linePrefab);
+            LineRenderer line = lineObj.GetComponent<LineRenderer>();
+            // Set false to not scale to map holder and go offpos. Alternatively set localscale to 1,1,1 at bottom.
+            lineObj.transform.SetParent(MapController.Instance.GetActiveMapHolder().transform, false);
+            lineList.Add(lineObj);
+            line.startWidth = lineStartSize;
+            line.endWidth = lineEndSize;
+            lineObj.transform.localPosition = new Vector3(0, 0, 0);
+            line.SetPosition(0, ruler.GetPositionVector());
+            line.SetPosition(1, lineloc.GetPositionVector());
+            line.startColor = Color.blue;
+            line.endColor = Color.red;
+        }
     }
     public void HighlightLocationOrange(Location loc)
     {

@@ -14,7 +14,7 @@ public class MarketController : MonoBehaviour
     public List<LocalExchange> archivedLocalExchanges = new List<LocalExchange>();
 
     LocalMarket selectedLocalMarket;
-    Market.Participant selectedParticipant;
+    Participant selectedParticipant;
       
 
     private void Awake()
@@ -31,7 +31,7 @@ public class MarketController : MonoBehaviour
     {
         selectedLocalMarket = market;
     }
-    public void SetSelectedParticipant (Market.Participant participant)
+    public void SetSelectedParticipant (Participant participant)
     {
         selectedParticipant = participant;
     }
@@ -39,8 +39,20 @@ public class MarketController : MonoBehaviour
     {
         return selectedLocalMarket;
     }
-    public Market.Participant GetSelectedParticipant()
+    public Participant GetSelectedParticipant()
     {
         return selectedParticipant;
+    }
+    public Market GetMarketForParticipant (Participant givenParticipant)
+    {
+        foreach (Location loc in archivedLocalMarkets.Keys)        
+            foreach (Market market in archivedLocalMarkets[loc])
+                if (market.participantList.Contains(givenParticipant))
+                    return market;
+        
+ 
+        
+        Debug.Log("Did not find market for participant: " + givenParticipant.participantName);
+        return null;
     }
 }

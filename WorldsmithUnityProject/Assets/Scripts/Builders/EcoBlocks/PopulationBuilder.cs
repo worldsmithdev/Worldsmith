@@ -92,7 +92,7 @@ public class PopulationBuilder : MonoBehaviour
         else
         {
 
-            if (loc.hubType == 3 || loc.hubType == 5)
+            if (loc.hubType == 3 || loc.hubType == 5) // crafts supplier or major hub
             {
                 EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Leisure, 0.04f, loc), null); 
                 EconomyController.Instance.populationDictionary.Add(new Population(Population.ClassType.Habitant, Population.LaborType.Housekeeper, 0.9f - artisanAddition, loc), null); 

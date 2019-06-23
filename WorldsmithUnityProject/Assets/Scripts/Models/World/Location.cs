@@ -40,8 +40,9 @@ public class Location : WorldElement
     public string industrySecondary;
     public int harborQuality;
     public int hubType;
-    public string offloadPrimary;
-    public string offloadSecondary;
+    public string offloadOne;
+    public string offloadTwo;
+    public string offloadThree;
     public string offloadResource;
     public int offloadDifficultyPrimary;
     public int offloadDifficultySecondary;
