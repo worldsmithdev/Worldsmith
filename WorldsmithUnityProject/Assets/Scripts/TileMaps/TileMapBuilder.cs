@@ -88,8 +88,9 @@ public class TileMapBuilder : MonoBehaviour
         ecoBlockHierarchySpritePairings.Add(Ruler.Hierarchy.Dominated, SpriteCollection.Instance.schematicDominatedSprite);
 
 
-        marketSpritePairings.Add(Tile.TileAbstractionType.LocalMarket, SpriteCollection.Instance.colorTileOrange);
-        marketSpritePairings.Add(Tile.TileAbstractionType.Participant, SpriteCollection.Instance.colorTileLightblue);
+        marketSpritePairings.Add(Tile.TileAbstractionType.LocalMarket, SpriteCollection.Instance.localMarketSprite);
+        marketSpritePairings.Add(Tile.TileAbstractionType.Participant, SpriteCollection.Instance.localParticipantSprite);
+        marketSpritePairings.Add(Tile.TileAbstractionType.Exchange, SpriteCollection.Instance.localExchangeSprite);
   
     }
     public void FillMapTiles (TileMap givenMap)

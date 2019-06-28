@@ -16,7 +16,8 @@ public class Ruler : EcoBlock
     public Attitude attitude;
     public bool isLocalRuler;
 
-
+    public Dictionary<Resource.Type, int> resourceBuyPriority = new Dictionary<Resource.Type, int>();
+    public Dictionary<Resource.Type, int> resourceSellPriority = new Dictionary<Resource.Type, int>();
 
     // LOCALPOLITICS Step
     public float cycleGenerationLevyPercentage;
@@ -26,6 +27,8 @@ public class Ruler : EcoBlock
     // LOCALEXCHANGE Step
     public Dictionary<Resource.Type, float> cycleLocalSurplusResources = new Dictionary<Resource.Type, float>(); 
     public Dictionary<Resource.Type, float> cycleLocalWantedResources = new Dictionary<Resource.Type, float>();
+
+
 
     public Ruler(Location loc, bool localRuler)
     {
@@ -38,6 +41,8 @@ public class Ruler : EcoBlock
         yLocation = loc.GetPositionVector().y;
         blockType = BlockType.Ruler;
 
+        ResourceController.Instance.SetResourceBuyPriority(this);
+
         blockID = "Ruler";
         int nr = 1;
         if (isLocalRuler)
@@ -46,7 +51,9 @@ public class Ruler : EcoBlock
             blockID = "Secondary";
         blockID += "RulerOf" + loc.elementID;
         blockID += nr;
-         
+
+        
+
         while (EconomyController.Instance.BlockIDExists(this.blockID, this.blockType) == true)
         {
             nr++;

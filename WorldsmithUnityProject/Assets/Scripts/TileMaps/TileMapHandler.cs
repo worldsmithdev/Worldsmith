@@ -57,6 +57,8 @@ public class TileMapHandler : MonoBehaviour
             UIController.Instance.exploreUI.exchangeSchematicHeaderText.text = "LocalMarket: " + tile.linkedLocalMarket.marketName;
         else if (tile.tileAbstractionType == Tile.TileAbstractionType.Participant)
             UIController.Instance.exploreUI.exchangeSchematicHeaderText.text = "Participant: " + tile.linkedParticipant.participantName;
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.Exchange)
+            UIController.Instance.exploreUI.exchangeSchematicHeaderText.text = "Exchange: " + tile.linkedExchange.exchangeName;
         else
             UIController.Instance.exploreUI.exchangeSchematicHeaderText.text = "Schematic";
 
@@ -131,6 +133,10 @@ public class TileMapHandler : MonoBehaviour
             MarketController.Instance.SetSelectedParticipant(tile.linkedParticipant);
             UIController.Instance.exploreUI.exploreTextSetter.SetClickedParticipantText(tile.linkedParticipant);
         }
-           
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.Exchange)
+        {
+            ExchangeController.Instance.SetSelectedExchange(tile.linkedExchange);
+            UIController.Instance.exploreUI.exploreTextSetter.SetClickedExchangeText(tile.linkedExchange);
+        }
     }
 }

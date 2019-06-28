@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Exchange  
 {
-   
+    public string exchangeName;
+    public Color32 exchangeColor;
 
 
 

@@ -4,7 +4,13 @@ using UnityEngine;
 
 [System.Serializable]
 public class Warband : EcoBlock
-{ 
+{
+
+
+    public Dictionary<Resource.Type, int> resourceBuyPriority = new Dictionary<Resource.Type, int>();
+    public Dictionary<Resource.Type, int> resourceSellPriority = new Dictionary<Resource.Type, int>();
+
+
 
     public Warband(Location loc)
     { 
@@ -12,7 +18,10 @@ public class Warband : EcoBlock
         blockType = BlockType.Warband;
         xLocation = loc.GetPositionVector().x;
         yLocation = loc.GetPositionVector().y;
-         
+
+        ResourceController.Instance.SetResourceBuyPriority(this);
+        ResourceController.Instance.SetResourceSellPriority(this);
+
         int nr = 1; 
         blockID = "WarbandOf" + loc.elementID;
         blockID += nr;

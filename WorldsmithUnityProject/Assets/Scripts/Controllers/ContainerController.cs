@@ -364,12 +364,8 @@ public class ContainerController : MonoBehaviour
         DestroyLines();
 
         foreach (LocationContainer container in locationContainerList)
-        {
-            Location loc = container.GetContainedLocation();
-            Ruler ruler = loc.localRuler;
-            if (ruler != null)
-                if (ruler.rulerHierarchy == Ruler.Hierarchy.Dominating)
-                    InstantiateDominationLines(ruler);
+        { 
+                    InstantiateOffloadLines(container);
         }
     }
     public void DestroyLines()
@@ -399,21 +395,34 @@ public class ContainerController : MonoBehaviour
             line.startWidth = lineStartSize;
             line.endWidth = lineEndSize;
             lineObj.transform.localPosition = new Vector3(0, 0, 0);
-            line.SetPosition(0, ruler.GetPositionVector());
-            line.SetPosition(1, lineloc.GetPositionVector());
+            line.SetPosition(1, ruler.GetPositionVector());
+            line.SetPosition(0, lineloc.GetPositionVector());
             line.startColor = Color.blue;
             line.endColor = Color.red;
         } 
     }
-    public void InstantiateOffloadLines(Ruler ruler)
-    {
-        Location loc = ruler.GetHomeLocation();
+    public void InstantiateOffloadLines(LocationContainer container)
+    { 
         List<Location> lineLocations = new List<Location>();
+        Location loc = container.GetContainedLocation();
 
-        foreach (Location location in ruler.GetControlledLocations())
-            lineLocations.Add(location);
-
-        foreach (Location lineloc in lineLocations)
+        if (loc.offloadOne == "Global" )
+        {
+            GameObject lineObj = Instantiate(linePrefab);
+            LineRenderer line = lineObj.GetComponent<LineRenderer>();
+            // Set false to not scale to map holder and go offpos. Alternatively set localscale to 1,1,1 at bottom.
+            lineObj.transform.SetParent(MapController.Instance.GetActiveMapHolder().transform, false);
+            lineList.Add(lineObj);
+            line.startWidth = lineStartSize  ;
+            line.endWidth = lineEndSize /2;
+            lineObj.transform.localPosition = new Vector3(0, 0, 0);
+            line.SetPosition(1, new Vector3 (loc.GetPositionVector().x, loc.GetPositionVector().y + 0.25f, 0));
+            line.SetPosition(0, loc.GetPositionVector());
+            line.startColor = Color.blue;
+            line.endColor = Color.blue;
+        }
+        // has primary offload
+        if (loc.offloadOne!= "Global" && loc.offloadOne != "")
         {
             GameObject lineObj = Instantiate(linePrefab);
             LineRenderer line = lineObj.GetComponent<LineRenderer>();
@@ -423,11 +432,44 @@ public class ContainerController : MonoBehaviour
             line.startWidth = lineStartSize;
             line.endWidth = lineEndSize;
             lineObj.transform.localPosition = new Vector3(0, 0, 0);
-            line.SetPosition(0, ruler.GetPositionVector());
-            line.SetPosition(1, lineloc.GetPositionVector());
-            line.startColor = Color.blue;
-            line.endColor = Color.red;
+            line.SetPosition(1, LocationController.Instance.GetSpecificLocation(loc.offloadOne).GetPositionVector());
+            line.SetPosition(0, loc.GetPositionVector());
+            line.startColor = Color.black;
+            line.endColor = Color.black;
         }
+
+        if (loc.offloadTwo != "Global" && loc.offloadTwo != "")
+        {
+            GameObject lineObj = Instantiate(linePrefab);
+            LineRenderer line = lineObj.GetComponent<LineRenderer>();
+            // Set false to not scale to map holder and go offpos. Alternatively set localscale to 1,1,1 at bottom.
+            lineObj.transform.SetParent(MapController.Instance.GetActiveMapHolder().transform, false);
+            lineList.Add(lineObj);
+            line.startWidth = lineStartSize;
+            line.endWidth = lineEndSize;
+            lineObj.transform.localPosition = new Vector3(0, 0, 0);
+            line.SetPosition(1, LocationController.Instance.GetSpecificLocation(loc.offloadTwo).GetPositionVector());
+            line.SetPosition(0, loc.GetPositionVector());
+            line.startColor = Color.gray;
+            line.endColor = Color.gray;
+        }
+
+        //if (loc.offloadThree != "Global" && loc.offloadThree != "")
+        //{
+        //    GameObject lineObj = Instantiate(linePrefab);
+        //    LineRenderer line = lineObj.GetComponent<LineRenderer>();
+        //    // Set false to not scale to map holder and go offpos. Alternatively set localscale to 1,1,1 at bottom.
+        //    lineObj.transform.SetParent(MapController.Instance.GetActiveMapHolder().transform, false);
+        //    lineList.Add(lineObj);
+        //    line.startWidth = lineStartSize / 2;
+        //    line.endWidth = lineEndSize / 2;
+        //    lineObj.transform.localPosition = new Vector3(0, 0, 0);
+        //    line.SetPosition(0, LocationController.Instance.GetSpecificLocation(loc.offloadThree).GetPositionVector());
+        //    line.SetPosition(1, loc.GetPositionVector());
+        //    line.startColor = Color.gray;
+        //    line.endColor = Color.gray;
+        //}
+ 
     }
     public void HighlightLocationOrange(Location loc)
     {

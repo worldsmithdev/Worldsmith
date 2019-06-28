@@ -195,31 +195,48 @@ public class TileMapSpecifics : MonoBehaviour
         Location selectedLoc = LocationController.Instance.GetSelectedLocation();
         for (int x = 0; x < givenMap.xSize; x += 1)
             for (int y = 0; y < givenMap.ySize; y += 1)
-                givenMap.GetTileAt(x, y).SetBlank();
+                givenMap.GetTileAt(x, y).SetEmpty();
+         
+        int xPos = givenMap.xSize +5;
+        int yPos;
 
-        int xPos = -1;
-        int yPos = givenMap.ySize - 1;
+        int count = 0;
 
-        foreach (Location loc in MarketController.Instance.archivedLocalMarkets.Keys)
+        // Most recent market on the right side always. Move to left.
+        // 3 participants horizontally below it.
+        // below each of those, the exchanges in which they were active
+
+        MarketController.Instance.archivedLocalMarkets[selectedLoc].Reverse();
+
+        foreach (LocalMarket locmarket in MarketController.Instance.archivedLocalMarkets[selectedLoc])
         {
-            if (loc == selectedLoc)
+            count++;
+            if (count < 4)
             {
-                foreach (LocalMarket locmarket in MarketController.Instance.archivedLocalMarkets[loc])
-                {                   
-                    if (xPos < givenMap.xSize)
+                xPos -= 10;
+                yPos = givenMap.ySize - 2;
+
+                givenMap.GetTileAt(xPos, yPos).SetLinkedLocalMarket(locmarket);
+
+                xPos -= 4;
+                foreach (Participant participant in locmarket.participantList)
+                {
+                    xPos += 2;
+                    yPos = givenMap.ySize - 4;
+                    givenMap.GetTileAt(xPos, yPos).SetLinkedParticipant(participant);
+
+                    foreach (LocalExchange locexch in locmarket.localExchangesList)
                     {
-                        yPos = givenMap.ySize - 1;
-                        xPos++;
-                        givenMap.GetTileAt(xPos, yPos).SetLinkedLocalMarket(locmarket);
-                        foreach (Participant participant in locmarket.participantList)
+                        if (locexch.activeParticipant == participant)
                         {
-                            yPos--;
-                            givenMap.GetTileAt(xPos, yPos).SetLinkedParticipant(participant); 
+                            yPos -= 2;
+                            givenMap.GetTileAt(xPos, yPos).SetLinkedExchange(locexch);
                         }
                     }
-                }
-            }
-         
-        }
+                } 
+            }  
+        } 
+        MarketController.Instance.archivedLocalMarkets[selectedLoc].Reverse(); 
+
     }
 }

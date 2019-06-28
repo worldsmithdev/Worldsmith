@@ -12,7 +12,7 @@ public class Tile
 
     public enum TileDataType { Unassigned, Blank, Terrain, Building, WorldElement, EcoBlock, Abstraction}
     public enum TileTerrainType { Sea, Land, Mountain, Forest }
-    public enum TileAbstractionType { Unassigned, LocalMarket, Participant }
+    public enum TileAbstractionType { Unassigned, LocalMarket, Participant, Exchange }
 
     public string originalTileMapName;
 
@@ -30,6 +30,7 @@ public class Tile
     public Item linkedItem;
     public LocalMarket linkedLocalMarket;
     public Participant linkedParticipant;
+    public Exchange linkedExchange;
 
     public Tile(int xloc, int yloc, string mapname)
     {
@@ -42,6 +43,10 @@ public class Tile
     public void SetBlank()
     {
         tileDataType = TileDataType.Blank;
+    }
+    public void SetEmpty()
+    {
+        tileDataType = TileDataType.Unassigned;
     }
     public void SetTileEcoBlockType(EcoBlock.BlockType type)
     {
@@ -106,5 +111,11 @@ public class Tile
         tileDataType = TileDataType.Abstraction;
         tileAbstractionType = TileAbstractionType.Participant;
         linkedParticipant = participant;
+    }
+    public void SetLinkedExchange(Exchange exchange)
+    {
+        tileDataType = TileDataType.Abstraction;
+        tileAbstractionType = TileAbstractionType.Exchange;
+        linkedExchange = exchange;
     }
 }

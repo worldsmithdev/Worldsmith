@@ -12,7 +12,11 @@ public class Population : EcoBlock
     public LaborType laborType;
 
     public int amount;
-     
+
+    public Dictionary<Resource.Type, int> resourceBuyPriority = new Dictionary<Resource.Type, int >();
+    public Dictionary<Resource.Type, int> resourceSellPriority = new Dictionary<Resource.Type, int>();
+
+
 
     // INDUSTRY Step
     public float cycleWaresManpower;
@@ -43,6 +47,9 @@ public class Population : EcoBlock
         blockType = BlockType.Population;
         xLocation = loc.GetPositionVector().x;
         yLocation = loc.GetPositionVector().y;
+
+        ResourceController.Instance.SetResourceBuyPriority(this);
+        ResourceController.Instance.SetResourceSellPriority(this);
 
         int nr = 1;
         blockID = classType.ToString().Substring(0, 1) + laborType.ToString().Substring(0, 1) + "Pop"   +loc.elementID + nr;

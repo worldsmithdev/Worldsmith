@@ -9,9 +9,7 @@ public class MarketController : MonoBehaviour
 
 
     public List<LocalMarket> cycleLocalMarkets = new List<LocalMarket>();
-    public Dictionary<Location, List<LocalMarket>> archivedLocalMarkets = new Dictionary<Location, List<LocalMarket>>(); 
-    public List<LocalExchange> cycleLocalExchanges = new List<LocalExchange>();
-    public List<LocalExchange> archivedLocalExchanges = new List<LocalExchange>();
+    public Dictionary<Location, List<LocalMarket>> archivedLocalMarkets = new Dictionary<Location, List<LocalMarket>>();  
 
     LocalMarket selectedLocalMarket;
     Participant selectedParticipant;

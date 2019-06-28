@@ -56,9 +56,9 @@ public class ResourceBuilder : MonoBehaviour
     }
     void AssignLeisureClassResources (Population population)
     {
-    //    population.resourcePortfolio[Resource.Type.Wheat].amount += (population.cycleDesiredFoodConsumption * territoryStatusFoodModifier[population.GetHomeLocation().territoryStatus]) * 2;
+        population.resourcePortfolio[Resource.Type.Wheat].amount += (population.cycleDesiredFoodConsumption * territoryStatusFoodModifier[population.GetHomeLocation().territoryStatus]) * 20;
     //    population.resourcePortfolio[Resource.Type.Wares].amount += (population.cycleDesiredComfortConsumption * territoryStatusLuxuryModifier[population.GetHomeLocation().territoryStatus]) * 2;
-        population.resourcePortfolio[Resource.Type.Silver].amount += (population.amount * 5f);
+        population.resourcePortfolio[Resource.Type.Silver].amount += (population.amount * 50f);
     }
     void AssignHousekeeperClassResources(Population population)
     {

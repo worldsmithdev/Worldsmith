@@ -10,7 +10,7 @@ public class LocalExchangeStep : Step
     public override void PrepareStep()
     {         
         MarketController.Instance.cycleLocalMarkets = new List<LocalMarket>();
-        MarketController.Instance.cycleLocalExchanges = new List<LocalExchange>();
+        ExchangeController.Instance.cycleLocalExchanges = new List<LocalExchange>();
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
         {
             loc.localMarket = null;

@@ -6,7 +6,7 @@ public class LocalMarket : Market
 {
 
 
-
+    public List<LocalExchange> localExchangesList = new List<LocalExchange>();
 
 
 
@@ -35,29 +35,39 @@ public class LocalMarket : Market
         newParticipant.type = Participant.Type.Population;
         if (population.classType == Population.ClassType.Citizen || population.laborType == Population.LaborType.Leisure)
             newParticipant.priorityLevel = Participant.PriorityLevel.HI;
+        else if (population.laborType == Population.LaborType.Artisan)
+            newParticipant.priorityLevel = Participant.PriorityLevel.MID;
         else
             newParticipant.priorityLevel = Participant.PriorityLevel.LO;
-        newParticipant.offeredResources = new Dictionary<Resource.Type, float>();
-        newParticipant.wantedResources = new Dictionary<Resource.Type, float>();
-        newParticipant.claimedResources = new Dictionary<Resource.Type, float>();
-        newParticipant.deductedResources = new Dictionary<Resource.Type, float>();
-        newParticipant.outTradedResources = new Dictionary<Resource.Type, float>();
-        newParticipant.inTradedResources = new Dictionary<Resource.Type, float>();
+
+        newParticipant.resourceBuyPriority = population.resourceBuyPriority;
+        newParticipant.resourceSellPriority = population.resourceSellPriority;
+
+        //newParticipant.claimedResources = new Dictionary<Resource.Type, float>();
+        //newParticipant.deductedResources = new Dictionary<Resource.Type, float>();
+        //newParticipant.outTradedResources = new Dictionary<Resource.Type, float>();
+        //newParticipant.inTradedResources = new Dictionary<Resource.Type, float>();
         //newParticipant.purchasedResources = new List<Resource>();
         //newParticipant.silverCreditStatus = 0f;
         //newParticipant.paidSilver = 0f;
         //newParticipant.receivedSilver = 0f;
 
-        foreach (Resource.Type restype in population.cycleLocalSurplusResources.Keys)        
+        foreach (Resource.Type restype in population.cycleLocalSurplusResources.Keys)
+        {
+            newParticipant.initialOfferedResources.Add(restype, population.cycleLocalSurplusResources[restype]);
             newParticipant.offeredResources.Add(restype, population.cycleLocalSurplusResources[restype]);
+        }
         foreach (Resource.Type restype in population.cycleLocalWantedResources.Keys)
+        {
+            newParticipant.initialWantedResources.Add(restype, population.cycleLocalWantedResources[restype]);
             newParticipant.wantedResources.Add(restype, population.cycleLocalWantedResources[restype]);
+        }
 
         if (population.GetHomeLocation().elementID == "Egenimos")
         {
             debugLoc = population.GetHomeLocation(); 
         }
-        newParticipant.participantName = "PTC" + newParticipant.linkedEcoBlock.blockID + WorldController.Instance.GetWorld().completedCycles; 
+        newParticipant.participantName = "P" + newParticipant.linkedEcoBlock.blockID + WorldController.Instance.GetWorld().completedCycles; 
         participantList.Add(newParticipant);
 
     }
@@ -88,23 +98,69 @@ public class LocalMarket : Market
         //newParticipant.participantName = "PTC" + newParticipant.linkedEcoBlock.blockID + WorldController.Instance.GetWorld().completedCycles;
         //participantList.Add(newParticipant);
     }
+    void ShopAndExchange (Participant participant, List<Participant> pList)
+    {
+        foreach (Participant passiveParticipant in pList)
+        {
+            if (participant != passiveParticipant)
+            {
+                participant.shoppingList = new List<Resource>();
+                foreach (Resource.Type restype in passiveParticipant.offeredResources.Keys)
+                    if (participant.wantedResources.ContainsKey(restype))
+                    { 
+                        if (passiveParticipant.offeredResources[restype] > 0)
+                        {
+                            if (participant.wantedResources[restype] >= passiveParticipant.offeredResources[restype])
+                            {
+                               Debug.Log(participant.participantName + " shopped for what was available of " + restype + " at " + passiveParticipant.participantName);
+                                participant.shoppingList.Add(new Resource(restype, passiveParticipant.offeredResources[restype])); // take all
+                                participant.totalShoppingList[restype] += passiveParticipant.offeredResources[restype];
+                            }
+                            else
+                            {
+                                Debug.Log(participant.participantName + " shopped for what they wanted of " + restype + " at " + passiveParticipant.participantName);
+                                participant.shoppingList.Add(new Resource(restype, participant.wantedResources[restype])); // take desired
+                                participant.totalShoppingList[restype] += participant.wantedResources[restype]; 
+                            }
+                        }
+                    }
 
+                float shoppingValue = 0f;
+                foreach (Resource shopres in participant.shoppingList)                
+                    shoppingValue += Converter.GetSilverEquivalent(shopres); 
+                
+                if (shoppingValue > 0)
+                {
+                  Debug.Log("Creating exchange for active: " + participant.participantName + " with passive: " + passiveParticipant.participantName);
+                    ExchangeController.Instance.CreateLocalExchange(this, participant, passiveParticipant, participant.shoppingList);
+                }
+
+            }
+        }
+    }
+
+    void ShopAround (Participant participant)
+    {
+        ShopAndExchange(participant, participantsHigh);
+        ShopAndExchange(participant, participantsMid);
+        ShopAndExchange(participant, participantsLow); 
+    }
 
     public override void ResolveMarket()
     {
         // Compile types and amounts of wanted resources
-        foreach (Participant participant in participantList)
-        {
-            foreach (Resource.Type restype in participant.wantedResources.Keys)
-            {
-                if (this.wantedResourceTypes.Contains(restype) == false)
-                    this.wantedResourceTypes.Add(restype);
-                if (this.totalWantedResources.ContainsKey(restype) == false)
-                    this.totalWantedResources.Add(restype, participant.wantedResources[restype]);
-                else
-                    this.totalWantedResources[restype] += participant.wantedResources[restype];
-            }
-        }
+        //foreach (Participant participant in participantList)
+        //{
+        //    foreach (Resource.Type restype in participant.wantedResources.Keys)
+        //    {
+        //        if (this.wantedResourceTypes.Contains(restype) == false)
+        //            this.wantedResourceTypes.Add(restype);
+        //        if (this.totalWantedResources.ContainsKey(restype) == false)
+        //            this.totalWantedResources.Add(restype, participant.wantedResources[restype]);
+        //        else
+        //            this.totalWantedResources[restype] += participant.wantedResources[restype];
+        //    }
+        //}
 
         // Divide Ps into priority-based sublists
         foreach (Participant participant in participantList)
@@ -120,58 +176,83 @@ public class LocalMarket : Market
         ShuffleParticipants();
 
 
-        // Collect all resources offered by all Ps and add them to totalOfferedResources dict
-        foreach (Participant participant in participantList)
-        {
-            foreach (Resource.Type restype in participant.offeredResources.Keys)
-                if (participant.offeredResources[restype] > 0)
-                {
-                    if (totalOfferedResources.ContainsKey(restype))
-                        totalOfferedResources[restype] += participant.offeredResources[restype];
-                    else
-                        totalOfferedResources.Add(restype, participant.offeredResources[restype]);
-                }
-        } 
-         // In priority order, each P claims a portion of the offered resources
         foreach (Participant participant in participantsHigh)
             if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
-                ClaimResources(participant);
+                ShopAround(participant);
 
         foreach (Participant participant in participantsMid)
-             if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
-                ClaimResources(participant);
+            if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+                ShopAround(participant);
 
         foreach (Participant participant in participantsLow)
-             if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
-                ClaimResources(participant);
-
-        // Prepare dictionary
-        foreach (Resource.Type restype in totalClaimedResources.Keys)
-            totalDeductedResources.Add(restype, 0);
-
-        // In priority order, each P sells their resources as far as they're claimed
-        foreach (Participant participant in participantsHigh)
-             if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
-                DeductResources(participant);
-        foreach (Participant participant in participantsMid)
-             if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
-                DeductResources(participant);
-        foreach (Participant participant in participantsLow)
-             if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
-                DeductResources(participant);
-
-        // In priority older, each P squares their sell value against their take value, then gets either Pos or Neg credit
-        foreach (Participant participant in participantsHigh)
             if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
-                SetCreditStatus(participant);
-        foreach (Participant participant in participantsMid)
-            if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
-                SetCreditStatus(participant);
-        foreach (Participant participant in participantsLow)
-            if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
-                SetCreditStatus(participant);
+                ShopAround(participant);
 
-         
+
+ 
+        //// Collect all resources offered by all Ps and add them to totalOfferedResources dict
+        //foreach (Participant participant in participantList)
+        //{
+        //    foreach (Resource.Type restype in participant.offeredResources.Keys)
+        //        if (participant.offeredResources[restype] > 0)
+        //        {
+        //            if (totalOfferedResources.ContainsKey(restype))
+        //                totalOfferedResources[restype] += participant.offeredResources[restype];
+        //            else
+        //                totalOfferedResources.Add(restype, participant.offeredResources[restype]);
+        //        }
+        //} 
+
+        // // In priority order, each P claims a portion of the offered resources
+        //foreach (Participant participant in participantsHigh)
+        //    if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        //        ClaimResources(participant);
+
+        //foreach (Participant participant in participantsMid)
+        //     if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        //        ClaimResources(participant);
+
+        //foreach (Participant participant in participantsLow)
+        //     if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        //        ClaimResources(participant);
+
+        //// Prepare dictionary
+        //foreach (Resource.Type restype in totalClaimedResources.Keys)
+        //    totalDeductedResources.Add(restype, 0);
+
+        //// In priority order, each P sells their resources as far as they're claimed
+        //foreach (Participant participant in participantsHigh)
+        //     if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        //        DeductResources(participant);
+        //foreach (Participant participant in participantsMid)
+        //     if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        //        DeductResources(participant);
+        //foreach (Participant participant in participantsLow)
+        //     if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        //        DeductResources(participant);
+
+        //// In priority older, each P squares their sell value against their take value, then gets either Pos or Neg credit
+        //foreach (Participant participant in participantsHigh)
+        //    if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        //        SetCreditStatus(participant);
+        //foreach (Participant participant in participantsMid)
+        //    if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        //        SetCreditStatus(participant);
+        //foreach (Participant participant in participantsLow)
+        //    if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        //        SetCreditStatus(participant);
+
+
+        //foreach (Participant participant in participantList)
+        //    if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        //        ProcessCredit(participant);
+
+        //foreach (Participant participant in participantList)
+        //    if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        //        ResolveCredit(participant);
+
+
+
         //// For each P, if they have a Poscredit, collect silver from the Ps with Neg credit
         ////foreach (Participant participant in participantsHigh)
         ////    if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
@@ -194,14 +275,6 @@ public class LocalMarket : Market
         ////        ResolveCredit(participant);
 
 
-        foreach (Participant participant in participantList)
-            if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
-                ProcessCredit(participant);
-
-        foreach (Participant participant in participantList)
-            if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
-                ResolveCredit(participant);
-
         //CompileSoldPercentages();
 
         //foreach (Participant participant in participantList)
@@ -214,45 +287,45 @@ public class LocalMarket : Market
     // For each resource P wants, if it's on offer, claim as much as possible to their max wants, 
     void ClaimResources (Participant participant)
     {
-        foreach (Resource.Type wantedrestype in participant.wantedResources.Keys)
-            if (participant.wantedResources[wantedrestype] > 0) // wants its
-            {
-              //  Debug.Log("P " + participant.participantName + " wants "+ participant.wantedResources[wantedrestype] +wantedrestype);
-                if (totalOfferedResources.ContainsKey(wantedrestype)) // it's on offer
-                {
-                    if (totalOfferedResources[wantedrestype] > 0) // verify on offer
-                    {
-                      //  Debug.Log("P " + participant.participantName + " sees on offer  " + totalOfferedResources[wantedrestype] + wantedrestype);
-                        if (participant.wantedResources[wantedrestype] >= totalOfferedResources[wantedrestype]) // wants more/all that is available        
-                        {
-                            float maxClaimValue = participant.GetPotentialSpendingPower() - participant.GetClaimedValue();
-                            float claimedResourceValue = Converter.GetSilverEquivalent(new Resource(wantedrestype, participant.wantedResources[wantedrestype]));
-                            if (maxClaimValue > claimedResourceValue)
-                            {
-                                ClaimResource(participant, new Resource(wantedrestype, totalOfferedResources[wantedrestype]));
-                            }
-                            else
-                            { 
-                                ClaimResource(participant, new Resource(wantedrestype, Converter.GetResourceEquivalent(participant, wantedrestype, maxClaimValue).amount)); 
-                            }
-                        }                            
-                        else // wants less than is available                        
-                        {
-                            float maxClaimValue = participant.GetPotentialSpendingPower();
-                            float claimedResourceValue = Converter.GetSilverEquivalent(new Resource(wantedrestype, participant.wantedResources[wantedrestype]));
+        //foreach (Resource.Type wantedrestype in participant.wantedResources.Keys)
+        //    if (participant.wantedResources[wantedrestype] > 0) // wants its
+        //    {
+        //      //  Debug.Log("P " + participant.participantName + " wants "+ participant.wantedResources[wantedrestype] +wantedrestype);
+        //        if (totalOfferedResources.ContainsKey(wantedrestype)) // it's on offer
+        //        {
+        //            if (totalOfferedResources[wantedrestype] > 0) // verify on offer
+        //            {
+        //              //  Debug.Log("P " + participant.participantName + " sees on offer  " + totalOfferedResources[wantedrestype] + wantedrestype);
+        //                if (participant.wantedResources[wantedrestype] >= totalOfferedResources[wantedrestype]) // wants more/all that is available        
+        //                {
+        //                    float maxClaimValue = participant.GetPotentialSpendingPower() - participant.GetClaimedValue();
+        //                    float claimedResourceValue = Converter.GetSilverEquivalent(new Resource(wantedrestype, participant.wantedResources[wantedrestype]));
+        //                    if (maxClaimValue > claimedResourceValue)
+        //                    {
+        //                        ClaimResource(participant, new Resource(wantedrestype, totalOfferedResources[wantedrestype]));
+        //                    }
+        //                    else
+        //                    { 
+        //                        ClaimResource(participant, new Resource(wantedrestype, Converter.GetResourceEquivalent(participant, wantedrestype, maxClaimValue).amount)); 
+        //                    }
+        //                }                            
+        //                else // wants less than is available                        
+        //                {
+        //                    float maxClaimValue = participant.GetPotentialSpendingPower();
+        //                    float claimedResourceValue = Converter.GetSilverEquivalent(new Resource(wantedrestype, participant.wantedResources[wantedrestype]));
 
-                            if (maxClaimValue > claimedResourceValue)
-                            {
-                                ClaimResource(participant, new Resource(wantedrestype, participant.wantedResources[wantedrestype]));
-                            }
-                            else
-                            {
-                                ClaimResource(participant, new Resource(wantedrestype, Converter.GetResourceEquivalent(participant, wantedrestype, maxClaimValue).amount));
-                            }
-                        }
-                    }    
-                }
-            }
+        //                    if (maxClaimValue > claimedResourceValue)
+        //                    {
+        //                        ClaimResource(participant, new Resource(wantedrestype, participant.wantedResources[wantedrestype]));
+        //                    }
+        //                    else
+        //                    {
+        //                        ClaimResource(participant, new Resource(wantedrestype, Converter.GetResourceEquivalent(participant, wantedrestype, maxClaimValue).amount));
+        //                    }
+        //                }
+        //            }    
+        //        }
+        //    }
     } 
             //actualClaimedResources.Add(restype, 0); 
             //totalDeductedResources.Add(restype, 0);

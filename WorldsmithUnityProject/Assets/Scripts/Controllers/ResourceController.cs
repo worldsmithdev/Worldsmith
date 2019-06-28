@@ -50,12 +50,89 @@ public class ResourceController : MonoBehaviour
     }
 
  
+    public void InitiateResourceDictionary (Dictionary<Resource.Type, float> dict)
+    {
+        foreach (Resource.Type restype in resourceCompendium.Keys)
+        {
+            dict.Add(restype, 0);
+        }
+    }
+
 
     public Resource.Category GetResourceCategory(Resource res)
     {
         return resourceCompendium[res.type];
     }
 
- 
+
+    public void SetResourceBuyPriority(Ruler ruler)
+    {
+        ruler.resourceBuyPriority = new Dictionary<Resource.Type, int>();
+        ruler.resourceBuyPriority.Add(Resource.Type.Silver, 1);
+        ruler.resourceBuyPriority.Add(Resource.Type.Wheat, 2);
+        ruler.resourceBuyPriority.Add(Resource.Type.Wares, 3);
+         
+        foreach (Resource.Type restype in resourceCompendium.Keys)        
+            if (ruler.resourceBuyPriority.ContainsKey(restype) == false)            
+                ruler.resourceBuyPriority.Add(restype, 0);        
+
+
+    }
+    public void SetResourceBuyPriority(Warband warband)
+    {
+        warband.resourceBuyPriority = new Dictionary<Resource.Type, int>();
+        warband.resourceBuyPriority.Add(Resource.Type.Silver, 1);
+        warband.resourceBuyPriority.Add(Resource.Type.Wares, 2);
+        warband.resourceBuyPriority.Add(Resource.Type.Wheat, 3);
+
+        foreach (Resource.Type restype in resourceCompendium.Keys)
+            if (warband.resourceBuyPriority.ContainsKey(restype) == false)
+                warband.resourceBuyPriority.Add(restype, 0);
+    }
+    public void SetResourceBuyPriority(Population population)
+    {
+        population.resourceBuyPriority = new Dictionary<Resource.Type, int>();
+        population.resourceBuyPriority.Add(Resource.Type.Wheat, 1);
+        population.resourceBuyPriority.Add(Resource.Type.Silver, 2);
+        population.resourceBuyPriority.Add(Resource.Type.Wares, 3);
+
+        foreach (Resource.Type restype in resourceCompendium.Keys)
+            if (population.resourceBuyPriority.ContainsKey(restype) == false)
+                population.resourceBuyPriority.Add(restype, 0);
+    }
+
+
+    public void SetResourceSellPriority(Ruler ruler)
+    {
+        ruler.resourceSellPriority = new Dictionary<Resource.Type, int>(); 
+        ruler.resourceSellPriority.Add(Resource.Type.Wheat, 1);
+        ruler.resourceSellPriority.Add(Resource.Type.Wares, 2);
+
+        foreach (Resource.Type restype in resourceCompendium.Keys)
+            if (ruler.resourceSellPriority.ContainsKey(restype) == false)
+                ruler.resourceSellPriority.Add(restype, 0);
+
+
+    }
+    public void SetResourceSellPriority(Warband warband)
+    {
+        warband.resourceSellPriority = new Dictionary<Resource.Type, int>();
+        warband.resourceSellPriority.Add(Resource.Type.Wheat, 1);
+        warband.resourceSellPriority.Add(Resource.Type.Wares, 2);
+
+        foreach (Resource.Type restype in resourceCompendium.Keys)
+            if (warband.resourceSellPriority.ContainsKey(restype) == false)
+                warband.resourceSellPriority.Add(restype, 0);
+    }
+    public void SetResourceSellPriority(Population population)
+    {
+        population.resourceSellPriority = new Dictionary<Resource.Type, int>();
+        population.resourceSellPriority.Add(Resource.Type.Wheat, 1);
+        population.resourceSellPriority.Add(Resource.Type.Wares, 2);
+
+        foreach (Resource.Type restype in resourceCompendium.Keys)
+            if (population.resourceSellPriority.ContainsKey(restype) == false)
+                population.resourceSellPriority.Add(restype, 0);
+    }
 
 }

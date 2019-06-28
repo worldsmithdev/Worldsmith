@@ -93,6 +93,9 @@ public class SpriteCollection : MonoBehaviour
 
     public Sprite clickableBackgroundSprite;
 
+    public Sprite localMarketSprite;
+    public Sprite localParticipantSprite;
+    public Sprite localExchangeSprite;
 
 
 
