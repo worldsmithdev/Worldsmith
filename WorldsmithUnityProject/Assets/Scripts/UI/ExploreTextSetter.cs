@@ -323,12 +323,12 @@ public class ExploreTextSetter : MonoBehaviour
         string line1 = "" + participant.participantName + "  type: "  + participant.type +" prio: " + participant.priorityLevel + "\n";
         string line2 = "Linked EB: " + participant.linkedEcoBlock.blockID  + " (Current) Spending power: " + participant.storedSpendingPower.ToString("F1") + "\n";
 
-        string line3 = "offered: ";
+        string line3 = "offereds: ";
         foreach (Resource.Type restype in participant.initialOfferedResources.Keys)
             line3 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + participant.initialOfferedResources[restype].ToString("F1") + " ";
         line3 += "\n";
 
-        string line4 = "wanted: ";
+        string line4 = "wanteds: ";
         foreach (Resource.Type restype in participant.initialWantedResources.Keys)
             line4 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + participant.initialWantedResources[restype].ToString("F1") + " ";
         line4 += "\n";
@@ -340,12 +340,12 @@ public class ExploreTextSetter : MonoBehaviour
         line5 += "\n";
 
 
-        string line6 = "deducted: ";
+    //    string line6 = "deducted: ";
         //foreach (Resource.Type restype in participant.deductedResources.Keys)
         //    line6 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + participant.deductedResources[restype].ToString("F1") + " ";
         //line6 += "\n";
 
-        string line7 = "Creditstatus: " + participant.silverCreditStatus + "  silver received: " + participant.receivedSilver + "  silver paid: " + participant.paidSilver + "\n";
+     //   string line7 = "Creditstatus: " + participant.silverCreditStatus + "  silver received: " + participant.receivedSilver + "  silver paid: " + participant.paidSilver + "\n";
         //string line8 = "spending power: " + participant.GetSpendingPower();
 
         //string line6 = "out traded: ";
@@ -365,7 +365,7 @@ public class ExploreTextSetter : MonoBehaviour
         //line8 += "\n";
 
          
-        exploreUI.exchangeClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
+        exploreUI.exchangeClickedText.text = line1 + line2 + line3 + line4;
     }
 
     public void SetClickedExchangeText(Exchange exchange)

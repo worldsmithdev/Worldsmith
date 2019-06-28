@@ -197,7 +197,7 @@ public class TileMapSpecifics : MonoBehaviour
             for (int y = 0; y < givenMap.ySize; y += 1)
                 givenMap.GetTileAt(x, y).SetEmpty();
          
-        int xPos = givenMap.xSize +5;
+        int xPos = givenMap.xSize +2;
         int yPos;
 
         int count = 0;
@@ -211,17 +211,17 @@ public class TileMapSpecifics : MonoBehaviour
         foreach (LocalMarket locmarket in MarketController.Instance.archivedLocalMarkets[selectedLoc])
         {
             count++;
-            if (count < 4)
+            if (count < 3)
             {
                 xPos -= 10;
                 yPos = givenMap.ySize - 2;
 
                 givenMap.GetTileAt(xPos, yPos).SetLinkedLocalMarket(locmarket);
 
-                xPos -= 4;
+                xPos -= 5;
                 foreach (Participant participant in locmarket.participantList)
                 {
-                    xPos += 2;
+                    xPos += 1;
                     yPos = givenMap.ySize - 4;
                     givenMap.GetTileAt(xPos, yPos).SetLinkedParticipant(participant);
 

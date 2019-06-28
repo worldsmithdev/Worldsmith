@@ -31,11 +31,11 @@ public class LocalExchange : Exchange
     }
 
 
-    public void CommitResource (bool isActive,  Resource resource)
+    public void CommitResource (bool isActiveParticipant,  Resource resource)
     {
         if (resource.amount > 0)
         {
-            if (isActive == true)
+            if (isActiveParticipant == true)
             {
                 activeResources.Add(resource);
                 if (activeCommitted.ContainsKey(resource.type))
@@ -43,7 +43,7 @@ public class LocalExchange : Exchange
                 else
                     activeCommitted.Add(resource.type, resource.amount);
             }
-            else
+            else // passive participant
             {
                 passiveResources.Add(resource);
                 if (passiveCommitted.ContainsKey(resource.type))
@@ -73,9 +73,11 @@ public class LocalExchange : Exchange
             foreach (Resource res in activeResources)
             {
                 activeParticipant.linkedEcoBlock.resourcePortfolio[res.type].amount -= res.amount;
-            activeParticipant.offeredResources[res.type] -= res.amount;
-            //       Debug.Log("Active P " + activeParticipant.linkedEcoBlock.blockID + " pays " + res.amount + res.type);
+            if (activeParticipant.offeredResources.ContainsKey(res.type))
+                activeParticipant.offeredResources[res.type] -= res.amount;
+           //         Debug.Log("Active P " + activeParticipant.linkedEcoBlock.blockID + " pays " + res.amount + res.type);
             passiveParticipant.linkedEcoBlock.resourcePortfolio[res.type].amount += res.amount;
+            if (passiveParticipant.wantedResources.ContainsKey(res.type))
                 passiveParticipant.wantedResources[res.type] -= res.amount;
 
             //        Debug.Log("Passive P " + passiveParticipant.linkedEcoBlock.blockID + " gets " + res.amount + res.type);
@@ -84,11 +86,13 @@ public class LocalExchange : Exchange
         foreach (Resource res in passiveResources)
             {
                 activeParticipant.linkedEcoBlock.resourcePortfolio[res.type].amount += res.amount;
-            activeParticipant.wantedResources[res.type] -= res.amount;
+            if (activeParticipant.wantedResources.ContainsKey(res.type))
+                activeParticipant.wantedResources[res.type] -= res.amount;
 
             //      Debug.Log("Active P " + activeParticipant.linkedEcoBlock.blockID + " gets " + res.amount + res.type);
             passiveParticipant.linkedEcoBlock.resourcePortfolio[res.type].amount -= res.amount;
-            passiveParticipant.offeredResources[res.type] -= res.amount;
+            if (passiveParticipant.offeredResources.ContainsKey(res.type))
+                passiveParticipant.offeredResources[res.type] -= res.amount;
           //     Debug.Log("Passive P " + passiveParticipant.linkedEcoBlock.blockID + " pays " + res.amount + res.type);
 
             }

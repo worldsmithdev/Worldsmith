@@ -112,13 +112,13 @@ public class LocalMarket : Market
                         {
                             if (participant.wantedResources[restype] >= passiveParticipant.offeredResources[restype])
                             {
-                               Debug.Log(participant.participantName + " shopped for what was available of " + restype + " at " + passiveParticipant.participantName);
+                            //   Debug.Log(participant.participantName + " shopped for what was available of " + restype + " at " + passiveParticipant.participantName);
                                 participant.shoppingList.Add(new Resource(restype, passiveParticipant.offeredResources[restype])); // take all
                                 participant.totalShoppingList[restype] += passiveParticipant.offeredResources[restype];
                             }
                             else
                             {
-                                Debug.Log(participant.participantName + " shopped for what they wanted of " + restype + " at " + passiveParticipant.participantName);
+                             //   Debug.Log(participant.participantName + " shopped for what they wanted of " + restype + " at " + passiveParticipant.participantName);
                                 participant.shoppingList.Add(new Resource(restype, participant.wantedResources[restype])); // take desired
                                 participant.totalShoppingList[restype] += participant.wantedResources[restype]; 
                             }
@@ -131,7 +131,7 @@ public class LocalMarket : Market
                 
                 if (shoppingValue > 0)
                 {
-                  Debug.Log("Creating exchange for active: " + participant.participantName + " with passive: " + passiveParticipant.participantName);
+               //   Debug.Log("Creating exchange for active: " + participant.participantName + " with passive: " + passiveParticipant.participantName);
                     ExchangeController.Instance.CreateLocalExchange(this, participant, passiveParticipant, participant.shoppingList);
                 }
 
@@ -139,11 +139,19 @@ public class LocalMarket : Market
         }
     }
 
+    void ShopForProfit(Participant participant, List<Participant> pList)
+    {
+        // buy food etc that they can exzchange regionally/globally
+    }
     void ShopAround (Participant participant)
     {
         ShopAndExchange(participant, participantsHigh);
         ShopAndExchange(participant, participantsMid);
-        ShopAndExchange(participant, participantsLow); 
+        ShopAndExchange(participant, participantsLow);
+
+        ShopForProfit(participant, participantsHigh);
+        ShopForProfit(participant, participantsMid);
+        ShopForProfit(participant, participantsLow); 
     }
 
     public override void ResolveMarket()
@@ -176,16 +184,13 @@ public class LocalMarket : Market
         ShuffleParticipants();
 
 
-        foreach (Participant participant in participantsHigh)
-            if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        foreach (Participant participant in participantsHigh) 
                 ShopAround(participant);
 
-        foreach (Participant participant in participantsMid)
-            if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        foreach (Participant participant in participantsMid) 
                 ShopAround(participant);
 
-        foreach (Participant participant in participantsLow)
-            if (((Population)participant.linkedEcoBlock).GetHomeLocation() == debugLoc)
+        foreach (Participant participant in participantsLow) 
                 ShopAround(participant);
 
 
