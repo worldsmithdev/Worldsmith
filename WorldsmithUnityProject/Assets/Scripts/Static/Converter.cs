@@ -28,7 +28,7 @@ public class Converter
 
         unitSilverValues.Add(Resource.Type.Silver, 1f);
         unitSilverValues.Add(Resource.Type.Wheat, 50f);
-        unitSilverValues.Add(Resource.Type.Wares, 1f);
+        unitSilverValues.Add(Resource.Type.Wares, 2f);
         unitSilverValues.Add(Resource.Type.Timber, 10f);
         unitSilverValues.Add(Resource.Type.Stone, 10f);
         unitSilverValues.Add(Resource.Type.Salt, 20f);

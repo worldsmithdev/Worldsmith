@@ -9,6 +9,8 @@ public class ExchangeCreator : MonoBehaviour
     {
         Participant activeParticipant = createdExchange.activeParticipant;
         Participant passiveParticipant = createdExchange.passiveParticipant;
+
+        
         bool forceSilver = ExchangeController.Instance.forceSilverOnLocalExchange;
         float silverPercentage = DetermineForcedSilverPercentage(activeParticipant, passiveParticipant);
 
@@ -35,8 +37,7 @@ public class ExchangeCreator : MonoBehaviour
             {
                 createdExchange.CommitResource(true, Converter.GetResourceEquivalent(payType, sellValue));
                 createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, sellValue));
-            }
-
+            } 
         }
         else if (spendValue > 0)
         {
@@ -50,11 +51,8 @@ public class ExchangeCreator : MonoBehaviour
             {
                 createdExchange.CommitResource(true, Converter.GetResourceEquivalent(payType, spendValue));
                 createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, spendValue));
-            }  
-           
-
-        }
-
+            }   
+        } 
     }
 
 
@@ -87,15 +85,28 @@ public class ExchangeCreator : MonoBehaviour
         }
 
     }
+    //public LocalExchange CreateLocalPurchase(LocalMarket market, Participant activeParticipant, Participant passiveParticipant, List<Resource> shoppingList)
+    //{
+    //    LocalExchange createdExchange = new LocalExchange();
+
+    //    createdExchange.exchangeName = "LocPurch" + activeParticipant.participantName + WorldController.Instance.GetWorld().completedCycles;
+    //    createdExchange.activeParticipant = activeParticipant;
+    //    createdExchange.passiveParticipant = passiveParticipant;
+    //    createdExchange.localMarket = market;
+    //    createdExchange.shoppingList = shoppingList;
+
+
+    //    return createdExchange;
+    //}
 
 
 
-
-    public LocalExchange CreateLocalExchange(LocalMarket market, Participant activeParticipant, Participant passiveParticipant, List<Resource> shoppingList)
+    public LocalExchange CreateLocalExchange(LocalExchange.ExchangeType type, LocalMarket market, Participant activeParticipant, Participant passiveParticipant, List<Resource> shoppingList)
     {
         LocalExchange createdExchange = new LocalExchange();
 
-        createdExchange.exchangeName = "LocExch" + activeParticipant.participantName + WorldController.Instance.GetWorld().completedCycles;
+        createdExchange.exchangeName = "LocExch" +type + activeParticipant.participantName + WorldController.Instance.GetWorld().completedCycles;
+        createdExchange.exchangeType = type;
         createdExchange.activeParticipant = activeParticipant;
         createdExchange.passiveParticipant = passiveParticipant;
         createdExchange.localMarket = market;
@@ -111,10 +122,12 @@ public class ExchangeCreator : MonoBehaviour
             // Attempt Purchase through prioritized payment-types
             for (int secondcount = 1; activeParticipant.resourceSellPriority.ContainsValue(secondcount); secondcount++)
             {
+                // set Pay type
                 Resource.Type payType = Resource.Type.Unassigned;
                 foreach (Resource.Type restype in activeParticipant.resourceSellPriority.Keys)
                     if (activeParticipant.resourceSellPriority[restype] == secondcount)
                         payType = restype;
+
 
                 if (activeParticipant.offeredResources.ContainsKey(payType) && passiveParticipant.wantedResources.ContainsKey(payType))                
                     AttemptResourcePurchase(createdExchange, shopRes, payType);

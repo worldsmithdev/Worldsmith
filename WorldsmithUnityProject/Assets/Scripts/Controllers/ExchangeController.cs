@@ -21,9 +21,9 @@ public class ExchangeController : MonoBehaviour
     }
 
 
-    public LocalExchange CreateLocalExchange (LocalMarket market, Participant activeParticipant, Participant passiveParticipant, List<Resource> shoppingList)
+    public LocalExchange CreateLocalExchange (LocalExchange.ExchangeType type, LocalMarket market, Participant activeParticipant, Participant passiveParticipant, List<Resource> shoppingList)
     {
-     return   exchangeCreator.CreateLocalExchange(market, activeParticipant, passiveParticipant, shoppingList);  
+     return   exchangeCreator.CreateLocalExchange(type, market, activeParticipant, passiveParticipant, shoppingList);  
     }
 
 

@@ -40,9 +40,33 @@ public class Ruler : EcoBlock
         xLocation = loc.GetPositionVector().x;
         yLocation = loc.GetPositionVector().y;
         blockType = BlockType.Ruler;
+        SetName(loc);
+
+
+        // hackle at profit resources for now
+        if (loc.hubType == 1  )
+        {
+            profitResources.Add(Resource.Type.Wheat);
+        }
+        if ( loc.hubType == 2)
+        {
+            profitResources.Add(Resource.Type.Wheat);
+            profitResources.Add(Resource.Type.Wares);
+        }
+        if (loc.hubType  >= 3)
+        {
+            profitResources.Add(Resource.Type.Wheat);
+            profitResources.Add(Resource.Type.Wares);
+        }
 
         ResourceController.Instance.SetResourceBuyPriority(this);
 
+        
+        foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)
+            resourcePortfolio.Add(restype, new Resource(restype, 0));
+    }
+    void SetName(Location loc )
+    {
         blockID = "Ruler";
         int nr = 1;
         if (isLocalRuler)
@@ -51,8 +75,6 @@ public class Ruler : EcoBlock
             blockID = "Secondary";
         blockID += "RulerOf" + loc.elementID;
         blockID += nr;
-
-        
 
         while (EconomyController.Instance.BlockIDExists(this.blockID, this.blockType) == true)
         {
@@ -63,11 +85,8 @@ public class Ruler : EcoBlock
                 blockID = "Secondary";
             blockID += "RulerOf" + loc.elementID;
             blockID += nr;
-        } 
-        foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)
-            resourcePortfolio.Add(restype, new Resource(restype, 0));
+        }
     }
-
     public Location GetHomeLocation()
     {      
        foreach (Location loc in WorldController.Instance.GetWorld().locationList)

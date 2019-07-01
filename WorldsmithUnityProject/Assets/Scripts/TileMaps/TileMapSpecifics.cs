@@ -197,7 +197,7 @@ public class TileMapSpecifics : MonoBehaviour
             for (int y = 0; y < givenMap.ySize; y += 1)
                 givenMap.GetTileAt(x, y).SetEmpty();
          
-        int xPos = givenMap.xSize +2;
+        int xPos = givenMap.xSize ; 
         int yPos;
 
         int count = 0;
@@ -212,28 +212,29 @@ public class TileMapSpecifics : MonoBehaviour
         {
             count++;
             if (count < 3)
-            {
+            { 
                 xPos -= 10;
                 yPos = givenMap.ySize - 2;
 
-                givenMap.GetTileAt(xPos, yPos).SetLinkedLocalMarket(locmarket);
+                givenMap.GetTileAt(xPos, yPos).SetLinkedLocalMarket(locmarket); 
 
-                xPos -= 5;
+                xPos -= 2;
                 foreach (Participant participant in locmarket.participantList)
                 {
                     xPos += 1;
-                    yPos = givenMap.ySize - 4;
-                    givenMap.GetTileAt(xPos, yPos).SetLinkedParticipant(participant);
-
+                    yPos = givenMap.ySize - 4; 
+                     givenMap.GetTileAt(xPos, yPos).SetLinkedParticipant(participant);
+                     
                     foreach (LocalExchange locexch in locmarket.localExchangesList)
                     {
                         if (locexch.activeParticipant == participant)
                         {
-                            yPos -= 2;
+                            yPos -= 1;
                             givenMap.GetTileAt(xPos, yPos).SetLinkedExchange(locexch);
                         }
                     }
-                } 
+                }
+                xPos -= locmarket.participantList.Count;
             }  
         } 
         MarketController.Instance.archivedLocalMarkets[selectedLoc].Reverse(); 

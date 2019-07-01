@@ -48,7 +48,7 @@ public class ResourceBuilder : MonoBehaviour
     }
     void AssignLocalRulerResources (Ruler ruler)
     {
-
+        ruler.resourcePortfolio[Resource.Type.Silver].amount += (52000f);
     }
     void AssignSecondaryRulerResources(Ruler ruler)
     {

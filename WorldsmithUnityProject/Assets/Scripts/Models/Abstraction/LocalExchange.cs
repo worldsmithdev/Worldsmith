@@ -6,6 +6,9 @@ public class LocalExchange : Exchange
 {
 
    
+    public enum ExchangeType { Unassigned, Market, Purchase  };
+
+    public ExchangeType exchangeType;
     public Participant activeParticipant;
     public Participant passiveParticipant;
 

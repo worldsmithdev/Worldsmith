@@ -320,7 +320,9 @@ public class ExploreTextSetter : MonoBehaviour
     public void SetClickedParticipantText(Participant participant)
     {
         exploreUI.clickedType = ExploreUI.ClickedTypes.Participant;
-        string line1 = "" + participant.participantName + "  type: "  + participant.type +" prio: " + participant.priorityLevel + "\n";
+
+
+        string  line1 = "" + participant.participantName + "  type: "  + participant.type +" prio: " + participant.priorityLevel + "\n";
         string line2 = "Linked EB: " + participant.linkedEcoBlock.blockID  + " (Current) Spending power: " + participant.storedSpendingPower.ToString("F1") + "\n";
 
         string line3 = "offereds: ";
@@ -365,7 +367,7 @@ public class ExploreTextSetter : MonoBehaviour
         //line8 += "\n";
 
          
-        exploreUI.exchangeClickedText.text = line1 + line2 + line3 + line4;
+        exploreUI.exchangeClickedText.text = line1 + line2 + line3 + line4 +line5;
     }
 
     public void SetClickedExchangeText(Exchange exchange)
@@ -373,9 +375,9 @@ public class ExploreTextSetter : MonoBehaviour
         LocalExchange locExchange = (LocalExchange)exchange;
         exploreUI.clickedType = ExploreUI.ClickedTypes.Exchange;
 
-     
 
-        string line1 = "Active Resources: ";
+        string line1 = "" + exchange.exchangeName + "\n";
+            line1 += "Active Resources: ";
         foreach (Resource res in locExchange.activeResources)
             line1 += " " + res.type.ToString().Substring(0, 2).ToUpper() + "" + res.amount.ToString("F1") + " ";
         line1 += "\n";

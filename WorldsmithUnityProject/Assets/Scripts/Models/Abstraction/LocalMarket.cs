@@ -5,19 +5,20 @@ using UnityEngine;
 public class LocalMarket : Market
 {
 
+    string currentLocName;
+    string debugLocName = "Gela";
+    bool enableDebugLoc = true;
+    Location debugLoc;
+    Participant debugParticipant;
+
+
 
     public List<LocalExchange> localExchangesList = new List<LocalExchange>();
-
-
-
 
     List<Participant> participantsHigh = new List<Participant>();
     List<Participant> participantsMid = new List<Participant>();
     List<Participant> participantsLow = new List<Participant>();
-
-
-    Location debugLoc;
-    Participant debugParticipant;
+   
 
     public LocalMarket(Location loc)
     {
@@ -41,16 +42,7 @@ public class LocalMarket : Market
             newParticipant.priorityLevel = Participant.PriorityLevel.LO;
 
         newParticipant.resourceBuyPriority = population.resourceBuyPriority;
-        newParticipant.resourceSellPriority = population.resourceSellPriority;
-
-        //newParticipant.claimedResources = new Dictionary<Resource.Type, float>();
-        //newParticipant.deductedResources = new Dictionary<Resource.Type, float>();
-        //newParticipant.outTradedResources = new Dictionary<Resource.Type, float>();
-        //newParticipant.inTradedResources = new Dictionary<Resource.Type, float>();
-        //newParticipant.purchasedResources = new List<Resource>();
-        //newParticipant.silverCreditStatus = 0f;
-        //newParticipant.paidSilver = 0f;
-        //newParticipant.receivedSilver = 0f;
+        newParticipant.resourceSellPriority = population.resourceSellPriority; 
 
         foreach (Resource.Type restype in population.cycleLocalSurplusResources.Keys)
         {
@@ -63,40 +55,44 @@ public class LocalMarket : Market
             newParticipant.wantedResources.Add(restype, population.cycleLocalWantedResources[restype]);
         }
 
-        if (population.GetHomeLocation().elementID == "Egenimos")
-        {
-            debugLoc = population.GetHomeLocation(); 
-        }
+
+        currentLocName = population.GetHomeLocation().elementID; 
+       
         newParticipant.participantName = "P" + newParticipant.linkedEcoBlock.blockID + WorldController.Instance.GetWorld().completedCycles; 
         participantList.Add(newParticipant);
 
     }
     public void RegisterAsRuler (Ruler ruler)
     {
-        //Participant newParticipant = new Participant();
+        Participant newParticipant = new Participant();
 
-        //newParticipant.linkedEcoBlock = population;
-        //newParticipant.type = Participant.Type.Population;
-        //if (population.classType == Population.ClassType.Citizen)
-        //    newParticipant.priorityLevel = Participant.PriorityLevel.HI;
-        //else
-        //    newParticipant.priorityLevel = Participant.PriorityLevel.LO;
-        //newParticipant.offeredResources = new Dictionary<Resource.Type, float>();
-        //newParticipant.wantedResources = new Dictionary<Resource.Type, float>();
-        //newParticipant.purchasedResources = new List<Resource>();
-        //newParticipant.soldValue = 0f;
+        newParticipant.linkedEcoBlock = ruler;
+        newParticipant.type = Participant.Type.Ruler;
+        if (ruler.isLocalRuler == true)
+            newParticipant.priorityLevel = Participant.PriorityLevel.HI; 
+        else
+            newParticipant.priorityLevel = Participant.PriorityLevel.MID;
 
-        //foreach (Resource.Type restype in population.cycleLocalSurplusResources.Keys)
-        //    newParticipant.offeredResources.Add(restype, population.cycleLocalSurplusResources[restype]);
-        //foreach (Resource.Type restype in population.cycleLocalWantedResources.Keys)
-        //    newParticipant.wantedResources.Add(restype, population.cycleLocalWantedResources[restype]);
+        newParticipant.resourceBuyPriority = ruler.resourceBuyPriority;
+        newParticipant.resourceSellPriority = ruler.resourceSellPriority;
 
-        //if (population.GetHomeLocation().elementID == "Egenimos" && population.classType == Population.ClassType.Habitant && population.laborType == Population.LaborType.Housekeeper)
-        //{
-        //    debugPop = population;
-        //}
-        //newParticipant.participantName = "PTC" + newParticipant.linkedEcoBlock.blockID + WorldController.Instance.GetWorld().completedCycles;
-        //participantList.Add(newParticipant);
+        foreach (Resource.Type restype in ruler.cycleLocalSurplusResources.Keys)
+        {
+            newParticipant.initialOfferedResources.Add(restype, ruler.cycleLocalSurplusResources[restype]);
+            newParticipant.offeredResources.Add(restype, ruler.cycleLocalSurplusResources[restype]);
+        }
+        foreach (Resource.Type restype in ruler.cycleLocalWantedResources.Keys)
+        {
+            newParticipant.initialWantedResources.Add(restype, ruler.cycleLocalWantedResources[restype]);
+            newParticipant.wantedResources.Add(restype, ruler.cycleLocalWantedResources[restype]);
+        }
+
+
+        currentLocName = ruler.GetHomeLocation().elementID;
+
+    //    Debug.Log("name" + newParticipant.linkedEcoBlock.blockID);
+        newParticipant.participantName = "P" + newParticipant.linkedEcoBlock.blockID + WorldController.Instance.GetWorld().completedCycles;
+        participantList.Add(newParticipant);
     }
     void ShopAndExchange (Participant participant, List<Participant> pList)
     {
@@ -105,24 +101,24 @@ public class LocalMarket : Market
             if (participant != passiveParticipant)
             {
                 participant.shoppingList = new List<Resource>();
+
+                // Check each shops'wares
+                // Then create a shopping list
                 foreach (Resource.Type restype in passiveParticipant.offeredResources.Keys)
-                    if (participant.wantedResources.ContainsKey(restype))
-                    { 
-                        if (passiveParticipant.offeredResources[restype] > 0)
-                        {
+                    if (participant.wantedResources.ContainsKey(restype) && passiveParticipant.offeredResources[restype] > 0)
+                    {                         
                             if (participant.wantedResources[restype] >= passiveParticipant.offeredResources[restype])
                             {
-                            //   Debug.Log(participant.participantName + " shopped for what was available of " + restype + " at " + passiveParticipant.participantName);
+                          //    Debug.Log(participant.participantName + " shopped for what was available of " + restype + " at " + passiveParticipant.participantName);
                                 participant.shoppingList.Add(new Resource(restype, passiveParticipant.offeredResources[restype])); // take all
                                 participant.totalShoppingList[restype] += passiveParticipant.offeredResources[restype];
                             }
                             else
                             {
-                             //   Debug.Log(participant.participantName + " shopped for what they wanted of " + restype + " at " + passiveParticipant.participantName);
+                          //    Debug.Log(participant.participantName + " shopped for what they wanted of " + restype + participant.wantedResources[restype]+ " at " + passiveParticipant.participantName);
                                 participant.shoppingList.Add(new Resource(restype, participant.wantedResources[restype])); // take desired
                                 participant.totalShoppingList[restype] += participant.wantedResources[restype]; 
-                            }
-                        }
+                            }                        
                     }
 
                 float shoppingValue = 0f;
@@ -132,7 +128,7 @@ public class LocalMarket : Market
                 if (shoppingValue > 0)
                 {
                //   Debug.Log("Creating exchange for active: " + participant.participantName + " with passive: " + passiveParticipant.participantName);
-                    ExchangeController.Instance.CreateLocalExchange(this, participant, passiveParticipant, participant.shoppingList);
+                    ExchangeController.Instance.CreateLocalExchange(LocalExchange.ExchangeType.Market, this, participant, passiveParticipant, participant.shoppingList);
                 }
 
             }
@@ -141,7 +137,30 @@ public class LocalMarket : Market
 
     void ShopForProfit(Participant participant, List<Participant> pList)
     {
-        // buy food etc that they can exzchange regionally/globally
+
+        foreach (Participant passiveParticipant in pList)
+        {
+            if (participant != passiveParticipant)
+            {
+                participant.shoppingList = new List<Resource>();
+
+                foreach (Resource.Type restype in participant.linkedEcoBlock.profitResources)
+                {
+                    if (passiveParticipant.offeredResources.ContainsKey(restype) && passiveParticipant.offeredResources[restype] > 0)
+                    {                        
+                        participant.shoppingList.Add(new Resource(restype, passiveParticipant.offeredResources[restype]));                        
+                    } 
+                }
+
+                float shoppingValue = 0f;
+                foreach (Resource shopres in participant.shoppingList)
+                    shoppingValue += Converter.GetSilverEquivalent(shopres);
+
+                if (shoppingValue > 0)
+                    ExchangeController.Instance.CreateLocalExchange(LocalExchange.ExchangeType.Purchase, this, participant, passiveParticipant, participant.shoppingList);
+            }
+        }
+ 
     }
     void ShopAround (Participant participant)
     {
@@ -184,13 +203,16 @@ public class LocalMarket : Market
         ShuffleParticipants();
 
 
-        foreach (Participant participant in participantsHigh) 
+        foreach (Participant participant in participantsHigh)           
+      //      if (currentLocName == debugLocName)
                 ShopAround(participant);
 
-        foreach (Participant participant in participantsMid) 
+        foreach (Participant participant in participantsMid)
+    //        if (currentLocName == debugLocName)
                 ShopAround(participant);
 
-        foreach (Participant participant in participantsLow) 
+        foreach (Participant participant in participantsLow)
+    //        if (currentLocName == debugLocName)
                 ShopAround(participant);
 
 
