@@ -17,6 +17,8 @@ public class ExploreUI : MonoBehaviour
     public GameObject Content1;
     public GameObject Content2;
     public GameObject Content3; 
+    public GameObject Content4; 
+    public GameObject Content5; 
 
     int activeToggle = 1;
 
@@ -34,9 +36,17 @@ public class ExploreUI : MonoBehaviour
     public TextMeshProUGUI layoutSchematicHeaderText;
     public TextMeshProUGUI layoutTemplateText;
 
-    // Exchange
-    public TextMeshProUGUI exchangeClickedText;
-    public TextMeshProUGUI exchangeSchematicHeaderText;
+    // LocalExchange
+    public TextMeshProUGUI localExchangeClickedText;
+    public TextMeshProUGUI localExchangeSchematicHeaderText;
+
+    // RegionalExchange
+    public TextMeshProUGUI regionalExchangeClickedText;
+    public TextMeshProUGUI regionalExchangeSchematicHeaderText;
+
+    // GlobalExchange
+    public TextMeshProUGUI globalExchangeClickedText;
+    public TextMeshProUGUI globalExchangeSchematicHeaderText;
 
 
     void Start()
@@ -44,6 +54,8 @@ public class ExploreUI : MonoBehaviour
         Content1.SetActive(true);
         Content2.SetActive(false);
         Content3.SetActive(false);
+        Content4.SetActive(false);
+        Content5.SetActive(false);
     }
     void Update()
     {
@@ -131,7 +143,7 @@ public class ExploreUI : MonoBehaviour
             layoutClickedText.text = "";
 
             // Exchange content
-            exchangeClickedText.text = "";
+            localExchangeClickedText.text = "";
 
             if (activeToggle == 1)
             {
@@ -152,9 +164,9 @@ public class ExploreUI : MonoBehaviour
                 else if (clickedType == ClickedTypes.Territory)
                     exploreTextSetter.SetClickedTerritory(TerritoryController.Instance.GetSelectedTerritory());
                 else if (clickedType == ClickedTypes.Market)
-                    exploreTextSetter.SetClickedMarketText( MarketController.Instance.GetSelectedMarket());
+                    exploreTextSetter.SetClickedLocalMarketText( MarketController.Instance.GetSelectedLocalMarket());
                 else if (clickedType == ClickedTypes.Participant)
-                    exploreTextSetter.SetClickedParticipantText(MarketController.Instance.GetSelectedParticipant());
+                    exploreTextSetter.SetClickedLocalParticipantText(MarketController.Instance.GetSelectedParticipant());
             }
             else if (activeToggle == 2)
             {
@@ -162,10 +174,17 @@ public class ExploreUI : MonoBehaviour
             }
             else if (activeToggle == 3)
             {
-                exploreTextSetter.SetDefaultExchangeContentText();
+                exploreTextSetter.SetDefaultLocalExchangeContentText();
+            }
+            else if (activeToggle == 4)
+            {
+                exploreTextSetter.SetDefaultRegionalExchangeContentText();
+            }
+            else if (activeToggle == 5)
+            {
+                exploreTextSetter.SetDefaultGlobalExchangeContentText();
             }
 
-     
 
             RefreshExploreMaps();
 
@@ -217,9 +236,17 @@ public class ExploreUI : MonoBehaviour
 
             TileMapController.Instance.CreateTemplateTileMap(selectedLoc);
         }
-        else if (activeToggle == 3) // EXCHANGE
+        else if (activeToggle == 3) // LOCALEXCHANGE
         {
-            TileMapController.Instance.CreateTileMap("Exchanges", TileMap.TileMapCategory.Schematic);
+            TileMapController.Instance.CreateTileMap("LocalExchanges", TileMap.TileMapCategory.Schematic);
+        }
+        else if (activeToggle == 4) // REGIONALEXCHANGE
+        {
+            TileMapController.Instance.CreateTileMap("RegionalExchanges", TileMap.TileMapCategory.Schematic);
+        }
+        else if (activeToggle == 5) // GLOBALEXCHANGE
+        {
+            TileMapController.Instance.CreateTileMap("GlobalExchanges", TileMap.TileMapCategory.Schematic);
         }
     }
     public void RefreshClose()
@@ -247,8 +274,24 @@ public class ExploreUI : MonoBehaviour
             activeToggle = 3;
         Content3.SetActive(checkmarked); 
         RefreshUI();
-        exploreTextSetter.SetDefaultExchangeContentText();
-    } 
+        exploreTextSetter.SetDefaultLocalExchangeContentText();
+    }
+    public void ToggleContent4(bool checkmarked)
+    {
+        if (checkmarked == true)
+            activeToggle = 4;
+        Content4.SetActive(checkmarked);
+        RefreshUI();
+        exploreTextSetter.SetDefaultRegionalExchangeContentText();
+    }
+    public void ToggleContent5(bool checkmarked)
+    {
+        if (checkmarked == true)
+            activeToggle = 5;
+        Content5.SetActive(checkmarked);
+    //    RefreshUI();
+        exploreTextSetter.SetDefaultGlobalExchangeContentText();
+    }
 
     public void ShiftRight()
     {

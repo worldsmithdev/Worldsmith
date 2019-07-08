@@ -54,4 +54,30 @@ public class RulerController : MonoBehaviour
     {
         return selectedRuler;
     }
+
+
+    public List<Ruler> GetShuffledList()
+    {
+        List<Ruler> shuffledList = new List<Ruler>();
+
+        foreach (Ruler ruler in EconomyController.Instance.rulerDictionary.Keys)
+            shuffledList.Add(ruler);
+
+        //    int shuffledAmount = Random.Range(0, shuffledList.Count);
+
+        for (int i = 0; i < shuffledList.Count - 2; i++)
+        {
+            int finalSpot = shuffledList.Count - 1;
+            Ruler movedBlock = shuffledList[finalSpot];
+            shuffledList.Remove(movedBlock);
+            shuffledList.Insert(Random.Range(0, shuffledList.Count - 1), movedBlock);
+        }
+        for (int i = shuffledList.Count - 1; i > 1; i--)
+        {
+            Ruler movedBlock = shuffledList[0];
+            shuffledList.Remove(movedBlock);
+            shuffledList.Insert(Random.Range(1, shuffledList.Count - 1), movedBlock);
+        } 
+        return shuffledList; 
+    }
 }

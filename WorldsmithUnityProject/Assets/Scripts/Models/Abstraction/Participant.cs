@@ -17,12 +17,7 @@ public class Participant
     public Dictionary<Resource.Type, float> initialWantedResources = new Dictionary<Resource.Type, float>(); 
     public Dictionary<Resource.Type, float> wantedResources = new Dictionary<Resource.Type, float>(); 
 
-
-
-    public Dictionary<Resource.Type, float> claimedResources;
-    public Dictionary<Resource.Type, float> deductedResources;
-    public Dictionary<Resource.Type, float> outTradedResources;
-    public Dictionary<Resource.Type, float> inTradedResources;
+     
 
     public bool spendingSilver = true;
     public float storedSpendingPower;
@@ -30,17 +25,7 @@ public class Participant
     public List<Resource> shoppingList = new List<Resource>();
     public Dictionary<Resource.Type, float> totalShoppingList = new Dictionary<Resource.Type, float>();
 
-
-
-
-    public float totalDeductedValue;
-    public float totalClaimedValue;
-    public float silverCreditStatus;
-    public float paidSilver;
-    public float receivedSilver;
-
-    public List<Resource> purchasedResources;
-
+      
 
     public Participant()
     {
@@ -91,17 +76,5 @@ public class Participant
     //    storedSpendingPower = totalAmount;
     //    return totalAmount;
     //}
-    public float GetClaimedValue()
-    {
-        Market market = MarketController.Instance.GetMarketForParticipant(this);
-        float totalAmount = 0f;
-         
-        foreach (Resource.Type restype in claimedResources.Keys)
-            if (claimedResources[restype] > 0)
-            { 
-                    totalAmount += Converter.GetSilverEquivalent(new Resource(restype, offeredResources[restype])); 
-            }
-
-        return totalAmount;
-    }
+  
 }

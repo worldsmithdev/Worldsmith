@@ -75,6 +75,7 @@ public class LocalExchange : Exchange
         //} 
             foreach (Resource res in activeResources)
             {
+            localMarket.activelyExchangedResources.Add(res);
                 activeParticipant.linkedEcoBlock.resourcePortfolio[res.type].amount -= res.amount;
             if (activeParticipant.offeredResources.ContainsKey(res.type))
                 activeParticipant.offeredResources[res.type] -= res.amount;
@@ -88,7 +89,9 @@ public class LocalExchange : Exchange
         }
         foreach (Resource res in passiveResources)
             {
-                activeParticipant.linkedEcoBlock.resourcePortfolio[res.type].amount += res.amount;
+            localMarket.passivelyExchangedResources.Add(res);
+
+            activeParticipant.linkedEcoBlock.resourcePortfolio[res.type].amount += res.amount;
             if (activeParticipant.wantedResources.ContainsKey(res.type))
                 activeParticipant.wantedResources[res.type] -= res.amount;
 

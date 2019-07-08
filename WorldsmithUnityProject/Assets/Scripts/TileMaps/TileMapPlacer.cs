@@ -20,8 +20,12 @@ public class TileMapPlacer : MonoBehaviour
     public GameObject exploreSquareLayoutTileMapOutline;
     public GameObject exploreFlatLayoutTileMapOutline;
     public GameObject exploreLayoutTileMapHolder; 
-    public GameObject exploreExchangeTileMapOutline; 
-    public GameObject exploreExchangeTileMapHolder; 
+    public GameObject exploreLocalExchangeTileMapOutline; 
+    public GameObject exploreLocalExchangeTileMapHolder;
+    public GameObject exploreRegionalExchangeTileMapOutline;
+    public GameObject exploreRegionalExchangeTileMapHolder;
+    public GameObject exploreGlobalExchangeTileMapOutline;
+    public GameObject exploreGlobalExchangeTileMapHolder;
     public GameObject locationSectionSquareLayoutOutline; 
     public GameObject locationSectionFlatLayoutOutline; 
     public GameObject locationSectionLayoutHolder;  
@@ -89,10 +93,20 @@ public class TileMapPlacer : MonoBehaviour
             activeOutline = exploreElementsTileMapOutline;
             activeHolder = exploreElementsTileMapHolder;
         }
-        else if (givenMap.tileMapName == "Exchanges")
+        else if (givenMap.tileMapName == "LocalExchanges")
         {
-            activeOutline = exploreExchangeTileMapOutline;
-            activeHolder = exploreExchangeTileMapHolder;
+            activeOutline = exploreLocalExchangeTileMapOutline;
+            activeHolder = exploreLocalExchangeTileMapHolder;
+        }
+        else if (givenMap.tileMapName == "RegionalExchanges")
+        {
+            activeOutline = exploreRegionalExchangeTileMapOutline;
+            activeHolder = exploreRegionalExchangeTileMapHolder;
+        }
+        else if (givenMap.tileMapName == "GlobalExchanges")
+        {
+            activeOutline = exploreGlobalExchangeTileMapOutline;
+            activeHolder = exploreGlobalExchangeTileMapHolder;
         }
     }
     public GameObject GetHolderForTileMap (TileMap givenMap)

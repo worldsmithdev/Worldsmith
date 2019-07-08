@@ -28,7 +28,14 @@ public class Ruler : EcoBlock
     public Dictionary<Resource.Type, float> cycleLocalSurplusResources = new Dictionary<Resource.Type, float>(); 
     public Dictionary<Resource.Type, float> cycleLocalWantedResources = new Dictionary<Resource.Type, float>();
 
+    // REGIONALEXCHANGE STEP
+    public Dictionary<Resource.Type, float> cycleRegionalSurplusResources = new Dictionary<Resource.Type, float>();
+    public Dictionary<Resource.Type, float> cycleRegionalWantedResources = new Dictionary<Resource.Type, float>();
+    public Dictionary<Resource.Type, float> cycleRegionalPledgedResources = new Dictionary<Resource.Type, float>();
 
+    // GLOBALEXCHANGE STEP
+    public Dictionary<Resource.Type, float> cycleGlobalSurplusResources = new Dictionary<Resource.Type, float>();
+    public Dictionary<Resource.Type, float> cycleGlobalWantedResources = new Dictionary<Resource.Type, float>();
 
     public Ruler(Location loc, bool localRuler)
     {
@@ -62,8 +69,10 @@ public class Ruler : EcoBlock
         ResourceController.Instance.SetResourceBuyPriority(this);
 
         
+        
         foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)
             resourcePortfolio.Add(restype, new Resource(restype, 0));
+        ResourceController.Instance.InitiateResourceDictionary(cycleRegionalPledgedResources);
     }
     void SetName(Location loc )
     {

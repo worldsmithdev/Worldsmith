@@ -9,13 +9,10 @@ public class Market
     public int exchangesAmount;
     // Collects all resources that are wanted and offered, the parties they are offered by, and the priority they have in shopping around
     public List<Participant> participantList = new List<Participant>();
-    public List<Resource.Type> tradedResourceTypes = new List<Resource.Type>();
 
-    public List<Resource.Type> wantedResourceTypes = new List<Resource.Type>();
-    public Dictionary<Resource.Type, float> totalWantedResources = new Dictionary<Resource.Type, float>();
-    public Dictionary<Resource.Type, float> totalOfferedResources = new Dictionary<Resource.Type, float>();
-    public Dictionary<Resource.Type, float> totalClaimedResources = new Dictionary<Resource.Type, float>(); 
-    public Dictionary<Resource.Type, float> totalDeductedResources = new Dictionary<Resource.Type, float>(); 
+    public List<Resource> activelyExchangedResources = new List<Resource>();
+    public List<Resource> passivelyExchangedResources = new List<Resource>();
+  
 
 
     public Dictionary<Resource.Type, float> resourceSoldPercentages = new Dictionary<Resource.Type, float>();

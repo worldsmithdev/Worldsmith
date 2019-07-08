@@ -227,9 +227,9 @@ public class ExploreTextSetter : MonoBehaviour
         exploreUI.layoutClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
     }
 
-    // EXCHANGE ----------------------------------
+    // LOCALEXCHANGE ----------------------------------
 
-    public void SetDefaultExchangeContentText()
+    public void SetDefaultLocalExchangeContentText()
     {
         Location selectedLoc = LocationController.Instance.GetSelectedLocation();
         string line1 = "Local Market with "+ selectedLoc.localMarket.participantList.Count +" Participants\n";
@@ -265,7 +265,7 @@ public class ExploreTextSetter : MonoBehaviour
         string line5 = "" + "\n";
         string line6 = "" + "\n";
         string line7 = "" + "\n";
-        exploreUI.exchangeClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
+        exploreUI.localExchangeClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
     }
     public void SetClickedExchangeText(Building.BuildingType type)
     {
@@ -277,20 +277,21 @@ public class ExploreTextSetter : MonoBehaviour
         string line5 = "" + "\n";
         string line6 = "" + "\n";
         string line7 = "" + "\n";
-        exploreUI.exchangeClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
+        exploreUI.localExchangeClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
     }
-    public void SetClickedMarketText(LocalMarket locmarket)
+    public void SetClickedLocalMarketText(LocalMarket locmarket)
     {
         exploreUI.clickedType = ExploreUI.ClickedTypes.Market;
         string line1 = "" + locmarket.marketName + " Participants: " + locmarket.participantList.Count +  "\n";
-        string line2 = "total offered: ";
-        foreach (Resource.Type restype in locmarket.totalOfferedResources.Keys)
-            line2 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + locmarket.totalOfferedResources[restype].ToString("F0") + " ";
+        string line2 = "Actively Exchanged: ";
+        foreach (Resource res in locmarket.activelyExchangedResources)
+            line2 += " " + res.type.ToString().Substring(0, 2).ToUpper() + "" + res.amount.ToString("F1") + " ";
         line2 += "\n";
-        string line3 = "total wanted: ";
-        foreach (Resource.Type restype in locmarket.totalWantedResources.Keys)
-            line3 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + locmarket.totalWantedResources[restype].ToString("F0") + " ";
+        string line3 = "Passively Exchanged: ";
+        foreach (Resource res in locmarket.passivelyExchangedResources)
+            line3 += " " + res.type.ToString().Substring(0, 2).ToUpper() + "" + res.amount.ToString("F1") + " ";
         line3 += "\n";
+
 
         //string line4 = "total claimed: ";
         //float totalSilverClaimed = 0f;
@@ -315,9 +316,9 @@ public class ExploreTextSetter : MonoBehaviour
         //foreach (Resource.Type restype in locmarket.resourceSoldPercentages.Keys)
         //    line7 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + locmarket.resourceSoldPercentages[restype].ToString("F0") + " ";
         //line7 += "\n"; 
-        exploreUI.exchangeClickedText.text = line1 + line2 + line3  ;
+        exploreUI.localExchangeClickedText.text = line1 + line2 + line3  ;
     }
-    public void SetClickedParticipantText(Participant participant)
+    public void SetClickedLocalParticipantText(Participant participant)
     {
         exploreUI.clickedType = ExploreUI.ClickedTypes.Participant;
 
@@ -367,10 +368,10 @@ public class ExploreTextSetter : MonoBehaviour
         //line8 += "\n";
 
          
-        exploreUI.exchangeClickedText.text = line1 + line2 + line3 + line4 +line5;
+        exploreUI.localExchangeClickedText.text = line1 + line2 + line3 + line4 +line5;
     }
 
-    public void SetClickedExchangeText(Exchange exchange)
+    public void SetClickedLocalExchangeText(Exchange exchange)
     {
         LocalExchange locExchange = (LocalExchange)exchange;
         exploreUI.clickedType = ExploreUI.ClickedTypes.Exchange;
@@ -391,8 +392,52 @@ public class ExploreTextSetter : MonoBehaviour
         line3 += "Passive Participant: " + locExchange.passiveParticipant.participantName + "\n";
          
 
-        exploreUI.exchangeClickedText.text = line1 + line2 + line3;
-
+        exploreUI.localExchangeClickedText.text = line1 + line2 + line3; 
     }
 
+    public void SetDefaultRegionalExchangeContentText()
+    {
+        Location selectedLoc = LocationController.Instance.GetSelectedLocation();
+    }
+    public void SetClickedRegionalExchangeText(Exchange exchange)
+    {
+        RegionalExchange regExchange = (RegionalExchange)exchange;
+        exploreUI.clickedType = ExploreUI.ClickedTypes.Exchange;
+
+
+        string line1 = "" + exchange.exchangeName + "\n"; 
+
+        exploreUI.regionalExchangeClickedText.text = line1  ;
+    }
+    public void SetClickedRegionalMarketText(RegionalMarket regmarket)
+    {
+        exploreUI.clickedType = ExploreUI.ClickedTypes.Market;
+        string line1 = "" + regmarket.marketName +  "\n";
+   
+ 
+        exploreUI.regionalExchangeClickedText.text = line1  ;
+    }
+
+    public void SetDefaultGlobalExchangeContentText()
+    {
+        Location selectedLoc = LocationController.Instance.GetSelectedLocation();
+    }
+    public void SetClickedGlobalExchangeText(Exchange exchange)
+    {
+        GlobalExchange globExchange = (GlobalExchange)exchange;
+        exploreUI.clickedType = ExploreUI.ClickedTypes.Exchange;
+
+
+        string line1 = "" + exchange.exchangeName + "\n";
+
+        exploreUI.globalExchangeClickedText.text = line1;
+    }
+    public void SetClickedGlobalMarketText(GlobalMarket globmarket)
+    {
+        exploreUI.clickedType = ExploreUI.ClickedTypes.Market;
+        string line1 = "" + globmarket.marketName + "\n";
+
+
+        exploreUI.globalExchangeClickedText.text = line1;
+    }
 }

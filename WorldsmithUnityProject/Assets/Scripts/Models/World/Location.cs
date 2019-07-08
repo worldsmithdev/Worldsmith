@@ -72,6 +72,8 @@ public class Location : WorldElement
 
     // Steps
     public LocalMarket localMarket;
+    public RegionalMarket regionalMarket;
+    public GlobalMarket globalMarket;
 
     public Resource.Type primaryResourceType = Resource.Type.Unassigned;
     public Resource.Type secondaryResourceType = Resource.Type.Unassigned;

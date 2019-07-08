@@ -190,7 +190,7 @@ public class TileMapSpecifics : MonoBehaviour
     }
 
 
-    public void BuildExchangesMap(TileMap givenMap)
+    public void BuildLocalExchangesMap(TileMap givenMap)
     {
         Location selectedLoc = LocationController.Instance.GetSelectedLocation();
         for (int x = 0; x < givenMap.xSize; x += 1)
@@ -230,7 +230,7 @@ public class TileMapSpecifics : MonoBehaviour
                         if (locexch.activeParticipant == participant)
                         {
                             yPos -= 1;
-                            givenMap.GetTileAt(xPos, yPos).SetLinkedExchange(locexch);
+                            givenMap.GetTileAt(xPos, yPos).SetLinkedLocalExchange(locexch);
                         }
                     }
                 }
@@ -239,5 +239,62 @@ public class TileMapSpecifics : MonoBehaviour
         } 
         MarketController.Instance.archivedLocalMarkets[selectedLoc].Reverse(); 
 
+    }
+    public void BuildRegionalExchangesMap(TileMap givenMap)
+    {
+        Location selectedLoc = LocationController.Instance.GetSelectedLocation();
+        for (int x = 0; x < givenMap.xSize; x += 1)
+            for (int y = 0; y < givenMap.ySize; y += 1)
+                givenMap.GetTileAt(x, y).SetEmpty();
+
+        int xPos = givenMap.xSize;
+        int yPos;
+
+        int count = 0;
+         
+        MarketController.Instance.archivedRegionalMarkets[selectedLoc].Reverse();
+
+        foreach (RegionalMarket market in MarketController.Instance.archivedRegionalMarkets[selectedLoc])
+        {
+            count++;
+            if (count < 3)
+            {
+                xPos -= 10;
+                yPos = givenMap.ySize - 2;
+
+                givenMap.GetTileAt(xPos, yPos).SetLinkedRegionalMarket(market);
+
+              
+               
+            }
+        }
+        MarketController.Instance.archivedRegionalMarkets[selectedLoc].Reverse();
+
+    }
+    public void BuildGlobalExchangesMap(TileMap givenMap)
+    {
+        Location selectedLoc = LocationController.Instance.GetSelectedLocation();
+        for (int x = 0; x < givenMap.xSize; x += 1)
+            for (int y = 0; y < givenMap.ySize; y += 1)
+                givenMap.GetTileAt(x, y).SetEmpty();
+
+        int xPos = givenMap.xSize;
+        int yPos;
+
+        int count = 0;
+
+        MarketController.Instance.archivedGlobalMarkets[selectedLoc].Reverse();
+
+        foreach (GlobalMarket market in MarketController.Instance.archivedGlobalMarkets[selectedLoc])
+        {
+            count++;
+            if (count < 3)
+            {
+                xPos -= 10;
+                yPos = givenMap.ySize - 2; 
+                givenMap.GetTileAt(xPos, yPos).SetLinkedGlobalMarket(market); 
+            }
+        }
+        MarketController.Instance.archivedGlobalMarkets[selectedLoc].Reverse(); 
     }
 }

@@ -54,14 +54,27 @@ public class TileMapHandler : MonoBehaviour
         }
 
         if (tile.tileAbstractionType == Tile.TileAbstractionType.LocalMarket)
-            UIController.Instance.exploreUI.exchangeSchematicHeaderText.text = "LocalMarket: " + tile.linkedLocalMarket.marketName;
+            UIController.Instance.exploreUI.localExchangeSchematicHeaderText.text = "LocalMarket: " + tile.linkedLocalMarket.marketName;
         else if (tile.tileAbstractionType == Tile.TileAbstractionType.Participant)
-            UIController.Instance.exploreUI.exchangeSchematicHeaderText.text = "Participant: " + tile.linkedParticipant.participantName;
-        else if (tile.tileAbstractionType == Tile.TileAbstractionType.Exchange)
-            UIController.Instance.exploreUI.exchangeSchematicHeaderText.text = "Exchange: " + tile.linkedExchange.exchangeName;
+            UIController.Instance.exploreUI.localExchangeSchematicHeaderText.text = "Participant: " + tile.linkedParticipant.participantName;
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.LocalExchange)
+            UIController.Instance.exploreUI.localExchangeSchematicHeaderText.text = "LocalExchange: " + tile.linkedExchange.exchangeName; 
         else
-            UIController.Instance.exploreUI.exchangeSchematicHeaderText.text = "Schematic";
+            UIController.Instance.exploreUI.localExchangeSchematicHeaderText.text = "Schematic"; 
 
+        if (tile.tileAbstractionType == Tile.TileAbstractionType.RegionalMarket)
+            UIController.Instance.exploreUI.regionalExchangeSchematicHeaderText.text = "RegionalMarket: " + tile.linkedRegionalMarket.marketName;
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.RegionalExchange)
+            UIController.Instance.exploreUI.regionalExchangeSchematicHeaderText.text = "RegionalExchange: " + tile.linkedExchange.exchangeName;
+        else
+            UIController.Instance.exploreUI.regionalExchangeSchematicHeaderText.text = "Schematic";
+
+        if (tile.tileAbstractionType == Tile.TileAbstractionType.GlobalMarket)
+            UIController.Instance.exploreUI.globalExchangeSchematicHeaderText.text = "GlobalMarket: " + tile.linkedGlobalMarket.marketName;
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.GlobalExchange)
+            UIController.Instance.exploreUI.globalExchangeSchematicHeaderText.text = "GlobalExchange: " + tile.linkedExchange.exchangeName;
+        else
+            UIController.Instance.exploreUI.globalExchangeSchematicHeaderText.text = "Schematic";
 
     }
     public void HandleTileClick(Tile tile)
@@ -125,18 +138,38 @@ public class TileMapHandler : MonoBehaviour
         if (tile.tileAbstractionType == Tile.TileAbstractionType.LocalMarket)
         {
             MarketController.Instance.SetSelectedLocalMarket(tile.linkedLocalMarket);
-            UIController.Instance.exploreUI.exploreTextSetter.SetClickedMarketText((LocalMarket)tile.linkedLocalMarket);
+            UIController.Instance.exploreUI.exploreTextSetter.SetClickedLocalMarketText((LocalMarket)tile.linkedLocalMarket);
         }
          
         else if (tile.tileAbstractionType == Tile.TileAbstractionType.Participant)
         {
             MarketController.Instance.SetSelectedParticipant(tile.linkedParticipant);
-            UIController.Instance.exploreUI.exploreTextSetter.SetClickedParticipantText(tile.linkedParticipant);
+            UIController.Instance.exploreUI.exploreTextSetter.SetClickedLocalParticipantText(tile.linkedParticipant);
         }
-        else if (tile.tileAbstractionType == Tile.TileAbstractionType.Exchange)
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.LocalExchange)
         {
             ExchangeController.Instance.SetSelectedExchange(tile.linkedExchange);
-            UIController.Instance.exploreUI.exploreTextSetter.SetClickedExchangeText(tile.linkedExchange);
+            UIController.Instance.exploreUI.exploreTextSetter.SetClickedLocalExchangeText(tile.linkedExchange);
+        }
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.RegionalMarket)
+        {
+            MarketController.Instance.SetSelectedRegionalMarket(tile.linkedRegionalMarket);
+            UIController.Instance.exploreUI.exploreTextSetter.SetClickedRegionalMarketText(tile.linkedRegionalMarket);
+        }
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.RegionalExchange)
+        {
+            ExchangeController.Instance.SetSelectedExchange(tile.linkedExchange);
+            UIController.Instance.exploreUI.exploreTextSetter.SetClickedRegionalExchangeText(tile.linkedExchange);
+        }
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.GlobalMarket)
+        {
+            MarketController.Instance.SetSelectedGlobalMarket(tile.linkedGlobalMarket);
+            UIController.Instance.exploreUI.exploreTextSetter.SetClickedGlobalMarketText(tile.linkedGlobalMarket);
+        }
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.GlobalExchange)
+        {
+            ExchangeController.Instance.SetSelectedExchange(tile.linkedExchange);
+            UIController.Instance.exploreUI.exploreTextSetter.SetClickedGlobalExchangeText(tile.linkedExchange);
         }
     }
 }

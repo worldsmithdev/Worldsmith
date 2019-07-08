@@ -90,8 +90,13 @@ public class TileMapBuilder : MonoBehaviour
 
         marketSpritePairings.Add(Tile.TileAbstractionType.LocalMarket, SpriteCollection.Instance.localMarketSprite);
         marketSpritePairings.Add(Tile.TileAbstractionType.Participant, SpriteCollection.Instance.localParticipantSprite);
-        marketSpritePairings.Add(Tile.TileAbstractionType.Exchange, SpriteCollection.Instance.localExchangeSprite);
-  
+        marketSpritePairings.Add(Tile.TileAbstractionType.LocalExchange, SpriteCollection.Instance.localExchangeSprite);
+        marketSpritePairings.Add(Tile.TileAbstractionType.RegionalMarket, SpriteCollection.Instance.localMarketSprite);
+        marketSpritePairings.Add(Tile.TileAbstractionType.RegionalExchange, SpriteCollection.Instance.localExchangeSprite);
+        marketSpritePairings.Add(Tile.TileAbstractionType.GlobalMarket, SpriteCollection.Instance.localMarketSprite);
+        marketSpritePairings.Add(Tile.TileAbstractionType.GlobalExchange, SpriteCollection.Instance.localExchangeSprite);
+
+
     }
     public void FillMapTiles (TileMap givenMap)
     { 
@@ -104,8 +109,12 @@ public class TileMapBuilder : MonoBehaviour
                 TileMapController.Instance.tileMapSpecifics.BuildElementsMap(givenMap);
             else if (givenMap.tileMapName == "Rule")
                 TileMapController.Instance.tileMapSpecifics.BuildRuleMap(givenMap);
-            else if (givenMap.tileMapName == "Exchanges")
-                TileMapController.Instance.tileMapSpecifics.BuildExchangesMap(givenMap);
+            else if (givenMap.tileMapName == "LocalExchanges")
+                TileMapController.Instance.tileMapSpecifics.BuildLocalExchangesMap(givenMap);
+            else if (givenMap.tileMapName == "RegionalExchanges")
+                TileMapController.Instance.tileMapSpecifics.BuildRegionalExchangesMap(givenMap);
+            else if (givenMap.tileMapName == "GlobalExchanges")
+                TileMapController.Instance.tileMapSpecifics.BuildGlobalExchangesMap(givenMap);
         }
         else if (givenMap.tileMapCategory == TileMap.TileMapCategory.Dynamic)
         {

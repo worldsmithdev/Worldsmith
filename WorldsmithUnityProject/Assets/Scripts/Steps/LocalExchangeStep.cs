@@ -57,7 +57,7 @@ public class LocalExchangeStep : Step
         // Make sure no Participant offers resources that they also want
         CheckForSurplusDesiredOverlap();
 
-        foreach (LocalMarket locMarket in MarketController.Instance.cycleLocalMarkets)  //WorldController.Instance.GetWorld().locationList)        
+        foreach (LocalMarket locMarket in MarketController.Instance.cycleLocalMarkets)    
          locMarket.ResolveMarket();
 
         //foreach (LocalExchange localExchange in MarketController.Instance.cycleLocalExchanges)        
@@ -65,6 +65,7 @@ public class LocalExchangeStep : Step
         
     }
 
+    // ----------------------------------------------------------------------
 
     // Reserve some amount of resources. Add the rest to localSurplusDict
     void DetermineSurplusResources (Population population)

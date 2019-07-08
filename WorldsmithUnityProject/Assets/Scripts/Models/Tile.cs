@@ -12,7 +12,7 @@ public class Tile
 
     public enum TileDataType { Unassigned, Blank, Terrain, Building, WorldElement, EcoBlock, Abstraction}
     public enum TileTerrainType { Sea, Land, Mountain, Forest }
-    public enum TileAbstractionType { Unassigned, LocalMarket, Participant, Exchange }
+    public enum TileAbstractionType { Unassigned, LocalMarket, Participant, LocalExchange, RegionalMarket, RegionalExchange, GlobalMarket, GlobalExchange }
 
     public string originalTileMapName;
 
@@ -30,7 +30,10 @@ public class Tile
     public Item linkedItem;
     public LocalMarket linkedLocalMarket;
     public Participant linkedParticipant;
+    public RegionalMarket linkedRegionalMarket;
+    public GlobalMarket linkedGlobalMarket;
     public Exchange linkedExchange;
+
 
     public Tile(int xloc, int yloc, string mapname)
     {
@@ -112,10 +115,34 @@ public class Tile
         tileAbstractionType = TileAbstractionType.Participant;
         linkedParticipant = participant;
     }
-    public void SetLinkedExchange(Exchange exchange)
+    public void SetLinkedLocalExchange(Exchange exchange)
     {
         tileDataType = TileDataType.Abstraction;
-        tileAbstractionType = TileAbstractionType.Exchange;
+        tileAbstractionType = TileAbstractionType.LocalExchange;
+        linkedExchange = exchange;
+    }
+    public void SetLinkedRegionalMarket(RegionalMarket market)
+    {
+        tileDataType = TileDataType.Abstraction;
+        tileAbstractionType = TileAbstractionType.RegionalMarket;
+        linkedRegionalMarket = market;
+    }
+    public void SetLinkedRegionalExchange(Exchange exchange)
+    {
+        tileDataType = TileDataType.Abstraction;
+        tileAbstractionType = TileAbstractionType.RegionalExchange;
+        linkedExchange = exchange;
+    }
+    public void SetLinkedGlobalMarket(GlobalMarket market)
+    {
+        tileDataType = TileDataType.Abstraction;
+        tileAbstractionType = TileAbstractionType.GlobalMarket;
+        linkedGlobalMarket = market;
+    }
+    public void SetLinkedGlobalExchange(Exchange exchange)
+    {
+        tileDataType = TileDataType.Abstraction;
+        tileAbstractionType = TileAbstractionType.GlobalExchange;
         linkedExchange = exchange;
     }
 }

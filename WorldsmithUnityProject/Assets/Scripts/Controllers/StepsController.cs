@@ -36,7 +36,7 @@ public class StepsController : MonoBehaviour
         // TEMPORARY STIPEND
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             if (ecoblock.isLocalRuler)
-                ecoblock.resourcePortfolio[Resource.Type.Silver].amount += 52000f;
+                ecoblock.resourcePortfolio[Resource.Type.Silver].amount += 2000f;
 
         // Generation
         foreach (Territory ecoblock in EconomyController.Instance.territoryDictionary.Keys)
@@ -91,30 +91,23 @@ public class StepsController : MonoBehaviour
             localExchangeStep.CycleStep(ecoblock);
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys) 
             localExchangeStep.CycleStep(ecoblock);  
-        localExchangeStep.ResolveStep(); 
+         localExchangeStep.ResolveStep(); 
   
 
         // RegionalPolitics
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             regionalPoliticsStep.ConfigureStep(ecoblock);
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
-            regionalPoliticsStep.CycleStep(ecoblock);
-       
+            regionalPoliticsStep.CycleStep(ecoblock); 
             regionalPoliticsStep.ResolveStep();
 
-        // RegionalExchange
-
-        // wares, then food, then silver if profitable
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            regionalExchangeStep.ConfigureStep(ecoblock);
-        foreach (Population ecoblock in EconomyController.Instance.populationDictionary.Keys)
-            regionalExchangeStep.CycleStep(ecoblock);
+        // RegionalExchange 
+        regionalExchangeStep.PrepareStep();  
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             regionalExchangeStep.ConfigureStep(ecoblock);
-        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
-            regionalExchangeStep.CycleStep(ecoblock);
-
-        regionalExchangeStep.ResolveStep();
+        List<Ruler> shuffledRulersList = RulerController.Instance.GetShuffledList(); 
+        foreach (Ruler ecoblock in shuffledRulersList)
+            regionalExchangeStep.CycleStep(ecoblock); 
          
 
         // Destruction
@@ -126,11 +119,11 @@ public class StepsController : MonoBehaviour
             destructionStep.ResolveStep();
 
         // GlobalExchange
+        globalExchangeStep.PrepareStep();
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             globalExchangeStep.ConfigureStep(ecoblock);
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             globalExchangeStep.CycleStep(ecoblock);
-
         globalExchangeStep.ResolveStep();
 
 

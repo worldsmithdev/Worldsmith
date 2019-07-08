@@ -8,6 +8,10 @@ public class ExchangeController : MonoBehaviour
 
     public List<LocalExchange> cycleLocalExchanges = new List<LocalExchange>();
     public List<LocalExchange> archivedLocalExchanges = new List<LocalExchange>();
+    public List<RegionalExchange> cycleRegionalExchanges = new List<RegionalExchange>();
+    public List<RegionalExchange> archivedRegionalExchanges = new List<RegionalExchange>();
+    public List<GlobalExchange> cycleGlobalExchanges = new List<GlobalExchange>();
+    public List<GlobalExchange> archivedGlobalExchanges = new List<GlobalExchange>();
 
     public ExchangeCreator exchangeCreator;
 
