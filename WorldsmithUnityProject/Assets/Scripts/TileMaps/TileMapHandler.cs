@@ -57,15 +57,19 @@ public class TileMapHandler : MonoBehaviour
             UIController.Instance.exploreUI.localExchangeSchematicHeaderText.text = "LocalMarket: " + tile.linkedLocalMarket.marketName;
         else if (tile.tileAbstractionType == Tile.TileAbstractionType.Participant)
             UIController.Instance.exploreUI.localExchangeSchematicHeaderText.text = "Participant: " + tile.linkedParticipant.participantName;
-        else if (tile.tileAbstractionType == Tile.TileAbstractionType.LocalExchange)
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.LocalExchange || tile.tileAbstractionType == Tile.TileAbstractionType.LocalExchangePassive)
             UIController.Instance.exploreUI.localExchangeSchematicHeaderText.text = "LocalExchange: " + tile.linkedExchange.exchangeName; 
         else
             UIController.Instance.exploreUI.localExchangeSchematicHeaderText.text = "Schematic"; 
 
         if (tile.tileAbstractionType == Tile.TileAbstractionType.RegionalMarket)
             UIController.Instance.exploreUI.regionalExchangeSchematicHeaderText.text = "RegionalMarket: " + tile.linkedRegionalMarket.marketName;
-        else if (tile.tileAbstractionType == Tile.TileAbstractionType.RegionalExchange)
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.RegionalExchange || tile.tileAbstractionType == Tile.TileAbstractionType.RegionalExchangePassive)
             UIController.Instance.exploreUI.regionalExchangeSchematicHeaderText.text = "RegionalExchange: " + tile.linkedExchange.exchangeName;
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.RegionalBuyer)
+            UIController.Instance.exploreUI.regionalExchangeSchematicHeaderText.text = "Buyer: " + tile.linkedRegionalBuyer.blockID;
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.RegionalSeller)
+            UIController.Instance.exploreUI.regionalExchangeSchematicHeaderText.text = "Seller: " + tile.linkedRegionalSeller.blockID;
         else
             UIController.Instance.exploreUI.regionalExchangeSchematicHeaderText.text = "Schematic";
 
@@ -146,7 +150,7 @@ public class TileMapHandler : MonoBehaviour
             MarketController.Instance.SetSelectedParticipant(tile.linkedParticipant);
             UIController.Instance.exploreUI.exploreTextSetter.SetClickedLocalParticipantText(tile.linkedParticipant);
         }
-        else if (tile.tileAbstractionType == Tile.TileAbstractionType.LocalExchange)
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.LocalExchange || tile.tileAbstractionType == Tile.TileAbstractionType.LocalExchangePassive)
         {
             ExchangeController.Instance.SetSelectedExchange(tile.linkedExchange);
             UIController.Instance.exploreUI.exploreTextSetter.SetClickedLocalExchangeText(tile.linkedExchange);
@@ -156,10 +160,21 @@ public class TileMapHandler : MonoBehaviour
             MarketController.Instance.SetSelectedRegionalMarket(tile.linkedRegionalMarket);
             UIController.Instance.exploreUI.exploreTextSetter.SetClickedRegionalMarketText(tile.linkedRegionalMarket);
         }
-        else if (tile.tileAbstractionType == Tile.TileAbstractionType.RegionalExchange)
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.RegionalExchange || tile.tileAbstractionType == Tile.TileAbstractionType.RegionalExchangePassive)
         {
             ExchangeController.Instance.SetSelectedExchange(tile.linkedExchange);
             UIController.Instance.exploreUI.exploreTextSetter.SetClickedRegionalExchangeText(tile.linkedExchange);
+        }
+
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.RegionalBuyer)
+        {
+            RulerController.Instance.SetSelectedRuler(tile.linkedRegionalBuyer);
+            UIController.Instance.exploreUI.exploreTextSetter.SetClickedRegionalBuyerText(tile.linkedRegionalBuyer);
+        }
+        else if (tile.tileAbstractionType == Tile.TileAbstractionType.RegionalSeller)
+        {
+            RulerController.Instance.SetSelectedRuler(tile.linkedRegionalSeller);
+            UIController.Instance.exploreUI.exploreTextSetter.SetClickedRegionalSellerText(tile.linkedRegionalSeller);
         }
         else if (tile.tileAbstractionType == Tile.TileAbstractionType.GlobalMarket)
         {

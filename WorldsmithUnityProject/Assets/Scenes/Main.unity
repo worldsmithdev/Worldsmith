@@ -52802,6 +52802,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchangeCreator: {fileID: 401935393}
   forceSilverOnLocalExchange: 0
+  forceSilverOnRegionalExchange: 1
+  regionalForcedSilverPercentage: 0.1
+  exchangeRateFreeSupplier: 0.7
+  exchangeRateFreeHub: 0.8
+  exchangeRateForcedSupplier: 0.5
+  exchangeRateForcedHub: 0.6
+  globalAcceptedTypes: 
 --- !u!1 &1798491045
 GameObject:
   m_ObjectHideFlags: 0
@@ -56153,9 +56160,13 @@ MonoBehaviour:
   clickableBackgroundSprite: {fileID: 21300000, guid: 87784a8aad9ba4d48a5da29b81c1d957,
     type: 3}
   localMarketSprite: {fileID: 21300000, guid: 5a8717a303e91724dad92bc21706058a, type: 3}
-  localParticipantSprite: {fileID: 21300000, guid: e3cc52dc0faaaff428823a24d123470b,
+  localParticipantSprite: {fileID: 21300000, guid: 8a921ee2915f0c74bb4777bc35609b46,
+    type: 3}
+  localParticipantSpriteHi: {fileID: 21300000, guid: e3cc52dc0faaaff428823a24d123470b,
     type: 3}
   localExchangeSprite: {fileID: 21300000, guid: bcb70ddba90af2746ba0ba7eb4c6c622,
+    type: 3}
+  localExchangeSpriteLO: {fileID: 21300000, guid: eac05ba0195ce6045996a40bf4616285,
     type: 3}
 --- !u!4 &1886122693
 Transform:

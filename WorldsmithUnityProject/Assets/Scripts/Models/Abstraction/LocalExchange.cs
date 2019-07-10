@@ -6,9 +6,9 @@ public class LocalExchange : Exchange
 {
 
    
-    public enum ExchangeType { Unassigned, Market, Purchase  };
+    public enum Type { Unassigned, Market, Purchase  };
 
-    public ExchangeType exchangeType;
+    public Type type;
     public Participant activeParticipant;
     public Participant passiveParticipant;
 
@@ -26,11 +26,9 @@ public class LocalExchange : Exchange
 
     public LocalExchange()
     {
-        foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)
-        {
-            activeCommitted.Add(restype, 0);
-            passiveCommitted.Add(restype, 0);
-        }
+        ResourceController.Instance.InitiateResourceDictionary(activeCommitted);
+        ResourceController.Instance.InitiateResourceDictionary(passiveCommitted);
+ 
     }
 
 

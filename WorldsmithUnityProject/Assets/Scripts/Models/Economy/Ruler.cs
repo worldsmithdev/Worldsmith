@@ -4,10 +4,8 @@ using UnityEngine;
 
 [System.Serializable]
 public class Ruler : EcoBlock
-{
-     
-
-    public enum Hierarchy {  Unassigned, Dominating, Independent, Dominated, Secondary   }     
+{  
+    public enum Hierarchy {  Unassigned, Dominating, Independent, Reined, Dominated, Subjugated, Secondary   }     
     public enum AuthorityType { Unassigned, Aristocrat, Oligarch, Monarchist, Tyrant, Democratic }
     public enum Attitude { Unassigned, Aggressive, Economic, Temperate, Independent, Submissive }
 
@@ -19,6 +17,9 @@ public class Ruler : EcoBlock
     public Dictionary<Resource.Type, int> resourceBuyPriority = new Dictionary<Resource.Type, int>();
     public Dictionary<Resource.Type, int> resourceSellPriority = new Dictionary<Resource.Type, int>();
 
+    // ALL Steps
+     public List<Resource.Type> wantedResourceTypes = new List<Resource.Type>(); 
+
     // LOCALPOLITICS Step
     public float cycleGenerationLevyPercentage;
     public float cycleIndustryLevyPercentage;
@@ -28,14 +29,12 @@ public class Ruler : EcoBlock
     public Dictionary<Resource.Type, float> cycleLocalSurplusResources = new Dictionary<Resource.Type, float>(); 
     public Dictionary<Resource.Type, float> cycleLocalWantedResources = new Dictionary<Resource.Type, float>();
 
-    // REGIONALEXCHANGE STEP
+    // REGIONALEXCHANGE STEP 
     public Dictionary<Resource.Type, float> cycleRegionalSurplusResources = new Dictionary<Resource.Type, float>();
-    public Dictionary<Resource.Type, float> cycleRegionalWantedResources = new Dictionary<Resource.Type, float>();
-    public Dictionary<Resource.Type, float> cycleRegionalPledgedResources = new Dictionary<Resource.Type, float>();
+    public List<Resource.Type> cycleRegionalWantedResourceTypes = new List<Resource.Type>(); 
 
     // GLOBALEXCHANGE STEP
-    public Dictionary<Resource.Type, float> cycleGlobalSurplusResources = new Dictionary<Resource.Type, float>();
-    public Dictionary<Resource.Type, float> cycleGlobalWantedResources = new Dictionary<Resource.Type, float>();
+    public Dictionary<Resource.Type, float> cycleGlobalSurplusResources = new Dictionary<Resource.Type, float>(); 
 
     public Ruler(Location loc, bool localRuler)
     {
@@ -53,17 +52,17 @@ public class Ruler : EcoBlock
         // hackle at profit resources for now
         if (loc.hubType == 1  )
         {
-            profitResources.Add(Resource.Type.Wheat);
+            localProfitResourceTypes.Add(Resource.Type.Wheat);
         }
         if ( loc.hubType == 2)
         {
-            profitResources.Add(Resource.Type.Wheat);
-            profitResources.Add(Resource.Type.Wares);
+            localProfitResourceTypes.Add(Resource.Type.Wheat);
+            localProfitResourceTypes.Add(Resource.Type.Wares);
         }
         if (loc.hubType  >= 3)
         {
-            profitResources.Add(Resource.Type.Wheat);
-            profitResources.Add(Resource.Type.Wares);
+            localProfitResourceTypes.Add(Resource.Type.Wheat);
+            localProfitResourceTypes.Add(Resource.Type.Wares);
         }
 
         ResourceController.Instance.SetResourceBuyPriority(this);
@@ -72,7 +71,7 @@ public class Ruler : EcoBlock
         
         foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)
             resourcePortfolio.Add(restype, new Resource(restype, 0));
-        ResourceController.Instance.InitiateResourceDictionary(cycleRegionalPledgedResources);
+        ResourceController.Instance.InitiateResourceDictionary(cycleRegionalCommittedResources); 
     }
     void SetName(Location loc )
     {

@@ -95,7 +95,9 @@ public class SpriteCollection : MonoBehaviour
 
     public Sprite localMarketSprite;
     public Sprite localParticipantSprite;
+    public Sprite localParticipantSpriteHi;
     public Sprite localExchangeSprite;
+    public Sprite localExchangeSpriteLO;
 
 
 

@@ -44,8 +44,9 @@ public class Location : WorldElement
     public string offloadTwo;
     public string offloadThree;
     public string offloadResource;
-    public int offloadDifficultyPrimary;
-    public int offloadDifficultySecondary;
+    public int offloadDifficultyOne;
+    public int offloadDifficultyTwo;
+    public int offloadDifficultyThree;
     public string summary;
     public int politicalHierarchy;
     public string[] dominateStrings;

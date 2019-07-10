@@ -15,10 +15,10 @@ MonoBehaviour:
   SheetName: Assets/Resources/Imports/WorldsmithImports.xlsx
   WorksheetName: CharacterImports
   dataArray:
-  - name: Jantje
-    description: is lelijk
-    age: 22
-    location: Egenimos
+  - name: 
+    description: 
+    age: 0
+    location: 
     item: 
   - name: 
     description: 

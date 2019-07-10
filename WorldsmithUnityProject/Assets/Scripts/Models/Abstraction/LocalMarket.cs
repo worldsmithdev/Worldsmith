@@ -121,7 +121,7 @@ public class LocalMarket : Market
                 if (shoppingValue > 0)
                 {
                //   Debug.Log("Creating exchange for active: " + participant.participantName + " with passive: " + passiveParticipant.participantName);
-                    ExchangeController.Instance.CreateLocalExchange(LocalExchange.ExchangeType.Market, this, participant, passiveParticipant, participant.shoppingList);
+                    ExchangeController.Instance.CreateLocalExchange(LocalExchange.Type.Market, this, participant, passiveParticipant, participant.shoppingList);
                 }
 
             }
@@ -137,7 +137,7 @@ public class LocalMarket : Market
             {
                 participant.shoppingList = new List<Resource>();
 
-                foreach (Resource.Type restype in participant.linkedEcoBlock.profitResources)
+                foreach (Resource.Type restype in participant.linkedEcoBlock.localProfitResourceTypes)
                 {
                     if (passiveParticipant.offeredResources.ContainsKey(restype) && passiveParticipant.offeredResources[restype] > 0)
                     {                        
@@ -150,7 +150,7 @@ public class LocalMarket : Market
                     shoppingValue += Converter.GetSilverEquivalent(shopres);
 
                 if (shoppingValue > 0)
-                    ExchangeController.Instance.CreateLocalExchange(LocalExchange.ExchangeType.Purchase, this, participant, passiveParticipant, participant.shoppingList);
+                    ExchangeController.Instance.CreateLocalExchange(LocalExchange.Type.Purchase, this, participant, passiveParticipant, participant.shoppingList);
             }
         }
  

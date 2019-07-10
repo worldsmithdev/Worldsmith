@@ -90,14 +90,6 @@ MonoBehaviour:
     name: ResourceRate
     isEnable: 0
     isArray: 0
-  - type: 3
-    name: IndustryRate
-    isEnable: 0
-    isArray: 0
-  - type: 3
-    name: MintingRate
-    isEnable: 0
-    isArray: 0
   - type: 1
     name: PrimaryResource
     isEnable: 0
@@ -115,6 +107,14 @@ MonoBehaviour:
     isEnable: 0
     isArray: 0
   - type: 3
+    name: IndustryRate
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: MintingRate
+    isEnable: 0
+    isArray: 0
+  - type: 3
     name: HarborQuality
     isEnable: 0
     isArray: 0
@@ -123,11 +123,15 @@ MonoBehaviour:
     isEnable: 0
     isArray: 0
   - type: 1
-    name: PrimaryOffload
+    name: Offload1
     isEnable: 0
     isArray: 0
   - type: 1
-    name: SecondaryOffload
+    name: Offload2
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: Offload3
     isEnable: 0
     isArray: 0
   - type: 1
@@ -135,19 +139,19 @@ MonoBehaviour:
     isEnable: 0
     isArray: 0
   - type: 3
-    name: PrimaryDifficulty
+    name: Difficulty1
     isEnable: 0
     isArray: 0
   - type: 3
-    name: SecondaryDifficulty
+    name: Difficulty2
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: Difficulty3
     isEnable: 0
     isArray: 0
   - type: 3
     name: PoliticalHierarchy
-    isEnable: 0
-    isArray: 0
-  - type: 1
-    name: Dominates
     isEnable: 0
     isArray: 0
   - type: 3
@@ -160,6 +164,10 @@ MonoBehaviour:
     isArray: 0
   - type: 3
     name: PoliticalChallenge
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: Dominates
     isEnable: 0
     isArray: 0
   - type: 1

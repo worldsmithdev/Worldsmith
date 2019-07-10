@@ -21,16 +21,29 @@ public class ExploreTextSetter : MonoBehaviour
         else if (location.currentFaction == 5 && location.greekType == 2)
             line2 += " - Ionian Greek";
         line2 += "\n";
-        string line3 = "Total Silver ";
-        float total = 0f;
+
+        string line3 = "Rulers Silver: ";
+        float totalrulers = 0f;
+        totalrulers += location.localRuler.resourcePortfolio[Resource.Type.Silver].amount;
+        foreach (Ruler ruler in location.secondaryRulers)
+            totalrulers += ruler.resourcePortfolio[Resource.Type.Silver].amount;
+        line3 += "" + totalrulers +  "\n";
+
+        string line4 = "Populations Silver: ";
+        float totalpop = 0f;
         foreach (Population population in location.localRuler.GetControlledPopulations())
-        {
+            totalpop += population.resourcePortfolio[Resource.Type.Silver].amount;         
+        line4 += "" + totalpop +   "\n";
+
+        string line5 = "Total  Silver: ";
+        float total = 0f;
+        total += location.localRuler.resourcePortfolio[Resource.Type.Silver].amount;
+        foreach (Ruler ruler in location.secondaryRulers)
+            total += ruler.resourcePortfolio[Resource.Type.Silver].amount;
+        foreach (Population population in location.localRuler.GetControlledPopulations())
             total += population.resourcePortfolio[Resource.Type.Silver].amount;
-      //      Debug.Log("adding silver: " + population.resourcePortfolio[Resource.Type.Silver].amount + " for " + population.blockID);
-        }
-        line3 += "" + total + "\n";
-        string line4 = "" + "\n";
-        string line5 = "" + "\n";
+        line5 += "" + total +  "\n";
+         
         string line6 = "" + "\n";
         string line7 = "" + "\n";
         exploreUI.overviewClickedText.text = line1 + line2 + line3 + line4 + line5 + line6 + line7;
@@ -81,7 +94,14 @@ public class ExploreTextSetter : MonoBehaviour
         string line3 = "Owns - ";
         foreach (Resource.Type restype in ruler.resourcePortfolio.Keys)
             if (ruler.resourcePortfolio[restype].amount > 0)
-                line3 += "" + restype + ": " + ruler.resourcePortfolio[restype].amount.ToString("F1") + ", ";
+            {
+                if (restype == Resource.Type.Silver)
+                    line3 += "" + restype + ": " + (ruler.resourcePortfolio[restype].amount / 26000).ToString("F1") + " Talents, ";
+                else
+                    line3 += "" + restype + ": " + ruler.resourcePortfolio[restype].amount.ToString("F1") + ", ";
+            }
+     
+
         line3 += "\n\n";
 
         string line4 = "Levied - ";
@@ -281,7 +301,7 @@ public class ExploreTextSetter : MonoBehaviour
     }
     public void SetClickedLocalMarketText(LocalMarket locmarket)
     {
-        exploreUI.clickedType = ExploreUI.ClickedTypes.Market;
+        exploreUI.clickedType = ExploreUI.ClickedTypes.LocalMarket;
         string line1 = "" + locmarket.marketName + " Participants: " + locmarket.participantList.Count +  "\n";
         string line2 = "Actively Exchanged: ";
         foreach (Resource res in locmarket.activelyExchangedResources)
@@ -291,31 +311,7 @@ public class ExploreTextSetter : MonoBehaviour
         foreach (Resource res in locmarket.passivelyExchangedResources)
             line3 += " " + res.type.ToString().Substring(0, 2).ToUpper() + "" + res.amount.ToString("F1") + " ";
         line3 += "\n";
-
-
-        //string line4 = "total claimed: ";
-        //float totalSilverClaimed = 0f;
-        //foreach (Resource.Type restype in locmarket.totalClaimedResources.Keys)
-        //{
-        //    totalSilverClaimed += Converter.GetSilverEquivalent(new Resource(restype, locmarket.totalClaimedResources[restype]));
-        //    line4 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + locmarket.totalClaimedResources[restype].ToString("F0") + " ";
-        //}
-        //line4 +=  " silver value: " + totalSilverClaimed + "\n";
-        //string line5 = "total deducted: " ;
-        //float totalSilverDeducted = 0f;
-        //foreach (Resource.Type restype in locmarket.totalDeductedResources.Keys)
-        //{
-        //    totalSilverDeducted += Converter.GetSilverEquivalent(new Resource(restype, locmarket.totalDeductedResources[restype]));
-        //    line5 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + locmarket.totalDeductedResources[restype].ToString("F0") + " ";
-        //} 
-        //line5 += " silver value: " + totalSilverDeducted + "\n";
-        //string line6 = "" + "\n";
-
-
-        //string line7 = "sold percentage: ";
-        //foreach (Resource.Type restype in locmarket.resourceSoldPercentages.Keys)
-        //    line7 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + locmarket.resourceSoldPercentages[restype].ToString("F0") + " ";
-        //line7 += "\n"; 
+ 
         exploreUI.localExchangeClickedText.text = line1 + line2 + line3  ;
     }
     public void SetClickedLocalParticipantText(Participant participant)
@@ -340,33 +336,7 @@ public class ExploreTextSetter : MonoBehaviour
         foreach (Resource.Type restype  in participant.totalShoppingList.Keys)
             if (participant.totalShoppingList[restype] > 0)
               line5 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + participant.totalShoppingList[restype].ToString("F1") + " ";
-        line5 += "\n";
-
-
-    //    string line6 = "deducted: ";
-        //foreach (Resource.Type restype in participant.deductedResources.Keys)
-        //    line6 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + participant.deductedResources[restype].ToString("F1") + " ";
-        //line6 += "\n";
-
-     //   string line7 = "Creditstatus: " + participant.silverCreditStatus + "  silver received: " + participant.receivedSilver + "  silver paid: " + participant.paidSilver + "\n";
-        //string line8 = "spending power: " + participant.GetSpendingPower();
-
-        //string line6 = "out traded: ";
-        //foreach (Resource.Type restype in participant.outTradedResources.Keys)
-        //    line6 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + participant.outTradedResources[restype].ToString("F0") + " ";
-        //line6 += "\n";
-
-        //string line7 = "in traded: ";
-        //foreach (Resource.Type restype in participant.inTradedResources.Keys)
-        //    line7 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + participant.inTradedResources[restype].ToString("F0") + " ";
-        //line7 += "\n";
-
-
-        //string line8 = "purchased: ";
-        //foreach (Resource res in participant.purchasedResources)
-        //    line8 += " " + res.type.ToString().Substring(0, 2).ToUpper() + "" + res.amount.ToString("F0") + " ";
-        //line8 += "\n";
-
+        line5 += "\n"; 
          
         exploreUI.localExchangeClickedText.text = line1 + line2 + line3 + line4 +line5;
     }
@@ -398,6 +368,7 @@ public class ExploreTextSetter : MonoBehaviour
     public void SetDefaultRegionalExchangeContentText()
     {
         Location selectedLoc = LocationController.Instance.GetSelectedLocation();
+        exploreUI.regionalExchangeClickedText.text ="";
     }
     public void SetClickedRegionalExchangeText(Exchange exchange)
     {
@@ -405,22 +376,58 @@ public class ExploreTextSetter : MonoBehaviour
         exploreUI.clickedType = ExploreUI.ClickedTypes.Exchange;
 
 
-        string line1 = "" + exchange.exchangeName + "\n"; 
+        string line1 = "" + exchange.exchangeName + "\n";
+        line1 += "Active Resources: ";
+        foreach (Resource res in regExchange.activeResources)
+            line1 += " " + res.type.ToString().Substring(0, 2).ToUpper() + "" + res.amount.ToString("F1") + " ";
+        line1 += "\n";
 
-        exploreUI.regionalExchangeClickedText.text = line1  ;
+        string line2 = "Passive Resources: ";
+        foreach (Resource res in regExchange.passiveResources)
+            line2 += " " + res.type.ToString().Substring(0, 2).ToUpper() + "" + res.amount.ToString("F1") + " ";
+        line2 += "\n";
+
+        string line3 = "Active Party: " + regExchange.activeParty.blockID + "\n";
+        line3 += "Passive Party: " + regExchange.passiveParty.blockID + "\n";
+
+
+        exploreUI.regionalExchangeClickedText.text = line1 + line2 + line3;
     }
     public void SetClickedRegionalMarketText(RegionalMarket regmarket)
     {
-        exploreUI.clickedType = ExploreUI.ClickedTypes.Market;
+        exploreUI.clickedType = ExploreUI.ClickedTypes.RegionalMarket;
         string line1 = "" + regmarket.marketName +  "\n";
-   
- 
-        exploreUI.regionalExchangeClickedText.text = line1  ;
-    }
 
+        string line2 = "Seller's Surpluses: ";
+        foreach (Resource.Type restype in regmarket.seller.cycleRegionalSurplusResources.Keys)
+            if (regmarket.seller.cycleRegionalSurplusResources[restype] > 0)
+               line2 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + regmarket.seller.cycleRegionalSurplusResources[restype].ToString("F1") + " ";
+        line2 += "\n";
+        string line3 = "Types Wanted: ";
+        foreach (Resource.Type restype in regmarket.seller.cycleRegionalWantedResourceTypes)
+            line3 += " " + restype.ToString().Substring(0, 2).ToUpper()   + " ";
+        line3 += "\n";
+
+        exploreUI.regionalExchangeClickedText.text = line1 +line2 +line3 ;
+    }
+    public void SetClickedRegionalBuyerText(Ruler ruler)
+    {
+        exploreUI.clickedType = ExploreUI.ClickedTypes.Participant;
+        string line1 = "Buyer: " + ruler.blockID + "\n"; 
+
+        exploreUI.regionalExchangeClickedText.text = line1;
+    }
+    public void SetClickedRegionalSellerText(Ruler ruler)
+    {
+        exploreUI.clickedType = ExploreUI.ClickedTypes.Participant;
+        string line1 = "Seller: " + ruler.blockID + "\n"; 
+
+        exploreUI.regionalExchangeClickedText.text = line1;
+    }
     public void SetDefaultGlobalExchangeContentText()
     {
         Location selectedLoc = LocationController.Instance.GetSelectedLocation();
+        exploreUI.globalExchangeClickedText.text = "";
     }
     public void SetClickedGlobalExchangeText(Exchange exchange)
     {
@@ -429,15 +436,29 @@ public class ExploreTextSetter : MonoBehaviour
 
 
         string line1 = "" + exchange.exchangeName + "\n";
+        line1 += "Active Resources: ";
+        foreach (Resource res in globExchange.activeResources)
+            line1 += " " + res.type.ToString().Substring(0, 2).ToUpper() + "" + res.amount.ToString("F1") + " ";
+        line1 += "\n";
 
-        exploreUI.globalExchangeClickedText.text = line1;
+        string line2 = "Received Resources: ";
+        foreach (Resource res in globExchange.receivedResources)
+            line2 += " " + res.type.ToString().Substring(0, 2).ToUpper() + "" + res.amount.ToString("F1") + " ";
+        line2 += "\n";
+         
+
+        exploreUI.globalExchangeClickedText.text = line1 + line2;
     }
     public void SetClickedGlobalMarketText(GlobalMarket globmarket)
     {
-        exploreUI.clickedType = ExploreUI.ClickedTypes.Market;
+        exploreUI.clickedType = ExploreUI.ClickedTypes.GlobalMarket;
         string line1 = "" + globmarket.marketName + "\n";
 
+        string line2 = "Seller's Surpluses: ";
+        foreach (Resource.Type restype in globmarket.seller.cycleGlobalSurplusResources.Keys)
+            line2 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + globmarket.seller.cycleGlobalSurplusResources[restype].ToString("F1") + " ";
+        line2 += "\n";
 
-        exploreUI.globalExchangeClickedText.text = line1;
+        exploreUI.globalExchangeClickedText.text = line1 + line2;
     }
 }

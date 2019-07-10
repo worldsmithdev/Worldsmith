@@ -81,14 +81,6 @@ public class LocationImportsData
   public int Resourcerate { get {return resourcerate; } set { resourcerate = value;} }
   
   [SerializeField]
-  int industryrate;
-  public int Industryrate { get {return industryrate; } set { industryrate = value;} }
-  
-  [SerializeField]
-  int mintingrate;
-  public int Mintingrate { get {return mintingrate; } set { mintingrate = value;} }
-  
-  [SerializeField]
   string primaryresource;
   public string Primaryresource { get {return primaryresource; } set { primaryresource = value;} }
   
@@ -105,6 +97,14 @@ public class LocationImportsData
   public string Secondaryindustry { get {return secondaryindustry; } set { secondaryindustry = value;} }
   
   [SerializeField]
+  int industryrate;
+  public int Industryrate { get {return industryrate; } set { industryrate = value;} }
+  
+  [SerializeField]
+  int mintingrate;
+  public int Mintingrate { get {return mintingrate; } set { mintingrate = value;} }
+  
+  [SerializeField]
   int harborquality;
   public int Harborquality { get {return harborquality; } set { harborquality = value;} }
   
@@ -113,32 +113,36 @@ public class LocationImportsData
   public int Hubtype { get {return hubtype; } set { hubtype = value;} }
   
   [SerializeField]
-  string primaryoffload;
-  public string Primaryoffload { get {return primaryoffload; } set { primaryoffload = value;} }
+  string offload1;
+  public string Offload1 { get {return offload1; } set { offload1 = value;} }
   
   [SerializeField]
-  string secondaryoffload;
-  public string Secondaryoffload { get {return secondaryoffload; } set { secondaryoffload = value;} }
+  string offload2;
+  public string Offload2 { get {return offload2; } set { offload2 = value;} }
+  
+  [SerializeField]
+  string offload3;
+  public string Offload3 { get {return offload3; } set { offload3 = value;} }
   
   [SerializeField]
   string resourceoffload;
   public string Resourceoffload { get {return resourceoffload; } set { resourceoffload = value;} }
   
   [SerializeField]
-  int primarydifficulty;
-  public int Primarydifficulty { get {return primarydifficulty; } set { primarydifficulty = value;} }
+  int difficulty1;
+  public int Difficulty1 { get {return difficulty1; } set { difficulty1 = value;} }
   
   [SerializeField]
-  int secondarydifficulty;
-  public int Secondarydifficulty { get {return secondarydifficulty; } set { secondarydifficulty = value;} }
+  int difficulty2;
+  public int Difficulty2 { get {return difficulty2; } set { difficulty2 = value;} }
+  
+  [SerializeField]
+  int difficulty3;
+  public int Difficulty3 { get {return difficulty3; } set { difficulty3 = value;} }
   
   [SerializeField]
   int politicalhierarchy;
   public int Politicalhierarchy { get {return politicalhierarchy; } set { politicalhierarchy = value;} }
-  
-  [SerializeField]
-  string dominates;
-  public string Dominates { get {return dominates; } set { dominates = value;} }
   
   [SerializeField]
   int politicalauthority;
@@ -151,6 +155,10 @@ public class LocationImportsData
   [SerializeField]
   int politicalchallenge;
   public int Politicalchallenge { get {return politicalchallenge; } set { politicalchallenge = value;} }
+  
+  [SerializeField]
+  string dominates;
+  public string Dominates { get {return dominates; } set { dominates = value;} }
   
   [SerializeField]
   string rival;

@@ -5,12 +5,14 @@ using UnityEngine;
 public class ExchangeCreator : MonoBehaviour
 {
 
+
+
+    // ------------------------ LOCAL
+
     void AttemptResourcePurchase(LocalExchange createdExchange, Resource shoppedResource, Resource.Type payType)
     {
         Participant activeParticipant = createdExchange.activeParticipant;
-        Participant passiveParticipant = createdExchange.passiveParticipant;
-
-        
+        Participant passiveParticipant = createdExchange.passiveParticipant; 
         bool forceSilver = ExchangeController.Instance.forceSilverOnLocalExchange;
         float silverPercentage = DetermineForcedSilverPercentage(activeParticipant, passiveParticipant);
 
@@ -53,8 +55,7 @@ public class ExchangeCreator : MonoBehaviour
                 createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, spendValue));
             }   
         } 
-    }
-
+    } 
 
     void AttemptSilverPurchase(LocalExchange createdExchange, Resource shoppedResource )
     {
@@ -84,29 +85,14 @@ public class ExchangeCreator : MonoBehaviour
 
         }
 
-    }
-    //public LocalExchange CreateLocalPurchase(LocalMarket market, Participant activeParticipant, Participant passiveParticipant, List<Resource> shoppingList)
-    //{
-    //    LocalExchange createdExchange = new LocalExchange();
-
-    //    createdExchange.exchangeName = "LocPurch" + activeParticipant.participantName + WorldController.Instance.GetWorld().completedCycles;
-    //    createdExchange.activeParticipant = activeParticipant;
-    //    createdExchange.passiveParticipant = passiveParticipant;
-    //    createdExchange.localMarket = market;
-    //    createdExchange.shoppingList = shoppingList;
-
-
-    //    return createdExchange;
-    //}
-
-
-
-    public LocalExchange CreateLocalExchange(LocalExchange.ExchangeType type, LocalMarket market, Participant activeParticipant, Participant passiveParticipant, List<Resource> shoppingList)
+    } 
+     
+    public LocalExchange CreateLocalExchange(LocalExchange.Type type, LocalMarket market, Participant activeParticipant, Participant passiveParticipant, List<Resource> shoppingList)
     {
         LocalExchange createdExchange = new LocalExchange();
 
         createdExchange.exchangeName = "LocExch" +type + activeParticipant.participantName + WorldController.Instance.GetWorld().completedCycles;
-        createdExchange.exchangeType = type;
+        createdExchange.type = type;
         createdExchange.activeParticipant = activeParticipant;
         createdExchange.passiveParticipant = passiveParticipant;
         createdExchange.localMarket = market;
@@ -197,4 +183,165 @@ public class ExchangeCreator : MonoBehaviour
                     if (res.type == buytype)
                         createdExchange.orderedShoppingList.Add(res);
     }
+
+
+    // ------------------------ REGIONAL 
+    
+    public void CreateRegionalSeizedExchange(RegionalMarket market, EcoBlock activeParty, Ruler dominator)
+    {
+        RegionalExchange createdExchange = new RegionalExchange();
+        createdExchange.type = RegionalExchange.Type.Seized;
+        createdExchange.exchangeName = "" + createdExchange.type + "Exch" +  WorldController.Instance.GetWorld().completedCycles;
+        createdExchange.activeParty = activeParty;
+        createdExchange.passiveParty = dominator;
+        createdExchange.regionalMarket = market;
+
+        foreach (Resource.Type restype in dominator.cycleRegionalWantedResourceTypes)
+            if (activeParty.resourcePortfolio[restype].amount > 0)
+                createdExchange.CommitResource(true, new Resource(restype, activeParty.resourcePortfolio[restype].amount) ); 
+        
+        if (createdExchange.activeResources.Count > 0 || createdExchange.passiveResources.Count > 0)
+               market.regionalExchangesList.Add(createdExchange);  
+    }
+    public void CreateRegionalForcedExchange(RegionalMarket market, Ruler activeParty, Ruler passiveParty)
+    {
+        RegionalExchange createdExchange = new RegionalExchange();
+        createdExchange.type = RegionalExchange.Type.Forced;
+        createdExchange.exchangeName = "" + createdExchange.type + "Exch" + activeParty.GetHomeLocation().elementID + WorldController.Instance.GetWorld().completedCycles;
+        createdExchange.activeParty = activeParty;
+        createdExchange.passiveParty = passiveParty;
+        createdExchange.regionalMarket = market;
+
+        foreach (Resource.Type restype in passiveParty.cycleRegionalWantedResourceTypes)        
+            if (activeParty.cycleRegionalSurplusResources.ContainsKey(restype))           
+                TradeAwayResources(createdExchange, restype, activeParty, passiveParty);
+
+        if (createdExchange.activeResources.Count > 0 || createdExchange.passiveResources.Count > 0)
+        market.regionalExchangesList.Add(createdExchange);
+    }
+
+    public void CreateRegionalFreeExchange(RegionalMarket market, Ruler activeParty, Ruler passiveParty)
+    {
+        
+            RegionalExchange createdExchange = new RegionalExchange();
+            createdExchange.type = RegionalExchange.Type.Free;
+            createdExchange.exchangeName = "" + createdExchange.type + "Exch" + activeParty.GetHomeLocation().elementID + WorldController.Instance.GetWorld().completedCycles;
+            createdExchange.activeParty = activeParty;
+            createdExchange.passiveParty = passiveParty;
+            createdExchange.regionalMarket = market;
+
+        foreach (Resource.Type restype in passiveParty.cycleRegionalWantedResourceTypes)
+                if (activeParty.cycleRegionalSurplusResources.ContainsKey(restype))
+                    TradeAwayResources(createdExchange, restype, activeParty, passiveParty);
+
+            if (createdExchange.activeResources.Count > 0 || createdExchange.passiveResources.Count > 0)
+                market.regionalExchangesList.Add(createdExchange); 
+    } 
+    void TradeAwayResources(RegionalExchange createdExchange, Resource.Type restype, Ruler activeParty, Ruler passiveParty)
+    {
+        float offeredValue = Converter.GetSilverEquivalent(new Resource(restype, activeParty.cycleRegionalSurplusResources[restype] - activeParty.cycleRegionalCommittedResources[restype]));
+
+        float exchangeRate = ExchangeController.Instance.GetExchangeRate(activeParty);
+
+        float paidValue = 0f;
+
+        if (offeredValue > 0)
+        {
+            List<Resource> paymentResources = DeterminePaymentResources(offeredValue * exchangeRate, activeParty, passiveParty);
+            foreach (Resource res in paymentResources)
+            {
+                createdExchange.CommitResource(false, res);
+                paidValue += Converter.GetSilverEquivalent(res);
+            }
+            createdExchange.CommitResource(true, new Resource(restype, paidValue));
+        }
+    }
+    List<Resource> DeterminePaymentResources(float value, Ruler activeParty, Ruler passiveParty)
+    {
+        List<Resource> returnList = new List<Resource>();
+
+        float remainingValue = value;
+        float silverToPay;
+
+        if (ExchangeController.Instance.forceSilverOnRegionalExchange == true && passiveParty.resourcePortfolio[Resource.Type.Silver].amount > 0)
+        {
+            silverToPay = remainingValue * ExchangeController.Instance.regionalForcedSilverPercentage;
+            if (passiveParty.resourcePortfolio[Resource.Type.Silver].amount >= silverToPay)
+            {
+                returnList.Add(new Resource(Resource.Type.Silver, silverToPay));
+                remainingValue -= silverToPay;
+            }
+            else if (passiveParty.resourcePortfolio[Resource.Type.Silver].amount < silverToPay)
+            {
+                returnList.Add(new Resource(Resource.Type.Silver, passiveParty.resourcePortfolio[Resource.Type.Silver].amount));
+                remainingValue -= passiveParty.resourcePortfolio[Resource.Type.Silver].amount;
+            }
+        }
+
+        foreach (Resource.Type restype in activeParty.cycleRegionalWantedResourceTypes)
+        {
+            if (passiveParty.resourcePortfolio[restype].amount > 0)
+            {
+                // has more of resource to pay with than needed
+                if (Converter.GetSilverEquivalent(new Resource(restype, passiveParty.resourcePortfolio[restype].amount)) >= remainingValue)
+                {
+                    returnList.Add(new Resource(restype, Converter.GetResourceEquivalent(restype, remainingValue).amount));
+                    remainingValue = 0;
+                }
+                // has less of resource to pay with than needed
+                else if (Converter.GetSilverEquivalent(new Resource(restype, passiveParty.resourcePortfolio[restype].amount)) < remainingValue)
+                {
+                    returnList.Add(new Resource(restype, Converter.GetResourceEquivalent(restype, passiveParty.resourcePortfolio[restype].amount).amount));
+                    remainingValue -= Converter.GetResourceEquivalent(restype, passiveParty.resourcePortfolio[restype].amount).amount;
+                }
+            }
+        }
+
+        if (remainingValue > 0 && passiveParty.resourcePortfolio[Resource.Type.Silver].amount > 0)
+        {
+            if (passiveParty.resourcePortfolio[Resource.Type.Silver].amount >= remainingValue)
+            {
+                returnList.Add(new Resource(Resource.Type.Silver, remainingValue));
+            }
+            else if (passiveParty.resourcePortfolio[Resource.Type.Silver].amount < remainingValue)
+            {
+                returnList.Add(new Resource(Resource.Type.Silver, passiveParty.resourcePortfolio[Resource.Type.Silver].amount));
+            }
+        }
+
+        return returnList;
+    }
+
+
+    // ------------------------ GLOBAL 
+
+    public void CreateGlobalExchange (GlobalMarket market, Ruler ruler)
+    {
+        GlobalExchange createdExchange = new GlobalExchange();
+        createdExchange.exchangeName = "GlobalExch" + ruler.GetHomeLocation().elementID + WorldController.Instance.GetWorld().completedCycles;
+        createdExchange.activeParty = ruler;
+        createdExchange.globalMarket = market;
+
+        float totalExportsValue = 0f;
+
+        // Ship off resources and tally total value
+        foreach (Resource.Type restype in ruler.cycleGlobalSurplusResources.Keys)
+        { 
+            createdExchange.CommitResource(new Resource(restype, ruler.cycleGlobalSurplusResources[restype]));
+            totalExportsValue += Converter.GetSilverEquivalent(new Resource(restype, ruler.cycleGlobalSurplusResources[restype]));
+        }
+
+        // Return resources for total value according to preset proportions
+        foreach (Resource.Type restype in ExchangeController.Instance.globalImportPercentages.Keys)
+        {
+            float percentage = ExchangeController.Instance.globalImportPercentages[restype];
+            createdExchange.receivedResources.Add(new Resource (restype, Converter.GetResourceEquivalent(restype, totalExportsValue).amount * percentage     )    );
+             
+        }
+
+        if (totalExportsValue > 0  )
+            market.globalExchangesList.Add(createdExchange);
+    }
+
+
 }

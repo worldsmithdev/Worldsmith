@@ -52,10 +52,9 @@ public class ResourceController : MonoBehaviour
  
     public void InitiateResourceDictionary (Dictionary<Resource.Type, float> dict)
     {
-        foreach (Resource.Type restype in resourceCompendium.Keys)
-        {
-            dict.Add(restype, 0);
-        }
+       // dict = new Dictionary<Resource.Type, float>();
+        foreach (Resource.Type restype in resourceCompendium.Keys)        
+            dict.Add(restype, 0);        
     }
 
 

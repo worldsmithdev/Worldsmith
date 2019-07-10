@@ -34,9 +34,11 @@ public class StepsController : MonoBehaviour
     {
 
         // TEMPORARY STIPEND
-        foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
-            if (ecoblock.isLocalRuler)
-                ecoblock.resourcePortfolio[Resource.Type.Silver].amount += 2000f;
+        //foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
+        //    if (ecoblock.isLocalRuler) 
+        //         ecoblock.resourcePortfolio[Resource.Type.Silver].amount += 2000f; 
+             
+
 
         // Generation
         foreach (Territory ecoblock in EconomyController.Instance.territoryDictionary.Keys)
@@ -102,13 +104,14 @@ public class StepsController : MonoBehaviour
             regionalPoliticsStep.ResolveStep();
 
         // RegionalExchange 
-        regionalExchangeStep.PrepareStep();  
+        regionalExchangeStep.PrepareStep();
         foreach (Ruler ecoblock in EconomyController.Instance.rulerDictionary.Keys)
             regionalExchangeStep.ConfigureStep(ecoblock);
-        List<Ruler> shuffledRulersList = RulerController.Instance.GetShuffledList(); 
+        List<Ruler> shuffledRulersList = RulerController.Instance.GetShuffledList();
         foreach (Ruler ecoblock in shuffledRulersList)
-            regionalExchangeStep.CycleStep(ecoblock); 
-         
+            regionalExchangeStep.CycleStep(ecoblock);
+        regionalExchangeStep.ResolveStep();
+
 
         // Destruction
         foreach (Warband ecoblock in EconomyController.Instance.warbandDictionary.Keys)

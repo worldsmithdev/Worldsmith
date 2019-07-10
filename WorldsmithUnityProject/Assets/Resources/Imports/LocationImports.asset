@@ -33,24 +33,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 3
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Timber
     secondaryresource: Pork
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Longane
-    secondaryoffload: Goraion
+    offload1: Longane
+    offload2: Goraion
+    offload3: Tissa
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 5
+    difficulty1: 1
+    difficulty2: 3
+    difficulty3: 4
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: Longane
     friend: 
     religiousimportance: 1
@@ -71,40 +73,42 @@ MonoBehaviour:
   - name: Abolla
     locationtype: Settled
     locationsubtype: Village
-    description: Hellenized at an early stage, and quickly conquered during initial
-      Syrakusan expansion.
+    description: On a sunny platform, a small thriving community was quickly hellenized
+      and conquered.
     summary: Sikel Farming Settlement
-    populationsize: 4
+    populationsize: 3
     founded: 1
     originalfaction: 1
     currentfaction: 1
     greektype: 0
     hellenized: 6
-    territorysoil: 4
+    territorysoil: 2
     territorysize: 1
     territorystatus: 4
-    foodfocus: 2
+    foodfocus: 3
     buildfocus: 1
     buildrate: 1
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Syrakousai
-    secondaryoffload: 
+    offload1: Heloros
+    offload2: Syrakousai
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -141,24 +145,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Entella
-    secondaryoffload: Selinous
+    offload1: Entella
+    offload2: Selinous
+    offload3: Hippana
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 4
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 5
     politicalattitude: 3
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -195,24 +201,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 2
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Amber
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Piakos
-    secondaryoffload: Hybla Geleatis
+    offload1: Hybla Geleatis
+    offload2: Kentoripa
+    offload3: Piakos
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: Piakos
     religiousimportance: 2
@@ -234,39 +242,42 @@ MonoBehaviour:
   - name: Adryx
     locationtype: Settled
     locationsubtype: Village
-    description: 'Was quickly hellenized and so spared the most violent dominion. '
+    description: 'Among the first conquered Sitel sites, much of its original culture
+      is dimished. '
     summary: Sikel Farming Settlement
     populationsize: 3
     founded: 1
     originalfaction: 1
     currentfaction: 1
     greektype: 0
-    hellenized: 3
-    territorysoil: 4
+    hellenized: 6
+    territorysoil: 2
     territorysize: 1
     territorystatus: 3
     foodfocus: 2
     buildfocus: 1
     buildrate: 1
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Syrakousai
-    secondaryoffload: 
+    offload1: Syrakousai
+    offload2: Megara
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 1
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -302,24 +313,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 2
-    industryrate: 2
-    mintingrate: 2
     primaryresource: Timber
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 2
     harborquality: 1
     hubtype: 2
-    primaryoffload: Aegeston Emporion
-    secondaryoffload: 
+    offload1: Aegeston Emporion
+    offload2: Motya
+    offload3: Drepanon
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Aegeston Emporion
     politicalauthority: 1
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: Aegeston Emporion
     rival: 
     friend: 
     religiousimportance: 1
@@ -340,8 +353,8 @@ MonoBehaviour:
   - name: Aegeston Emporion
     locationtype: Settled
     locationsubtype: Village
-    description: Superior in its rich selection of West-Sicily foods.
-    summary: Elymian Port Outpost
+    description: Serves local and global customers to a rich selection.
+    summary: Elymian Port Settlement
     populationsize: 4
     founded: 1
     originalfaction: 3
@@ -352,35 +365,37 @@ MonoBehaviour:
     territorysize: 1
     territorystatus: 3
     foodfocus: 1
-    buildfocus: 1
+    buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 4
     hubtype: 2
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
     primarycult: 
     secondarycult: 
     coinageemblem: 
-    height: 0
-    naturaldefense: 0
+    height: 30
+    naturaldefense: 2
     fortification: 1
     primaryfighters: 1
     secondaryfighters: 2
@@ -408,24 +423,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 2
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Travertine
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Aegeston Emporion
-    secondaryoffload: Halikyai
+    offload1: Aegeston Emporion
+    offload2: Halikyai
+    offload3: Aegesta
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 2
+    difficulty1: 1
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 3
@@ -463,24 +480,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 4
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Fish
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 3
     hubtype: 1
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: Skurke
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 3
@@ -516,24 +535,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Hybla Heraia
-    secondaryoffload: Kamarina
+    offload1: Hybla Heraia
+    offload2: Kamarina
+    offload3: Akrillai
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 3
+    difficulty2: 2
+    difficulty3: 4
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -569,24 +590,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Phoinix
-    secondaryoffload: Longane
+    offload1: Phoinix
+    offload2: Longane
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 4
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: Phoinix
     religiousimportance: 1
@@ -623,24 +646,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 3
-    industryrate: 2
-    mintingrate: 1
     primaryresource: Stone
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Kentoripa
-    secondaryoffload: Leona
+    offload1: Kentoripa
+    offload2: Leona
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 1
+    difficulty1: 2
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: Tavake
     politicalauthority: 1
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: Tavake
     rival: Enna
     friend: 
     religiousimportance: 3
@@ -678,24 +703,26 @@ MonoBehaviour:
     buildfocus: 5
     buildrate: 3
     resourcerate: 1
-    industryrate: 3
-    mintingrate: 3
     primaryresource: Livestock
     secondaryresource: 
     primaryindustry: Winery
     secondaryindustry: Oils
+    industryrate: 3
+    mintingrate: 3
     harborquality: 3
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: Gela
+    offload1: Global
+    offload2: Gela
+    offload3: 
     resourceoffload: Carthage
-    primarydifficulty: 2
-    secondarydifficulty: 1
+    difficulty1: 2
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Eknomos,Gidinon,Kakyron,Kalkarak,Kamikos,Koskon,Krastos,Rotonde,Tirnon
     politicalauthority: 2
     politicalattitude: 1
     politicalchallenge: 1
+    dominates: Eknomos,Gidinon,Kakyron,Kalkarak,Kamikos,Koskon,Krastos,Rotonde,Tirnon
     rival: 
     friend: 
     religiousimportance: 2
@@ -715,41 +742,42 @@ MonoBehaviour:
     surety: 1
   - name: Akrai
     locationtype: Settled
-    locationsubtype: Village
-    description: 'Prosperous dependent fortress in a very defensible and commanding
-      position. '
-    summary: Greek Commanding Fortress
-    populationsize: 6
+    locationsubtype: Stronghold
+    description: 'Prosperous fortress-town in a very defensible and commanding position. '
+    summary: Greek Valley Outpost
+    populationsize: 5
     founded: 4
     originalfaction: 1
     currentfaction: 5
     greektype: 1
     hellenized: 0
     territorysoil: 2
-    territorysize: 1
-    territorystatus: 4
+    territorysize: 3
+    territorystatus: 3
     foodfocus: 4
-    buildfocus: 5
+    buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
-    hubtype: 3
-    primaryoffload: Syrakousai
-    secondaryoffload: 
+    hubtype: 2
+    offload1: Syrakousai
+    offload2: Heloros
+    offload3: Megara
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 3
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -762,55 +790,57 @@ MonoBehaviour:
     primaryfighters: 2
     secondaryfighters: 1
     primarystrategic: 3
-    secondarystrategic: 2
+    secondarystrategic: 3
     terrainstring: 
     mythstring: 
     constructionstring: 
     surety: 1
   - name: Akrillai
     locationtype: Settled
-    locationsubtype: Village
+    locationsubtype: Stronghold
     description: 'Syrakusan fortress in a favorable trading position. '
-    summary: Greek Commercial Fortress
-    populationsize: 6
+    summary: Greek Commercial Outpost
+    populationsize: 4
     founded: 4
     originalfaction: 1
     currentfaction: 5
     greektype: 1
     hellenized: 0
-    territorysoil: 3
-    territorysize: 1
+    territorysoil: 2
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 3
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Horses
     secondaryindustry: 
+    industryrate: 3
+    mintingrate: 2
     harborquality: 1
-    hubtype: 4
-    primaryoffload: Syrakousai
-    secondaryoffload: 
+    hubtype: 2
+    offload1: Akrai
+    offload2: Echetla
+    offload3: Kamarina
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 3
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
     primarycult: 
     secondarycult: 
     coinageemblem: 
-    height: 350
-    naturaldefense: 2
+    height: 600
+    naturaldefense: 3
     fortification: 3
     primaryfighters: 2
     secondaryfighters: 3
@@ -823,51 +853,53 @@ MonoBehaviour:
   - name: Alagene
     locationtype: Settled
     locationsubtype: Village
-    description: Small Sikanian settlement requested assistance and has been taken
-      over by Myttistratos for strategic lookout and Henna trade facilitation.
-    summary: Greek Lookout Settlement
-    populationsize: 2
+    description: Small Sikanian settlement has seen Myttistratos encroach on their
+      autonomy, for their strategic lookout and trade position.
+    summary: Sikan Mountain Village
+    populationsize: 3
     founded: 1
     originalfaction: 2
     currentfaction: 2
     greektype: 1
     hellenized: 5
     territorysoil: 2
-    territorysize: 1
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Myttistratos
-    secondaryoffload: 
+    offload1: Myttistratos
+    offload2: Enna
+    offload3: Murene
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
-    politicalhierarchy: 1
-    dominates: 
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 3
+    politicalhierarchy: 2
     politicalauthority: 2
-    politicalattitude: 5
-    politicalchallenge: 6
+    politicalattitude: 4
+    politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
     primarycult: 
     secondarycult: 
     coinageemblem: 
-    height: 0
-    naturaldefense: 0
-    fortification: 1
-    primaryfighters: 2
-    secondaryfighters: 1
+    height: 800
+    naturaldefense: 3
+    fortification: 2
+    primaryfighters: 1
+    secondaryfighters: 2
     primarystrategic: 3
     secondarystrategic: 2
     terrainstring: Overlooks valley with Himera-Henna road.
@@ -892,24 +924,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Hamiit
-    secondaryoffload: Kephaloidion
+    offload1: Hamiit
+    offload2: Kephaloidion
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 2
+    difficulty1: 3
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -930,48 +964,50 @@ MonoBehaviour:
   - name: Allisse
     locationtype: Settled
     locationsubtype: Village
-    description: Strongly hellenized settlement is an offload for inferior Engyon
-      productions.
-    summary: Hellenized Sikel Settlement
+    description: Deep in the mountains with a love for Greek products - even Engyon's
+      inferior crafts.
+    summary: Sikel Mountain Village
     populationsize: 4
     founded: 1
     originalfaction: 1
     currentfaction: 1
     greektype: 0
     hellenized: 3
-    territorysoil: 2
+    territorysoil: 1
     territorysize: 1
-    territorystatus: 3
+    territorystatus: 4
     foodfocus: 1
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Engyon
-    secondaryoffload: 
+    offload1: Engyon
+    offload2: Tissa
+    offload3: Skurke
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 4
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
     primarycult: 
     secondarycult: 
     coinageemblem: 
-    height: 0
-    naturaldefense: 0
+    height: 600
+    naturaldefense: 3
     fortification: 2
     primaryfighters: 1
     secondaryfighters: 2
@@ -983,10 +1019,9 @@ MonoBehaviour:
     surety: 4
   - name: Amaselos
     locationtype: Settled
-    locationsubtype: Village
-    description: Local king is causing tension by raiding along the route that his
-      fortress commands.
-    summary: Sikel Raiding Fortress
+    locationsubtype: Stronghold
+    description: Causing tension by raiding along the route that his fortress commands.
+    summary: Sikel Mountain Stronghold
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -1000,32 +1035,34 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kentoripa
-    secondaryoffload: 
+    offload1: Kentoripa
+    offload2: Leona
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
-    politicalhierarchy: 2
-    dominates: 
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
+    politicalhierarchy: 3
     politicalauthority: 3
     politicalattitude: 2
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
     primarycult: 
     secondarycult: 
     coinageemblem: 
-    height: 0
-    naturaldefense: 0
+    height: 800
+    naturaldefense: 4
     fortification: 4
     primaryfighters: 1
     secondaryfighters: 2
@@ -1053,24 +1090,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Skiara
-    secondaryoffload: Himera
+    offload1: Skiara
+    offload2: Himera
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 1
+    difficulty1: 2
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 1
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -1106,24 +1145,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Eryx
-    secondaryoffload: Aegeston Emporion
+    offload1: Eryx
+    offload2: Aegeston Emporion
+    offload3: Elima
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -1144,9 +1185,9 @@ MonoBehaviour:
   - name: Apollonia
     locationtype: Settled
     locationsubtype: Village
-    description: 'Rich small settlement protected by its natural position and nearby
+    description: 'Prosperous and protected through its natural position and nearby
       Skurke. '
-    summary: Rich Minor Settlement
+    summary: Sikel Mountain Village
     populationsize: 4
     founded: 1
     originalfaction: 1
@@ -1154,37 +1195,39 @@ MonoBehaviour:
     greektype: 0
     hellenized: 2
     territorysoil: 2
-    territorysize: 1
+    territorysize: 3
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
     buildrate: 2
-    resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
+    resourcerate: 3
     primaryresource: Marble
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Skurke
-    secondaryoffload: 
+    offload1: Skurke
+    offload2: Kalakte
+    offload3: Engyon
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 4
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
     primarycult: 
     secondarycult: 
     coinageemblem: 
-    height: 0
+    height: 550
     naturaldefense: 3
     fortification: 2
     primaryfighters: 1
@@ -1199,10 +1242,10 @@ MonoBehaviour:
   - name: Ariaiton
     locationtype: Settled
     locationsubtype: Village
-    description: Formerly flourishing Sikan hilltop is slowly recovering from early
-      Geloan aggression.
-    summary: Recovering Sikan Settlement
-    populationsize: 4
+    description: Formerly flourishing community is slowly recovering from early and
+      hard Geloan aggression.
+    summary: Sikan Hilltop Village
+    populationsize: 3
     founded: 1
     originalfaction: 1
     currentfaction: 1
@@ -1215,24 +1258,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Gela
-    secondaryoffload: 
+    offload1: Gela
+    offload2: Maroi
+    offload3: Kakyron
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 3
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 5
-    politicalchallenge: 5
+    politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -1245,7 +1290,7 @@ MonoBehaviour:
     primaryfighters: 1
     secondaryfighters: 2
     primarystrategic: 3
-    secondarystrategic: 4
+    secondarystrategic: 1
     terrainstring: 
     mythstring: 
     constructionstring: 
@@ -1253,8 +1298,8 @@ MonoBehaviour:
   - name: Artemision
     locationtype: Settled
     locationsubtype: Village
-    description: Small population with a smaller minority heavy handed in the regional
-      sanctuary's wealth.
+    description: Small population with a smaller minority that is heavy handed with
+      the regional sanctuary's wealth.
     summary: Greek Mountain Village
     populationsize: 2
     founded: 4
@@ -1269,24 +1314,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 3
-    industryrate: 1
-    mintingrate: 2
     primaryresource: Timber
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Phoinix
-    secondaryoffload: Longane
-    resourceoffload: Zankle
-    primarydifficulty: 3
-    secondarydifficulty: 2
+    offload1: Mylai
+    offload2: Longane
+    offload3: Phoinix
+    resourceoffload: Mylai
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 4
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 2
@@ -1322,24 +1369,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 3
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Figurines
     secondaryindustry: 
+    industryrate: 3
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Agyrion
-    secondaryoffload: Enna
+    offload1: Agyrion
+    offload2: Enna
+    offload3: Murene
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 3
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 1
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -1375,24 +1424,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Agyrion
-    secondaryoffload: Enna
+    offload1: Agyrion
+    offload2: Enna
+    offload3: Noai
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -1414,9 +1465,8 @@ MonoBehaviour:
   - name: Babalon
     locationtype: Settled
     locationsubtype: Village
-    description: 'Strong and fortified with an actively favorable disposition to Greek
-      influence. '
-    summary: Fortified Sikan Settlement
+    description: 'Strong and fortified, actively favorable to Greek influence. '
+    summary: Sikan Mountain Village
     populationsize: 4
     founded: 1
     originalfaction: 2
@@ -1430,32 +1480,34 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Myttistratos
-    secondaryoffload: 
+    offload1: Myttistratos
+    offload2: Murene
+    offload3: Kamikos
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
-    politicalhierarchy: 2
-    dominates: 
+    difficulty1: 3
+    difficulty2: 4
+    difficulty3: 3
+    politicalhierarchy: 3
     politicalauthority: 1
-    politicalattitude: 4
+    politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
     primarycult: Local
     secondarycult: 
     coinageemblem: 
-    height: 0
-    naturaldefense: 0
+    height: 750
+    naturaldefense: 3
     fortification: 4
     primaryfighters: 2
     secondaryfighters: 1
@@ -1483,24 +1535,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Tigra
-    secondaryoffload: Kakyron
+    offload1: Tigra
+    offload2: Kakyron
+    offload3: Kaltigene
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -1537,24 +1591,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kimena
-    secondaryoffload: Makella
+    offload1: Kimena
+    offload2: Makella
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -1578,7 +1634,7 @@ MonoBehaviour:
     description: Chalkidian-Greek phrourion with its native population and traditions
       still largely in place.
     summary: Sikel-Greek Outpost
-    populationsize: 3
+    populationsize: 4
     founded: 4
     originalfaction: 1
     currentfaction: 5
@@ -1589,26 +1645,28 @@ MonoBehaviour:
     territorystatus: 3
     foodfocus: 1
     buildfocus: 4
-    buildrate: 2
+    buildrate: 3
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Echetla
-    secondaryoffload: 
+    offload1: Echetla
+    offload2: Maroi
+    offload3: Morgantina
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -1616,10 +1674,10 @@ MonoBehaviour:
     secondarycult: 
     coinageemblem: 
     height: 450
-    naturaldefense: 2
-    fortification: 2
-    primaryfighters: 1
-    secondaryfighters: 2
+    naturaldefense: 3
+    fortification: 3
+    primaryfighters: 2
+    secondaryfighters: 1
     primarystrategic: 3
     secondarystrategic: 1
     terrainstring: 
@@ -1631,38 +1689,40 @@ MonoBehaviour:
     locationsubtype: Village
     description: 'Small Greek farming outlier with loyalties divided between Syrakusai
       and Kamarina. '
-    summary: Greek Farming Outpost
+    summary: Greek Farming Village
     populationsize: 2
     founded: 4
     originalfaction: 5
     currentfaction: 5
     greektype: 1
     hellenized: 4
-    territorysoil: 4
-    territorysize: 1
+    territorysoil: 3
+    territorysize: 2
     territorystatus: 3
-    foodfocus: 1
+    foodfocus: 2
     buildfocus: 1
     buildrate: 1
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Akrillai
-    secondaryoffload: 
+    offload1: Akrillai
+    offload2: Kamarina
+    offload3: Gela
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 2
-    dominates: 
     politicalauthority: 2
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -1671,7 +1731,7 @@ MonoBehaviour:
     coinageemblem: 
     height: 150
     naturaldefense: 2
-    fortification: 2
+    fortification: 1
     primaryfighters: 2
     secondaryfighters: 1
     primarystrategic: 4
@@ -1699,24 +1759,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 3
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: Carpentry
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 2
-    primaryoffload: Himera
-    secondaryoffload: 
+    offload1: Himera
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 2
+    difficulty1: 1
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -1752,24 +1814,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Leontinoi
-    secondaryoffload: Katane
+    offload1: Leontinoi
+    offload2: Katane
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 1
+    difficulty1: 1
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -1806,24 +1870,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 4
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: Trade
     secondaryindustry: 
+    industryrate: 4
+    mintingrate: 2
     harborquality: 4
     hubtype: 4
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: Kamarina
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -1844,48 +1910,50 @@ MonoBehaviour:
   - name: Demena
     locationtype: Settled
     locationsubtype: Village
-    description: 'In the dominion of Tissa, and reliant on them for Greek wares,  but
-      with some independent nature. '
-    summary: Minor Sikel Strongpoint
+    description: In the dominion of Tissa, and reliant on them for their favorite
+      Greek wares.
+    summary: Sikel Mountain Village
     populationsize: 4
     founded: 1
     originalfaction: 1
     currentfaction: 1
     greektype: 0
-    hellenized: 1
+    hellenized: 2
     territorysoil: 1
     territorysize: 1
     territorystatus: 3
     foodfocus: 1
     buildfocus: 1
     buildrate: 2
-    resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
+    resourcerate: 2
     primaryresource: Stone
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Tissa
-    secondaryoffload: 
+    offload1: Tissa
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
     primarycult: 
     secondarycult: 
     coinageemblem: 
-    height: 0
-    naturaldefense: 0
+    height: 650
+    naturaldefense: 3
     fortification: 2
     primaryfighters: 1
     secondaryfighters: 2
@@ -1913,24 +1981,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Tigra
-    secondaryoffload: Kaltigene
+    offload1: Tigra
+    offload2: Kaltigene
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -1967,24 +2037,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 4
     hubtype: 2
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2021,24 +2093,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 1
     resourcerate: 2
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Clay
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Leontinoi
-    secondaryoffload: Maroi
+    offload1: Leontinoi
+    offload2: Maroi
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: Kasasi
     politicalauthority: 2
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: Kasasi
     rival: 
     friend: 
     religiousimportance: 1
@@ -2075,24 +2149,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 1
     harborquality: 4
     hubtype: 1
-    primaryoffload: Pachynos
-    secondaryoffload: Heloros
+    offload1: Pachynos
+    offload2: Heloros
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 1
+    difficulty1: 1
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2114,7 +2190,7 @@ MonoBehaviour:
   - name: Egenimos
     locationtype: Settled
     locationsubtype: Stronghold
-    description: Controls the land- and river traffic its position dictates - sometimes
+    description: Controls traffic on land and river, as its position dictates - sometimes
       aggressively.
     summary: Sikan Valley Stronghold
     populationsize: 4
@@ -2130,24 +2206,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kamikos
-    secondaryoffload: Madara
+    offload1: Kamikos
+    offload2: Madara
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 2
+    difficulty1: 3
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2184,24 +2262,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 3
     hubtype: 2
-    primaryoffload: Akragas
-    secondaryoffload: 
+    offload1: Akragas
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2238,24 +2318,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Drepanon
-    secondaryoffload: Motya
+    offload1: Drepanon
+    offload2: Motya
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 1
+    difficulty1: 1
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2292,24 +2374,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 2
     harborquality: 1
     hubtype: 3
-    primaryoffload: Kentoripa
-    secondaryoffload: Tissa
+    offload1: Kentoripa
+    offload2: Tissa
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Allisse,Kapution
     politicalauthority: 1
     politicalattitude: 1
     politicalchallenge: 1
+    dominates: Allisse,Kapution
     rival: 
     friend: 
     religiousimportance: 2
@@ -2346,24 +2430,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Kentoripa
-    secondaryoffload: Noai
+    offload1: Kentoripa
+    offload2: Noai
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Kapod
     politicalauthority: 3
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: Kapod
     rival: 
     friend: 
     religiousimportance: 2
@@ -2401,24 +2487,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Selinous
-    secondaryoffload: Aereo
+    offload1: Selinous
+    offload2: Aereo
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 2
     politicalattitude: 3
     politicalchallenge: 4
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 4
@@ -2454,24 +2542,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Katane
-    secondaryoffload: Xiphonia
+    offload1: Katane
+    offload2: Xiphonia
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2507,24 +2597,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Myttistratos
-    secondaryoffload: 
+    offload1: Myttistratos
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 2
-    dominates: 
     politicalauthority: 2
     politicalattitude: 4
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2560,24 +2652,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Leona
-    secondaryoffload: Echetla
+    offload1: Leona
+    offload2: Echetla
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 2
+    difficulty1: 1
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2615,24 +2709,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Drepanon
-    secondaryoffload: Ancyrai
+    offload1: Drepanon
+    offload2: Ancyrai
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 3
+    difficulty1: 1
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2671,24 +2767,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 3
-    industryrate: 2
-    mintingrate: 1
     primaryresource: Stone
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Echetla
-    secondaryoffload: Maroi
+    offload1: Echetla
+    offload2: Maroi
+    offload3: 
     resourceoffload: Maroi
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2725,24 +2823,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 1
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Heloros
-    secondaryoffload: 
+    offload1: Heloros
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2778,24 +2878,26 @@ MonoBehaviour:
     buildfocus: 5
     buildrate: 3
     resourcerate: 2
-    industryrate: 3
-    mintingrate: 2
     primaryresource: Clay
     secondaryresource: 
     primaryindustry: Pottery
     secondaryindustry: Terracotta
+    industryrate: 3
+    mintingrate: 2
     harborquality: 3
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: Kamarina
+    offload1: Global
+    offload2: Kamarina
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 1
+    difficulty1: 2
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Ariaiton,Kamerai,Kasgeraton,Maktorion,Mentuse,Omphake,Phalarion
     politicalauthority: 4
     politicalattitude: 1
     politicalchallenge: 3
+    dominates: Ariaiton,Kamerai,Kasgeraton,Maktorion,Mentuse,Omphake,Phalarion
     rival: 
     friend: 
     religiousimportance: 1
@@ -2831,24 +2933,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kaltigene
-    secondaryoffload: 
+    offload1: Kaltigene
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2884,24 +2988,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 2
     hubtype: 1
-    primaryoffload: Kamikos
-    secondaryoffload: 
+    offload1: Kamikos
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2937,24 +3043,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 3
     hubtype: 1
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -2990,24 +3098,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 3
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Timber
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Hippana
-    secondaryoffload: Entella
+    offload1: Hippana
+    offload2: Entella
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -3043,24 +3153,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 4
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Timber
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Morgantina
-    secondaryoffload: Tigra
+    offload1: Morgantina
+    offload2: Tigra
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -3096,24 +3208,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 2
-    industryrate: 1
-    mintingrate: 2
     primaryresource: Salt
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 2
-    primaryoffload: Motya
-    secondaryoffload: Aegesta
+    offload1: Motya
+    offload2: Aegesta
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -3149,24 +3263,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 3
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Oils
     secondaryindustry: Pottery
+    industryrate: 3
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Skurke
-    secondaryoffload: 
+    offload1: Skurke
+    offload2: 
+    offload3: 
     resourceoffload: Skurke
-    primarydifficulty: 1
-    secondarydifficulty: 2
+    difficulty1: 1
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 3
@@ -3205,24 +3321,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 3
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 3
+    mintingrate: 2
     harborquality: 2
     hubtype: 4
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -3260,24 +3378,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Madara
-    secondaryoffload: Murene
+    offload1: Madara
+    offload2: Murene
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -3314,24 +3434,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Syrakousai
-    secondaryoffload: 
+    offload1: Syrakousai
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 4
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -3367,24 +3489,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 3
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Stone
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Tigra
-    secondaryoffload: Morgantina
+    offload1: Tigra
+    offload2: Morgantina
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -3420,24 +3544,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Murene
-    secondaryoffload: Kephaloidion
+    offload1: Murene
+    offload2: Kephaloidion
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: Tyrrhene
     religiousimportance: 3
@@ -3473,24 +3599,26 @@ MonoBehaviour:
     buildfocus: 5
     buildrate: 2
     resourcerate: 2
-    industryrate: 2
-    mintingrate: 5
     primaryresource: Timber
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 5
     harborquality: 4
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Kolle Kalos,Skiara
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 5
+    dominates: Kolle Kalos,Skiara
     rival: 
     friend: 
     religiousimportance: 1
@@ -3528,24 +3656,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Kamikos
-    secondaryoffload: Madara
+    offload1: Kamikos
+    offload2: Madara
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -3582,24 +3712,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Pottery
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Katane
-    secondaryoffload: Leona
+    offload1: Katane
+    offload2: Leona
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 1
+    difficulty1: 1
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 2
@@ -3636,24 +3768,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 2
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Honey
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Kamarina
-    secondaryoffload: Chersonos
+    offload1: Kamarina
+    offload2: Chersonos
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 2
+    difficulty1: 1
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: Motyka,Skikli
     politicalauthority: 3
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: Motyka,Skikli
     rival: 
     friend: Kamarina
     religiousimportance: 1
@@ -3690,24 +3824,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 3
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Fish
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 4
     hubtype: 4
-    primaryoffload: Global
-    secondaryoffload: Panormos
+    offload1: Global
+    offload2: Panormos
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -3743,24 +3879,26 @@ MonoBehaviour:
     buildfocus: 5
     buildrate: 2
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Aereo
-    secondaryoffload: Entella
+    offload1: Aereo
+    offload2: Entella
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 2
@@ -3797,24 +3935,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 3
     hubtype: 1
-    primaryoffload: Heloros
-    secondaryoffload: 
+    offload1: Heloros
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -3850,24 +3990,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Hamiit
-    secondaryoffload: Agyrion
+    offload1: Hamiit
+    offload2: Agyrion
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -3903,24 +4045,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Hybla Geleatis
-    secondaryoffload: Katane
+    offload1: Hybla Geleatis
+    offload2: Katane
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 1
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -3957,24 +4101,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 3
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Wine
     secondaryindustry: 
+    industryrate: 3
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Aegeston Emporion
-    secondaryoffload: Aegesta
+    offload1: Aegeston Emporion
+    offload2: Aegesta
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4011,24 +4157,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 1
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Chersonos
-    secondaryoffload: 
+    offload1: Chersonos
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 2
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4065,24 +4213,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 3
-    primaryoffload: Koskon
-    secondaryoffload: 
+    offload1: Koskon
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4119,24 +4269,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 4
-    industryrate: 2
-    mintingrate: 1
     primaryresource: Fish
     secondaryresource: Timber
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 1
     harborquality: 3
     hubtype: 1
-    primaryoffload: Global
-    secondaryoffload: Skurke
+    offload1: Global
+    offload2: Skurke
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: Kilon
     politicalauthority: 2
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: Kilon
     rival: 
     friend: 
     religiousimportance: 1
@@ -4173,24 +4325,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Murene
-    secondaryoffload: 
+    offload1: Murene
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4227,24 +4381,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Akragas
-    secondaryoffload: 
+    offload1: Akragas
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4280,24 +4436,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 3
     hubtype: 1
-    primaryoffload: Naxos
-    secondaryoffload: 
+    offload1: Naxos
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 3
@@ -4333,24 +4491,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 2
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Stone
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Aegeston Emporion
-    secondaryoffload: Aereo
+    offload1: Aegeston Emporion
+    offload2: Aereo
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4387,24 +4547,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Koskon
-    secondaryoffload: Enna
+    offload1: Koskon
+    offload2: Enna
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Gibol Gabol,Motyon
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: Gibol Gabol,Motyon
     rival: 
     friend: 
     religiousimportance: 2
@@ -4441,24 +4603,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 3
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 2
     harborquality: 4
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: Gela
+    offload1: Global
+    offload2: Gela
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 1
+    difficulty1: 2
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 2
     politicalattitude: 3
     politicalchallenge: 5
+    dominates: 
     rival: Syrakousai
     friend: 
     religiousimportance: 1
@@ -4494,24 +4658,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 1
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Gela
-    secondaryoffload: 
+    offload1: Gela
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4548,24 +4714,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Pottery
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Akragas
-    secondaryoffload: 
+    offload1: Akragas
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4604,24 +4772,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Aereo
-    secondaryoffload: Entella
+    offload1: Aereo
+    offload2: Entella
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4657,24 +4827,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Enna
-    secondaryoffload: 
+    offload1: Enna
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4711,24 +4883,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 3
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Minoa
-    secondaryoffload: Kamikos
+    offload1: Minoa
+    offload2: Kamikos
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 2
+    difficulty1: 1
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4765,24 +4939,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Sulfur
     secondaryresource: Timber
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Engyon
-    secondaryoffload: 
+    offload1: Engyon
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 3
     politicalattitude: 5
     politicalchallenge: 2
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4818,24 +4994,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Makella
-    secondaryoffload: Kimena
+    offload1: Makella
+    offload2: Kimena
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4871,24 +5049,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Hybla Geleatis
-    secondaryoffload: Leona
+    offload1: Hybla Geleatis
+    offload2: Leona
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 1
+    difficulty1: 1
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 2
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4925,24 +5105,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 1
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Echetla
-    secondaryoffload: Maroi
+    offload1: Echetla
+    offload2: Maroi
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 2
+    difficulty1: 1
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -4979,24 +5161,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Maroi
-    secondaryoffload: 
+    offload1: Maroi
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5033,24 +5217,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 1
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Syrakousai
-    secondaryoffload: 
+    offload1: Syrakousai
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5086,24 +5272,26 @@ MonoBehaviour:
     buildfocus: 5
     buildrate: 3
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Akrai
-    secondaryoffload: 
+    offload1: Akrai
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 3
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5139,24 +5327,26 @@ MonoBehaviour:
     buildfocus: 5
     buildrate: 3
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 4
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: Leontinoi
+    offload1: Global
+    offload2: Leontinoi
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 1
+    difficulty1: 2
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: 
     politicalauthority: 2
     politicalattitude: 3
     politicalchallenge: 2
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5192,24 +5382,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Granary
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 2
     hubtype: 1
-    primaryoffload: Panormos
-    secondaryoffload: Hykarra
+    offload1: Panormos
+    offload2: Hykarra
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5245,24 +5437,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 1
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 3
     hubtype: 1
-    primaryoffload: Megara
-    secondaryoffload: 
+    offload1: Megara
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5298,24 +5492,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 1
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kamarina
-    secondaryoffload: Mastrome
+    offload1: Kamarina
+    offload2: Mastrome
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 1
+    difficulty1: 1
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5351,24 +5547,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 2
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Stone
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Nilaios
-    secondaryoffload: Kimena
+    offload1: Nilaios
+    offload2: Kimena
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5404,24 +5602,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 3
-    industryrate: 3
-    mintingrate: 2
     primaryresource: Sulfur
     secondaryresource: Salt
     primaryindustry: Pottery
     secondaryindustry: Jewelry
+    industryrate: 3
+    mintingrate: 2
     harborquality: 1
     hubtype: 3
-    primaryoffload: Hybla Geleatis
-    secondaryoffload: Noai
+    offload1: Hybla Geleatis
+    offload2: Noai
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 2
+    difficulty1: 1
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 2
     politicalchallenge: 4
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5458,24 +5658,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 3
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 4
     hubtype: 4
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5513,24 +5715,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Murene
-    secondaryoffload: 
+    offload1: Murene
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 2
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5567,24 +5771,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Hamiit
-    secondaryoffload: 
+    offload1: Hamiit
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5621,24 +5827,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 2
-    primaryoffload: Boukara
-    secondaryoffload: Madara
+    offload1: Boukara
+    offload2: Madara
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 2
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5675,24 +5883,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Hippana
-    secondaryoffload: Madara
+    offload1: Hippana
+    offload2: Madara
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5728,24 +5938,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Himera
-    secondaryoffload: 
+    offload1: Himera
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5781,24 +5993,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Tissa
-    secondaryoffload: Naxos
+    offload1: Tissa
+    offload2: Naxos
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 2
@@ -5836,24 +6050,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Akragas
-    secondaryoffload: 
+    offload1: Akragas
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5890,24 +6106,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kamikos
-    secondaryoffload: Madara
+    offload1: Kamikos
+    offload2: Madara
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -5944,24 +6162,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Panormos
-    secondaryoffload: Makella
+    offload1: Panormos
+    offload2: Makella
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 1
+    difficulty1: 1
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 3
@@ -5998,24 +6218,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kakyron
-    secondaryoffload: Maktorion
+    offload1: Kakyron
+    offload2: Maktorion
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -6052,24 +6274,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 3
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 3
-    primaryoffload: Leontinoi
-    secondaryoffload: 
+    offload1: Leontinoi
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -6105,24 +6329,26 @@ MonoBehaviour:
     buildfocus: 5
     buildrate: 3
     resourcerate: 1
-    industryrate: 3
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: Sculpture
     secondaryindustry: 
+    industryrate: 3
+    mintingrate: 2
     harborquality: 2
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: Katane
+    offload1: Global
+    offload2: Katane
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 1
+    difficulty1: 2
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Balkonon,Leona,Symaithos
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 2
+    dominates: Balkonon,Leona,Symaithos
     rival: 
     friend: 
     religiousimportance: 1
@@ -6159,24 +6385,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 3
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 3
     harborquality: 5
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: 
     politicalauthority: 5
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -6213,24 +6441,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Mylai
-    secondaryoffload: Abakainon
+    offload1: Mylai
+    offload2: Abakainon
+    offload3: 
     resourceoffload: Zankle
-    primarydifficulty: 1
-    secondarydifficulty: 2
+    difficulty1: 1
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: Abakainon
     friend: 
     religiousimportance: 1
@@ -6268,24 +6498,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 2
-    industryrate: 3
-    mintingrate: 2
     primaryresource: Sulfur
     secondaryresource: 
     primaryindustry: Bronzeworking
     secondaryindustry: 
+    industryrate: 3
+    mintingrate: 2
     harborquality: 1
     hubtype: 3
-    primaryoffload: Himera
-    secondaryoffload: Krastos
+    offload1: Himera
+    offload2: Krastos
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: Pikone
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: Pikone
     rival: 
     friend: 
     religiousimportance: 2
@@ -6322,24 +6554,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 1
     harborquality: 1
     hubtype: 3
-    primaryoffload: Panormos
-    secondaryoffload: Kimena
+    offload1: Panormos
+    offload2: Kimena
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -6377,24 +6611,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Gela
-    secondaryoffload: Maroi
+    offload1: Gela
+    offload2: Maroi
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 2
-    dominates: 
     politicalauthority: 4
     politicalattitude: 5
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -6430,24 +6666,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kephaloidion
-    secondaryoffload: Himera
+    offload1: Kephaloidion
+    offload2: Himera
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -6483,24 +6721,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 3
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kakyron
-    secondaryoffload: Gela
+    offload1: Kakyron
+    offload2: Gela
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -6537,24 +6777,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 3
     resourcerate: 1
-    industryrate: 4
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 4
+    mintingrate: 1
     harborquality: 1
     hubtype: 3
-    primaryoffload: Gela
-    secondaryoffload: Echetla
+    offload1: Gela
+    offload2: Echetla
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 2
+    difficulty1: 1
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 2
@@ -6591,24 +6833,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 3
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: Wares
     secondaryindustry: 
+    industryrate: 3
+    mintingrate: 2
     harborquality: 1
     hubtype: 3
-    primaryoffload: Kamarina
-    secondaryoffload: Chersonos
+    offload1: Kamarina
+    offload2: Chersonos
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 1
+    difficulty1: 1
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -6645,24 +6889,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 4
     hubtype: 4
-    primaryoffload: Selinous
-    secondaryoffload: 
+    offload1: Selinous
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -6698,24 +6944,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 2
     harborquality: 4
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Katulle,Selefe,Styella
     politicalauthority: 5
     politicalattitude: 2
     politicalchallenge: 5
+    dominates: Katulle,Selefe,Styella
     rival: 
     friend: 
     religiousimportance: 1
@@ -6752,24 +7000,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Echetla
-    secondaryoffload: Leontinoi
+    offload1: Echetla
+    offload2: Leontinoi
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -6805,24 +7055,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 1
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 3
     hubtype: 1
-    primaryoffload: Gela
-    secondaryoffload: 
+    offload1: Gela
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -6859,24 +7111,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 3
     hubtype: 1
-    primaryoffload: Rokka
-    secondaryoffload: 
+    offload1: Rokka
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -6913,24 +7167,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 4
     hubtype: 4
-    primaryoffload: Selinous
-    secondaryoffload: 
+    offload1: Selinous
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 3
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -6967,24 +7223,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 3
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Iron
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Hykarra
-    secondaryoffload: Aegeston Emporion
+    offload1: Hykarra
+    offload2: Aegeston Emporion
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -7021,24 +7279,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Entella
-    secondaryoffload: Selinous
+    offload1: Entella
+    offload2: Selinous
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -7075,24 +7335,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 3
-    mintingrate: 3
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 3
+    mintingrate: 3
     harborquality: 1
     hubtype: 2
-    primaryoffload: Noai
-    secondaryoffload: Maktorion
+    offload1: Noai
+    offload2: Maktorion
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 3
     politicalattitude: 2
     politicalchallenge: 2
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 3
@@ -7131,24 +7393,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 3
-    industryrate: 3
-    mintingrate: 3
     primaryresource: Salt
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 3
+    mintingrate: 3
     harborquality: 5
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -7186,24 +7450,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Hybla Heraia
-    secondaryoffload: 
+    offload1: Hybla Heraia
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -7240,24 +7506,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kaltigene
-    secondaryoffload: 
+    offload1: Kaltigene
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -7294,24 +7562,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Himera
-    secondaryoffload: Myttistratos
+    offload1: Himera
+    offload2: Myttistratos
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Kaligenos,Kibone
     politicalauthority: 1
     politicalattitude: 1
     politicalchallenge: 1
+    dominates: Kaligenos,Kibone
     rival: 
     friend: 
     religiousimportance: 3
@@ -7348,24 +7618,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 4
     hubtype: 4
-    primaryoffload: Zankle
-    secondaryoffload: 
+    offload1: Zankle
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 4
@@ -7402,24 +7674,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 3
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 4
-    primaryoffload: Koskon
-    secondaryoffload: Enna
+    offload1: Koskon
+    offload2: Enna
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: Alagene
     politicalauthority: 5
     politicalattitude: 3
     politicalchallenge: 5
+    dominates: Alagene
     rival: 
     friend: 
     religiousimportance: 1
@@ -7456,24 +7730,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 3
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Selinous
-    secondaryoffload: Entella
+    offload1: Selinous
+    offload2: Entella
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 4
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -7510,24 +7786,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 3
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Tigra
-    secondaryoffload: Morgantina
+    offload1: Tigra
+    offload2: Morgantina
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -7564,24 +7842,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 3
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Shipbuilding
     secondaryindustry: 
+    industryrate: 3
+    mintingrate: 1
     harborquality: 4
     hubtype: 1
-    primaryoffload: Zankle
-    secondaryoffload: Longane
+    offload1: Zankle
+    offload2: Longane
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 1
+    difficulty1: 1
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -7618,24 +7898,26 @@ MonoBehaviour:
     buildfocus: 5
     buildrate: 3
     resourcerate: 3
-    industryrate: 3
-    mintingrate: 4
     primaryresource: Timber
     secondaryresource: Limestone
     primaryindustry: Wine
     secondaryindustry: 
+    industryrate: 3
+    mintingrate: 4
     harborquality: 4
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Kallipolis,Phoinix
     politicalauthority: 4
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: Kallipolis,Phoinix
     rival: 
     friend: 
     religiousimportance: 3
@@ -7673,24 +7955,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 1
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Syrakousai
-    secondaryoffload: 
+    offload1: Syrakousai
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -7726,24 +8010,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Imachara
-    secondaryoffload: Engyon
+    offload1: Imachara
+    offload2: Engyon
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 3
+    difficulty1: 3
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -7779,24 +8065,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Makella
-    secondaryoffload: Entella
+    offload1: Makella
+    offload2: Entella
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -7833,24 +8121,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 4
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 4
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Leona
-    secondaryoffload: Hybla Geleatis
+    offload1: Leona
+    offload2: Hybla Geleatis
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -7887,24 +8177,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Wine
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Gela
-    secondaryoffload: 
+    offload1: Gela
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 5
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 4
@@ -7941,24 +8233,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 4
     hubtype: 4
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 2
@@ -7995,24 +8289,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 3
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Leontinoi
-    secondaryoffload: Echetla
+    offload1: Leontinoi
+    offload2: Echetla
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 2
@@ -8049,24 +8345,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 2
     harborquality: 5
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: Solous
+    offload1: Global
+    offload2: Solous
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Solous
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: Solous
     rival: 
     friend: 
     religiousimportance: 1
@@ -8103,24 +8401,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Megara
-    secondaryoffload: Leontinoi
+    offload1: Megara
+    offload2: Leontinoi
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -8157,24 +8457,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Madara
-    secondaryoffload: Myttistratos
+    offload1: Madara
+    offload2: Myttistratos
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 5
-    secondarydifficulty: 5
+    difficulty1: 5
+    difficulty2: 5
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -8210,24 +8512,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Panormos
-    secondaryoffload: Himera
+    offload1: Panormos
+    offload2: Himera
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 1
+    difficulty1: 1
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -8263,24 +8567,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Entella
-    secondaryoffload: Halikyai
+    offload1: Entella
+    offload2: Halikyai
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 2
@@ -8317,24 +8623,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Enna
-    secondaryoffload: Morgantina
+    offload1: Enna
+    offload2: Morgantina
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: 
     politicalauthority: 1
     politicalattitude: 3
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 3
@@ -8372,24 +8680,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Selinous
-    secondaryoffload: 
+    offload1: Selinous
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -8426,24 +8736,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 3
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Gela
-    secondaryoffload: 
+    offload1: Gela
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -8480,24 +8792,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Salt
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 4
     hubtype: 2
-    primaryoffload: Naxos
-    secondaryoffload: 
+    offload1: Naxos
+    offload2: 
+    offload3: 
     resourceoffload: Zankle
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: Agrilla
     religiousimportance: 1
@@ -8533,24 +8847,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Bronze
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kentoripa
-    secondaryoffload: Engyon
+    offload1: Kentoripa
+    offload2: Engyon
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -8586,24 +8902,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kimena
-    secondaryoffload: 
+    offload1: Kimena
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -8640,24 +8958,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 3
     hubtype: 1
-    primaryoffload: Akragas
-    secondaryoffload: 
+    offload1: Akragas
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 2
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -8694,24 +9014,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Makella
-    secondaryoffload: Entella
+    offload1: Makella
+    offload2: Entella
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 3
-    secondarydifficulty: 2
+    difficulty1: 3
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -8748,24 +9070,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 3
     hubtype: 1
-    primaryoffload: Syrakousai
-    secondaryoffload: 
+    offload1: Syrakousai
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -8801,24 +9125,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Halikyai
-    secondaryoffload: Aegesta
+    offload1: Halikyai
+    offload2: Aegesta
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -8854,24 +9180,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 4
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Pottery
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kamikos
-    secondaryoffload: Myttistratos
+    offload1: Kamikos
+    offload2: Myttistratos
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -8907,24 +9235,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kakyron
-    secondaryoffload: Omphake
+    offload1: Kakyron
+    offload2: Omphake
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -8960,24 +9290,26 @@ MonoBehaviour:
     buildfocus: 5
     buildrate: 2
     resourcerate: 2
-    industryrate: 3
-    mintingrate: 3
     primaryresource: Fish
     secondaryresource: 
     primaryindustry: Sculpture
     secondaryindustry: Philosophy
+    industryrate: 3
+    mintingrate: 3
     harborquality: 3
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: Zankle
+    offload1: Global
+    offload2: Zankle
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 3
+    dominates: 
     rival: 
     friend: Zankle
     religiousimportance: 1
@@ -9014,24 +9346,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Selinous
-    secondaryoffload: 
+    offload1: Selinous
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -9067,24 +9401,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 3
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Timber
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Zankle
-    secondaryoffload: Naulochos
+    offload1: Zankle
+    offload2: Naulochos
+    offload3: 
     resourceoffload: Naulochos
-    primarydifficulty: 3
-    secondarydifficulty: 2
+    difficulty1: 3
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -9121,24 +9457,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Akragas
-    secondaryoffload: 
+    offload1: Akragas
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 2
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -9175,24 +9513,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Kaltigene
-    secondaryoffload: Enna
+    offload1: Kaltigene
+    offload2: Enna
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -9228,24 +9568,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Boukara
-    secondaryoffload: Panormos
+    offload1: Boukara
+    offload2: Panormos
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -9282,24 +9624,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Entella
-    secondaryoffload: Hippana
+    offload1: Entella
+    offload2: Hippana
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -9336,24 +9680,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 1
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Megara
-    secondaryoffload: 
+    offload1: Megara
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -9389,24 +9735,26 @@ MonoBehaviour:
     buildfocus: 5
     buildrate: 3
     resourcerate: 2
-    industryrate: 2
-    mintingrate: 4
     primaryresource: Stone
     secondaryresource: Clay
     primaryindustry: Sculpture
     secondaryindustry: Architecture
+    industryrate: 2
+    mintingrate: 4
     harborquality: 3
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: Mazara
+    offload1: Global
+    offload2: Mazara
+    offload3: 
     resourceoffload: Carthage
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Mazara,Merkane,Minoa,Petrosa,Rokka
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: Mazara,Merkane,Minoa,Petrosa,Rokka
     rival: Aegesta
     friend: 
     religiousimportance: 2
@@ -9442,24 +9790,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 4
-    primaryoffload: Himera
-    secondaryoffload: 
+    offload1: Himera
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -9496,24 +9846,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Hybla Heraia
-    secondaryoffload: 
+    offload1: Hybla Heraia
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -9549,24 +9901,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Pottery
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Akrillai
-    secondaryoffload: 
+    offload1: Akrillai
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -9602,24 +9956,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 3
-    industryrate: 1
-    mintingrate: 2
     primaryresource: Timber
     secondaryresource: Marble
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 3
     hubtype: 2
-    primaryoffload: Global
-    secondaryoffload: Kalakte
+    offload1: Global
+    offload2: Kalakte
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 1
+    difficulty1: 2
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Apollonia
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: Apollonia
     rival: 
     friend: 
     religiousimportance: 1
@@ -9658,24 +10014,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 3
     hubtype: 1
-    primaryoffload: Panormos
-    secondaryoffload: 
+    offload1: Panormos
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -9711,24 +10069,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Hippana
-    secondaryoffload: 
+    offload1: Hippana
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -9765,24 +10125,26 @@ MonoBehaviour:
     buildfocus: 4
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 2
     harborquality: 1
     hubtype: 1
-    primaryoffload: Megara
-    secondaryoffload: Leontinoi
+    offload1: Megara
+    offload2: Leontinoi
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 1
+    difficulty1: 2
+    difficulty2: 1
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 4
@@ -9818,24 +10180,26 @@ MonoBehaviour:
     buildfocus: 3
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Katane
-    secondaryoffload: 
+    offload1: Katane
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 5
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 2
@@ -9871,24 +10235,26 @@ MonoBehaviour:
     buildfocus: 5
     buildrate: 3
     resourcerate: 2
-    industryrate: 1
-    mintingrate: 3
     primaryresource: Stone
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 3
     harborquality: 5
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: Corinth
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Abolla,Adryx,Akrai,Akrillai,Bidis,Fiinoka,Heloros,Ichana,Kasibe,Kasmenai,Neaition,Plemmyrion,Skornake
     politicalauthority: 1
     politicalattitude: 1
     politicalchallenge: 2
+    dominates: Abolla,Adryx,Akrai,Akrillai,Bidis,Fiinoka,Heloros,Ichana,Kasibe,Kasmenai,Neaition,Plemmyrion,Skornake
     rival: 
     friend: 
     religiousimportance: 1
@@ -9924,24 +10290,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Agyrion
-    secondaryoffload: 
+    offload1: Agyrion
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -9978,24 +10346,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 5
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Oils
     secondaryindustry: Pottery
+    industryrate: 5
+    mintingrate: 1
     harborquality: 4
     hubtype: 3
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -10031,24 +10401,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 2
-    primaryoffload: Maktorion
-    secondaryoffload: Morgantina
+    offload1: Maktorion
+    offload2: Morgantina
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: Bakra
     politicalauthority: 1
     politicalattitude: 2
     politicalchallenge: 1
+    dominates: Bakra
     rival: 
     friend: 
     religiousimportance: 1
@@ -10084,24 +10456,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Timber
     secondaryresource: Sulfur
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Tissa
-    secondaryoffload: 
+    offload1: Tissa
+    offload2: 
+    offload3: 
     resourceoffload: Tissa
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 1
     politicalattitude: 5
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -10138,24 +10512,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Akragas
-    secondaryoffload: 
+    offload1: Akragas
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 1
-    dominates: 
     politicalauthority: 2
     politicalattitude: 5
     politicalchallenge: 6
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -10191,24 +10567,26 @@ MonoBehaviour:
     buildfocus: 2
     buildrate: 2
     resourcerate: 1
-    industryrate: 2
-    mintingrate: 2
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 2
+    mintingrate: 2
     harborquality: 1
     hubtype: 2
-    primaryoffload: Naxos
-    secondaryoffload: Longane
+    offload1: Naxos
+    offload2: Longane
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 1
-    secondarydifficulty: 3
+    difficulty1: 1
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 4
-    dominates: Demena,Tirakii
     politicalauthority: 3
     politicalattitude: 2
     politicalchallenge: 3
+    dominates: Demena,Tirakii
     rival: 
     friend: 
     religiousimportance: 1
@@ -10244,24 +10622,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Rokka
-    secondaryoffload: 
+    offload1: Rokka
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -10298,24 +10678,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 1
     resourcerate: 1
-    industryrate: 3
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: Piracy
     secondaryindustry: 
+    industryrate: 3
+    mintingrate: 1
     harborquality: 4
     hubtype: 1
-    primaryoffload: Megara
-    secondaryoffload: 
+    offload1: Megara
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -10352,24 +10734,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Herbita
-    secondaryoffload: 
+    offload1: Herbita
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 5
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: Herbita
     religiousimportance: 3
@@ -10406,24 +10790,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 2
     resourcerate: 1
-    industryrate: 1
-    mintingrate: 1
     primaryresource: 
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 3
     hubtype: 4
-    primaryoffload: Global
-    secondaryoffload: 
+    offload1: Global
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 5
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 3
@@ -10460,24 +10846,26 @@ MonoBehaviour:
     buildfocus: 1
     buildrate: 1
     resourcerate: 4
-    industryrate: 1
-    mintingrate: 1
     primaryresource: Timber
     secondaryresource: 
     primaryindustry: 
     secondaryindustry: 
+    industryrate: 1
+    mintingrate: 1
     harborquality: 1
     hubtype: 1
-    primaryoffload: Akrillai
-    secondaryoffload: 
+    offload1: Akrillai
+    offload2: 
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 2
+    difficulty1: 2
+    difficulty2: 2
+    difficulty3: 2
     politicalhierarchy: 3
-    dominates: 
     politicalauthority: 1
     politicalattitude: 4
     politicalchallenge: 1
+    dominates: 
     rival: 
     friend: 
     religiousimportance: 1
@@ -10514,24 +10902,26 @@ MonoBehaviour:
     buildfocus: 5
     buildrate: 5
     resourcerate: 3
-    industryrate: 4
-    mintingrate: 4
     primaryresource: Fish
     secondaryresource: Timber
     primaryindustry: Shipbuilding
     secondaryindustry: Slaves
+    industryrate: 4
+    mintingrate: 4
     harborquality: 5
     hubtype: 5
-    primaryoffload: Global
-    secondaryoffload: Mylai
+    offload1: Global
+    offload2: Mylai
+    offload3: 
     resourceoffload: 
-    primarydifficulty: 2
-    secondarydifficulty: 3
+    difficulty1: 2
+    difficulty2: 3
+    difficulty3: 2
     politicalhierarchy: 5
-    dominates: Mylai
     politicalauthority: 2
     politicalattitude: 2
     politicalchallenge: 3
+    dominates: Mylai
     rival: 
     friend: Rhegion
     religiousimportance: 1

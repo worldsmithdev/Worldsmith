@@ -10,8 +10,12 @@ public class GlobalExchangeStep : Step
         ExchangeController.Instance.cycleGlobalExchanges = new List<GlobalExchange>();
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
         {
-            loc.globalMarket = null;
-            loc.globalMarket = new GlobalMarket(loc);
+            if (loc.offloadOne == "Global")
+            {
+                loc.globalMarket = null;
+                loc.globalMarket = new GlobalMarket(loc);
+            }
+          
         }
     }
 
@@ -21,41 +25,38 @@ public class GlobalExchangeStep : Step
         {
             Ruler ruler = (Ruler)ecoblock;
 
-            if (ruler.isLocalRuler)
+            if (ruler.GetHomeLocation().offloadOne == "Global")
             {
-                ClearStepVariables(ruler);
-                DetermineSurplusResources(ruler);
-                DetermineWantedResources(ruler);
+                if (ruler.isLocalRuler)
+                {
+                    ClearStepVariables(ruler);
+                    DetermineSurplusResources(ruler); 
+                }
             }
-
-
-        }
-
+          
+        } 
     }
 
     public override void CycleStep(EcoBlock ecoblock)
     {
-        if (ecoblock.blockType == EcoBlock.BlockType.Ruler)
+        Ruler ruler = (Ruler)ecoblock;
+        if (ruler.GetHomeLocation().offloadOne == "Global")
         {
-            Ruler ruler = (Ruler)ecoblock;
-            RegisterToMarket(ruler);
+            ruler.GetHomeLocation().globalMarket.CreateMarket(ruler);
         }
+           
     }
-
-
     public override void ResolveStep()
     {
-
-
+        foreach (GlobalMarket market in MarketController.Instance.cycleGlobalMarkets)
+        { 
+            market.ResolveMarket();
+        }
     }
 
     // ----------------------------------------------------------------------
 
-    void RegisterToMarket(Ruler ruler)
-    {
-        ruler.GetHomeLocation().globalMarket.RegisterAsRuler(ruler);
-
-    }
+ 
 
     void DetermineSurplusResources(Ruler ruler)
     {
@@ -84,56 +85,27 @@ public class GlobalExchangeStep : Step
             foreach (Resource.Type restype in ruler.resourcePortfolio.Keys)
                 if (ruler.resourcePortfolio[restype].amount > 0 && restype != Resource.Type.Silver)
                 {
-                    if (resourceReservationList.ContainsKey(restype))
+                    // Check that the goods are marked as exportable
+                    if (ExchangeController.Instance.globalAcceptedTypes.Contains(restype))
                     {
-                        if (ruler.resourcePortfolio[restype].amount > resourceReservationList[restype])
-                            ruler.cycleGlobalSurplusResources.Add(restype, (ruler.resourcePortfolio[restype].amount - resourceReservationList[restype]));
+                        if (resourceReservationList.ContainsKey(restype))
+                        {
+                            if (ruler.resourcePortfolio[restype].amount > resourceReservationList[restype])
+                                ruler.cycleGlobalSurplusResources.Add(restype, (ruler.resourcePortfolio[restype].amount - resourceReservationList[restype]));
+                        }
+                        else
+                            ruler.cycleGlobalSurplusResources.Add(restype, ruler.resourcePortfolio[restype].amount);
                     }
-                    else
-                        ruler.cycleGlobalSurplusResources.Add(restype, ruler.resourcePortfolio[restype].amount);
+         
                 }
         }
     }
-    void DetermineWantedResources(Ruler ruler)
-    {
-        float actualDesiredFoodAmount;
-        float actualDesiredWaresAmount;
-        float totalDesiredFoodAmount = 0f;
-        float totalDesiredWaresAmount = 0f;
-
-
-        foreach (Population population in ruler.GetControlledPopulations())
-        {
-            if (population != null)
-            {
-                totalDesiredFoodAmount += population.cycleDesiredFoodConsumption;
-                totalDesiredWaresAmount += population.cycleDesiredComfortConsumption;
-            }
-        }
-
-        if (ruler.resourcePortfolio[Resource.Type.Wheat].amount < totalDesiredFoodAmount)
-            actualDesiredFoodAmount = totalDesiredFoodAmount - ruler.resourcePortfolio[Resource.Type.Wheat].amount;
-        else
-            actualDesiredFoodAmount = 0f;
-
-        if (actualDesiredFoodAmount > 0)
-            ruler.cycleGlobalWantedResources.Add(Resource.Type.Wheat, actualDesiredFoodAmount);
-
-        if (ruler.resourcePortfolio[Resource.Type.Wares].amount < totalDesiredWaresAmount)
-            actualDesiredWaresAmount = totalDesiredWaresAmount - ruler.resourcePortfolio[Resource.Type.Wares].amount;
-        else
-            actualDesiredWaresAmount = 0f;
-
-        if (actualDesiredWaresAmount > 0)
-            ruler.cycleGlobalWantedResources.Add(Resource.Type.Wares, actualDesiredWaresAmount);
-    }
-
-
+ 
 
 
     void ClearStepVariables(Ruler ruler)
     {
-        ruler.cycleGlobalSurplusResources = new Dictionary<Resource.Type, float>();
-        ruler.cycleGlobalWantedResources = new Dictionary<Resource.Type, float>();
+        ruler.cycleGlobalSurplusResources = new Dictionary<Resource.Type, float>(); 
+         
     }
 }

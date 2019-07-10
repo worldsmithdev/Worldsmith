@@ -16,7 +16,10 @@ public class EcoBlock
     public float yLocation;
 
     public Dictionary<Resource.Type, Resource> resourcePortfolio = new Dictionary<Resource.Type, Resource>();
-    public List<Resource.Type> profitResources = new List<Resource.Type>();
+
+    // Steps Nonsense
+    public List<Resource.Type> localProfitResourceTypes = new List<Resource.Type>();
+    public Dictionary<Resource.Type, float> cycleRegionalCommittedResources = new Dictionary<Resource.Type, float>();
 
     public Vector3 GetPositionVector()
     {

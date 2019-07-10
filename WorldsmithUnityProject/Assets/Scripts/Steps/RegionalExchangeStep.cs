@@ -17,30 +17,33 @@ public class RegionalExchangeStep : Step
 
     public override void ConfigureStep(EcoBlock ecoblock)
     {  
-            Ruler ruler = (Ruler)ecoblock; 
-            if (ruler.isLocalRuler)
+       Ruler ruler = (Ruler)ecoblock; 
+         if (ruler.isLocalRuler)
             {
-                ClearStepVariables(ruler);
-                DetermineSurplusResources(ruler);
-                DetermineWantedResources(ruler);
-                DetermineProfitResources(ruler);
+            ClearStepVariables(ruler);
+            DetermineSurplusResources(ruler);
+            DetermineWantedResources(ruler); 
             }  
     }
 
     public override void CycleStep(EcoBlock ecoblock)
     { 
             Ruler ruler = (Ruler)ecoblock;
-            ruler.GetHomeLocation().regionalMarket.InitializeMarket(ruler); 
-            ruler.GetHomeLocation().regionalMarket.ResolveMarket(); 
+            ruler.GetHomeLocation().regionalMarket.CreateMarket(ruler);  
+    }
+    public override void ResolveStep()
+    {  
+        foreach (RegionalMarket market in MarketController.Instance.cycleRegionalMarkets)
+            market.ResolveMarket();  
     }
 
 
-  
 
     // ----------------------------------------------------------------------
+ 
 
-   
 
+    // Keep some necessities for populations. Keep some reserved resources.
     void DetermineSurplusResources(Ruler ruler)
     {
         Dictionary<Resource.Type, float> resourceReservationList = new Dictionary<Resource.Type, float>();
@@ -71,56 +74,65 @@ public class RegionalExchangeStep : Step
                     if (resourceReservationList.ContainsKey(restype))
                     {
                         if (ruler.resourcePortfolio[restype].amount > resourceReservationList[restype])
-                            ruler.cycleRegionalSurplusResources.Add(restype, (ruler.resourcePortfolio[restype].amount - resourceReservationList[restype]));
+                            ruler.cycleRegionalSurplusResources[restype]+= (ruler.resourcePortfolio[restype].amount - resourceReservationList[restype]);
                     }
                     else
-                        ruler.cycleRegionalSurplusResources.Add(restype, ruler.resourcePortfolio[restype].amount);
+                        ruler.cycleRegionalSurplusResources[restype] += ruler.resourcePortfolio[restype].amount;
                 }
         } 
     }
     void DetermineWantedResources(Ruler ruler)
     {
-        float actualDesiredFoodAmount;
-        float actualDesiredWaresAmount;
-        float totalDesiredFoodAmount = 0f;
-        float totalDesiredWaresAmount = 0f;
+        ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Silver);
 
+        if (ruler.GetHomeLocation().hubType == 1)
+        {
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Wares);
+        }
+        if (ruler.GetHomeLocation().hubType == 2)
+        {
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Wares);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Wheat);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Timber);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Stone);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Salt);
+        }
+        if (ruler.GetHomeLocation().hubType == 3)
+        {
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Wheat);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Timber);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Stone);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Salt); 
+        }
+        if (ruler.GetHomeLocation().hubType == 4)
+        {
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Wheat);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Timber);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Stone);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Salt); 
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Wares);
+        }
+        if (ruler.GetHomeLocation().hubType == 5)
+        {
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Wheat);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Timber);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Stone);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Salt);
+            ruler.cycleRegionalWantedResourceTypes.Add(Resource.Type.Marble);
+        }
+        foreach (Resource.Type restype in ruler.wantedResourceTypes)        
+            if (ruler.cycleRegionalWantedResourceTypes.Contains(restype) == false)
+                 ruler.cycleRegionalWantedResourceTypes.Add(restype);
         
-            foreach (Population population in ruler.GetControlledPopulations())
-            {
-                if (population != null)
-                {
-                    totalDesiredFoodAmount += population.cycleDesiredFoodConsumption;
-                    totalDesiredWaresAmount += population.cycleDesiredComfortConsumption;
-                }
-            }
-
-            if (ruler.resourcePortfolio[Resource.Type.Wheat].amount < totalDesiredFoodAmount)
-                actualDesiredFoodAmount = totalDesiredFoodAmount - ruler.resourcePortfolio[Resource.Type.Wheat].amount;
-            else
-                actualDesiredFoodAmount = 0f;
-
-            if (actualDesiredFoodAmount > 0)
-                ruler.cycleRegionalWantedResources.Add(Resource.Type.Wheat, actualDesiredFoodAmount);
-
-            if (ruler.resourcePortfolio[Resource.Type.Wares].amount < totalDesiredWaresAmount)
-                actualDesiredWaresAmount = totalDesiredWaresAmount - ruler.resourcePortfolio[Resource.Type.Wares].amount;
-            else
-                actualDesiredWaresAmount = 0f;
-
-            if (actualDesiredWaresAmount > 0)
-                ruler.cycleRegionalWantedResources.Add(Resource.Type.Wares, actualDesiredWaresAmount); 
     }
-    void DetermineProfitResources(Ruler ruler)
-    {
-
-    }
-
 
 
     void ClearStepVariables(Ruler ruler)
     {
         ruler.cycleRegionalSurplusResources = new Dictionary<Resource.Type, float>();
-        ruler.cycleRegionalWantedResources = new Dictionary<Resource.Type, float>();
+        ruler.cycleRegionalCommittedResources = new Dictionary<Resource.Type, float>();
+        ruler.cycleRegionalWantedResourceTypes = new List<Resource.Type >();
+        ResourceController.Instance.InitiateResourceDictionary(ruler.cycleRegionalSurplusResources); 
+        ResourceController.Instance.InitiateResourceDictionary(ruler.cycleRegionalCommittedResources); 
     }
 }

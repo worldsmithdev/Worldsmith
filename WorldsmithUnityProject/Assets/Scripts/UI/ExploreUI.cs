@@ -8,7 +8,7 @@ public class ExploreUI : MonoBehaviour
     // Any text and UI (and some additional) functionality relating the Explore Screen
 
 
-    public enum ClickedTypes {None, Location, Character, Item, Creature, Ruler, Warband, Population, Territory, Building, Exchange, Market, Participant}
+    public enum ClickedTypes {None, Location, Character, Item, Creature, Ruler, Warband, Population, Territory, Building, Exchange, LocalMarket, Participant, RegionalMarket, GlobalMarket}
 
     public ClickedTypes clickedType;
 
@@ -163,10 +163,14 @@ public class ExploreUI : MonoBehaviour
                     exploreTextSetter.SetClickedPopulation(PopulationController.Instance.GetSelectedPopulation());
                 else if (clickedType == ClickedTypes.Territory)
                     exploreTextSetter.SetClickedTerritory(TerritoryController.Instance.GetSelectedTerritory());
-                else if (clickedType == ClickedTypes.Market)
+                else if (clickedType == ClickedTypes.LocalMarket)
                     exploreTextSetter.SetClickedLocalMarketText( MarketController.Instance.GetSelectedLocalMarket());
                 else if (clickedType == ClickedTypes.Participant)
                     exploreTextSetter.SetClickedLocalParticipantText(MarketController.Instance.GetSelectedParticipant());
+                else if (clickedType == ClickedTypes.RegionalMarket)
+                    exploreTextSetter.SetClickedRegionalMarketText(MarketController.Instance.GetSelectedRegionalMarket());
+                else if (clickedType == ClickedTypes.GlobalMarket)
+                    exploreTextSetter.SetClickedGlobalMarketText(MarketController.Instance.GetSelectedGlobalMarket());
             }
             else if (activeToggle == 2)
             {
@@ -289,7 +293,7 @@ public class ExploreUI : MonoBehaviour
         if (checkmarked == true)
             activeToggle = 5;
         Content5.SetActive(checkmarked);
-    //    RefreshUI();
+        RefreshUI();
         exploreTextSetter.SetDefaultGlobalExchangeContentText();
     }
 

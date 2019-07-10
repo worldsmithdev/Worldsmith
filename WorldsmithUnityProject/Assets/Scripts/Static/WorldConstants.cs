@@ -53,8 +53,8 @@ public class WorldConstants
     public static float POP_COMFORT_STORAGE_CYCLES = 1.0f; // Number of cycles-worth to set apart for comfort
     public static float POP_FOOD_WANTED_CYCLES = 1.0f;  
     public static float POP_COMFORT_WANTED_CYCLES = 1.0f;  
-    public static float RULER_FOOD_STORAGE_CYCLES = 3.0f;  
-    public static float RULER_COMFORT_STORAGE_CYCLES = 3.0f;  
+    public static float RULER_FOOD_STORAGE_CYCLES = 1.0f;  
+    public static float RULER_COMFORT_STORAGE_CYCLES = 1.0f;  
 
     // Dictionaries
 

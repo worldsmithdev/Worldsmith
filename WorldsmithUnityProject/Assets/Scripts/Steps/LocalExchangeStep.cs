@@ -105,7 +105,7 @@ public class LocalExchangeStep : Step
                 if (population != null)
                 {
                     foodAmountToKeep += population.cycleDesiredFoodConsumption * WorldConstants.RULER_FOOD_STORAGE_CYCLES;
-                    waresAmountToKeep += population.cycleDesiredComfortConsumption * WorldConstants.RULER_COMFORT_STORAGE_CYCLES;
+              //      waresAmountToKeep += population.cycleDesiredComfortConsumption * WorldConstants.RULER_COMFORT_STORAGE_CYCLES;
                 }
             }
             foreach (Resource.Type restype in ResourceController.Instance.resourceCompendium.Keys)            

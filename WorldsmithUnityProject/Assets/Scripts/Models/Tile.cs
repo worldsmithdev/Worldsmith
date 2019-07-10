@@ -12,7 +12,7 @@ public class Tile
 
     public enum TileDataType { Unassigned, Blank, Terrain, Building, WorldElement, EcoBlock, Abstraction}
     public enum TileTerrainType { Sea, Land, Mountain, Forest }
-    public enum TileAbstractionType { Unassigned, LocalMarket, Participant, LocalExchange, RegionalMarket, RegionalExchange, GlobalMarket, GlobalExchange }
+    public enum TileAbstractionType { Unassigned, LocalMarket, Participant, LocalExchange, LocalExchangePassive, RegionalMarket, RegionalExchange, RegionalExchangePassive, RegionalBuyer,RegionalSeller, GlobalMarket, GlobalExchange }
 
     public string originalTileMapName;
 
@@ -31,6 +31,8 @@ public class Tile
     public LocalMarket linkedLocalMarket;
     public Participant linkedParticipant;
     public RegionalMarket linkedRegionalMarket;
+    public Ruler linkedRegionalBuyer;
+    public Ruler linkedRegionalSeller;
     public GlobalMarket linkedGlobalMarket;
     public Exchange linkedExchange;
 
@@ -121,6 +123,12 @@ public class Tile
         tileAbstractionType = TileAbstractionType.LocalExchange;
         linkedExchange = exchange;
     }
+    public void SetLinkedLocalExchangePassive(Exchange exchange)
+    {
+        tileDataType = TileDataType.Abstraction;
+        tileAbstractionType = TileAbstractionType.LocalExchangePassive;
+        linkedExchange = exchange;
+    }
     public void SetLinkedRegionalMarket(RegionalMarket market)
     {
         tileDataType = TileDataType.Abstraction;
@@ -132,6 +140,24 @@ public class Tile
         tileDataType = TileDataType.Abstraction;
         tileAbstractionType = TileAbstractionType.RegionalExchange;
         linkedExchange = exchange;
+    }
+    public void SetLinkedRegionalExchangePassive(Exchange exchange)
+    {
+        tileDataType = TileDataType.Abstraction;
+        tileAbstractionType = TileAbstractionType.RegionalExchangePassive;
+        linkedExchange = exchange;
+    }
+    public void SetLinkedRegionalBuyer(Ruler ruler)
+    {
+        tileDataType = TileDataType.Abstraction;
+        tileAbstractionType = TileAbstractionType.RegionalBuyer;
+        linkedRegionalBuyer = ruler;
+    }
+    public void SetLinkedRegionalSeller(Ruler ruler)
+    {
+        tileDataType = TileDataType.Abstraction;
+        tileAbstractionType = TileAbstractionType.RegionalSeller;
+        linkedRegionalSeller = ruler;
     }
     public void SetLinkedGlobalMarket(GlobalMarket market)
     {

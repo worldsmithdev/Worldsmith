@@ -17,15 +17,27 @@ public class ExchangeController : MonoBehaviour
 
     Exchange selectedExchange;
     public bool forceSilverOnLocalExchange = false;
+    public bool forceSilverOnRegionalExchange = true;
+    public float regionalForcedSilverPercentage = 0.1f;
 
-    public 
+    public float exchangeRateFreeSupplier = 0.7f;
+    public float exchangeRateFreeHub = 0.8f;
+    public float exchangeRateForcedSupplier = 0.5f;
+    public float exchangeRateForcedHub = 0.6f;
+
+    public List<Resource.Type> globalAcceptedTypes = new List<Resource.Type>();
+    public Dictionary<Resource.Type, float> globalImportPercentages = new Dictionary<Resource.Type, float>(); 
+
     void Awake()
     {
         Instance = this;
+        globalAcceptedTypes.Add(Resource.Type.Wheat);
+        globalImportPercentages.Add(Resource.Type.Wares, 0.2f);
+        globalImportPercentages.Add(Resource.Type.Silver, 0.8f);
     }
 
 
-    public LocalExchange CreateLocalExchange (LocalExchange.ExchangeType type, LocalMarket market, Participant activeParticipant, Participant passiveParticipant, List<Resource> shoppingList)
+    public LocalExchange CreateLocalExchange (LocalExchange.Type type, LocalMarket market, Participant activeParticipant, Participant passiveParticipant, List<Resource> shoppingList)
     {
      return   exchangeCreator.CreateLocalExchange(type, market, activeParticipant, passiveParticipant, shoppingList);  
     }
@@ -38,5 +50,27 @@ public class ExchangeController : MonoBehaviour
     public Exchange GetSelectedExchange()
     {
         return selectedExchange;
+    }
+    public float GetExchangeRate (Ruler ruler)
+    {
+        Location loc = ruler.GetHomeLocation();
+        float rate = 0f;
+        if (ruler.rulerHierarchy == Ruler.Hierarchy.Reined)
+        {
+            if (loc.hubType == 1)
+                rate = exchangeRateForcedSupplier;
+            else
+                rate = exchangeRateForcedHub;
+        }
+        else
+        {
+            if (loc.hubType == 1)
+                rate = exchangeRateFreeSupplier;
+            else
+                rate = exchangeRateFreeHub;
+        }
+        if (rate == 0f)
+            Debug.Log("Returning ExchangeRate of 0.0 for " + ruler.blockID);
+        return rate;
     }
 }

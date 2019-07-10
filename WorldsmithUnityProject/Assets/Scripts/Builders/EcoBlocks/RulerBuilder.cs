@@ -10,7 +10,7 @@ public class RulerBuilder : MonoBehaviour
             if (loc.GetLocationType() == Location.LocationType.Settled)
                 BuildSettledRulers(loc);
 
-        OrganizeRulerDictionaryHierarchy();
+        OrganizeRulerHierarchy();
     }
 
 
@@ -43,7 +43,7 @@ public class RulerBuilder : MonoBehaviour
     }
 
 
-    void OrganizeRulerDictionaryHierarchy()
+    void OrganizeRulerHierarchy()
     {
         foreach (Location loc in WorldController.Instance.GetWorld().locationList)
         {
@@ -83,7 +83,16 @@ public class RulerBuilder : MonoBehaviour
             if (ruler.rulerHierarchy == Ruler.Hierarchy.Unassigned)
             {
                 if (EconomyController.Instance.rulerDictionary[ruler] != ruler && EconomyController.Instance.rulerDictionary[ruler] != null)
-                    ruler.rulerHierarchy = Ruler.Hierarchy.Dominated;
+                {
+                    Ruler dominator = EconomyController.Instance.rulerDictionary[ruler];
+                    if (dominator.attitude == Ruler.Attitude.Aggressive)
+                        ruler.rulerHierarchy = Ruler.Hierarchy.Subjugated;
+                    else if (dominator.attitude == Ruler.Attitude.Economic)
+                        ruler.rulerHierarchy = Ruler.Hierarchy.Dominated;
+                    else  
+                        ruler.rulerHierarchy = Ruler.Hierarchy.Reined;
+
+                }
             }
         }
     }

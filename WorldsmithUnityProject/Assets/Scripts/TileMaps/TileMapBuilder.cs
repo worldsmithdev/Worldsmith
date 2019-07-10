@@ -86,13 +86,19 @@ public class TileMapBuilder : MonoBehaviour
         ecoBlockHierarchySpritePairings.Add(Ruler.Hierarchy.Independent, SpriteCollection.Instance.schematicIndependentSprite);
         ecoBlockHierarchySpritePairings.Add(Ruler.Hierarchy.Secondary, SpriteCollection.Instance.schematicSecondarySprite);
         ecoBlockHierarchySpritePairings.Add(Ruler.Hierarchy.Dominated, SpriteCollection.Instance.schematicDominatedSprite);
+        ecoBlockHierarchySpritePairings.Add(Ruler.Hierarchy.Reined, SpriteCollection.Instance.schematicDominatedSprite);
+        ecoBlockHierarchySpritePairings.Add(Ruler.Hierarchy.Subjugated, SpriteCollection.Instance.schematicDominatedSprite);
 
 
         marketSpritePairings.Add(Tile.TileAbstractionType.LocalMarket, SpriteCollection.Instance.localMarketSprite);
         marketSpritePairings.Add(Tile.TileAbstractionType.Participant, SpriteCollection.Instance.localParticipantSprite);
         marketSpritePairings.Add(Tile.TileAbstractionType.LocalExchange, SpriteCollection.Instance.localExchangeSprite);
+        marketSpritePairings.Add(Tile.TileAbstractionType.LocalExchangePassive, SpriteCollection.Instance.localExchangeSpriteLO);
         marketSpritePairings.Add(Tile.TileAbstractionType.RegionalMarket, SpriteCollection.Instance.localMarketSprite);
         marketSpritePairings.Add(Tile.TileAbstractionType.RegionalExchange, SpriteCollection.Instance.localExchangeSprite);
+        marketSpritePairings.Add(Tile.TileAbstractionType.RegionalExchangePassive, SpriteCollection.Instance.localExchangeSpriteLO);
+        marketSpritePairings.Add(Tile.TileAbstractionType.RegionalBuyer, SpriteCollection.Instance.localParticipantSprite);
+        marketSpritePairings.Add(Tile.TileAbstractionType.RegionalSeller, SpriteCollection.Instance.localParticipantSpriteHi);
         marketSpritePairings.Add(Tile.TileAbstractionType.GlobalMarket, SpriteCollection.Instance.localMarketSprite);
         marketSpritePairings.Add(Tile.TileAbstractionType.GlobalExchange, SpriteCollection.Instance.localExchangeSprite);
 
@@ -314,7 +320,15 @@ public class TileMapBuilder : MonoBehaviour
                     foreach (Tile.TileAbstractionType type in marketSpritePairings.Keys)
                         if (  tileDrawn == false && linkedTile.tileAbstractionType == type)
                         {
-                            blockObj.GetComponent<SpriteRenderer>().sprite = marketSpritePairings[type];
+                            if (type == Tile.TileAbstractionType.Participant)
+                            {
+                                if (linkedTile.linkedParticipant.type == Participant.Type.Ruler)
+                                    blockObj.GetComponent<SpriteRenderer>().sprite = marketSpritePairings[Tile.TileAbstractionType.RegionalSeller];
+                                else
+                                    blockObj.GetComponent<SpriteRenderer>().sprite = marketSpritePairings[type];
+                            }
+                            else
+                                blockObj.GetComponent<SpriteRenderer>().sprite = marketSpritePairings[type];
                             tileDrawn = true;
                         } 
                 }

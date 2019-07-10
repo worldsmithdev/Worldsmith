@@ -75,7 +75,7 @@ public class TileMapSpecifics : MonoBehaviour
                 givenMap.GetTileAt(xPos, yPos).SetLinkedEcoBlock(localRuler);
             }
 
-            else if (localRuler.rulerHierarchy == Ruler.Hierarchy.Dominated)
+            else  
             {
                 xPos = 5;
                 yPos = 4;
@@ -264,8 +264,36 @@ public class TileMapSpecifics : MonoBehaviour
 
                 givenMap.GetTileAt(xPos, yPos).SetLinkedRegionalMarket(market);
 
-              
-               
+                xPos -= 3;
+
+                givenMap.GetTileAt(xPos, yPos).SetLinkedRegionalSeller(market.seller);
+                //foreach (RegionalExchange exchange in ExchangeController.Instance.cycleRegionalExchanges)
+                //{
+                //    if (exchange.passiveParty == buyer)
+                //    {
+                //        yPos -= 1;
+                //        givenMap.GetTileAt(xPos, yPos).SetLinkedRegionalExchange(exchange);
+                //    }
+                //}
+
+                xPos += 1;
+                yPos = givenMap.ySize - 2;
+                foreach (Ruler buyer in market.buyersList)
+                {
+                    xPos += 1;
+                    yPos = givenMap.ySize - 4;
+                    givenMap.GetTileAt(xPos, yPos).SetLinkedRegionalBuyer(buyer);
+
+                    foreach (RegionalExchange exchange in market.regionalExchangesList)
+                    { 
+                        if (exchange.passiveParty == buyer)
+                        {
+                            yPos -= 1;
+                            givenMap.GetTileAt(xPos, yPos).SetLinkedRegionalExchange(exchange);
+                        } 
+                    }
+                }
+                xPos -= market.buyersList.Count;
             }
         }
         MarketController.Instance.archivedRegionalMarkets[selectedLoc].Reverse();
@@ -292,7 +320,12 @@ public class TileMapSpecifics : MonoBehaviour
             {
                 xPos -= 10;
                 yPos = givenMap.ySize - 2; 
-                givenMap.GetTileAt(xPos, yPos).SetLinkedGlobalMarket(market); 
+                givenMap.GetTileAt(xPos, yPos).SetLinkedGlobalMarket(market);
+                foreach (GlobalExchange exchange in market.globalExchangesList)
+                {
+                    yPos -= 1;
+                    givenMap.GetTileAt(xPos, yPos).SetLinkedGlobalExchange(exchange);
+                }
             }
         }
         MarketController.Instance.archivedGlobalMarkets[selectedLoc].Reverse(); 
