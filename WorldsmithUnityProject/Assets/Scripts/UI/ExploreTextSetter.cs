@@ -413,16 +413,36 @@ public class ExploreTextSetter : MonoBehaviour
     public void SetClickedRegionalBuyerText(Ruler ruler)
     {
         exploreUI.clickedType = ExploreUI.ClickedTypes.Participant;
-        string line1 = "Buyer: " + ruler.blockID + "\n"; 
+        string line1 = "Buyer: " + ruler.blockID + "\n";
+        string line2 = "Surpluses: ";
+        foreach (Resource.Type restype in ruler.cycleRegionalSurplusResources.Keys)
+            if (ruler.cycleRegionalSurplusResources[restype] > 0)
+                line2 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + ruler.cycleRegionalSurplusResources[restype].ToString("F1") + " ";
+        line2 += "\n";
 
-        exploreUI.regionalExchangeClickedText.text = line1;
+        string line3 = "Wanted Types: ";
+        foreach (Resource.Type restype in ruler.cycleRegionalWantedResourceTypes)
+            line3 += " " + restype.ToString().Substring(0, 2).ToUpper() + " ";
+        line3 += "\n";
+
+        exploreUI.regionalExchangeClickedText.text = line1 + line2 + line3;
     }
     public void SetClickedRegionalSellerText(Ruler ruler)
     {
         exploreUI.clickedType = ExploreUI.ClickedTypes.Participant;
         string line1 = "Seller: " + ruler.blockID + "\n"; 
+        string line2 = "Surpluses: ";
+        foreach (Resource.Type restype in ruler.cycleRegionalSurplusResources.Keys)
+            if (ruler.cycleRegionalSurplusResources[restype] > 0)
+               line2 += " " + restype.ToString().Substring(0, 2).ToUpper() + "" + ruler.cycleRegionalSurplusResources[restype].ToString("F1") + " ";
+        line2 += "\n";
 
-        exploreUI.regionalExchangeClickedText.text = line1;
+        string line3 = "Wanted Types: ";
+        foreach (Resource.Type restype in ruler.cycleRegionalWantedResourceTypes)
+            line3 += " " + restype.ToString().Substring(0, 2).ToUpper() + " ";
+        line3 += "\n";
+
+        exploreUI.regionalExchangeClickedText.text = line1 + line2 + line3;
     }
     public void SetDefaultGlobalExchangeContentText()
     {

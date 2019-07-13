@@ -103,7 +103,6 @@ public class LocalExchange : Exchange
 
         ExchangeController.Instance.cycleLocalExchanges.Add(this);
         ExchangeController.Instance.archivedLocalExchanges.Add(this);
-        localMarket.localExchangesList.Add(this);
 
 
     }

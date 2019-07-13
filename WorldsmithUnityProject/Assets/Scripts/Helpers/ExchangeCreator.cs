@@ -20,39 +20,42 @@ public class ExchangeCreator : MonoBehaviour
         Resource wantedResource = new Resource(shoppedResource.type, shoppedResource.amount);
         wantedResource.amount -= createdExchange.passiveCommitted[shoppedResource.type];
 
-        float sellValue = Converter.GetSilverEquivalent(wantedResource); 
-        float spendValue = Converter.GetSilverEquivalent(new Resource(payType, activeParticipant.offeredResources[payType]));
-        spendValue -= Converter.GetSilverEquivalent(new Resource(payType, createdExchange.activeCommitted[payType]));
-        float wantValue = Converter.GetSilverEquivalent(new Resource(payType, passiveParticipant.wantedResources[payType])); 
-        if (spendValue > wantValue)
-            spendValue = wantValue;
+        float exchangeRate = ExchangeController.Instance.GetLocalExchangeRate(createdExchange);
 
-        if (spendValue > sellValue)
+        float soldResourceValue = Converter.GetSilverEquivalent(wantedResource) * exchangeRate; 
+        float paymentResourceValue = Converter.GetSilverEquivalent(new Resource(payType, activeParticipant.offeredResources[payType]));
+        paymentResourceValue -= Converter.GetSilverEquivalent(new Resource(payType, createdExchange.activeCommitted[payType]));
+        float paymentResourceWantValue = Converter.GetSilverEquivalent(new Resource(payType, passiveParticipant.wantedResources[payType])); 
+        if (paymentResourceValue > paymentResourceWantValue)
+            paymentResourceValue = paymentResourceWantValue;
+        
+
+        if (paymentResourceValue > soldResourceValue)
         {
             if (forceSilver == true)
             {
-                createdExchange.CommitResource(true, new Resource(Resource.Type.Silver, sellValue * silverPercentage));
-                createdExchange.CommitResource(true, Converter.GetResourceEquivalent(payType, sellValue * (1 - silverPercentage)));
-                createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, sellValue));
+                createdExchange.CommitResource(true, new Resource(Resource.Type.Silver, soldResourceValue * silverPercentage));
+                createdExchange.CommitResource(true, Converter.GetResourceEquivalent(payType, soldResourceValue * (1 - silverPercentage)));
+                createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, soldResourceValue / exchangeRate));
             }
             else
             {
-                createdExchange.CommitResource(true, Converter.GetResourceEquivalent(payType, sellValue));
-                createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, sellValue));
+                createdExchange.CommitResource(true, Converter.GetResourceEquivalent(payType, soldResourceValue));
+                createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, soldResourceValue / exchangeRate));
             } 
         }
-        else if (spendValue > 0)
+        else if (paymentResourceValue > 0)
         {
             if (forceSilver == true)
             {
-                createdExchange.CommitResource(true, new Resource(Resource.Type.Silver, spendValue * silverPercentage));
-                createdExchange.CommitResource(true, Converter.GetResourceEquivalent(payType, spendValue * (1 - silverPercentage)));
-                createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, spendValue));
+                createdExchange.CommitResource(true, new Resource(Resource.Type.Silver, paymentResourceValue * silverPercentage));
+                createdExchange.CommitResource(true, Converter.GetResourceEquivalent(payType, paymentResourceValue * (1 - silverPercentage)));
+                createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, paymentResourceValue / exchangeRate));
             }
             else
             {
-                createdExchange.CommitResource(true, Converter.GetResourceEquivalent(payType, spendValue));
-                createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, spendValue));
+                createdExchange.CommitResource(true, Converter.GetResourceEquivalent(payType, paymentResourceValue));
+                createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, paymentResourceValue  / exchangeRate));
             }   
         } 
     } 
@@ -65,22 +68,25 @@ public class ExchangeCreator : MonoBehaviour
         Resource wantedResource = new Resource(shoppedResource.type, shoppedResource.amount);
         wantedResource.amount -= createdExchange.passiveCommitted[shoppedResource.type];
 
-        float sellValue = Converter.GetSilverEquivalent(new Resource(wantedResource.type, wantedResource.amount));
+        float exchangeRate = ExchangeController.Instance.GetLocalExchangeRate(createdExchange);
+
+        float soldResourceValue = Converter.GetSilverEquivalent(wantedResource) * exchangeRate;
+        float paymentResourceValue = soldResourceValue ;
         float reservedSilver = Determiner.DetermineSilverReservation(activeParticipant.linkedEcoBlock);
         float spendValue = activeParticipant.linkedEcoBlock.resourcePortfolio[Resource.Type.Silver].amount - reservedSilver;
 
 
-        if (spendValue > sellValue)
+        if (spendValue > paymentResourceValue)
         {
-            createdExchange.CommitResource(true, new Resource(Resource.Type.Silver, sellValue));
-            createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, sellValue));
+            createdExchange.CommitResource(true, new Resource(Resource.Type.Silver, paymentResourceValue));
+            createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, soldResourceValue / exchangeRate));
        //     Debug.Log(" Buying ALL with silver!  for " + activeParticipant.participantName + "  shopping at " + passiveParticipant.participantName + "  resource " + wantedResource.type + wantedResource.amount + "  Actually buying: " + Converter.GetResourceEquivalent(wantedResource.type, sellValue).type + Converter.GetResourceEquivalent(wantedResource.type, sellValue).amount + "  for silver:" + sellValue);
 
         }
-        else if (spendValue > 0)
+        else if (paymentResourceValue > 0)
         {
             createdExchange.CommitResource(true, new Resource(Resource.Type.Silver, spendValue));
-            createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, spendValue));
+            createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, spendValue / exchangeRate));
        //     Debug.Log(" Buying AFFORDABLE with silver!  for " + activeParticipant.participantName + "  shopping at " + passiveParticipant.participantName + "  resource " + wantedResource.type + wantedResource.amount + "  Actually buying: " + Converter.GetResourceEquivalent(wantedResource.type, spendValue).type + Converter.GetResourceEquivalent(wantedResource.type, spendValue).amount + "  for silver:" + spendValue);
 
         }
@@ -129,7 +135,7 @@ public class ExchangeCreator : MonoBehaviour
             }
          
 
-            // Determine what to pay silver for
+            // Pay with silver if there's more to be had
             if (shopRes.amount > createdExchange.passiveCommitted[shopRes.type])
             {
                 AttemptSilverPurchase(createdExchange, shopRes);
@@ -146,8 +152,11 @@ public class ExchangeCreator : MonoBehaviour
             if (res != null)
                 totalValue += Converter.GetSilverEquivalent(res);
 
-        if (totalValue > 0)     
-            createdExchange.ResolveExchange();  
+        if (totalValue > 0)
+        {
+            market.localExchangesList.Add(createdExchange);
+            createdExchange.ResolveExchange();
+        }
 
         return createdExchange;
     }
@@ -191,7 +200,7 @@ public class ExchangeCreator : MonoBehaviour
     {
         RegionalExchange createdExchange = new RegionalExchange();
         createdExchange.type = RegionalExchange.Type.Seized;
-        createdExchange.exchangeName = "" + createdExchange.type + "Exch" +  WorldController.Instance.GetWorld().completedCycles;
+        createdExchange.exchangeName = "" + createdExchange.type + "Exch" +  WorldController.Instance.GetWorld().completedCycles + "-" + market.regionalExchangesList.Count;
         createdExchange.activeParty = activeParty;
         createdExchange.passiveParty = dominator;
         createdExchange.regionalMarket = market;
@@ -204,17 +213,17 @@ public class ExchangeCreator : MonoBehaviour
                market.regionalExchangesList.Add(createdExchange);  
     }
     public void CreateRegionalForcedExchange(RegionalMarket market, Ruler activeParty, Ruler passiveParty)
-    {
+    { 
         RegionalExchange createdExchange = new RegionalExchange();
         createdExchange.type = RegionalExchange.Type.Forced;
-        createdExchange.exchangeName = "" + createdExchange.type + "Exch" + activeParty.GetHomeLocation().elementID + WorldController.Instance.GetWorld().completedCycles;
+        createdExchange.exchangeName = "" + createdExchange.type + "Exch" + activeParty.GetHomeLocation().elementID + WorldController.Instance.GetWorld().completedCycles + "-" + market.regionalExchangesList.Count;
         createdExchange.activeParty = activeParty;
         createdExchange.passiveParty = passiveParty;
         createdExchange.regionalMarket = market;
 
         foreach (Resource.Type restype in passiveParty.cycleRegionalWantedResourceTypes)        
             if (activeParty.cycleRegionalSurplusResources.ContainsKey(restype))           
-                TradeAwayResources(createdExchange, restype, activeParty, passiveParty);
+                AttemptTrade(createdExchange, restype, activeParty, passiveParty);
 
         if (createdExchange.activeResources.Count > 0 || createdExchange.passiveResources.Count > 0)
         market.regionalExchangesList.Add(createdExchange);
@@ -225,19 +234,19 @@ public class ExchangeCreator : MonoBehaviour
         
             RegionalExchange createdExchange = new RegionalExchange();
             createdExchange.type = RegionalExchange.Type.Free;
-            createdExchange.exchangeName = "" + createdExchange.type + "Exch" + activeParty.GetHomeLocation().elementID + WorldController.Instance.GetWorld().completedCycles;
+            createdExchange.exchangeName = "" + createdExchange.type + "Exch" + activeParty.GetHomeLocation().elementID + WorldController.Instance.GetWorld().completedCycles + "-" + market.regionalExchangesList.Count;
             createdExchange.activeParty = activeParty;
             createdExchange.passiveParty = passiveParty;
             createdExchange.regionalMarket = market;
 
         foreach (Resource.Type restype in passiveParty.cycleRegionalWantedResourceTypes)
                 if (activeParty.cycleRegionalSurplusResources.ContainsKey(restype))
-                    TradeAwayResources(createdExchange, restype, activeParty, passiveParty);
+                    AttemptTrade(createdExchange, restype, activeParty, passiveParty);
 
             if (createdExchange.activeResources.Count > 0 || createdExchange.passiveResources.Count > 0)
                 market.regionalExchangesList.Add(createdExchange); 
     } 
-    void TradeAwayResources(RegionalExchange createdExchange, Resource.Type restype, Ruler activeParty, Ruler passiveParty)
+    void AttemptTrade(RegionalExchange createdExchange, Resource.Type restype, Ruler activeParty, Ruler passiveParty)
     {
         float offeredValue = Converter.GetSilverEquivalent(new Resource(restype, activeParty.cycleRegionalSurplusResources[restype] - activeParty.cycleRegionalCommittedResources[restype]));
 
@@ -251,9 +260,9 @@ public class ExchangeCreator : MonoBehaviour
             foreach (Resource res in paymentResources)
             {
                 createdExchange.CommitResource(false, res);
-                paidValue += Converter.GetSilverEquivalent(res);
+                paidValue += Converter.GetSilverEquivalent(res) / exchangeRate;
             }
-            createdExchange.CommitResource(true, new Resource(restype, paidValue));
+            createdExchange.CommitResource(true, Converter.GetResourceEquivalent(restype, paidValue));
         }
     }
     List<Resource> DeterminePaymentResources(float value, Ruler activeParty, Ruler passiveParty)
@@ -282,18 +291,30 @@ public class ExchangeCreator : MonoBehaviour
         {
             if (passiveParty.resourcePortfolio[restype].amount > 0)
             {
-                // has more of resource to pay with than needed
-                if (Converter.GetSilverEquivalent(new Resource(restype, passiveParty.resourcePortfolio[restype].amount)) >= remainingValue)
+                bool trading = true;
+                
+                    if (ExchangeController.Instance.globalImportPercentages.ContainsKey(restype))
+                        trading = true;
+                    else
+                        trading = false; 
+                
+                 
+                if (trading == true)
                 {
-                    returnList.Add(new Resource(restype, Converter.GetResourceEquivalent(restype, remainingValue).amount));
-                    remainingValue = 0;
-                }
-                // has less of resource to pay with than needed
-                else if (Converter.GetSilverEquivalent(new Resource(restype, passiveParty.resourcePortfolio[restype].amount)) < remainingValue)
-                {
-                    returnList.Add(new Resource(restype, Converter.GetResourceEquivalent(restype, passiveParty.resourcePortfolio[restype].amount).amount));
-                    remainingValue -= Converter.GetResourceEquivalent(restype, passiveParty.resourcePortfolio[restype].amount).amount;
-                }
+                    // has more of resource to pay with than needed
+                    if (Converter.GetSilverEquivalent(new Resource(restype, passiveParty.resourcePortfolio[restype].amount)) >= remainingValue)
+                    {
+                        returnList.Add(new Resource(restype, Converter.GetResourceEquivalent(restype, remainingValue).amount));
+                        remainingValue = 0;
+                    }
+                    // has less of resource to pay with than needed
+                    else if (Converter.GetSilverEquivalent(new Resource(restype, passiveParty.resourcePortfolio[restype].amount)) < remainingValue)
+                    {
+                        returnList.Add(new Resource(restype, Converter.GetResourceEquivalent(restype, passiveParty.resourcePortfolio[restype].amount).amount));
+                        remainingValue -= Converter.GetResourceEquivalent(restype, passiveParty.resourcePortfolio[restype].amount).amount;
+                    }
+                } 
+                
             }
         }
 

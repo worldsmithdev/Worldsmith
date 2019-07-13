@@ -70,7 +70,7 @@ public class RegionalMarket : Market
         else if (type == Type.Free)
             foreach (Ruler buyer in buyersList)   
                 if (ruler.GetHomeLocation().offloadOne != "Global") // exclude other regional exchanges for global for now
-                     ExchangeController.Instance.exchangeCreator.CreateRegionalFreeExchange(this, ruler, buyersList[0]); 
+                     ExchangeController.Instance.exchangeCreator.CreateRegionalFreeExchange(this, ruler, buyer); 
     }
 
     public override void ResolveMarket()

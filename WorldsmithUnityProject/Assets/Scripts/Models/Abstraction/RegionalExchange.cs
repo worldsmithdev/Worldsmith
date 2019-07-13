@@ -35,6 +35,9 @@ public class RegionalExchange : Exchange
                 passiveParty.resourcePortfolio[res.type].amount -= res.amount;
             }
         }
+    //    Debug.Log("adding " + this.exchangeName + activeParty.blockID + passiveParty.blockID);
+        ExchangeController.Instance.cycleRegionalExchanges.Add(this);
+        ExchangeController.Instance.archivedRegionalExchanges.Add(this); 
     } 
 
     public void CommitResource(bool byActiveParty, Resource resource)
@@ -42,7 +45,9 @@ public class RegionalExchange : Exchange
         if (resource.amount > 0)
         {
             if (byActiveParty == true)
-            {
+            { 
+                if (activeParty.blockID == "PrimaryRulerOfsKimena1")
+                    Debug.Log("Kimena is actively committing " + resource.type + resource.amount);
                 activeResources.Add(resource); 
                 if (activeParty.cycleRegionalCommittedResources.ContainsKey(resource.type))
                     activeParty.cycleRegionalCommittedResources[resource.type] += resource.amount;
@@ -51,6 +56,8 @@ public class RegionalExchange : Exchange
             }
             else if (byActiveParty == false)
             {
+                if (passiveParty.blockID == "PrimaryRulerOfsBoukara1")
+                    Debug.Log("Boukara is passively committing " + resource.type + resource.amount + " to "+ activeParty.blockID);
                 passiveResources.Add(resource); 
                 if (passiveParty.cycleRegionalCommittedResources.ContainsKey(resource.type))
                     passiveParty.cycleRegionalCommittedResources[resource.type] += resource.amount;

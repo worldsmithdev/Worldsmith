@@ -185,12 +185,12 @@ public class LocalExchangeStep : Step
             if (actualDesiredFoodAmount > 0)
                 ruler.cycleLocalWantedResources.Add(Resource.Type.Wheat, actualDesiredFoodAmount);
 
-            if (ruler.resourcePortfolio[Resource.Type.Wares].amount < totalDesiredWaresAmount)
-                actualDesiredWaresAmount = totalDesiredWaresAmount - ruler.resourcePortfolio[Resource.Type.Wares].amount;
-            else
-                actualDesiredWaresAmount = 0f;
-            if (actualDesiredWaresAmount > 0)
-                ruler.cycleLocalWantedResources.Add(Resource.Type.Wares, actualDesiredWaresAmount);
+            //if (ruler.resourcePortfolio[Resource.Type.Wares].amount < totalDesiredWaresAmount)
+            //    actualDesiredWaresAmount = totalDesiredWaresAmount - ruler.resourcePortfolio[Resource.Type.Wares].amount;
+            //else
+            //    actualDesiredWaresAmount = 0f;
+            //if (actualDesiredWaresAmount > 0)
+            //    ruler.cycleLocalWantedResources.Add(Resource.Type.Wares, actualDesiredWaresAmount);
         }
         else // non-local-ruler
         {

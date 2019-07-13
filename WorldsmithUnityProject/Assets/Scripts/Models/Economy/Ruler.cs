@@ -31,7 +31,7 @@ public class Ruler : EcoBlock
 
     // REGIONALEXCHANGE STEP 
     public Dictionary<Resource.Type, float> cycleRegionalSurplusResources = new Dictionary<Resource.Type, float>();
-    public List<Resource.Type> cycleRegionalWantedResourceTypes = new List<Resource.Type>(); 
+    public List<Resource.Type> cycleRegionalWantedResourceTypes = new List<Resource.Type>();  
 
     // GLOBALEXCHANGE STEP
     public Dictionary<Resource.Type, float> cycleGlobalSurplusResources = new Dictionary<Resource.Type, float>(); 
@@ -53,16 +53,18 @@ public class Ruler : EcoBlock
         if (loc.hubType == 1  )
         {
             localProfitResourceTypes.Add(Resource.Type.Wheat);
+            localProfitResourceTypes.Add(Resource.Type.Timber);
+            localProfitResourceTypes.Add(Resource.Type.Stone);
         }
         if ( loc.hubType == 2)
         {
             localProfitResourceTypes.Add(Resource.Type.Wheat);
-            localProfitResourceTypes.Add(Resource.Type.Wares);
+            localProfitResourceTypes.Add(Resource.Type.Timber);
+            localProfitResourceTypes.Add(Resource.Type.Stone);
         }
         if (loc.hubType  >= 3)
         {
-            localProfitResourceTypes.Add(Resource.Type.Wheat);
-            localProfitResourceTypes.Add(Resource.Type.Wares);
+            localProfitResourceTypes.Add(Resource.Type.Wheat); 
         }
 
         ResourceController.Instance.SetResourceBuyPriority(this);

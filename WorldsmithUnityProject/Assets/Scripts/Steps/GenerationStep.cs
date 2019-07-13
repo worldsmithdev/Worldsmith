@@ -35,12 +35,13 @@ public class GenerationStep : Step
         foreach (Population population in loc.populationList)
             if (population.laborType == Population.LaborType.Housekeeper) housekeeperPop += population.amount;
         manpower = housekeeperPop;
-
+         
         manpower *= (1 - WorldConstants.GENERATION_RATES_MODIFIER[loc.rateBuild]);
         manpower *= (1 - WorldConstants.GENERATION_RATES_MODIFIER[loc.rateResource]);
         manpower *= WorldConstants.TERRITORYSIZE_MULTIPLIER[terr.territorySize];
         manpower *= WorldConstants.TERRITORYSOIL_MULTIPLIER[terr.territorySoilQuality];
         manpower *= WorldConstants.TERRITORYSTATUS_MULTIPLIER[terr.territoryStatus];
+         
         terr.cycleFarmedManpower = manpower;   
     }
     void DetermineNatural(Territory terr)

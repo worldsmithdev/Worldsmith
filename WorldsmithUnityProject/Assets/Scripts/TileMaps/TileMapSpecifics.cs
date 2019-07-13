@@ -232,6 +232,11 @@ public class TileMapSpecifics : MonoBehaviour
                             yPos -= 1;
                             givenMap.GetTileAt(xPos, yPos).SetLinkedLocalExchange(locexch);
                         }
+                        if (locexch.passiveParticipant == participant)
+                        {
+                            yPos -= 1;
+                            givenMap.GetTileAt(xPos, yPos).SetLinkedLocalExchangePassive(locexch);
+                        }
                     }
                 }
                 xPos -= locmarket.participantList.Count;
@@ -242,6 +247,7 @@ public class TileMapSpecifics : MonoBehaviour
     }
     public void BuildRegionalExchangesMap(TileMap givenMap)
     {
+
         Location selectedLoc = LocationController.Instance.GetSelectedLocation();
         for (int x = 0; x < givenMap.xSize; x += 1)
             for (int y = 0; y < givenMap.ySize; y += 1)
@@ -267,27 +273,34 @@ public class TileMapSpecifics : MonoBehaviour
                 xPos -= 3;
 
                 givenMap.GetTileAt(xPos, yPos).SetLinkedRegionalSeller(market.seller);
-                //foreach (RegionalExchange exchange in ExchangeController.Instance.cycleRegionalExchanges)
-                //{
-                //    if (exchange.passiveParty == buyer)
-                //    {
-                //        yPos -= 1;
-                //        givenMap.GetTileAt(xPos, yPos).SetLinkedRegionalExchange(exchange);
-                //    }
-                //}
+                foreach (RegionalExchange exchange in ExchangeController.Instance.cycleRegionalExchanges)
+                {
+                //   Debug.Log("Active: " + exchange.activeParty.blockID + " passive: " + exchange.passiveParty.blockID + " seller: " + market.seller.blockID);
+                    if (exchange.passiveParty == market.seller)
+                    { 
+                        yPos -= 1;
+                        givenMap.GetTileAt(xPos, yPos).SetLinkedRegionalExchange(exchange);
+                        if (yPos < 2)
+                        {
+                            yPos = givenMap.ySize - 2;
+                            xPos += 1;
+                        }
+
+                    }
+                }
 
                 xPos += 1;
                 yPos = givenMap.ySize - 2;
                 foreach (Ruler buyer in market.buyersList)
-                {
+                { 
                     xPos += 1;
                     yPos = givenMap.ySize - 4;
                     givenMap.GetTileAt(xPos, yPos).SetLinkedRegionalBuyer(buyer);
 
                     foreach (RegionalExchange exchange in market.regionalExchangesList)
-                    { 
-                        if (exchange.passiveParty == buyer)
-                        {
+                    {  
+                        if (exchange.activeParty == market.seller && exchange.passiveParty == buyer)
+                        { 
                             yPos -= 1;
                             givenMap.GetTileAt(xPos, yPos).SetLinkedRegionalExchange(exchange);
                         } 
@@ -319,7 +332,7 @@ public class TileMapSpecifics : MonoBehaviour
             if (count < 3)
             {
                 xPos -= 10;
-                yPos = givenMap.ySize - 2; 
+                yPos = givenMap.ySize - 3; 
                 givenMap.GetTileAt(xPos, yPos).SetLinkedGlobalMarket(market);
                 foreach (GlobalExchange exchange in market.globalExchangesList)
                 {

@@ -87,9 +87,9 @@ public class WorldConstants
         // GENERATION
         GENERATION_RATES_MODIFIER.Add(1, 0.04f);
         GENERATION_RATES_MODIFIER.Add(2, 0.1f);
-        GENERATION_RATES_MODIFIER.Add(3, 0.25f);
-        GENERATION_RATES_MODIFIER.Add(4, 0.55f);
-        GENERATION_RATES_MODIFIER.Add(5, 0.85f);
+        GENERATION_RATES_MODIFIER.Add(3, 0.2f);
+        GENERATION_RATES_MODIFIER.Add(4, 0.35f);
+        GENERATION_RATES_MODIFIER.Add(5, 0.55f);
         DEFAULT_NATURAL_RESOURCETYPES.Add(Resource.Type.Timber, 0.75f);  // Must equal 1.0 total
         DEFAULT_NATURAL_RESOURCETYPES.Add(Resource.Type.Stone, 0.25f);
         TERRITORYSIZE_MULTIPLIER.Add(Territory.Size.Core, 0.6f);
