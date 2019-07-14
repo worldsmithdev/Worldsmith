@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LocalMarket : Market
-{
-     
-    string debugLocName = "Gela"; 
-    Location debugLoc; 
-
-
+{ 
 
     public List<LocalExchange> localExchangesList = new List<LocalExchange>();
 

@@ -17,7 +17,7 @@ public class ExchangeController : MonoBehaviour
 
     Exchange selectedExchange;
     public bool forceSilverOnLocalExchange = false;
-    public float localPayExchangeRate = 0.45f;
+    public float localPayExchangeRate = 0.5f;
     public bool forceSilverOnRegionalExchange = true;
     public float regionalForcedSilverPercentage = 0.8f;
 
@@ -26,12 +26,15 @@ public class ExchangeController : MonoBehaviour
     public float exchangeRateForcedSupplier = 0.5f;
     public float exchangeRateForcedHub = 0.6f;
      
+    public List<Resource.Type> regionalPaymentTypes = new List<Resource.Type>();
     public List<Resource.Type> globalAcceptedTypes = new List<Resource.Type>();
     public Dictionary<Resource.Type, float> globalImportPercentages = new Dictionary<Resource.Type, float>(); 
 
     void Awake()
     {
         Instance = this;
+        regionalPaymentTypes.Add(Resource.Type.Wares);
+        regionalPaymentTypes.Add(Resource.Type.Silver);
         globalAcceptedTypes.Add(Resource.Type.Wheat);
         globalAcceptedTypes.Add(Resource.Type.Timber);
         globalAcceptedTypes.Add(Resource.Type.Stone);
@@ -55,7 +58,7 @@ public class ExchangeController : MonoBehaviour
     {
         return selectedExchange;
     }
-    public float GetExchangeRate (Ruler ruler)
+    public float GetRegionalExchangeRate (Ruler ruler)
     {
         Location loc = ruler.GetHomeLocation();
         float rate = 0f;

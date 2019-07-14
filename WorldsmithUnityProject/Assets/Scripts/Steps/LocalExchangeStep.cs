@@ -161,8 +161,7 @@ public class LocalExchangeStep : Step
     // Determine what to want stockpile for each Pop's consumptions
     void DetermineWantedResources(Ruler ruler)
     {
-        float actualDesiredFoodAmount;
-        float actualDesiredWaresAmount;
+        float actualDesiredFoodAmount; 
         float totalDesiredFoodAmount = 0f;
         float totalDesiredWaresAmount = 0f;
 

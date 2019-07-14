@@ -29,7 +29,10 @@ public class RegionalExchangeStep : Step
     public override void CycleStep(EcoBlock ecoblock)
     { 
             Ruler ruler = (Ruler)ecoblock;
-            ruler.GetHomeLocation().regionalMarket.CreateMarket(ruler);  
+        if (ruler.isLocalRuler)
+        {
+            ruler.GetHomeLocation().regionalMarket.CreateMarket(ruler);
+        } 
     }
     public override void ResolveStep()
     {  

@@ -248,16 +248,18 @@ public class ExchangeCreator : MonoBehaviour
                 market.regionalExchangesList.Add(createdExchange); 
     } 
     void AttemptTrade(RegionalExchange createdExchange, Resource.Type restype, Ruler activeParty, Ruler passiveParty)
-    {
+    { 
+
         float offeredValue = Converter.GetSilverEquivalent(new Resource(restype, activeParty.cycleRegionalSurplusResources[restype] - activeParty.cycleRegionalCommittedResources[restype]));
+     
+        float exchangeRate = ExchangeController.Instance.GetRegionalExchangeRate(activeParty);
 
-        float exchangeRate = ExchangeController.Instance.GetExchangeRate(activeParty);
-
+     
         float paidValue = 0f;
 
         if (offeredValue > 0)
-        {
-            List<Resource> paymentResources = DeterminePaymentResources(offeredValue * exchangeRate, activeParty, passiveParty);
+        { 
+            List<Resource> paymentResources = DeterminePaymentResources(createdExchange, offeredValue * exchangeRate, activeParty, passiveParty);
             foreach (Resource res in paymentResources)
             {
                 createdExchange.CommitResource(false, res);
@@ -266,51 +268,68 @@ public class ExchangeCreator : MonoBehaviour
             createdExchange.CommitResource(true, Converter.GetResourceEquivalent(restype, paidValue));
         }
     }
-    List<Resource> DeterminePaymentResources(float value, Ruler activeParty, Ruler passiveParty)
+    List<Resource> DeterminePaymentResources(RegionalExchange createdExchange, float value, Ruler activeParty, Ruler passiveParty)
     {
         List<Resource> returnList = new List<Resource>();
 
+        bool debugging = false;
+        if (passiveParty.GetHomeLocation().elementID == "")
+            debugging = true;
         float remainingValue = value;
         float silverToPay;
+        float silverCommitted = 0f;
+        foreach (Resource res in createdExchange.passiveResources)        
+            if (res.type == Resource.Type.Silver)
+                silverCommitted += res.amount;
 
+        silverCommitted +=  Determiner.DetermineSilverReservation(passiveParty);
+        silverCommitted += passiveParty.cycleRegionalCommittedResources[Resource.Type.Silver];
+
+
+        if (debugging)
+            Debug.Log("" + passiveParty.blockID + " trading with " + activeParty.blockID + "  for value: " + value);
+
+        
         if (ExchangeController.Instance.forceSilverOnRegionalExchange == true && passiveParty.resourcePortfolio[Resource.Type.Silver].amount > 0)
         {
             silverToPay = remainingValue * ExchangeController.Instance.regionalForcedSilverPercentage;
-            if (passiveParty.resourcePortfolio[Resource.Type.Silver].amount >= silverToPay)
+            if ((passiveParty.resourcePortfolio[Resource.Type.Silver].amount - silverCommitted) >= silverToPay)
             {
+                if (debugging)
+                    Debug.Log("to " + activeParty.blockID + "adding forced max silver" + silverToPay + " with remval "+ remainingValue);
                 returnList.Add(new Resource(Resource.Type.Silver, silverToPay));
                 remainingValue -= silverToPay;
             }
-            else if (passiveParty.resourcePortfolio[Resource.Type.Silver].amount < silverToPay)
+            else if ((passiveParty.resourcePortfolio[Resource.Type.Silver].amount - silverCommitted) > 0)
             {
-                returnList.Add(new Resource(Resource.Type.Silver, passiveParty.resourcePortfolio[Resource.Type.Silver].amount));
-                remainingValue -= passiveParty.resourcePortfolio[Resource.Type.Silver].amount;
+                if (debugging)
+                    Debug.Log("to " + activeParty.blockID + "adding forced partly silver" + (passiveParty.resourcePortfolio[Resource.Type.Silver].amount - silverCommitted) + " with remval " + remainingValue);
+                returnList.Add(new Resource(Resource.Type.Silver, passiveParty.resourcePortfolio[Resource.Type.Silver].amount - silverCommitted));
+                remainingValue -= (passiveParty.resourcePortfolio[Resource.Type.Silver].amount - silverCommitted);
             }
         }
 
         foreach (Resource.Type restype in activeParty.cycleRegionalWantedResourceTypes)
         {
-            if (passiveParty.resourcePortfolio[restype].amount > 0)
-            {
-                bool trading = true;
-                
-                    if (ExchangeController.Instance.globalImportPercentages.ContainsKey(restype))
-                        trading = true;
-                    else
-                        trading = false; 
-                
+            if (restype != Resource.Type.Silver && passiveParty.resourcePortfolio[restype].amount > 0)
+            { 
                  
-                if (trading == true)
+                //check that they're paying with a payment type resource
+                if (ExchangeController.Instance.regionalPaymentTypes.Contains(restype) == true)
                 {
                     // has more of resource to pay with than needed
                     if (Converter.GetSilverEquivalent(new Resource(restype, passiveParty.resourcePortfolio[restype].amount)) >= remainingValue)
                     {
+                        if (debugging)
+                            Debug.Log("to " + activeParty.blockID + "adding full" + restype+ Converter.GetResourceEquivalent(restype, remainingValue).amount + " with remval " + remainingValue);
                         returnList.Add(new Resource(restype, Converter.GetResourceEquivalent(restype, remainingValue).amount));
                         remainingValue = 0;
                     }
                     // has less of resource to pay with than needed
-                    else if (Converter.GetSilverEquivalent(new Resource(restype, passiveParty.resourcePortfolio[restype].amount)) < remainingValue)
+                    else if (Converter.GetSilverEquivalent(new Resource(restype, passiveParty.resourcePortfolio[restype].amount)) > 0 )
                     {
+                        if (debugging)
+                            Debug.Log("to " + activeParty.blockID + "adding  partly " + Converter.GetResourceEquivalent(restype, passiveParty.resourcePortfolio[restype].amount).amount + " with remval " + remainingValue);
                         returnList.Add(new Resource(restype, Converter.GetResourceEquivalent(restype, passiveParty.resourcePortfolio[restype].amount).amount));
                         remainingValue -= Converter.GetResourceEquivalent(restype, passiveParty.resourcePortfolio[restype].amount).amount;
                     }
@@ -318,19 +337,38 @@ public class ExchangeCreator : MonoBehaviour
                 
             }
         }
+        silverCommitted = 0f;
+        foreach (Resource res in createdExchange.passiveResources)
+            if (res.type == Resource.Type.Silver)
+                silverCommitted += res.amount;
+        foreach (Resource res in returnList)
+            if (res.type == Resource.Type.Silver)
+                silverCommitted += res.amount;
 
-        if (remainingValue > 0 && passiveParty.resourcePortfolio[Resource.Type.Silver].amount > 0)
+        silverCommitted += Determiner.DetermineSilverReservation(passiveParty);
+        silverCommitted += passiveParty.cycleRegionalCommittedResources[Resource.Type.Silver];
+        if (remainingValue > 0 && passiveParty.resourcePortfolio[Resource.Type.Silver].amount - silverCommitted > 0)
         {
-            if (passiveParty.resourcePortfolio[Resource.Type.Silver].amount >= remainingValue)
+            if ((passiveParty.resourcePortfolio[Resource.Type.Silver].amount - silverCommitted) >= remainingValue)
             {
-                returnList.Add(new Resource(Resource.Type.Silver, remainingValue));
+                if (debugging)
+                    Debug.Log("to " + activeParty.blockID + "adding remaining silver full " + remainingValue + " with remval " + remainingValue);
+              returnList.Add(new Resource(Resource.Type.Silver, remainingValue));
             }
-            else if (passiveParty.resourcePortfolio[Resource.Type.Silver].amount < remainingValue)
+            else  
             {
-                returnList.Add(new Resource(Resource.Type.Silver, passiveParty.resourcePortfolio[Resource.Type.Silver].amount));
+                if (debugging)
+                    Debug.Log("to " + activeParty.blockID + "adding remaining silver. has" +  passiveParty.resourcePortfolio[Resource.Type.Silver].amount + " committed: "+ silverCommitted + " with remval " + remainingValue);
+                returnList.Add(new Resource(Resource.Type.Silver, passiveParty.resourcePortfolio[Resource.Type.Silver].amount - silverCommitted));
             }
         }
-
+        if (debugging == true)
+        {
+            foreach (Resource res in returnList)
+            {
+              //  Debug.Log("" + passiveParty.blockID + " trading with " + activeParty.blockID + " has resource as payment: " + res.type + res.amount);
+            }
+        }
         return returnList;
     }
 
