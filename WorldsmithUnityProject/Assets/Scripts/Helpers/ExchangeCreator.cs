@@ -70,20 +70,19 @@ public class ExchangeCreator : MonoBehaviour
 
         float exchangeRate = ExchangeController.Instance.GetLocalExchangeRate(createdExchange);
 
-        float soldResourceValue = Converter.GetSilverEquivalent(wantedResource) * exchangeRate;
-        float paymentResourceValue = soldResourceValue ;
+        float soldResourceValue = Converter.GetSilverEquivalent(wantedResource) * exchangeRate; 
         float reservedSilver = Determiner.DetermineSilverReservation(activeParticipant.linkedEcoBlock);
         float spendValue = activeParticipant.linkedEcoBlock.resourcePortfolio[Resource.Type.Silver].amount - reservedSilver;
+        spendValue -= createdExchange.activeCommitted[Resource.Type.Silver];
 
-
-        if (spendValue > paymentResourceValue)
+        if (spendValue > soldResourceValue)
         {
-            createdExchange.CommitResource(true, new Resource(Resource.Type.Silver, paymentResourceValue));
+            createdExchange.CommitResource(true, new Resource(Resource.Type.Silver, soldResourceValue));
             createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, soldResourceValue / exchangeRate));
        //     Debug.Log(" Buying ALL with silver!  for " + activeParticipant.participantName + "  shopping at " + passiveParticipant.participantName + "  resource " + wantedResource.type + wantedResource.amount + "  Actually buying: " + Converter.GetResourceEquivalent(wantedResource.type, sellValue).type + Converter.GetResourceEquivalent(wantedResource.type, sellValue).amount + "  for silver:" + sellValue);
 
         }
-        else if (paymentResourceValue > 0)
+        else if (soldResourceValue > 0)
         {
             createdExchange.CommitResource(true, new Resource(Resource.Type.Silver, spendValue));
             createdExchange.CommitResource(false, Converter.GetResourceEquivalent(wantedResource.type, spendValue / exchangeRate));
@@ -128,17 +127,19 @@ public class ExchangeCreator : MonoBehaviour
             // Attempt Purchase through non-prioritized resources
             if (shopRes.amount > createdExchange.passiveCommitted[shopRes.type])
             {
+                Resource remainingShopRes = new Resource(shopRes.type, shopRes.amount - createdExchange.passiveCommitted[shopRes.type]);
                 foreach (Resource.Type restype in activeParticipant.resourceSellPriority.Keys)
                     if (activeParticipant.resourceSellPriority[restype] == 0) // remaning types               
                         if (activeParticipant.offeredResources.ContainsKey(restype) && passiveParticipant.wantedResources.ContainsKey(restype))
-                            AttemptResourcePurchase(createdExchange, shopRes, restype);
+                            AttemptResourcePurchase(createdExchange, remainingShopRes, restype);
             }
          
 
             // Pay with silver if there's more to be had
             if (shopRes.amount > createdExchange.passiveCommitted[shopRes.type])
             {
-                AttemptSilverPurchase(createdExchange, shopRes);
+                Resource remainingShopRes = new Resource(shopRes.type, shopRes.amount - createdExchange.passiveCommitted[shopRes.type]);
+                AttemptSilverPurchase(createdExchange, remainingShopRes);
             }
 
         } 
