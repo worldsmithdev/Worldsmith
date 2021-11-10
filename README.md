@@ -1,17 +1,16 @@
 # Worldsmith
-[Worldsmith](https://Worldsmith.net) is a World Building Platform: a Unity framework with template database to organize and import your world, and tools to visualize, explore, simulate and gamify it.
+[Worldsmith](https://Worldsmith.net) is a Worldbuilding Platform: a Unity framework with template database to organize and import history and fantasy settings, and tools to visualize, explore, simulate and gamify it.
 
 With a pre-configured but flexible layout and interface, and a data framework that is intuitive and powerful, the application is not only a quick-setup world explorer, but a solid foundation for simulation & game development potential.
 
 This is not an auto-generation tool: users shape their world specifically through a database of variables and values for each of their World Elements: Locations, Characters, Gods, Items, Creatures, Laws, Factions and Stories.
 
-Example WebGL build (old version) (non-mobile) at http://furion.net
+These elements are brought together and presented as an initricately explorable world through a Unity application. A modular simulation system allows these worlds to be stepped forward in time for economic and social progression. 
+
+WebGL build (old version) (non-mobile) at http://furion.net
 
 Navigation gif:  https://i.imgur.com/XsVQU7W
 
-## Current State
-This current build is early-stage and experimental, with different tools and systems for data input and visualization, but limited executable functionality.
-Development focus is now on deeper functionality of my own world, and a MVP template product with better interface. Once these are sufficiently progressed, I will update this core build and description.
 
 ## Getting Started
 Every step from installing Unity to filling your database to customizing features is described in the tutorials below.
