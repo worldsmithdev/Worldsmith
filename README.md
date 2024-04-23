@@ -5,9 +5,9 @@ This is not an auto-generation system: users shape their world specifically thro
 
 These elements are brought together and presented as an initricately explorable world through a Unity application. A modular simulation system allows these worlds to be stepped forward in time with economic and social progression. 
 
-WebGL build (old version) (non-mobile) at http://furion.net
+WebGL build (old version) (non-mobile) at https://www.onlyworlds.com/webgl/
 
-Navigation gif:  https://i.imgur.com/XsVQU7W
+Impression gif:  https://i.imgur.com/XsVQU7W
 
 
 ## Getting Started
